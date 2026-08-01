@@ -1,0 +1,517 @@
+
+/* 基本設定 */
+:root {
+    --primary-color: #0a2d4d; /* 濃い紺色 */
+    --secondary-color: #1a73e8; /* 明るい青 */
+    --accent-color: #f0c419; /* アクセントの黄色 */
+    --text-color: #33333;
+    --background-color: #ffffff;
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
+    --font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+    line-height: 1.8;
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+.header {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.header__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    border: none;
+}
+
+.header__nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.header__nav li {
+    margin-left: 35px;
+}
+
+.header__nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header__nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.header__nav a:hover, .header__nav a.active {
+    color: var(--secondary-color);
+}
+
+.header__nav a:hover::after, .header__nav a.active::after {
+    width: 100%;
+}
+
+.header__nav .contact-button a {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header__nav .contact-button a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.header__nav .contact-button a::after {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero__title {
+    font-size: 52px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.hero__text {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 auto 40px;
+    max-width: 650px;
+    opacity: 0.9;
+}
+
+.hero__button a {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    padding: 18px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 2px solid var(--background-color);
+    transition: all 0.3s ease;
+}
+
+.hero__button a:hover {
+    background-color: transparent;
+    color: var(--background-color);
+}
+
+/* 共通セクションスタイル */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: center;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+}
+
+
+/* UGATTAの強みセクション */
+.features {
+    background-color: var(--light-gray);
+}
+
+.features__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+.feature-card__icon img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: grayscale(100%) contrast(1) brightness(1.5);
+    transition: filter 0.3s ease;
+}
+
+.feature-card:hover .feature-card__icon img {
+    filter: none;
+}
+
+.feature-card__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    color: var(--primary-color);
+}
+
+.feature-card__title span {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.feature-card__text {
+    font-size: 15px;
+    color: #666;
+}
+
+/* お問い合わせセクション */
+.contact {
+    text-align: center;
+}
+
+.contact__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.contact__text {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+}
+
+.contact__button a {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+}
+
+.contact__button a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(10, 45, 77, 0.4);
+}
+
+/* フッター */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer nav li {
+    margin: 0 15px;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+footer nav a:hover {
+    opacity: 1;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* サブページ共通 */
+.page-header {
+    background-color: var(--light-gray);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* 会社概要ページ */
+.about-content {
+    padding: 80px 0;
+}
+.about-section {
+    margin-bottom: 50px;
+}
+.about-section h2 {
+    font-size: 28px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.company-info {
+    width: 100%;
+    border-collapse: collapse;
+}
+.company-info th, .company-info td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+}
+.company-info th {
+    width: 25%;
+    background-color: var(--light-gray);
+    font-weight: 700;
+}
+.company-info ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* 事業内容ページ */
+.service-list {
+    padding: 80px 0;
+}
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.service-item:nth-child(even) {
+    flex-direction: none;
+}
+.service-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: none;
+}
+.service-content h2 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin: 0 0 10px;
+}
+
+/* 実績紹介ページ */
+.portfolio-grid {
+    padding: 80px 0;
+}
+.portfolio-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.portfolio-item img {
+    width: 100%;
+    display: block;
+}
+.portfolio-content {
+    padding: 25px;
+}
+.portfolio-content h3 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+/* お問い合わせページ */
+.contact-form-section {
+    padding: 80px 0;
+    text-align: center;
+}
+.center-text {
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+.btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .header__nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        flex-direction: column;
+        padding: 10px 0;
+        z-index: 1100;
+    }
+
+    .header__nav.active {
+        display: flex;
+    }
+
+    .header__nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header__nav li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header__nav a {
+        padding: 15px 0;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .header__nav a::after {
+        display: none;
+    }
+
+    .header__nav .contact-button {
+        padding: 15px;
+    }
+    
+    .header__nav .contact-button a {
+        padding: 12px 20px;
+    }
+
+    .menu-toggle {
+        display: block !important;
+    }
+
+    .hero__title {
+        font-size: 36px;
+    }
+
+    .hero__text {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .service-item, .service-item:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
