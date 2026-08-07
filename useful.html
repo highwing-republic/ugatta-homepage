@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-M3S9S5D7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GT-M3S9S5D7');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お役立ち情報 | 合同会社UGATTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    合同会社ＵＧＡＴＴＡ
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="services.html">事業内容</a></li>
+                        <li><a href="about.html">会社概要</a></li>
+                        <li><a href="useful.html">お役立ち情報</a></li>
+                        <li class="contact-button"><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ページタイトル -->
+        <section class="hero" style="padding: 60px 0; background-color: #f4f4f4; text-align: center;">
+            <div class="container">
+                <h1 class="hero__title" style="font-size: 32px; color: #333;">お役立ち情報</h1>
+                <p class="hero__text" style="color: #666; margin-top: 10px;">インバウンド対応やDX化に役立つ無料ツールをご提供しています。</p>
+            </div>
+        </section>
+
+        <!-- ▼ Streamlit埋め込みセクション ▼ -->
+        <section class="useful-content" style="padding: 60px 20px; max-width: 1000px; margin: 0 auto;">
+            <div style="width: 100%; height: 850px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #eeeeee;">
+                <iframe
+                    src="https://ugatta-inbound-dashboard-qzthycnwyeschpctdeqlbd.streamlit.app/?embed=true"
+                    width="100%"
+                    height="100%"
+                    style="border: none;"
+                    title="UGATTA インバウンドAI診断ツール"
+                ></iframe>
+            </div>
+        </section>
+        <!-- ▲ Streamlit埋め込みセクション ▲ -->
+
+        <section class="contact">
+            <div class="container">
+                <h2 class="contact__title">具体的な支援をご希望の方へ</h2>
+                <p class="contact__text">
+                    データ分析やAIツールで得たインサイトを元に、実際のWebサイト制作やDX導入の伴走支援を行います。<br>ぜひお気軽にご相談ください。
+                </p>
+                <div class="contact__button">
+                    <a href="contact.html">お問い合わせはこちら</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
