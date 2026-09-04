@@ -1,15 +1,20 @@
-# Ugatta website
+# UGATTA Website
 
-このサイトは Firebase Hosting から GitHub Pages に移行する構成です。
+合同会社UGATTAの本番サイトです。GitHub Pagesで `https://ugatta-llc.com/` に公開します。
 
 ## デプロイ方法
 
-1. GitHub リポジトリで Settings > Pages を開く
-2. "Build and deployment" で "GitHub Actions" を選択する
-3. main ブランチに変更を push すると、Actions が自動でデプロイされる
+1. GitHub リポジトリで `Settings > Pages` を開く
+2. `Build and deployment` で `GitHub Actions` を選択する
+3. `main` ブランチに変更をpushすると、Actionsが自動でデプロイされる
 
-## 変更内容
+## 公開設定
 
-- Firebase Hosting 設定ファイルを削除
-- GitHub Pages 用の GitHub Actions ワークフローを追加
-- Jekyll の処理を無効化するための `.nojekyll` を追加
+- カスタムドメイン: `ugatta-llc.com`（`CNAME`で管理）
+- Google Analytics: `GT-M3S9S5D7`
+- `robots.txt` と `sitemap.xml` で検索公開を管理
+- `.nojekyll` でJekyll処理を無効化
+
+## 無料ツール
+
+`useful.html` には「観光株シグナル / Tourism Market Signal」を埋め込み表示します。ツール本体は別リポジトリで更新されます。
