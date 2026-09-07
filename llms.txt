@@ -6,7 +6,7 @@
 - [トップ](https://ugatta-llc.com/): UGATTAの考え方、支援領域、進め方
 - [事業内容](https://ugatta-llc.com/services.html): DX・業務改善、人材育成、事業・サービス開発、マーケティング・販路開拓
 - [支援事例](https://ugatta-llc.com/ugatta_case_studies.html): 旅館のインバウンド支援、PMS刷新・業務フロー見直し
-- [無料ツール](https://ugatta-llc.com/useful.html): 観光・インバウンド関連50銘柄の変化を確認する「観光株シグナル」
+- [無料ツール](https://ugatta-llc.com/useful.html): 旅館・ホテルのDX課題を約5分で整理する「DXかんたん診断」と、観光・インバウンド関連50銘柄の変化を確認する「観光株シグナル」
 - [会社概要](https://ugatta-llc.com/about.html): 会社情報、所在地、代表者、事業内容
 - [お問い合わせ](https://ugatta-llc.com/contact.html): 各種支援の相談窓口
 
