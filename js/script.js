@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    document.documentElement.classList.add('menu-ready');
   }
 
   const reveals = document.querySelectorAll('.reveal');
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -30px' });
     reveals.forEach(el => observer.observe(el));
+    document.documentElement.classList.add('reveal-ready');
   } else {
     reveals.forEach(el => el.classList.add('is-visible'));
   }
@@ -37,10 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-analytics-event]').forEach(el => {
     el.addEventListener('click', () => {
       if (typeof window.gtag === 'function') {
-        window.gtag('event', el.dataset.analyticsEvent, {
+        const eventName = el.dataset.analyticsEvent;
+        const params = {
           link_url: el.href || '',
-          page_location: window.location.href
-        });
+          page_location: window.location.href,
+          destination_type: el.dataset.contactDestination || ''
+        };
+        window.gtag('event', eventName, params);
+        if (eventName === 'contact_page_click' || eventName === 'contact_form_open') {
+          window.gtag('event', 'contact_click', params);
+        }
       }
     });
   });

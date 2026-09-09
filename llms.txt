@@ -1,14 +1,14 @@
 # 合同会社UGATTA
 
-> 合同会社UGATTAは、DX・業務改善、人材育成、事業・サービス開発、マーケティング・販路開拓を支援する会社です。長野県松本市を拠点とし、宿泊・観光分野のDXやインバウンド支援にも取り組んでいます。
+> 合同会社UGATTAは、宿泊・観光事業者を中心に、DX・業務改善、人材育成、事業・サービス開発、マーケティング・販路開拓を支援する会社です。
 
 ## 主要ページ
 - [トップ](https://ugatta-llc.com/): UGATTAの考え方、支援領域、進め方
 - [事業内容](https://ugatta-llc.com/services.html): DX・業務改善、人材育成、事業・サービス開発、マーケティング・販路開拓
 - [支援事例](https://ugatta-llc.com/ugatta_case_studies.html): 旅館のインバウンド支援、PMS刷新・業務フロー見直し
-- [無料ツール](https://ugatta-llc.com/useful.html): 「DXかんたん診断」「都道府県別インバウンド宿泊者分析」「観光株シグナル」を無料で提供
-- [旅館・ホテルDXかんたん診断](https://ugatta-llc.com/dx-diagnosis.html): 施設の数字と16個の質問から、DXの現在地と優先課題を整理する無料診断
-- [都道府県別インバウンド宿泊者分析](https://ugatta-llc.com/inbound-analysis.html): 地域・国籍別の宿泊者数の推移を比べ、Web集客のヒントを整理する無料分析
+- [無料ツール](https://ugatta-llc.com/useful.html): 宿泊施設向けDX診断、インバウンド宿泊者分析、観光株シグナル
+- [DXかんたん診断](https://ugatta-llc.com/dx-diagnosis.html): 旅館・ホテルのDX課題と改善の優先順位を整理
+- [インバウンド宿泊者分析](https://ugatta-llc.com/inbound-analysis.html): 都道府県・国籍別の宿泊者データを比較する分析ツール
 - [会社概要](https://ugatta-llc.com/about.html): 会社情報、所在地、代表者、事業内容
 - [お問い合わせ](https://ugatta-llc.com/contact.html): 各種支援の相談窓口
 
