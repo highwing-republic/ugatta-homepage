@@ -1,12 +1,6 @@
 # UGATTA Website
 
-合同会社UGATTAの本番サイトです。GitHub Pagesで `https://ugatta-llc.com/` に公開します。
-
-## デプロイ方法
-
-1. GitHub リポジトリで `Settings > Pages` を開く
-2. `Build and deployment` で `GitHub Actions` を選択する
-3. `main` ブランチに変更をpushすると、Actionsが自動でデプロイされる
+合同会社UGATTAの公式サイトです。GitHub Pagesで `https://ugatta-llc.com/` に公開します。
 
 ## 公開設定
 
@@ -15,8 +9,20 @@
 - `robots.txt` と `sitemap.xml` で検索公開を管理
 - `.nojekyll` でJekyll処理を無効化
 
+## 更新・デプロイ
+
+GitHub Pages の **Deploy from a branch** を使い、`main` ブランチの `/ (root)` を公開します。`main` へ push すると自動的に反映されます。
+
+## インバウンド宿泊者分析データ
+
+- 表示データ: `data/inbound/latest.json`
+- メタデータ: `data/inbound/metadata.json`
+- 生成処理: `scripts/update_inbound_data.py`
+- 検証: `python -m pytest -q`
+- 自動更新: `.github/workflows/update-inbound-data.yml`
+
+観光庁「宿泊旅行統計調査」の最新第2次速報をGitHub Actionsで週次確認します。取得・解析・検証がすべて成功し、JSONに変更がある場合だけコミットします。観光庁への取得処理はGitHub Actions内に限定しています。
+
 ## 無料ツール
 
-`useful.html` では「旅館・ホテルDXかんたん診断」と「観光株シグナル / Tourism Market Signal」を案内します。各ツール本体は別プロジェクトで更新されるため、片方の更新がもう片方へ影響しない構成です。
-
-観光株シグナルの拡大表示は同じドメインの `report.html`、DX診断は `dx-diagnosis.html` で行います。各ツールを埋め込むことで、アドレス欄をUGATTAのドメインに保ちながら、別プロジェクトの最新版を表示します。
+`useful.html` からDX診断、インバウンド宿泊者分析、観光株シグナルへ同一ドメイン内で移動できます。

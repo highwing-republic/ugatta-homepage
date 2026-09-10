@@ -47,6 +47,11 @@ build/Release
 # Dependency directories
 node_modules/
 
+# Python test/build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
 # Optional npm cache directory
 .npm
 
