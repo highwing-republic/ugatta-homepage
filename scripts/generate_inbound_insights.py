@@ -329,7 +329,7 @@ def request_gemini(
         "generationConfig": {
             "responseFormat": {
                 "text": {
-                    "mimeType": "application/json",
+                    "mimeType": "APPLICATION_JSON",
                     "schema": response_schema(areas),
                 }
             },

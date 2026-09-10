@@ -177,7 +177,7 @@ def test_gemini_request_uses_current_response_format_and_redacts_errors():
     generation_config = captured["json"]["generationConfig"]
     assert "responseFormat" in generation_config
     assert "responseSchema" not in generation_config
-    assert generation_config["responseFormat"]["text"]["mimeType"] == "application/json"
+    assert generation_config["responseFormat"]["text"]["mimeType"] == "APPLICATION_JSON"
     assert "secret-key-value" not in str(exc_info.value)
 
 
