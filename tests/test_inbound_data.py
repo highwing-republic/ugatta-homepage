@@ -178,6 +178,8 @@ def test_gemini_request_uses_current_response_format_and_redacts_errors():
     assert "responseFormat" in generation_config
     assert "responseSchema" not in generation_config
     assert generation_config["responseFormat"]["text"]["mimeType"] == "APPLICATION_JSON"
+    assert generation_config["thinkingConfig"] == {"thinkingBudget": 0}
+    assert generation_config["maxOutputTokens"] == 8192
     assert "secret-key-value" not in str(exc_info.value)
 
 
