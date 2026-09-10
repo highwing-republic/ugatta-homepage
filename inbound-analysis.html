@@ -90,7 +90,7 @@
           </section>
 
           <section class="analysis-section insight-panel" aria-labelledby="insight-heading">
-            <p class="eyebrow">SHORT INSIGHT</p><h2 id="insight-heading">経営者向けショート示唆</h2><div id="short-insight"></div><p class="insight-caution">統計から確認できる規模と構成比をもとにした整理です。旅行者の動機や将来需要を断定するものではありません。</p>
+            <div class="insight-heading"><div><p class="eyebrow">AI SHORT INSIGHT</p><h2 id="insight-heading">経営者向けショート示唆</h2></div><p id="insight-status" class="insight-status" aria-live="polite"></p></div><div id="short-insight"></div><p class="insight-caution">Gemini AI生成文を表示する場合は、公的統計から確認できる規模・構成比・推移だけを入力として事前生成し、数値と出典期間を自動検証しています。旅行者の動機や将来需要、施策の成果を断定するものではありません。</p>
           </section>
 
           <section class="analysis-source" aria-labelledby="source-heading">
@@ -102,7 +102,7 @@
       </div>
     </section>
 
-    <section class="section qa-section"><div class="container qa-grid reveal"><div><p class="eyebrow">よくあるご質問</p><h2 class="section-title section-title--left">分析データについて</h2></div><div class="accordion-list"><details><summary>どのデータを利用していますか？</summary><p>観光庁「宿泊旅行統計調査」の公表データを利用し、最新の第2次速報を分析対象としています。対象月・集計範囲・更新日は画面下部の出典欄で確認できます。</p></details><details><summary>地域特化度とは何ですか？</summary><p>選択地域の国・地域別シェアを、全国の同じ国・地域のシェアで割った値です。1.0を上回るほど、全国平均よりその市場の構成比が高いことを示します。</p></details><details><summary>注目市場候補は将来需要の予測ですか？</summary><p>いいえ。現在の宿泊市場規模と地域特化度を整理した参考指標です。将来需要や特定施策の成果を予測・保証するものではありません。</p></details></div></div></section>
+    <section class="section qa-section"><div class="container qa-grid reveal"><div><p class="eyebrow">よくあるご質問</p><h2 class="section-title section-title--left">分析データについて</h2></div><div class="accordion-list"><details><summary>どのデータを利用していますか？</summary><p>観光庁「宿泊旅行統計調査」の公表データを利用し、最新の第2次速報を分析対象としています。対象月・集計範囲・更新日は画面下部の出典欄で確認できます。</p></details><details><summary>AIインサイトはどのように生成していますか？</summary><p>統計更新時にGitHub Actions上でGemini APIを使用し、表示中の規模・構成比・推移をもとに事前生成しています。閲覧時にGeminiや外部APIへ送信することはありません。生成結果がない場合や統計の更新月と一致しない場合は、統計値から組み立てる定型文を表示します。</p></details><details><summary>地域特化度とは何ですか？</summary><p>選択地域の国・地域別シェアを、全国の同じ国・地域のシェアで割った値です。1.0を上回るほど、全国平均よりその市場の構成比が高いことを示します。</p></details><details><summary>注目市場候補は将来需要の予測ですか？</summary><p>いいえ。現在の宿泊市場規模と地域特化度を整理した参考指標です。将来需要や特定施策の成果を予測・保証するものではありません。</p></details></div></div></section>
 
     <section class="cta-section"><div class="container"><div class="cta-panel"><div><p class="eyebrow">お問い合わせ</p><h2>実際のデータで、集客の論点を整理する</h2><p>対象地域、届けたい旅行者、利用できるデータを確認し、分析の目的と情報発信の方法を整理します。</p></div><a class="button button--large" data-analytics-event="contact_page_click" data-contact-destination="contact_page" href="contact.html">相談方法を確認する<span aria-hidden="true">→</span></a></div></div></section>
   </main>

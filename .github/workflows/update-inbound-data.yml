@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -31,17 +31,28 @@ jobs:
       - name: Fetch and validate latest second preliminary data
         run: python scripts/update_inbound_data.py
 
+      - name: Generate verified short insights with Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::warning::GEMINI_API_KEY is not configured. The site will use its statistics-based fallback insights."
+            exit 0
+          fi
+          python scripts/generate_inbound_insights.py
+
       - name: Run tests
         run: python -m pytest -q
 
-      - name: Commit updated JSON
+      - name: Commit updated statistics and insights
         run: |
-          if git diff --quiet -- data/inbound/latest.json data/inbound/metadata.json; then
-            echo "No new second preliminary data."
+          if git diff --quiet -- data/inbound/latest.json data/inbound/metadata.json data/inbound/insights.json; then
+            echo "No new statistics or AI insights."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/inbound/latest.json data/inbound/metadata.json
-          git commit -m "Update inbound accommodation statistics"
+          git add data/inbound/latest.json data/inbound/metadata.json data/inbound/insights.json
+          git commit -m "Update inbound statistics and AI insights"
           git push

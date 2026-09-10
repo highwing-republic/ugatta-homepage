@@ -22,6 +22,7 @@
   const slugToPrefecture = new Map(PREFECTURE_SLUGS.map(function (item) { return [item[1], item[0]]; }));
   const prefectureToSlug = new Map(PREFECTURE_SLUGS);
   let dataset = null;
+  let insightDataset = null;
 
   function formatNumber(value) {
     return numberFormatter.format(Math.round(value || 0));
@@ -47,6 +48,27 @@
     if (!data.national || !Number.isFinite(data.national.foreign_guest_nights)) throw new Error('全国値がありません。');
     if (!data.prefectures || Object.keys(data.prefectures).length !== 47) throw new Error('47都道府県が揃っていません。');
     if (!data.national.nationality || !Object.keys(data.national.nationality).length) throw new Error('国籍データがありません。');
+  }
+
+  function validatedInsightDataset(data, statistics) {
+    if (!data || typeof data !== 'object' || !data.metadata || data.metadata.status !== 'generated') return null;
+    const metadata = data.metadata;
+    const source = statistics.metadata;
+    if (metadata.generator !== 'Gemini API') return null;
+    if (metadata.source_year !== source.year || metadata.source_month !== source.month) return null;
+    if (metadata.source_release_type !== source.release_type || metadata.source_updated_at !== source.updated_at) return null;
+    if (!data.insights || typeof data.insights !== 'object') return null;
+    return data;
+  }
+
+  function aiInsightForArea(area) {
+    if (!insightDataset || !insightDataset.insights) return null;
+    const entry = insightDataset.insights[area];
+    if (!entry || !Array.isArray(entry.paragraphs) || entry.paragraphs.length !== 3) return null;
+    const paragraphs = entry.paragraphs.map(function (paragraph) {
+      return paragraph && typeof paragraph.text === 'string' ? paragraph.text.trim() : '';
+    });
+    return paragraphs.every(Boolean) ? paragraphs : null;
   }
 
   function getInitialArea() {
@@ -274,7 +296,24 @@
 
   function renderInsight(area, markets) {
     const container = byId('short-insight');
+    const status = byId('insight-status');
     container.textContent = '';
+    const aiParagraphs = aiInsightForArea(area);
+    if (aiParagraphs) {
+      aiParagraphs.forEach(function (text) {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = text;
+        container.appendChild(paragraph);
+      });
+      const generated = insightDataset.metadata.generated_at || '';
+      const generatedDate = generated.slice(0, 10).replace(/-/g, '.');
+      status.textContent = 'Gemini AI生成' + (generatedDate ? '／生成日 ' + generatedDate : '');
+      status.dataset.state = 'ai';
+      return;
+    }
+
+    status.textContent = '統計値から自動整理／AIインサイト未生成';
+    status.dataset.state = 'fallback';
     if (!markets.length) {
       const paragraph = document.createElement('p');
       paragraph.textContent = '国・地域別データを確認できません。';
@@ -363,14 +402,20 @@
     byId('analysis-dashboard').setAttribute('aria-hidden', 'true');
     byId('analysis-period').textContent = '';
     byId('tool').setAttribute('aria-busy', 'true');
-    return fetch('data/inbound/latest.json', { cache: 'no-store' })
+    const statisticsRequest = fetch('data/inbound/latest.json', { cache: 'no-store' })
       .then(function (response) {
         if (!response.ok) throw new Error('統計JSONの取得に失敗しました。');
         return response.json();
-      })
-      .then(function (data) {
+      });
+    const insightRequest = fetch('data/inbound/insights.json', { cache: 'no-store' })
+      .then(function (response) { return response.ok ? response.json() : null; })
+      .catch(function () { return null; });
+    return Promise.all([statisticsRequest, insightRequest])
+      .then(function (results) {
+        const data = results[0];
         validateDataset(data);
         dataset = data;
+        insightDataset = validatedInsightDataset(results[1], data);
         const selectedArea = getInitialArea();
         populateSelector(selectedArea);
         setSourceMetadata();
