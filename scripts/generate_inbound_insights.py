@@ -46,6 +46,10 @@ FORBIDDEN_PHRASES = (
 )
 
 
+class GeminiRequestError(RuntimeError):
+    """A non-retryable Gemini API request error with a redacted response body."""
+
+
 def ensure_github_actions_environment() -> None:
     if os.environ.get("GITHUB_ACTIONS") != "true":
         raise RuntimeError("Geminiによるインサイト生成はGitHub Actions内でのみ実行できます。")
@@ -323,8 +327,12 @@ def request_gemini(
     payload = {
         "contents": [{"role": "user", "parts": [{"text": build_prompt(batch)}]}],
         "generationConfig": {
-            "responseMimeType": "application/json",
-            "responseSchema": response_schema(areas),
+            "responseFormat": {
+                "text": {
+                    "mimeType": "application/json",
+                    "schema": response_schema(areas),
+                }
+            },
             "temperature": 0.2,
             "maxOutputTokens": 4096,
         },
@@ -341,10 +349,17 @@ def request_gemini(
             )
             if response.status_code == 429 or response.status_code >= 500:
                 raise requests.HTTPError(f"一時的なGemini APIエラー: {response.status_code}")
+            if response.status_code >= 400:
+                detail = response.text.strip()[:1000].replace(api_key, "***")
+                raise GeminiRequestError(
+                    f"Gemini APIエラー {response.status_code}: {detail or '詳細なし'}"
+                )
             response.raise_for_status()
             result = extract_response_payload(response.json())
             validate_batch_output(result, batch)
             return result
+        except GeminiRequestError:
+            raise
         except (requests.RequestException, ValueError) as exc:
             last_error = exc
             if attempt < max_attempts:

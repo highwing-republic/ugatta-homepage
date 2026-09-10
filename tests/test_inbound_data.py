@@ -9,11 +9,13 @@ from bs4 import BeautifulSoup
 from openpyxl import Workbook
 
 from scripts.generate_inbound_insights import (
+    GeminiRequestError,
     build_area_facts,
     canonical_digest,
     ensure_github_actions_environment as ensure_insight_actions_environment,
     existing_output_is_current,
     generator_digest,
+    request_gemini,
     validate_batch_output,
 )
 from scripts.update_inbound_data import (
@@ -150,6 +152,33 @@ def test_current_ai_output_detection_uses_data_digest_and_model():
     path = FakePath()
     assert existing_output_is_current(path, digest, "gemini-2.5-flash", areas)
     assert not existing_output_is_current(path, "different", "gemini-2.5-flash", areas)
+
+
+def test_gemini_request_uses_current_response_format_and_redacts_errors():
+    area_facts = build_area_facts(load_data(), "長野県")
+    captured = {}
+
+    class BadResponse:
+        status_code = 400
+        text = 'invalid request for secret-key-value'
+
+    def fake_post(url, *, headers, json, timeout):
+        captured.update(url=url, headers=headers, json=json, timeout=timeout)
+        return BadResponse()
+
+    with pytest.raises(GeminiRequestError) as exc_info:
+        request_gemini(
+            "secret-key-value",
+            "gemini-2.5-flash",
+            [area_facts],
+            post=fake_post,
+        )
+
+    generation_config = captured["json"]["generationConfig"]
+    assert "responseFormat" in generation_config
+    assert "responseSchema" not in generation_config
+    assert generation_config["responseFormat"]["text"]["mimeType"] == "application/json"
+    assert "secret-key-value" not in str(exc_info.value)
 
 
 def test_all_prefectures_exist():
