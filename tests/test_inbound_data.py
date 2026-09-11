@@ -154,7 +154,7 @@ def test_current_ai_output_detection_uses_data_digest_and_model():
     assert not existing_output_is_current(path, "different", "gemini-2.5-flash", areas)
 
 
-def test_gemini_request_uses_current_response_format_and_redacts_errors():
+def test_gemini_request_uses_2_5_json_schema_format_and_redacts_errors():
     area_facts = build_area_facts(load_data(), "長野県")
     captured = {}
 
@@ -175,9 +175,10 @@ def test_gemini_request_uses_current_response_format_and_redacts_errors():
         )
 
     generation_config = captured["json"]["generationConfig"]
-    assert "responseFormat" in generation_config
+    assert generation_config["responseMimeType"] == "application/json"
+    assert "responseJsonSchema" in generation_config
+    assert "responseFormat" not in generation_config
     assert "responseSchema" not in generation_config
-    assert generation_config["responseFormat"]["text"]["mimeType"] == "APPLICATION_JSON"
     assert generation_config["thinkingConfig"] == {"thinkingBudget": 0}
     assert generation_config["maxOutputTokens"] == 8192
     assert "secret-key-value" not in str(exc_info.value)

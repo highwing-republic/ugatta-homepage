@@ -327,12 +327,8 @@ def request_gemini(
     payload = {
         "contents": [{"role": "user", "parts": [{"text": build_prompt(batch)}]}],
         "generationConfig": {
-            "responseFormat": {
-                "text": {
-                    "mimeType": "APPLICATION_JSON",
-                    "schema": response_schema(areas),
-                }
-            },
+            "responseMimeType": "application/json",
+            "responseJsonSchema": response_schema(areas),
             "thinkingConfig": {"thinkingBudget": 0},
             "temperature": 0.2,
             "maxOutputTokens": 8192,
