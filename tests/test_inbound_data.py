@@ -179,6 +179,10 @@ def test_gemini_request_uses_2_5_json_schema_format_and_redacts_errors():
     assert "responseJsonSchema" in generation_config
     assert "responseFormat" not in generation_config
     assert "responseSchema" not in generation_config
+    encoded_schema = json.dumps(generation_config["responseJsonSchema"])
+    assert '"enum"' not in encoded_schema
+    assert '"minItems"' not in encoded_schema
+    assert '"maxItems"' not in encoded_schema
     assert generation_config["thinkingConfig"] == {"thinkingBudget": 0}
     assert generation_config["maxOutputTokens"] == 8192
     assert "secret-key-value" not in str(exc_info.value)

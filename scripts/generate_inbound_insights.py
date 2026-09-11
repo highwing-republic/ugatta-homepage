@@ -173,32 +173,26 @@ def build_area_facts(dataset: dict[str, Any], area: str) -> dict[str, Any]:
     return {"area": area, "facts": facts}
 
 
-def response_schema(areas: list[str]) -> dict[str, Any]:
+def response_schema() -> dict[str, Any]:
     return {
         "type": "object",
         "properties": {
             "insights": {
                 "type": "array",
-                "minItems": len(areas),
-                "maxItems": len(areas),
                 "items": {
                     "type": "object",
                     "properties": {
-                        "area": {"type": "string", "enum": areas},
+                        "area": {"type": "string"},
                         "paragraphs": {
                             "type": "array",
-                            "minItems": 3,
-                            "maxItems": 3,
                             "items": {
                                 "type": "object",
                                 "properties": {
-                                    "kind": {"type": "string", "enum": list(KINDS)},
+                                    "kind": {"type": "string"},
                                     "text": {"type": "string"},
                                     "fact_ids": {
                                         "type": "array",
-                                        "minItems": 1,
-                                        "maxItems": 4,
-                                        "items": {"type": "string", "enum": list(FACT_IDS)},
+                                        "items": {"type": "string"},
                                     },
                                 },
                                 "required": ["kind", "text", "fact_ids"],
@@ -323,12 +317,11 @@ def request_gemini(
 ) -> dict[str, Any]:
     if not re.fullmatch(r"[A-Za-z0-9._-]+", model):
         raise ValueError("Geminiモデル名が不正です。")
-    areas = [item["area"] for item in batch]
     payload = {
         "contents": [{"role": "user", "parts": [{"text": build_prompt(batch)}]}],
         "generationConfig": {
             "responseMimeType": "application/json",
-            "responseJsonSchema": response_schema(areas),
+            "responseJsonSchema": response_schema(),
             "thinkingConfig": {"thinkingBudget": 0},
             "temperature": 0.2,
             "maxOutputTokens": 8192,
