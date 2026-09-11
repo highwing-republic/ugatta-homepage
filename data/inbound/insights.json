@@ -1,15 +1,1503 @@
 {
   "metadata": {
-    "status": "pending",
+    "status": "generated",
     "generator": "Gemini API",
-    "model": null,
-    "generated_at": null,
+    "model": "gemini-2.5-flash",
+    "generated_at": "2026-09-11T00:05:42Z",
     "source_year": 2026,
     "source_month": 6,
     "source_release_type": "第2次速報",
     "source_updated_at": "2026-08-31",
-    "data_sha256": null,
-    "generator_sha256": null
+    "data_sha256": "de655bfb6d535667f0f5960c140d22272ee47b76bf4355ac434d58c276d3f6bc",
+    "generator_sha256": "0b01a63064996aeefac9a7736ad449db9092354dcfdee336573e7f4e19ebe41f"
   },
-  "insights": {}
+  "insights": {
+    "全国": {
+      "area": "全国",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の全国外国人延べ宿泊者数は10,863,490人泊でした。最大の市場は台湾で1,857,580人泊、地域内シェア17.1%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の宿泊者数10,863,490人泊は、前月の12,764,000人泊から-14.9%減少しました。上位5市場は台湾、米国、韓国、中国、香港です。",
+          "fact_ids": [
+            "monthly_change",
+            "top_markets"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "全国の外国人延べ宿泊者数の前月比減少について、その要因を詳細に確認することが考えられます。また、上位市場の動向を継続的に注視し、市場ごとの特性を把握することが重要です。",
+          "fact_ids": [
+            "monthly_change",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "北海道": {
+      "area": "北海道",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の北海道外国人延べ宿泊者数は730,250人泊で、全国シェアは6.7%でした。最大の市場は台湾で194,360人泊、地域内シェア26.6%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の宿泊者数730,250人泊は、前月の614,560人泊から18.8%増加しました。全国比で地域特化度が最も高い市場はシンガポールで、指数は2.96です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "外国人延べ宿泊者数の前月比増加要因について、詳細な分析を検討することが考えられます。また、地域特化度の高いシンガポール市場の動向を注視し、その特性を把握することが重要です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "青森県": {
+      "area": "青森県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の青森県外国人延べ宿泊者数は43,160人泊で、全国シェアは0.4%でした。最大の市場は台湾で19,510人泊、地域内シェア45.2%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の宿泊者数43,160人泊は、前月の40,550人泊から6.4%増加しました。全国比で地域特化度が最も高い市場は台湾で、指数は2.64です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "外国人延べ宿泊者数の前月比増加要因について、詳細な分析を検討することが考えられます。また、地域特化度の高い台湾市場の動向を注視し、その特性を把握することが重要です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "岩手県": {
+      "area": "岩手県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の岩手県外国人延べ宿泊者数は21,660人泊で、全国シェアは0.2%でした。最大の市場は台湾で10,820人泊、地域内シェア50.0%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の宿泊者数21,660人泊は、前月の24,830人泊から-12.8%減少しました。全国比で地域特化度が最も高い市場はベトナムで、指数は8.36です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "外国人延べ宿泊者数の前月比減少要因について、詳細な分析を検討することが考えられます。また、地域特化度の高いベトナム市場の動向を注視し、その特性を把握することが重要です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "宮城県": {
+      "area": "宮城県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の宮城県外国人延べ宿泊者数は74,200人泊で、全国シェアは0.7%でした。最大の市場は台湾で37,310人泊、地域内シェア50.3%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の宿泊者数74,200人泊は、前月の74,700人泊から-0.7%減少しました。全国比で地域特化度が最も高い市場は台湾で、指数は2.94です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "外国人延べ宿泊者数の前月比減少要因について、詳細な分析を検討することが考えられます。また、地域特化度の高い台湾市場の動向を注視し、その特性を把握することが重要です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "秋田県": {
+      "area": "秋田県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の秋田県外国人延べ宿泊者数は11,400人泊で、全国シェアは0.1%でした。最大の市場は台湾で6,020人泊、地域内シェア52.8%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の宿泊者数11,400人泊は、前月の10,100人泊から12.9%増加しました。全国比で地域特化度が最も高い市場は台湾で、指数は3.09です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "外国人延べ宿泊者数の前月比増加要因について、詳細な分析を検討することが考えられます。また、地域特化度の高い台湾市場の動向を注視し、その特性を把握することが重要です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "山形県": {
+      "area": "山形県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の山形県の外国人延べ宿泊者数は9,530人泊で、全国シェアは0.1%です。宿泊者数が最大の市場は台湾で、5,050人泊、地域内シェアは53.0%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は9,530人泊で、前月の12,310人泊から-22.6%減少しました。全国比で地域特化度が最も高い市場も台湾で、指数は3.10です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "台湾市場が宿泊者数と地域特化度で最も高いことを踏まえ、上位5市場である中国、韓国、米国、香港の動向と合わせて、今後の市場戦略を検討することを確認します。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "福島県": {
+      "area": "福島県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の福島県の外国人延べ宿泊者数は25,650人泊で、全国シェアは0.2%です。最大の市場は台湾で、15,180人泊、地域内シェアは59.2%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は25,650人泊で、前月の20,520人泊から25.0%増加しました。全国比で地域特化度が最も高い市場も台湾で、指数は3.46です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "台湾市場が宿泊者数と地域特化度で最も高いことを踏まえ、上位5市場である中国、米国、香港、韓国の動向と合わせて、今後の市場戦略を検討することを確認します。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "茨城県": {
+      "area": "茨城県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の茨城県の外国人延べ宿泊者数は28,000人泊で、全国シェアは0.3%です。最大の市場は中国で、6,490人泊、地域内シェアは23.2%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は28,000人泊で、前月の32,840人泊から-14.7%減少しました。全国比で地域特化度が最も高い市場はタイで、指数は3.30です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "中国市場が宿泊者数で最大である一方、タイ市場が地域特化度で最も高いことを踏まえ、上位5市場の動向と合わせて、今後の市場戦略を検討することを確認します。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "栃木県": {
+      "area": "栃木県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の栃木県の外国人延べ宿泊者数は27,080人泊で、全国シェアは0.2%です。最大の市場は米国で、4,820人泊、地域内シェアは17.8%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は27,080人泊で、前月の31,010人泊から-12.7%減少しました。全国比で地域特化度が最も高い市場はベトナムで、指数は2.55です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "米国市場が宿泊者数で最大である一方、ベトナム市場が地域特化度で最も高いことを踏まえ、上位5市場の動向と合わせて、今後の市場戦略を検討することを確認します。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "群馬県": {
+      "area": "群馬県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の群馬県の外国人延べ宿泊者数は16,130人泊で、全国シェアは0.1%です。最大の市場は台湾で、2,510人泊、地域内シェアは15.6%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は16,130人泊で、前月の22,880人泊から-29.5%減少しました。全国比で地域特化度が最も高い市場はカナダで、指数は2.99です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "台湾市場が宿泊者数で最大である一方、カナダ市場が地域特化度で最も高いことを踏まえ、上位5市場の動向と合わせて、今後の市場戦略を検討することを確認します。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "埼玉県": {
+      "area": "埼玉県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の埼玉県の外国人延べ宿泊者数は21,640人泊で、全国シェアは0.2%です。最大の市場は中国で、4,470人泊、地域内シェアは20.7%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は21,640人泊で、前月の28,480人泊から-24.0%減少しました。全国比で地域特化度が最も高い市場はベトナムで、指数は3.67です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "中国市場が宿泊者数で最大である一方、ベトナム市場が地域特化度で最も高いことを踏まえ、上位5市場の動向と合わせて、今後の市場戦略を検討することを確認します。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "千葉県": {
+      "area": "千葉県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の千葉県の外国人延べ宿泊者数は313,990人泊でした。全国シェアは2.9%であり、宿泊者数が最大の市場は米国で88,460人泊、地域内シェア28.2%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の365,850人泊から-14.2%減少しました。全国比で地域特化度が最も高い市場はタイで、指数は2.18です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "米国が最大の市場である一方、タイは地域特化度が高い市場です。これらの市場の動向を継続的に確認し、宿泊者数上位5市場の推移も合わせて検討することが望ましいでしょう。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "東京都": {
+      "area": "東京都",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の東京都の外国人延べ宿泊者数は3,718,990人泊でした。全国シェアは34.2%であり、宿泊者数が最大の市場は米国で877,320人泊、地域内シェア23.6%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の4,326,020人泊から-14.0%減少しました。全国比で地域特化度が最も高い市場は中東地域で、指数は1.59です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "米国が最大の市場である一方、中東地域は地域特化度が高い市場です。これらの市場の動向を継続的に確認し、宿泊者数上位5市場の推移も合わせて検討することが望ましいでしょう。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "神奈川県": {
+      "area": "神奈川県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の神奈川県の外国人延べ宿泊者数は281,880人泊でした。全国シェアは2.6%であり、宿泊者数が最大の市場は米国で57,730人泊、地域内シェア20.5%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の372,960人泊から-24.4%減少しました。全国比で地域特化度が最も高い市場は中国で、指数は1.49です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "米国が最大の市場である一方、中国は地域特化度が高い市場です。これらの市場の動向を継続的に確認し、宿泊者数上位5市場の推移も合わせて検討することが望ましいでしょう。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "新潟県": {
+      "area": "新潟県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の新潟県の外国人延べ宿泊者数は28,700人泊でした。全国シェアは0.3%であり、宿泊者数が最大の市場は台湾で4,220人泊、地域内シェア14.7%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の23,570人泊から21.8%増加しました。全国比で地域特化度が最も高い市場はフィリピンで、指数は3.19です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "台湾が最大の市場である一方、フィリピンは地域特化度が高い市場です。これらの市場の動向を継続的に確認し、宿泊者数上位5市場の推移も合わせて検討することが望ましいでしょう。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "富山県": {
+      "area": "富山県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の富山県の外国人延べ宿泊者数は23,000人泊でした。全国シェアは0.2%であり、宿泊者数が最大の市場は台湾で5,460人泊、地域内シェア23.7%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の63,000人泊から-63.5%減少しました。全国比で地域特化度が最も高い市場はタイで、指数は3.16です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "台湾が最大の市場である一方、タイは地域特化度が高い市場です。これらの市場の動向を継続的に確認し、宿泊者数上位5市場の推移も合わせて検討することが望ましいでしょう。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "石川県": {
+      "area": "石川県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の石川県の外国人延べ宿泊者数は121,010人泊でした。全国シェアは1.1%であり、宿泊者数が最大の市場は台湾で22,100人泊、地域内シェア18.3%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の205,540人泊から-41.1%減少しました。全国比で地域特化度が最も高い市場はイタリアで、指数は4.64です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "台湾が最大の市場である一方、イタリアは地域特化度が高い市場です。これらの市場の動向を継続的に確認し、宿泊者数上位5市場の推移も合わせて検討することが望ましいでしょう。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "福井県": {
+      "area": "福井県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の福井県の外国人延べ宿泊者数は8,420人泊でした。全国シェアは0.1%で、直近月は前月から-22.3%変化しました。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "monthly_change"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "宿泊者数が最大の市場は台湾で2,170人泊、地域内シェア25.8%です。全国比で地域特化度が最も高い市場はベトナムで、指数は3.15でした。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である台湾、中国、香港、韓国、米国からの宿泊者数の推移を継続的に確認し、各市場の動向を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "山梨県": {
+      "area": "山梨県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の山梨県の外国人延べ宿泊者数は96,700人泊でした。全国シェアは0.9%で、直近月は前月から-46.1%変化しました。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "monthly_change"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "宿泊者数が最大の市場は台湾で17,170人泊、地域内シェア17.8%です。全国比で地域特化度が最も高い市場はベトナムで、指数は5.87でした。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である台湾、中国、米国、タイ、香港からの宿泊者数の推移を継続的に確認し、各市場の動向を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "長野県": {
+      "area": "長野県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の長野県の外国人延べ宿泊者数は93,520人泊でした。全国シェアは0.9%で、直近月は前月から-38.8%変化しました。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "monthly_change"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "宿泊者数が最大の市場は台湾で23,020人泊、地域内シェア24.6%です。全国比で地域特化度が最も高い市場はタイで、指数は3.78でした。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である台湾、米国、中国、シンガポール、タイからの宿泊者数の推移を継続的に確認し、各市場の動向を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "岐阜県": {
+      "area": "岐阜県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の岐阜県の外国人延べ宿泊者数は85,730人泊でした。全国シェアは0.8%で、直近月は前月から-42.5%変化しました。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "monthly_change"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "宿泊者数が最大の市場は台湾で17,180人泊、地域内シェア20.0%です。全国比で地域特化度が最も高い市場はスペインで、指数は5.78でした。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である台湾、米国、スペイン、韓国、中国からの宿泊者数の推移を継続的に確認し、各市場の動向を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "静岡県": {
+      "area": "静岡県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の静岡県の外国人延べ宿泊者数は109,290人泊でした。全国シェアは1.0%で、直近月は前月から-24.4%変化しました。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "monthly_change"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "宿泊者数が最大の市場は中国で26,690人泊、地域内シェア24.4%です。全国比で地域特化度が最も高い市場はベトナムで、指数は4.09でした。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である中国、韓国、台湾、米国、香港からの宿泊者数の推移を継続的に確認し、各市場の動向を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "愛知県": {
+      "area": "愛知県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の愛知県の外国人延べ宿泊者数は283,260人泊でした。全国シェアは2.6%で、直近月は前月から-17.1%変化しました。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "monthly_change"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "宿泊者数が最大の市場は台湾で82,610人泊、地域内シェア29.2%です。全国比で地域特化度が最も高い市場はベトナムで、指数は3.46でした。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である台湾、韓国、中国、香港、米国からの宿泊者数の推移を継続的に確認し、各市場の動向を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "三重県": {
+      "area": "三重県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の三重県の外国人延べ宿泊者数は22,480人泊でした。全国シェアは0.2%であり、宿泊者数が最大の市場は台湾で5,920人泊、地域内シェアは26.3%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の26,060人泊から-13.7%変化しました。全国比で地域特化度が最も高い市場はタイで、指数は3.15です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である台湾、中国、香港、米国、シンガポールからの宿泊者数の推移を継続的に確認し、市場ごとの動向を検討することが重要です。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "滋賀県": {
+      "area": "滋賀県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の滋賀県の外国人延べ宿泊者数は18,520人泊でした。全国シェアは0.2%であり、宿泊者数が最大の市場は台湾で5,920人泊、地域内シェアは32.0%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の22,420人泊から-17.4%変化しました。全国比で地域特化度が最も高い市場は中東地域で、指数は2.09です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である台湾、中国、韓国、香港、米国からの宿泊者数の推移を継続的に確認し、市場ごとの動向を検討することが重要です。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "京都府": {
+      "area": "京都府",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の京都府の外国人延べ宿泊者数は1,095,320人泊でした。全国シェアは10.1%であり、宿泊者数が最大の市場は米国で271,910人泊、地域内シェアは24.8%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の1,281,710人泊から-14.5%変化しました。全国比で地域特化度が最も高い市場はスペインで、指数は2.61です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である米国、中国、台湾、韓国、オーストラリアからの宿泊者数の推移を継続的に確認し、市場ごとの動向を検討することが重要です。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "大阪府": {
+      "area": "大阪府",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の大阪府の外国人延べ宿泊者数は1,608,740人泊でした。全国シェアは14.8%であり、宿泊者数が最大の市場は中国で247,100人泊、地域内シェアは15.4%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の1,883,850人泊から-14.6%変化しました。全国比で地域特化度が最も高い市場はベトナムで、指数は1.44です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である中国、米国、台湾、韓国、香港からの宿泊者数の推移を継続的に確認し、市場ごとの動向を検討することが重要です。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "兵庫県": {
+      "area": "兵庫県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の兵庫県の外国人延べ宿泊者数は129,810人泊でした。全国シェアは1.2%であり、宿泊者数が最大の市場は台湾で42,310人泊、地域内シェアは32.6%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の142,680人泊から-9.0%変化しました。全国比で地域特化度が最も高い市場は台湾で、指数は1.91です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である台湾、中国、韓国、米国、香港からの宿泊者数の推移を継続的に確認し、市場ごとの動向を検討することが重要です。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "奈良県": {
+      "area": "奈良県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の奈良県の外国人延べ宿泊者数は27,930人泊でした。全国シェアは0.3%であり、宿泊者数が最大の市場は米国で8,800人泊、地域内シェアは31.5%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の34,100人泊から-18.1%変化しました。全国比で地域特化度が最も高い市場はフランスで、指数は4.20です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "上位市場である米国、中国、台湾、韓国、フランスからの宿泊者数の推移を継続的に確認し、市場ごとの動向を検討することが重要です。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "和歌山県": {
+      "area": "和歌山県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月の和歌山県の外国人延べ宿泊者数は35,350人泊で、全国シェアは0.3%でした。最大の市場は中国で8,870人泊、地域内シェアは25.1%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の47,850人泊から-26.1%と減少しました。全国比で地域特化度が最も高い市場は香港で、指数は2.44です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場の動向を継続的に確認し、特に地域特化度の高い香港市場の推移を注視することで、今後の戦略立案に役立てることを検討してください。",
+          "fact_ids": [
+            "top_markets",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "鳥取県": {
+      "area": "鳥取県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月の鳥取県の外国人延べ宿泊者数は15,560人泊で、全国シェアは0.1%でした。最大の市場は台湾で5,500人泊、地域内シェアは35.3%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の15,850人泊から-1.8%とわずかに減少しました。全国比で地域特化度が最も高い市場は台湾で、指数は2.07です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場の動向を継続的に確認し、特に地域特化度の高い台湾市場の推移を注視することで、今後の戦略立案に役立てることを検討してください。",
+          "fact_ids": [
+            "top_markets",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "島根県": {
+      "area": "島根県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月の島根県の外国人延べ宿泊者数は6,490人泊で、全国シェアは0.1%でした。最大の市場は台湾で2,610人泊、地域内シェアは40.2%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の9,620人泊から-32.5%と大きく減少しました。全国比で地域特化度が最も高い市場はフランスで、指数は3.87です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場の動向を継続的に確認し、特に地域特化度の高いフランス市場の推移を注視することで、今後の戦略立案に役立てることを検討してください。",
+          "fact_ids": [
+            "top_markets",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "岡山県": {
+      "area": "岡山県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月の岡山県の外国人延べ宿泊者数は48,940人泊で、全国シェアは0.5%でした。最大の市場は台湾で27,820人泊、地域内シェアは56.8%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の57,760人泊から-15.3%と減少しました。全国比で地域特化度が最も高い市場は台湾で、指数は3.32です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場の動向を継続的に確認し、特に地域特化度の高い台湾市場の推移を注視することで、今後の戦略立案に役立てることを検討してください。",
+          "fact_ids": [
+            "top_markets",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "広島県": {
+      "area": "広島県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月の広島県の外国人延べ宿泊者数は155,130人泊で、全国シェアは1.4%でした。最大の市場は米国で33,790人泊、地域内シェアは21.8%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の190,100人泊から-18.4%と減少しました。全国比で地域特化度が最も高い市場は英国で、指数は2.63です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場の動向を継続的に確認し、特に地域特化度の高い英国市場の推移を注視することで、今後の戦略立案に役立てることを検討してください。",
+          "fact_ids": [
+            "top_markets",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "山口県": {
+      "area": "山口県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月の山口県の外国人延べ宿泊者数は14,500人泊で、全国シェアは0.1%でした。最大の市場は韓国で6,790人泊、地域内シェアは46.8%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の17,790人泊から-18.5%と減少しました。全国比で地域特化度が最も高い市場は韓国で、指数は3.88です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場の動向を継続的に確認し、特に地域特化度の高い韓国市場の推移を注視することで、今後の戦略立案に役立てることを検討してください。",
+          "fact_ids": [
+            "top_markets",
+            "specialized_market"
+          ]
+        }
+      ]
+    },
+    "徳島県": {
+      "area": "徳島県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の徳島県の外国人延べ宿泊者数は12,860人泊で、全国シェアは0.1%でした。宿泊者数が最大の市場は韓国で、4,260人泊、地域内シェアは33.1%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は12,860人泊で、前月の17,080人泊から-24.7%減少しました。全国比で地域特化度が最も高い市場は韓国で、指数は2.74です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "韓国市場は地域内シェア33.1%と地域特化度指数2.74を示しており、この市場の動向を注視し、宿泊者数上位5市場の推移を確認することが重要です。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "香川県": {
+      "area": "香川県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の香川県の外国人延べ宿泊者数は67,480人泊で、全国シェアは0.6%でした。宿泊者数が最大の市場は台湾で、32,540人泊、地域内シェアは48.2%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は67,480人泊で、前月の86,770人泊から-22.2%減少しました。全国比で地域特化度が最も高い市場は台湾で、指数は2.82です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "台湾市場は地域内シェア48.2%と地域特化度指数2.82を示しており、この市場の動向を注視し、宿泊者数上位5市場の推移を確認することが重要です。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "愛媛県": {
+      "area": "愛媛県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の愛媛県の外国人延べ宿泊者数は28,240人泊で、全国シェアは0.3%でした。宿泊者数が最大の市場は韓国で、12,480人泊、地域内シェアは44.2%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は28,240人泊で、前月の58,000人泊から-51.3%減少しました。全国比で地域特化度が最も高い市場は韓国で、指数は3.66です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "韓国市場は地域内シェア44.2%と地域特化度指数3.66を示しており、この市場の動向を注視し、宿泊者数上位5市場の推移を確認することが重要です。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "高知県": {
+      "area": "高知県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の高知県の外国人延べ宿泊者数は10,450人泊で、全国シェアは0.1%でした。宿泊者数が最大の市場は台湾で、5,050人泊、地域内シェアは48.3%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は10,450人泊で、前月の11,160人泊から-6.4%減少しました。全国比で地域特化度が最も高い市場は台湾で、指数は2.83です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "台湾市場は地域内シェア48.3%と地域特化度指数2.83を示しており、この市場の動向を注視し、宿泊者数上位5市場の推移を確認することが重要です。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "福岡県": {
+      "area": "福岡県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の福岡県の外国人延べ宿泊者数は626,430人泊で、全国シェアは5.8%でした。宿泊者数が最大の市場は韓国で、224,190人泊、地域内シェアは35.8%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は626,430人泊で、前月の633,570人泊から-1.1%減少しました。全国比で地域特化度が最も高い市場は韓国で、指数は2.96です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "韓国市場は地域内シェア35.8%と地域特化度指数2.96を示しており、この市場の動向を注視し、宿泊者数上位5市場の推移を確認することが重要です。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "佐賀県": {
+      "area": "佐賀県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の佐賀県の外国人延べ宿泊者数は11,280人泊で、全国シェアは0.1%でした。宿泊者数が最大の市場は韓国で、4,330人泊、地域内シェアは38.4%です。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は11,280人泊で、前月の17,590人泊から-35.9%減少しました。全国比で地域特化度が最も高い市場は韓国で、指数は3.18です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "韓国市場は地域内シェア38.4%と地域特化度指数3.18を示しており、この市場の動向を注視し、宿泊者数上位5市場の推移を確認することが重要です。",
+          "fact_ids": [
+            "largest_market",
+            "specialized_market",
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "長崎県": {
+      "area": "長崎県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の長崎県の外国人延べ宿泊者数は40,030人泊で、全国シェアは0.4%でした。宿泊者数が最大の市場は韓国で、11,040人泊、地域内シェアは27.6%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の57,910人泊から-30.9%減少しました。全国比で地域特化度が最も高い市場は韓国で、指数は2.28です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場である韓国、台湾、米国、中国、香港の動向を継続的に確認し、各市場の特性に応じた情報提供やサービス内容を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "熊本県": {
+      "area": "熊本県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の熊本県の外国人延べ宿泊者数は74,030人泊で、全国シェアは0.7%でした。宿泊者数が最大の市場は台湾で、29,990人泊、地域内シェアは40.5%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の110,390人泊から-32.9%減少しました。全国比で地域特化度が最も高い市場は台湾で、指数は2.37です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場である台湾、韓国、中国、米国、香港の動向を継続的に確認し、各市場の特性に応じた情報提供やサービス内容を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "大分県": {
+      "area": "大分県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の大分県の外国人延べ宿泊者数は74,800人泊で、全国シェアは0.7%でした。宿泊者数が最大の市場は韓国で、23,650人泊、地域内シェアは31.6%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の107,330人泊から-30.3%減少しました。全国比で地域特化度が最も高い市場は韓国で、指数は2.62です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場である韓国、台湾、香港、中国、シンガポールの動向を継続的に確認し、各市場の特性に応じた情報提供やサービス内容を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "宮崎県": {
+      "area": "宮崎県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の宮崎県の外国人延べ宿泊者数は19,490人泊で、全国シェアは0.2%でした。宿泊者数が最大の市場は台湾で、8,330人泊、地域内シェアは42.7%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の20,560人泊から-5.2%減少しました。全国比で地域特化度が最も高い市場は台湾で、指数は2.50です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場である台湾、韓国、中国、香港、米国の動向を継続的に確認し、各市場の特性に応じた情報提供やサービス内容を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "鹿児島県": {
+      "area": "鹿児島県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の鹿児島県の外国人延べ宿泊者数は32,630人泊で、全国シェアは0.3%でした。宿泊者数が最大の市場は台湾で、8,000人泊、地域内シェアは24.5%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の55,810人泊から-41.5%減少しました。全国比で地域特化度が最も高い市場はフランスで、指数は1.56です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場である台湾、韓国、中国、米国、香港の動向を継続的に確認し、各市場の特性に応じた情報提供やサービス内容を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    },
+    "沖縄県": {
+      "area": "沖縄県",
+      "paragraphs": [
+        {
+          "kind": "observation",
+          "text": "2026年6月（第2次速報）の沖縄県の外国人延べ宿泊者数は513,800人泊で、全国シェアは4.7%でした。宿泊者数が最大の市場は台湾で、204,910人泊、地域内シェアは39.9%を占めています。",
+          "fact_ids": [
+            "period",
+            "total",
+            "national_share",
+            "largest_market"
+          ]
+        },
+        {
+          "kind": "comparison",
+          "text": "直近月の外国人延べ宿泊者数は前月の609,940人泊から-15.8%減少しました。全国比で地域特化度が最も高い市場は台湾で、指数は2.33です。",
+          "fact_ids": [
+            "monthly_change",
+            "specialized_market"
+          ]
+        },
+        {
+          "kind": "action",
+          "text": "宿泊者数上位5市場である台湾、韓国、米国、香港、中国の動向を継続的に確認し、各市場の特性に応じた情報提供やサービス内容を検討することが考えられます。",
+          "fact_ids": [
+            "top_markets"
+          ]
+        }
+      ]
+    }
+  }
 }
