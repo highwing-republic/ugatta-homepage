@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOTEL SMART シーン別運用マニュアル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f6f4;
+    --panel:#ffffff;
+    --ink:#1c2622;
+    --ink-soft:#4d5a54;
+    --line:#dfe3df;
+    --accent:#2f6f5e;
+    --accent-soft:#e7f1ec;
+    --accent-ink:#1f4f42;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#141815;
+      --panel:#1b211d;
+      --ink:#eef1ee;
+      --ink-soft:#a9b3ac;
+      --line:#2c332e;
+      --accent:#5fb89b;
+      --accent-soft:#1d2d27;
+      --accent-ink:#8fd3bc;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#141815;
+    --panel:#1b211d;
+    --ink:#eef1ee;
+    --ink-soft:#a9b3ac;
+    --line:#2c332e;
+    --accent:#5fb89b;
+    --accent-soft:#1d2d27;
+    --accent-ink:#8fd3bc;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.8;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:64px 24px 100px;}
+  .eyebrow{font-size:13px; color:var(--accent-ink); font-weight:700;}
+  h1{
+    font-family:"Zen Maru Gothic","Zen Kaku Gothic New",sans-serif;
+    font-size:clamp(26px,4vw,36px);
+    margin:10px 0 16px;
+  }
+  p.lede{color:var(--ink-soft); max-width:560px;}
+  .cards{display:grid; gap:16px; margin-top:32px;}
+  a.card{
+    display:block;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 24px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:border-color .15s ease;
+  }
+  a.card:hover{border-color:var(--accent);}
+  a.card .tag{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent-ink);
+    background:var(--accent-soft);
+    padding:3px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+  a.card h2{margin:0 0 6px; font-size:19px;}
+  a.card p{margin:0; color:var(--ink-soft); font-size:14.5px;}
+  footer{margin-top:56px; font-size:13px; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">HOTEL SMART シーン別運用マニュアル</div>
+    <h1>やること単位でまとめた、HOTEL SMART運用マニュアル集</h1>
+    <p class="lede">公式マニュアルより粒度の細かいシーン別に、管理画面の実際の操作にあわせて再構築しています。目的の作業から探してご利用ください。</p>
+
+    <div class="cards">
+      <a class="card" href="./startup.html">
+        <span class="tag">初期設定編</span>
+        <h2>物件情報まわりの初期設定（全13シーン）</h2>
+        <p>物件の基本情報、部屋タイプ、タブレット設定、自動メール、マイページなど、運用を始める前に整える設定項目を解説します。シーン1・2は実画面のスクリーンショット付きです。</p>
+      </a>
+      <a class="card" href="./front-operations.html">
+        <span class="tag">フロント運用編</span>
+        <h2>予約作成〜日次締めまでの日々の業務（全10シーン）</h2>
+        <p>電話受付・ウォークインの予約作成、料金・精算情報の登録、チェックイン／アウト、部屋のブロック、日次締めまでを解説します。</p>
+      </a>
+    </div>
+
+    <footer>本サイトは社内共有を目的として作成しています。画面表示は物件・契約プランによって一部異なる場合があります。</footer>
+  </div>
+</body>
+</html>

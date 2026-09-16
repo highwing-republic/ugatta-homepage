@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOTEL SMART フロント運用マニュアル（シーン別）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f6f4;
+    --panel:#ffffff;
+    --ink:#1c2622;
+    --ink-soft:#4d5a54;
+    --line:#dfe3df;
+    --accent:#2f6f5e;
+    --accent-soft:#e7f1ec;
+    --accent-ink:#1f4f42;
+    --warn-bg:#fdf3e7;
+    --warn-line:#e8b979;
+    --warn-ink:#7a4c15;
+    --tip-bg:#eef4fb;
+    --tip-line:#a9c7e6;
+    --tip-ink:#264a6e;
+    --code-bg:#eef0ec;
+    --shadow: 0 1px 2px rgba(28,38,34,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#141815;
+      --panel:#1b211d;
+      --ink:#eef1ee;
+      --ink-soft:#a9b3ac;
+      --line:#2c332e;
+      --accent:#5fb89b;
+      --accent-soft:#1d2d27;
+      --accent-ink:#8fd3bc;
+      --warn-bg:#2b2416;
+      --warn-line:#7a5a26;
+      --warn-ink:#e8c078;
+      --tip-bg:#182530;
+      --tip-line:#2f4f6e;
+      --tip-ink:#a9cdf0;
+      --code-bg:#232b26;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#141815;
+    --panel:#1b211d;
+    --ink:#eef1ee;
+    --ink-soft:#a9b3ac;
+    --line:#2c332e;
+    --accent:#5fb89b;
+    --accent-soft:#1d2d27;
+    --accent-ink:#8fd3bc;
+    --warn-bg:#2b2416;
+    --warn-line:#7a5a26;
+    --warn-ink:#e8c078;
+    --tip-bg:#182530;
+    --tip-line:#2f4f6e;
+    --tip-ink:#a9cdf0;
+    --code-bg:#232b26;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.8;
+    font-size:16px;
+  }
+  a{color:var(--accent-ink);}
+  .layout{
+    display:grid;
+    grid-template-columns:272px minmax(0,1fr);
+    max-width:1180px;
+    margin:0 auto;
+  }
+  @media (max-width:860px){
+    .layout{grid-template-columns:1fr;}
+    nav.toc{display:none;}
+  }
+  header.hero{
+    padding:56px 32px 40px;
+    border-bottom:1px solid var(--line);
+  }
+  header.hero .eyebrow{
+    font-size:13px;
+    color:var(--accent-ink);
+    font-weight:700;
+    letter-spacing:.02em;
+  }
+  header.hero .backlink{
+    display:inline-block;
+    margin-bottom:14px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-decoration:none;
+  }
+  header.hero .backlink:hover{color:var(--ink);}
+  header.hero h1{
+    font-family:"Zen Maru Gothic","Zen Kaku Gothic New",sans-serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,40px);
+    margin:10px 0 14px;
+    line-height:1.35;
+  }
+  header.hero p{
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0;
+    font-size:15.5px;
+  }
+  nav.toc{
+    position:sticky;
+    top:0;
+    align-self:start;
+    height:100vh;
+    overflow-y:auto;
+    padding:32px 20px 40px 32px;
+    border-right:1px solid var(--line);
+  }
+  nav.toc .toc-title{
+    font-size:12px;
+    color:var(--ink-soft);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  nav.toc ol{
+    list-style:none;
+    padding:0;
+    margin:0;
+    counter-reset:scene;
+  }
+  nav.toc li{counter-increment:scene; margin-bottom:2px;}
+  nav.toc a{
+    display:block;
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-size:14px;
+    padding:7px 10px 7px 0;
+    border-left:2px solid transparent;
+    padding-left:12px;
+  }
+  nav.toc a::before{
+    content:counter(scene) "　";
+    color:var(--accent);
+    font-weight:700;
+    font-variant-numeric:tabular-nums;
+  }
+  nav.toc a:hover{color:var(--ink); border-left-color:var(--line);}
+  main{padding:8px 32px 100px;min-width:0;}
+  section.scene{
+    padding:44px 0;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:16px;
+  }
+  section.scene:last-child{border-bottom:none;}
+  .scene-num{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--accent-soft);
+    color:var(--accent-ink);
+    font-weight:700;
+    font-size:14px;
+    margin-right:10px;
+  }
+  .scene h2{
+    display:flex;
+    align-items:center;
+    font-size:22px;
+    margin:0 0 6px;
+  }
+  .path{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 20px 40px;
+    font-family:monospace;
+  }
+  .path b{color:var(--accent-ink); font-weight:600;}
+  .scene .lede{
+    margin:0 0 20px 40px;
+    color:var(--ink-soft);
+    max-width:660px;
+  }
+  .scene .body{margin-left:40px;}
+  .steps{padding-left:0; list-style:none; margin:0 0 22px; counter-reset:step;}
+  .steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:34px;
+    margin-bottom:16px;
+  }
+  .steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0; top:1px;
+    width:22px;height:22px;
+    border-radius:6px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--accent-ink);
+    font-weight:700;
+    font-size:12.5px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  table.field{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0 22px;
+    font-size:14.5px;
+    background:var(--panel);
+    border:1px solid var(--line);
+  }
+  table.field caption{
+    text-align:left;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+    caption-side:top;
+  }
+  table.field th, table.field td{
+    text-align:left;
+    padding:9px 12px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.field th{
+    background:var(--accent-soft);
+    color:var(--accent-ink);
+    font-weight:600;
+    width:26%;
+    white-space:nowrap;
+  }
+  table.field tr:last-child td, table.field tr:last-child th{border-bottom:none;}
+  .callout{
+    border-radius:10px;
+    padding:14px 16px;
+    margin:16px 0;
+    font-size:14.5px;
+    border:1px solid;
+  }
+  .callout.tip{background:var(--tip-bg); border-color:var(--tip-line); color:var(--tip-ink);}
+  .callout.warn{background:var(--warn-bg); border-color:var(--warn-line); color:var(--warn-ink);}
+  .callout .label{font-weight:700; margin-right:4px;}
+  .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px 40px;}
+  .pill{
+    font-size:12.5px;
+    padding:4px 10px;
+    border-radius:999px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+  code{
+    background:var(--code-bg);
+    padding:1px 6px;
+    border-radius:4px;
+    font-size:.92em;
+  }
+  .cov-note{
+    margin:0 0 20px 40px;
+    font-size:13px;
+    color:var(--ink-soft);
+    border-left:3px solid var(--line);
+    padding-left:12px;
+  }
+  h3.sub{font-size:16px;margin:18px 0 6px;}
+  footer{
+    padding:40px 32px 80px;
+    color:var(--ink-soft);
+    font-size:13px;
+    max-width:660px;
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="toc">
+    <div class="toc-title">フロント運用編・目次</div>
+    <ol>
+      <li><a href="#s1">ログイン／ログアウト</a></li>
+      <li><a href="#s2">予約作成（個人予約）</a></li>
+      <li><a href="#s3">予約作成（団体予約）</a></li>
+      <li><a href="#s4">予約の変更（パターン別）</a></li>
+      <li><a href="#s5">料金情報（売上）の登録</a></li>
+      <li><a href="#s6">精算情報の登録</a></li>
+      <li><a href="#s7">利用明細・領収書の発行</a></li>
+      <li><a href="#s8">チェックイン／チェックアウト</a></li>
+      <li><a href="#s9">部屋のブロック</a></li>
+      <li><a href="#s10">日次締め</a></li>
+    </ol>
+  </nav>
+
+  <div>
+    <header class="hero">
+      <a class="backlink" href="./index.html">← マニュアル一覧に戻る</a>
+      <div class="eyebrow">HOTEL SMART シーン別運用マニュアル／フロント運用編</div>
+      <h1>電話受付・ウォークインの予約作成から日次締めまで。フロント業務を場面ごとに解説します</h1>
+      <p>
+        公式「フロント運用マニュアル 2024.1〜」の内容にもとづき、予約作成、料金・精算情報の登録、
+        利用明細・領収書の発行、チェックイン／チェックアウト、部屋のブロック、日次締めまでの
+        一連の業務を、やること単位（シーン）でまとめました。初期設定編（物件情報まわり）の設定が
+        済んでいることを前提としています。
+      </p>
+    </header>
+
+    <main>
+
+      <!-- SCENE 1 -->
+      <section class="scene" id="s1">
+        <h2><span class="scene-num">1</span>ログイン／ログアウト</h2>
+        <p class="path">ブラウザ（Chrome）＞ <b>https://connect.hotelsmart.jp/host/login</b></p>
+        <p class="lede">フロント業務を始める前に、管理画面へのログイン・ログアウトの手順をスタッフ全員に周知しておきます。</p>
+        <div class="body">
+          <h3 class="sub">ログイン</h3>
+          <ol class="steps">
+            <li>ブラウザ（Chrome）で <code>https://connect.hotelsmart.jp/host/login</code> にアクセスします。</li>
+            <li>ログインID・パスワードを入力し、「ログイン」を押します。</li>
+          </ol>
+          <h3 class="sub">ログアウト</h3>
+          <ol class="steps">
+            <li>管理画面右上のアカウント名をクリックします。</li>
+            <li>「ログアウト」を押します。</li>
+          </ol>
+          <div class="callout tip"><span class="label">ヒント</span>共有端末で運用する場合は、シフト交代のタイミングで毎回ログアウトする運用ルールを決めておくと安全です。</div>
+        </div>
+      </section>
+
+      <!-- SCENE 2 -->
+      <section class="scene" id="s2">
+        <h2><span class="scene-num">2</span>予約作成（個人予約）</h2>
+        <p class="path"><b>予約管理</b> ＞ 【予約情報】／【残室管理】／【客室の状況表】のいずれか</p>
+        <p class="lede">電話受付やウォークインの予約を作成する方法です。予約作成画面には3通りの入り口があります。</p>
+        <div class="body">
+          <h3 class="sub">A. 予約管理＞【予約情報】から</h3>
+          <p>一覧画面の「新規作成」（<code>Ctrl+A</code> / <code>⌘+A</code>）で予約作成画面が開きます。</p>
+
+          <h3 class="sub">B. 予約管理＞【残室管理】から</h3>
+          <p>各部屋タイプと空室数が表示されるので、予約を作成したい日付・部屋タイプの残室数をクリックすると、指定した日付と部屋タイプが入った状態で予約作成画面が開きます。</p>
+
+          <h3 class="sub">C. 【客室の状況表】から</h3>
+          <p>空室をクリックして開くポップアップ画面で「新規予約」をクリックすると、客室の状況表で選択した日付・部屋からの予約作成画面が開きます。</p>
+
+          <h3 class="sub">＜予約入力方法＞</h3>
+          <ol class="steps">
+            <li><b>お客様情報</b>：代表者氏名・フリガナ・連絡先（電話番号／メールアドレス）を入力します。過去に宿泊のあるお客様は時計マークから登録済み情報を引用できます。</li>
+            <li><b>予約情報</b>：物件名／日付（CI・CO）／人数／プラン／部屋情報／お食事／交通手段／参加形態を入力します。複数部屋予約で部屋ごとに宿泊期間が異なる場合は「部屋毎に設定する」から個別に指定します。</li>
+            <li><b>宿泊者情報</b>：「宿泊者台帳」から宿泊者情報の入力や、宿泊者への部屋の割り当てを行います。</li>
+            <li><b>予約付帯情報</b>：予約経路を選択します。まだ確定していない予約であれば「仮予約」にチェックを入れます。</li>
+            <li><b>共有事項</b>：お客様からのリクエスト／オペレーターメモ／リピートメモ／清掃時備考を必要に応じて記入します。</li>
+          </ol>
+          <table class="field">
+            <caption>共有事項・入力項目の使い分け</caption>
+            <tr><th>お客様からのリクエスト</th><td>お客様からのご依頼など。予約内でのみ確認できます</td></tr>
+            <tr><th>オペレーターメモ</th><td>お電話の対応歴等を記載。予約内でのみ確認できます</td></tr>
+            <tr><th>リピートメモ</th><td>同代表者による次回以降の予約に引き継がれるメモ。アレルギー情報など繰り返し対応が必要な情報を記載</td></tr>
+            <tr><th>清掃時備考</th><td>この予約の準備段階にあたる清掃予定に共有される</td></tr>
+          </table>
+          <div class="callout tip"><span class="label">ヒント</span>①〜⑤の入力を完了したら「変更を保存する」（<code>Ctrl+S</code> / <code>⌘+S</code>）で予約作成は完了です。</div>
+        </div>
+      </section>
+
+      <!-- SCENE 3 -->
+      <section class="scene" id="s3">
+        <h2><span class="scene-num">3</span>予約作成（団体予約）</h2>
+        <p class="path"><b>予約管理</b> ＞ 【予約情報】 ＞ 「団体予約」</p>
+        <p class="lede">複数部屋・複数人数をまとめて扱う団体予約は、個人予約とは別の入力フローで作成します。</p>
+        <div class="body">
+          <ol class="steps">
+            <li><b>お客様情報</b>：代表者氏名・連絡先に加えて、法人・団体（法人名・担当者）を設定できます。</li>
+            <li><b>予約情報</b>：物件名・日付（CI・CO）・プランを入力します。</li>
+            <li><b>宿泊変更</b>：「人数変更」で部屋タイプ×部屋数・1部屋あたりの宿泊人数を入力し、「料金計算」で選択したプランの料金設定に基づき料金を自動算出します。プラン未設定時や個別の料金調整が必要な場合は「金額変更」から部屋別・日別に料金を直接入力します。予約時点で部屋を指定する場合は「部屋変更」から部屋を選びます。</li>
+            <li><b>宿泊者情報</b>：「宿泊者台帳」から代表者・同行者の宿泊者情報の入力や、部屋の割り当てを行います。</li>
+            <li><b>予約付帯情報</b>：予約経路の選択、未確定予約への「仮予約」チェック。</li>
+            <li><b>共有事項</b>：個人予約と同様の項目を必要に応じて記入します。</li>
+          </ol>
+          <div class="callout tip"><span class="label">ヒント</span>特定の部屋だけチェックインが遅い／チェックアウトが早い場合は、対象日付の部屋をクリックして「日程削除」→「この日までの日程を削除する」または「この日以降の日程を削除する」にチェックを入れて「削除する」を押します。利用のない日程の部屋はグレーで表示されます。</div>
+        </div>
+      </section>
+
+      <!-- SCENE 4 -->
+      <section class="scene" id="s4">
+        <h2><span class="scene-num">4</span>予約の変更（パターン別）</h2>
+        <p class="path">対象予約の詳細ページ ＞ <b>予約情報</b>／<b>宿泊変更</b>／<b>宿泊者情報</b>／<b>設定</b></p>
+        <p class="lede">宿泊期間の変更、部屋の追加・削除・途中変更、宿泊者情報の変更、プランの変更など、よくある変更パターンをまとめました。</p>
+        <div class="body">
+          <div class="callout warn"><span class="label">注意</span>サイトコントローラー経由で取り込まれた予約情報は、基本的には変更できません。変更はできるだけOTAやサイトコントローラー側で行い、それができない場合のみ該当予約の自動更新を停止してから管理画面で変更してください。また、日次締め済みのデータは変更できません。</div>
+
+          <h3 class="sub">宿泊期間の変更</h3>
+          <p>《予約情報》欄より変更可能です。チェックイン日はクリックして表示されるポップアップで変更後の日付を入力し「移動する」を押します（「日程の移動に合わせて料金の利用日を変更する」「ブロックや他の予約との重複が発生する部屋割りを解除する」は初期値でチェック済み。不要な場合のみ外します）。チェックアウト日は直接入力または「カレンダー入力」から選択します。複数部屋で部屋ごとに期間が異なる場合は「部屋毎に設定する」から個別に変更します。</p>
+          <p>中抜け（連泊中の一部の日だけ部屋を空ける）が発生する場合は、《宿泊変更》の「部屋変更」で該当日の部屋をクリックし「割当解除」→ 再度クリックして「日程削除」→ 削除したい期間にチェックを入れて「削除する」の順に操作します。</p>
+
+          <h3 class="sub">部屋の追加／削除</h3>
+          <p><b>追加：</b>[部屋情報]で「部屋を追加する」を押すと部屋を追加できます。<br>
+          <b>削除：</b>[部屋情報]で削除したい部屋の鉛筆マークをクリックし、「部屋を削除する」を押します。</p>
+
+          <h3 class="sub">部屋の途中変更</h3>
+          <p>連泊中に途中で部屋を移動する場合は、「宿泊変更」の［部屋変更］を開き、部屋が変わる日付の部屋をクリックして変更後の部屋を選択・保存します。</p>
+
+          <h3 class="sub">宿泊者情報の確認・変更</h3>
+          <p>《宿泊者情報》にて「宿泊者台帳」をクリックすると、一覧で宿泊者情報の確認・編集、部屋の割り当て、宿泊者の追加・削除が行えます。</p>
+
+          <h3 class="sub">プランの変更</h3>
+          <p>[プラン]で変更後のプランを選択後、[お食事]で「プランに合わせる」ボタンを押して保存します。保存後に《料金詳細》欄の「料金情報の再登録」から、変更後のプランに合わせた料金への変更が可能です。</p>
+
+          <h3 class="sub">サイトコントローラーの自動更新停止</h3>
+          <p>予約詳細ページ右側《設定》の［サイトコントローラー設定］にて、「この予約の自動更新を停止する」を押すと、サイトコントローラー経由の予約でも管理画面から変更操作ができるようになります。</p>
+          <div class="callout warn"><span class="label">注意</span>停止後はOTAやサイトコントローラー上で予約内容やステータスの変更があっても反映されません。一度停止した後は、基本的に再開を行わないでください。再開すると、変更を行った内容が更新によって戻ってしまう可能性があります。</div>
+        </div>
+      </section>
+
+      <!-- SCENE 5 -->
+      <section class="scene" id="s5">
+        <h2><span class="scene-num">5</span>料金情報（売上）の登録</h2>
+        <p class="path">予約詳細ページ下部 ＜ <b>料金・精算情報</b> ＞ 料金詳細</p>
+        <p class="lede">料金詳細は「部屋別料金」と「日別料金」で表示を切り替え可能です。部屋毎／日毎に展開式で表示され、それぞれの段階で料金の登録ができます。</p>
+        <div class="body">
+          <ol class="steps">
+            <li>《料金・精算情報》欄で「料金追加」を押します。</li>
+            <li>表示された《新規料金情報》に、料金科目・利用日・部屋・単価・数量・決済（決済連携している場合のみ表示）・備考を入力して保存します。</li>
+          </ol>
+          <table class="field">
+            <caption>料金登録の入力項目</caption>
+            <tr><th>料金科目</th><td>宿泊費／食事代など売上の内訳区分</td></tr>
+            <tr><th>利用日／部屋</th><td>部屋別料金・日別料金いずれの表示からでも同じ内容を登録可能</td></tr>
+            <tr><th>単価・数量</th><td>金額の内訳。小計は自動計算されます</td></tr>
+            <tr><th>決済</th><td>決済連携している場合のみ表示・選択可能</td></tr>
+          </table>
+          <div class="cov-note">部屋別・日別に料金登録がない箇所は赤で表示されるため、登録漏れの目視確認に使えます。</div>
+        </div>
+      </section>
+
+      <!-- SCENE 6 -->
+      <section class="scene" id="s6">
+        <h2><span class="scene-num">6</span>精算情報の登録</h2>
+        <p class="path">予約詳細ページ下部 ＜ <b>料金・精算情報</b> ＞ 支払情報</p>
+        <p class="lede">精算は「一括精算」「料金選択して精算」「金額指定して精算（特殊精算）」の3つの方法で行えます。</p>
+        <div class="body">
+          <h3 class="sub">一括精算／料金選択をして精算する方法</h3>
+          <ol class="steps">
+            <li>全ての未収金を精算する場合は「一括精算」、料金を指定して精算する場合は該当の料金を選択して「選択精算」をクリックします。</li>
+            <li>支払い方法・種別を選択し、ポイントの有無、支払日を入力して「精算する」をクリックします。ここで対象の料金を選択し直すことも可能です。</li>
+          </ol>
+          <h3 class="sub">金額を指定して精算する方法</h3>
+          <ol class="steps">
+            <li>「特殊精算（金額指定）」をクリックします。</li>
+            <li>内訳（利用科目指定／金額指定／部屋指定）、支払い方法（事前決済／現地決済）、支払い日、金額を入力し「保存する」をクリックします。</li>
+          </ol>
+          <div class="callout tip"><span class="label">ヒント</span>複数部屋にまたがる未収金がある場合は、対象部屋・対象日を個別にチェックして精算範囲を絞り込めます。</div>
+        </div>
+      </section>
+
+      <!-- SCENE 7 -->
+      <section class="scene" id="s7">
+        <h2><span class="scene-num">7</span>利用明細・領収書の発行</h2>
+        <p class="path">予約詳細ページ ＞ <b>利用明細・領収書</b></p>
+        <p class="lede">《利用明細・領収書》欄から発行します。作成時点で《料金詳細》に登録されている内容が画面に反映されます。</p>
+        <div class="body">
+          <h3 class="sub">作成</h3>
+          <ol class="steps">
+            <li>「利用明細・領収書発行」を押します。対象の部屋（複数部屋予約は該当部屋のみチェック）を選択し、プラン仕訳した料金を宿泊費にまとめて発行する場合は「プラン仕訳料金を統合する」にチェックを入れます。</li>
+            <li>《利用明細・領収書作成》画面で、様式（日本語／英語／中国語繁体／簡体）・宛名・備考・項目明細・部屋番号・ご利用日・金額を確認し「発行する」を押します。変更が必要な場合はここで記載内容を修正します。</li>
+          </ol>
+          <h3 class="sub">確認・発行</h3>
+          <p>作成した書類は《履歴》に一覧表示され、「ダウンロード」からPDFを確認できます。ダウンロードしてメールなどで送付・印刷してお客様にお渡しください。HOTEL SMARTからの共有機能はありません。</p>
+          <h3 class="sub">再発行</h3>
+          <p>同じ内容のものを再発行する場合は「現在の日時で再作成」を押します。明細番号は変わらず新しい枝番が採番されます。</p>
+          <h3 class="sub">修正・追加</h3>
+          <p>一度発行したものと違う内容で発行する場合は「明細・領収書発行」から新規に作成してください。新たな明細番号が採番されます。複数の履歴がある場合は、有効欄でチェックを入れて管理します。</p>
+        </div>
+      </section>
+
+      <!-- SCENE 8 -->
+      <section class="scene" id="s8">
+        <h2><span class="scene-num">8</span>チェックイン／チェックアウト</h2>
+        <p class="path">【客室の状況表】</p>
+        <p class="lede">フロントでの有人対応でチェックイン／アウトを行う方法です。操作は【客室の状況表】にて行います。</p>
+        <div class="body">
+          <ol class="steps">
+            <li>お客様のお名前をお伺いし、目検もしくは［当日分の予約検索］欄にお客様のお名前を入力して該当予約の部屋を特定します（検索でヒットすると該当の部屋がハイライトされます）。</li>
+            <li>該当の部屋をクリックして詳細情報を開きます。</li>
+            <li>記載内容を確認し、フロントでの対応が必要な内容があれば対応します。特になければ「チェックイン」や「チェックアウト」を押してステータスを変更します。</li>
+          </ol>
+          <table class="field">
+            <caption>各項目の説明</caption>
+            <tr><th>メモ</th><td>［お客様からのリクエスト］［オペレーターメモ］［リピートメモ］の入力がある場合に表示されます</td></tr>
+            <tr><th>料金情報</th><td>料金の合計金額と、未収金が残っている場合はその金額が赤文字で表示されます。詳細確認や未収金の精算登録は「予約詳細」から《料金情報》欄で対応します</td></tr>
+            <tr><th>チェックインメール送信／チェックアウトメール送信</th><td>チェック✓をいれた状態で「チェックイン」「チェックアウト」を押すと、そのタイミングで対応するメールが送信されます。【自動メール配信設定】で自動送信を「行わない」設定にしている場合、チェックを入れていてもメールは送信されません</td></tr>
+          </table>
+          <div class="callout tip"><span class="label">ヒント</span>料金明細・領収書を発行する場合は「領収書発行」ボタンから発行できます。宛名と備考欄以外の記載内容の修正が必要な場合は、予約詳細ページから発行してください。</div>
+        </div>
+      </section>
+
+      <!-- SCENE 9 -->
+      <section class="scene" id="s9">
+        <h2><span class="scene-num">9</span>部屋のブロック</h2>
+        <p class="path"><b>物件管理</b> ＞ 物件情報 ＞ 対象部屋の詳細 ＞ <b>ブロック設定</b></p>
+        <p class="lede">お部屋のメンテナンスや備品の故障など、一時的にお部屋の利用を停止したい場合はブロック機能を利用します。ブロックをした部屋には部屋割りができなくなります。</p>
+        <div class="body">
+          <ol class="steps">
+            <li>【物件管理】＞【物件情報】から、ブロックを行いたい部屋の詳細に入ります。</li>
+            <li>［ブロック設定］にて、ブロックを行いたい期間を日時（開始日時〜終了日時）で指定します。複数期間をブロックする場合は「ブロック期間を追加する」から追加できます。</li>
+            <li>「変更を保存する」で確定します。</li>
+          </ol>
+          <div class="callout warn"><span class="label">注意</span>すでに予約が入っている期間や、日次締めが完了している期間はブロック設定ができません。</div>
+        </div>
+      </section>
+
+      <!-- SCENE 10 -->
+      <section class="scene" id="s10">
+        <h2><span class="scene-num">10</span>日次締め</h2>
+        <p class="path"><b>売上管理</b> ＞ <b>日次締め機能</b></p>
+        <p class="lede">日次締め機能を利用すると、締めを行った日付の予約情報を確定させることができます。また、客室の状況表の日付の切り替えが行われます。</p>
+        <div class="body">
+          <ol class="steps">
+            <li>【売上管理】＞【日次締め機能】にアクセスします。</li>
+            <li>締め前に対応が必要な予約がないか確認します。対応が必要な予約がある場合、該当予約とエラーメッセージが表示されます。表示されているチェックインコードをクリックして該当予約の詳細を開き、対応します。</li>
+            <li>精算情報にて、支払い方法別の金額が表示されるので、レジと金額が一致しているか確認します。</li>
+            <li>②と③に問題がなければ「日次締めを行う」を押して締めを行います。</li>
+          </ol>
+          <div class="callout warn"><span class="label">注意</span>日次締め済みのデータは変更できません。締める前に、当日分の予約・精算内容に誤りがないか必ず確認してください。</div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      本ページは、公式マニュアル「HOTEL SMART フロント運用マニュアル 2024.1〜」の内容にもとづいて作成しました。
+      画面表示は物件・契約プランによって一部異なる場合があります。
+    </footer>
+  </div>
+</div>
+</body>
+</html>
