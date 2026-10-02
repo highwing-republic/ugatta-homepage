@@ -28,6 +28,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Remove repository-only files from the published site
+        run: rm -rf README.md tests .gitignore
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

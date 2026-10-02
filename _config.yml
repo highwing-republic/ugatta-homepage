@@ -1,0 +1,6 @@
+# GitHub Pages (Jekyll) build settings.
+# Keep repository-only files off the public site.
+exclude:
+  - README.md
+  - tests/
+  - "*.md"
