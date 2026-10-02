@@ -9,7 +9,7 @@
   --white:#fff;
   --line:#d5d0c6;
   --line-dark:rgba(255,255,255,.18);
-  --serif:"Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;
+  --serif:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
   --latin:"Helvetica Neue",Arial,sans-serif;
   --container:1180px;
@@ -92,7 +92,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .intro-copy>p{margin:0 0 30px}
 .intro-copy>p:not(.lead-copy){color:var(--ink-soft)}
 .question-lines{margin:42px 0 44px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.question-lines p{margin:0;padding:8px 0;font-family:var(--serif);font-size:clamp(19px,2vw,26px);line-height:1.55}
+.question-lines p{margin:0;padding:8px 0;font-family:var(--serif);font-size:clamp(19px,2vw,26px);line-height:1.55;font-weight:500}
 
 .service-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .service-tile{position:relative;min-height:318px;padding:40px 44px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;transition:background .25s ease}
