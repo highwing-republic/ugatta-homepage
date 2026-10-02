@@ -162,6 +162,15 @@ class LabMigrationTests(unittest.TestCase):
             with self.subTest(relative=relative):
                 self.assertFalse((ROOT / relative).exists())
 
+    def test_repository_only_files_are_not_published(self) -> None:
+        workflow = (ROOT / ".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
+        cleanup = workflow.index("rm -rf README.md tests")
+        self.assertLess(cleanup, workflow.index("actions/upload-pages-artifact"))
+        config = (ROOT / "_config.yml").read_text(encoding="utf-8")
+        for excluded in ("README.md", "tests/"):
+            self.assertIn(f"- {excluded}", config)
+        self.assertFalse((ROOT / ".nojekyll").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
