@@ -125,6 +125,9 @@ class LabMigrationTests(unittest.TestCase):
         self.assertIsNotNone(match)
         section = match.group(1)
         self.assertIn("宿泊DXラボ", section)
+        self.assertIn("宿泊・観光事業者向けにの", section)
+        self.assertIn("お役立ちツールは宿泊DXラボで", section)
+        self.assertIn("実験的に公開しています。", section)
         button = [
             link
             for link in anchors(section)
