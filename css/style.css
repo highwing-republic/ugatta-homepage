@@ -128,7 +128,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tool-panel h2,.tool-intro-grid h2{margin:0 0 26px;font-family:var(--serif);font-size:clamp(28px,2.8vw,40px);font-weight:500;line-height:1.5;text-wrap:balance;word-break:auto-phrase}
 .tool-panel p:not(.eyebrow){max-width:620px;color:#525a56;margin-bottom:34px;font-size:16px}
 
-.qa-grid{align-items:start}.accordion-list{border-top:1px solid var(--line)}
+.qa-grid{align-items:start;gap:clamp(48px,7vw,100px)}
+/* Break the FAQ title only at the <wbr> phrase points ("DX・集客支援に / 関するよくあるご質問"). */
+.qa-section .section-title{word-break:keep-all;overflow-wrap:anywhere}.accordion-list{border-top:1px solid var(--line)}
 .accordion-list details{border-bottom:1px solid var(--line)}
 .accordion-list summary{list-style:none;cursor:pointer;padding:26px 44px 26px 0;position:relative;font-family:var(--serif);font-size:17px;font-weight:500}
 .accordion-list summary::-webkit-details-marker{display:none}
