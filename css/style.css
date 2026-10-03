@@ -17,6 +17,8 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.92;letter-spacing:.01em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+/* Keep the off-canvas mobile menu (translated off-screen) from widening the page; clip does not break the sticky header. */
+html,body{overflow-x:clip}
 body.nav-open{overflow:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
