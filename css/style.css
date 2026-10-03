@@ -33,6 +33,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .lead-copy{font-family:var(--serif);font-size:clamp(18px,1.6vw,22px);line-height:1.75;font-weight:500;letter-spacing:.01em}
 .section{padding:96px 0}
 .section--tint{background:var(--paper-soft)}
+/* The lab panel follows the plain process section on the home page, so tint it to keep the alternating rhythm. */
+.tool-section{background:var(--paper-soft)}
 .section--dark{background:#27312b;color:#fff}
 .section-title{margin:0;font-family:var(--serif);font-size:clamp(28px,2.8vw,40px);font-weight:500;line-height:1.35;letter-spacing:.005em;text-wrap:balance;word-break:auto-phrase}
 .section-title--left{text-align:left}
