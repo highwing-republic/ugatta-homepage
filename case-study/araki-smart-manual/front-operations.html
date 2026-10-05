@@ -544,15 +544,34 @@
         <div class="body">
           <h3 class="sub">作成</h3>
           <ol class="steps">
-            <li>「利用明細・領収書発行」を押します。対象の部屋（複数部屋予約は該当部屋のみチェック）を選択し、プラン仕訳した料金を宿泊費にまとめて発行する場合は「プラン仕訳料金を統合する」にチェックを入れます。</li>
-            <li>《利用明細・領収書作成》画面で、様式（日本語／英語／中国語繁体／簡体）・宛名・備考・項目明細・部屋番号・ご利用日・金額を確認し「発行する」を押します。変更が必要な場合はここで記載内容を修正します。</li>
+            <li>対象の部屋（複数部屋予約は該当部屋のみチェック）を選択し、プラン仕訳した料金を宿泊費にまとめて発行する場合は「プラン仕訳料金を統合する」にチェックを入れて、「明細・領収書作成」を押します。</li>
           </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-21-invoice-section.jpg" target="_blank" rel="noopener"><img src="screenshots/front-21-invoice-section.jpg" alt="予約詳細の利用明細・領収書欄（部屋の選択と明細・領収書作成ボタン）のスクリーンショット"></a>
+            <figcaption>手順1：予約詳細の《利用明細・領収書》欄。対象の部屋を選択し、「明細・領収書作成」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <ol class="steps" start="2" style="counter-reset:step 1;">
+            <li>《利用明細・領収書作成》画面で、言語設定（日本語／英語／中国語／韓国語）・税区分・宛名・ご到着日・ご出発日・備考・項目明細・部屋番号・ご利用日・金額・領収金額・但し書きを確認し「発行する」を押します。変更が必要な場合はここで記載内容を修正します。</li>
+          </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-22-invoice-form.jpg" target="_blank" rel="noopener"><img src="screenshots/front-22-invoice-form.jpg" alt="利用明細・領収書作成画面（言語設定・税区分・宛名・ご到着日・ご出発日・項目明細・領収金額・但し書き）のスクリーンショット"></a>
+            <figcaption>手順2：《利用明細・領収書作成》画面。言語設定・税区分・宛名・ご到着日／ご出発日・項目明細・領収金額・但し書きを確認します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-23-invoice-form-filled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-23-invoice-form-filled.jpg" alt="利用明細・領収書作成画面で但し書きにご宿泊代と入力した状態のスクリーンショット"></a>
+            <figcaption>但し書きを入力した状態（例：「ご宿泊代」）。内容を確認したら「発行する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout tip"><span class="label">ヒント</span>チェックアウト日より前にチェックアウトした予約では、作成画面の「ご出発日」が実際にチェックアウトした日で表示されました（2026/10/05確認）。宛名・日付・但し書きは発行前に確認し、必要に応じて修正してください。</div>
           <h3 class="sub">確認・発行</h3>
           <p>作成した書類は《履歴》に一覧表示され、「ダウンロード」からPDFを確認できます。ダウンロードしてメールなどで送付・印刷してお客様にお渡しください。HOTEL SMARTからの共有機能はありません。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-24-invoice-history.jpg" target="_blank" rel="noopener"><img src="screenshots/front-24-invoice-history.jpg" alt="発行後の履歴（明細番号・枝番・作成日時・ダウンロード・有効）のスクリーンショット"></a>
+            <figcaption>発行後の《履歴》。明細番号・枝番・作成日時が表示され、「ダウンロード」からPDFを確認できます。「有効」欄で有効な書類を管理します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
           <h3 class="sub">再発行</h3>
           <p>同じ内容のものを再発行する場合は「現在の日時で再作成」を押します。明細番号は変わらず新しい枝番が採番されます。</p>
           <h3 class="sub">修正・追加</h3>
-          <p>一度発行したものと違う内容で発行する場合は「明細・領収書発行」から新規に作成してください。新たな明細番号が採番されます。複数の履歴がある場合は、有効欄でチェックを入れて管理します。</p>
+          <p>一度発行したものと違う内容で発行する場合は「明細・領収書作成」から新規に作成してください。新たな明細番号が採番されます。複数の履歴がある場合は、有効欄でチェックを入れて管理します。</p>
         </div>
       </section>
 
@@ -560,7 +579,7 @@
       <section class="scene" id="s8">
         <h2><span class="scene-num">8</span>チェックイン／チェックアウト</h2>
         <p class="path">【客室の状況表】</p>
-        <p class="lede">フロントでの有人対応でチェックイン／アウトを行う方法です。操作は【客室の状況表】にて行います。</p>
+        <p class="lede">フロントでの有人対応でチェックイン／アウトを行う方法です。操作は【客室の状況表】にて行います。チェックアウト日より前などで状況表から操作できない場合は、予約詳細のステータスから行います（下の注意を参照）。</p>
         <div class="body">
           <ol class="steps">
             <li>お客様のお名前をお伺いし、目検もしくは画面上の［当日分の予約検索］欄にお客様のお名前を入力して該当予約の部屋を特定します（検索でヒットすると該当の部屋がハイライトされます）。</li>
@@ -582,6 +601,31 @@
           <figure class="screenshot">
             <a href="screenshots/front-12-checkin-confirm.jpg" target="_blank" rel="noopener"><img src="screenshots/front-12-checkin-confirm.jpg" alt="チェックイン確認画面（チェックイン通知のチェックボックスと保存するボタン）のスクリーンショット"></a>
             <figcaption>手順3：「チェックイン」を押すと確認画面が開きます。対象の部屋とチェックイン通知の有無を確認し「保存する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-15-room-indicator-staying.jpg" target="_blank" rel="noopener"><img src="screenshots/front-15-room-indicator-staying.jpg" alt="宿泊中の部屋が黄緑色で表示された客室の状況表のスクリーンショット"></a>
+            <figcaption>チェックアウト時の【客室の状況表】。宿泊中の部屋は黄緑色で表示され、左側の「宿泊中」に件数が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-16-today-search-staying.jpg" target="_blank" rel="noopener"><img src="screenshots/front-16-today-search-staying.jpg" alt="当日分の予約検索で宿泊中のお客様を検索し、検索結果が表示された状態のスクリーンショット"></a>
+            <figcaption>手順1：［当日分の予約検索］欄で宿泊中のお客様を検索した状態。検索結果に部屋番号・代表者名・チェックインコードが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-17-room-popup-no-checkout.jpg" target="_blank" rel="noopener"><img src="screenshots/front-17-room-popup-no-checkout.jpg" alt="チェックアウト日前のためチェックアウトボタンが表示されていない部屋の詳細情報のスクリーンショット"></a>
+            <figcaption>手順2：部屋の詳細情報。チェックアウト日前のため、「チェックアウト」ボタンが表示されていません（下の注意を参照）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout warn"><span class="label">注意</span>客室の状況表の日付は日次締めで切り替わります。状況表の日付がチェックアウト日になる前は、部屋の詳細情報に「チェックアウト」ボタンが表示されませんでした（2026/10/05確認）。その場合は予約詳細の右上のステータスから「チェックアウト済みにする」を選び、チェックアウトする部屋を選んで実行します。チェックアウト日より前に実行すると「チェックアウト日ではありませんが、チェックアウトしますか？」と確認が表示されます。</div>
+          <figure class="screenshot">
+            <a href="screenshots/front-18-status-menu.jpg" target="_blank" rel="noopener"><img src="screenshots/front-18-status-menu.jpg" alt="予約詳細の右上のステータス（チェックイン済み（宿泊中））を開き、チェックアウト済みにするが表示されたメニューのスクリーンショット"></a>
+            <figcaption>部屋の詳細情報の「予約詳細」から予約詳細を開き、右上のステータス（「チェックイン済み（宿泊中）」）を押すとメニューが開きます。「チェックアウト済みにする」を選びます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-19-checkout-confirm.jpg" target="_blank" rel="noopener"><img src="screenshots/front-19-checkout-confirm.jpg" alt="ステータス変更画面（チェックアウトする部屋の選択、チェックアウト通知のチェックボックス、チェックアウト済みにするボタン）のスクリーンショット"></a>
+            <figcaption>「ステータス変更」画面。チェックアウトする部屋とチェックアウト通知の有無を選び、「チェックアウト済みにする」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-20-checked-out.jpg" target="_blank" rel="noopener"><img src="screenshots/front-20-checked-out.jpg" alt="チェックアウト後の予約詳細（ステータスがチェックアウト済み、オペレーターメモに操作履歴）のスクリーンショット"></a>
+            <figcaption>チェックアウト後の予約詳細。ステータスが「チェックアウト済み」になり、オペレーターメモに操作履歴（ホスト操作：チェックアウト）が記録されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <table class="field">
             <caption>各項目の説明</caption>
