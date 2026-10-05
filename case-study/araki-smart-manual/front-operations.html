@@ -272,6 +272,25 @@
     padding-left:12px;
   }
   h3.sub{font-size:16px;margin:18px 0 6px;}
+  figure.screenshot{
+    margin:0 0 22px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    background:var(--panel);
+    box-shadow:var(--shadow);
+  }
+  figure.screenshot img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  figure.screenshot figcaption{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    padding:8px 12px;
+    border-top:1px solid var(--line);
+  }
   footer{
     padding:40px 32px 80px;
     color:var(--ink-soft);
@@ -350,6 +369,18 @@
 
           <h3 class="sub">C. 【客室の状況表】から</h3>
           <p>空室をクリックして開くポップアップ画面で「新規予約」をクリックすると、客室の状況表で選択した日付・部屋からの予約作成画面が開きます。</p>
+          <figure class="screenshot">
+            <img src="screenshots/front-01-room-indicator.jpg" alt="物件を種子島あらき別館に切り替えた客室の状況表のスクリーンショット">
+            <figcaption>【客室の状況表】。物件を「種子島あらき別館」に切り替えると、その物件の部屋（BEKKAN 1〜4）が表示されます。</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="screenshots/front-02-room-popup-new-reserve.jpg" alt="空室をクリックして開いた部屋情報ポップアップと新規予約ボタンのスクリーンショット">
+            <figcaption>空室をクリックすると部屋情報のポップアップが開きます。「新規予約」を押して予約作成画面へ進みます。</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="screenshots/front-03-reserve-form.jpg" alt="日付と部屋が入力済みの状態で開いた新規予約の入力画面のスクリーンショット">
+            <figcaption>新規予約の入力画面。客室の状況表で選んだ日付・部屋（部屋タイプ）があらかじめ入った状態で開きます。</figcaption>
+          </figure>
 
           <h3 class="sub">＜予約入力方法＞</h3>
           <p>現在の予約作成画面は2列構成です。左列を上から入力し、続いて右列を確認すると見落としを減らせます。</p>
@@ -361,6 +392,10 @@
             <li><b>宿泊変更（右列）</b>：「人数変更」「金額変更」「部屋変更」で、人数・室数・料金・部屋割りを設定します。</li>
             <li><b>予約経路・予約受付日時（右列）</b>：予約を受けた経路と日時を入力・確認します。</li>
           </ol>
+          <figure class="screenshot">
+            <img src="screenshots/front-04-reserve-form-filled.jpg" alt="新規予約画面で代表者氏名・人数・予約経路を入力した状態のスクリーンショット">
+            <figcaption>代表者氏名（左列）、人数・予約経路（右列）を入力した状態。予約経路はプルダウン（電話予約／自社HP／その他）から選びます。</figcaption>
+          </figure>
           <table class="field">
             <caption>共有事項・入力項目の使い分け</caption>
             <tr><th>お客様からのリクエスト</th><td>お客様からのご依頼など。予約内でのみ確認できます</td></tr>
@@ -369,7 +404,12 @@
             <tr><th>清掃時備考</th><td>この予約の準備段階にあたる清掃予定に共有される</td></tr>
           </table>
           <div class="callout tip"><span class="label">表示項目について</span>「仮予約」「リピートメモ」「清掃時備考」などは、施設の表示設定によって表示されない場合があります。見当たらない項目を無理に探さず、必要性を責任者へ確認してください。</div>
-          <div class="callout tip"><span class="label">保存</span>入力内容を読み直し、「変更を保存する」を1回だけ押します。画面ヘルプに表示されるショートカットは <code>Ctrl+S</code> です。</div>
+          <div class="callout tip"><span class="label">保存</span>入力内容を読み直し、「予約を登録する」を1回だけ押します。画面ヘルプに表示されるショートカットは <code>Ctrl+S</code> です。</div>
+          <figure class="screenshot">
+            <img src="screenshots/front-05-reserve-detail.jpg" alt="予約を登録した後に表示される予約詳細画面のスクリーンショット">
+            <figcaption>画面下部の「予約を登録する」を押した後に表示される予約詳細画面。</figcaption>
+          </figure>
+          <div class="callout tip"><span class="label">ヒント</span>プラン未選択で予約を作成した際、「金額変更」に入力した金額が料金として登録されないことがありました（2026/10/05確認）。登録後は予約詳細の《料金詳細》で金額を確認し、0円の場合は「料金追加」から登録してください。</div>
         </div>
       </section>
 
@@ -433,6 +473,18 @@
             <li>《料金・精算情報》欄で「料金追加」を押します。</li>
             <li>表示された《新規料金情報》に、料金科目・利用日・部屋・単価・数量・決済（決済連携している場合のみ表示）・備考を入力して保存します。</li>
           </ol>
+          <figure class="screenshot">
+            <img src="screenshots/front-06-billing-add.jpg" alt="料金追加を押して開いた新規料金情報の入力画面のスクリーンショット">
+            <figcaption>手順1：「料金追加」を押すと《新規料金情報》の入力画面が開きます。</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="screenshots/front-07-billing-filled.jpg" alt="新規料金情報で料金科目に宿泊費、単価に10000円を入力した状態のスクリーンショット">
+            <figcaption>手順2：料金科目・利用日・部屋・単価などを入力した状態。小計は自動計算されます。入力後「保存する」を押します。</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="screenshots/front-08-billing-registered.jpg" alt="料金登録後の料金詳細と、未収金が赤字で表示された料金・精算情報のスクリーンショット">
+            <figcaption>登録後の《料金詳細》。精算前は《料金・精算情報》欄に未収金が赤字で表示されます。</figcaption>
+          </figure>
           <table class="field">
             <caption>料金登録の入力項目</caption>
             <tr><th>料金科目</th><td>宿泊費／食事代など売上の内訳区分</td></tr>
@@ -455,6 +507,14 @@
             <li>全ての未収金を精算する場合は「一括精算」、料金を指定して精算する場合は該当の料金を選択して「選択精算」をクリックします。</li>
             <li>支払い方法・種別を選択し、ポイントの有無、支払日を入力して「精算する」をクリックします。ここで対象の料金を選択し直すことも可能です。</li>
           </ol>
+          <figure class="screenshot">
+            <img src="screenshots/front-13-bulk-payment.jpg" alt="一括精算の入力画面で支払い方法・種別・支払日を指定するスクリーンショット">
+            <figcaption>手順2：一括精算の入力画面。支払い方法（事前決済／現地決済）・種別・ポイント・支払日を指定して「精算する」を押します。</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="screenshots/front-14-payment-done.jpg" alt="精算完了後に支払い情報が登録された状態のスクリーンショット">
+            <figcaption>精算完了後。《支払い情報》に日付・金額・種別・支払方法が登録され、未収金の表示が消えます。</figcaption>
+          </figure>
           <h3 class="sub">金額を指定して精算する方法</h3>
           <ol class="steps">
             <li>「特殊精算（金額指定）」をクリックします。</li>
@@ -491,10 +551,26 @@
         <p class="lede">フロントでの有人対応でチェックイン／アウトを行う方法です。操作は【客室の状況表】にて行います。</p>
         <div class="body">
           <ol class="steps">
-            <li>お客様のお名前をお伺いし、目検もしくは［当日分の予約検索］欄にお客様のお名前を入力して該当予約の部屋を特定します（検索でヒットすると該当の部屋がハイライトされます）。</li>
+            <li>お客様のお名前をお伺いし、目検もしくは画面上の［当日分の予約検索］欄にお客様のお名前を入力して該当予約の部屋を特定します（検索でヒットすると該当の部屋がハイライトされます）。</li>
             <li>該当の部屋をクリックして詳細情報を開きます。</li>
             <li>記載内容を確認し、フロントでの対応が必要な内容があれば対応します。特になければ「チェックイン」や「チェックアウト」を押してステータスを変更します。</li>
           </ol>
+          <figure class="screenshot">
+            <img src="screenshots/front-09-room-indicator-checkin-due.jpg" alt="チェックイン予定の部屋がオレンジ色で表示された客室の状況表のスクリーンショット">
+            <figcaption>【客室の状況表】。チェックイン予定の部屋は色付きで表示され、左側の「チェックイン予定」に件数が表示されます。</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="screenshots/front-10-today-search.jpg" alt="当日分の予約検索にお客様の氏名を入力して検索した状態のスクリーンショット">
+            <figcaption>手順1：［当日分の予約検索］欄にお客様のお名前を入力した状態。該当する部屋がハイライトされます。</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="screenshots/front-11-room-detail-popup.jpg" alt="部屋をクリックして開いた詳細情報（お客様情報・宿泊情報・料金情報）のスクリーンショット">
+            <figcaption>手順2：部屋をクリックして開く詳細情報。お客様情報・宿泊情報・メモ・料金情報（未収金）を確認できます。</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="screenshots/front-12-checkin-confirm.jpg" alt="チェックイン確認画面（チェックイン通知のチェックボックスと保存するボタン）のスクリーンショット">
+            <figcaption>手順3：「チェックイン」を押すと確認画面が開きます。対象の部屋とチェックイン通知の有無を確認し「保存する」を押します。</figcaption>
+          </figure>
           <table class="field">
             <caption>各項目の説明</caption>
             <tr><th>メモ</th><td>［お客様からのリクエスト］［オペレーターメモ］［リピートメモ］の入力がある場合に表示されます</td></tr>
