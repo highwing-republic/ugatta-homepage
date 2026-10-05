@@ -1,109 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HOTEL SMART シーン別運用マニュアル</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#f5f6f4;
-    --panel:#ffffff;
-    --ink:#1c2622;
-    --ink-soft:#4d5a54;
-    --line:#dfe3df;
-    --accent:#2f6f5e;
-    --accent-soft:#e7f1ec;
-    --accent-ink:#1f4f42;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#141815;
-      --panel:#1b211d;
-      --ink:#eef1ee;
-      --ink-soft:#a9b3ac;
-      --line:#2c332e;
-      --accent:#5fb89b;
-      --accent-soft:#1d2d27;
-      --accent-ink:#8fd3bc;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#141815;
-    --panel:#1b211d;
-    --ink:#eef1ee;
-    --ink-soft:#a9b3ac;
-    --line:#2c332e;
-    --accent:#5fb89b;
-    --accent-soft:#1d2d27;
-    --accent-ink:#8fd3bc;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
-    line-height:1.8;
-  }
-  .wrap{max-width:760px; margin:0 auto; padding:64px 24px 100px;}
-  .eyebrow{font-size:13px; color:var(--accent-ink); font-weight:700;}
-  h1{
-    font-family:"Zen Maru Gothic","Zen Kaku Gothic New",sans-serif;
-    font-size:clamp(26px,4vw,36px);
-    margin:10px 0 16px;
-  }
-  p.lede{color:var(--ink-soft); max-width:560px;}
-  .cards{display:grid; gap:16px; margin-top:32px;}
-  a.card{
-    display:block;
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:22px 24px;
-    text-decoration:none;
-    color:var(--ink);
-    transition:border-color .15s ease;
-  }
-  a.card:hover{border-color:var(--accent);}
-  a.card .tag{
-    display:inline-block;
-    font-size:12px;
-    font-weight:700;
-    color:var(--accent-ink);
-    background:var(--accent-soft);
-    padding:3px 10px;
-    border-radius:999px;
-    margin-bottom:10px;
-  }
-  a.card h2{margin:0 0 6px; font-size:19px;}
-  a.card p{margin:0; color:var(--ink-soft); font-size:14.5px;}
-  footer{margin-top:56px; font-size:13px; color:var(--ink-soft);}
-</style>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>あらきホテル｜かんたんフロントマニュアル</title>
+  <meta name="description" content="種子島あらきホテルのフロントスタッフ向けHOTEL SMARTかんたん操作マニュアル">
+  <link rel="stylesheet" href="assets/manual.css">
 </head>
 <body>
-  <div class="wrap">
-    <div class="eyebrow">HOTEL SMART シーン別運用マニュアル</div>
-    <h1>やること単位でまとめた、HOTEL SMART運用マニュアル集</h1>
-    <p class="lede">公式マニュアルより粒度の細かいシーン別に、管理画面の実際の操作にあわせて再構築しています。目的の作業から探してご利用ください。</p>
-
-    <div class="cards">
-      <a class="card" href="./startup.html">
-        <span class="tag">初期設定編</span>
-        <h2>物件情報まわりの初期設定（全13シーン）</h2>
-        <p>物件の基本情報、部屋タイプ、タブレット設定、自動メール、マイページなど、運用を始める前に整える設定項目を解説します。シーン1・2は実画面のスクリーンショット付きです。</p>
-      </a>
-      <a class="card" href="./front-operations.html">
-        <span class="tag">フロント運用編</span>
-        <h2>予約作成〜日次締めまでの日々の業務（全10シーン）</h2>
-        <p>電話受付・ウォークインの予約作成、料金・精算情報の登録、チェックイン／アウト、部屋のブロック、日次締めまでを解説します。</p>
-      </a>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">あらきホテル<small>かんたんフロントマニュアル</small></a>
+      <nav class="global-nav" aria-label="主要メニュー">
+        <a href="daily-operations.html">1日の業務</a>
+        <a href="reservation-guide.html">予約・会計</a>
+        <a href="room-assignment.html">部屋割り</a>
+        <a href="service-operations.html">客室・清掃</a>
+        <a href="troubleshooting.html">困ったとき</a>
+        <a href="glossary.html">用語集</a>
+      </nav>
     </div>
+  </header>
 
-    <footer>本サイトは社内共有を目的として作成しています。画面表示は物件・契約プランによって一部異なる場合があります。</footer>
-  </div>
+  <main id="main" class="page">
+    <section class="hero">
+      <p class="eyebrow">HOTEL SMART 操作ガイド</p>
+      <h1>今やりたい作業から探す</h1>
+      <p>画面の名前が分からなくても大丈夫です。「予約を探す」「チェックイン」など、目的から手順を選んでください。</p>
+      <div class="meta-row"><span class="tag">ドラフト版 2026-09-18</span><span class="tag">フロント向け</span></div>
+    </section>
+
+    <section class="search-panel" aria-label="マニュアル検索">
+      <form class="search-row" data-manual-search>
+        <label for="manual-search" class="skip-link">やりたいことを検索</label>
+        <input id="manual-search" type="search" placeholder="例：予約が見つからない、領収書、清掃" autocomplete="off">
+        <button type="submit">検索</button>
+      </form>
+      <p class="search-hint">短い言葉で検索できます。Enterキーまたは「検索」を押してください。</p>
+      <div class="search-results" data-search-results aria-live="polite"></div>
+    </section>
+
+    <section aria-labelledby="basic-rules">
+      <div class="section-heading"><h2 id="basic-rules">最初に覚える4つのルール</h2><p>間違いを防ぐ基本</p></div>
+      <div class="rule-strip">
+        <div class="rule-item"><strong>① 日付を確認</strong>操作前に、表示している宿泊日・対象日を声に出して確認します。</div>
+        <div class="rule-item"><strong>② お客様を照合</strong>氏名だけでなく、宿泊日・電話番号・人数のどれかも確認します。</div>
+        <div class="rule-item"><strong>③ 保存は1回</strong>反応が遅くても連打せず、一覧で登録結果を確認します。</div>
+        <div class="rule-item stop"><strong>④ 分からなければ止める</strong>料金・取消・返金・外部予約は、推測で変更せず責任者へ確認します。</div>
+      </div>
+    </section>
+
+    <div class="section-heading"><h2>今日のフロント業務</h2><p>左上から順番に確認</p></div>
+    <section class="card-grid" aria-label="日次業務">
+      <a class="card" href="daily-operations.html#shift-start"><span class="card-number">1</span><h3>出勤したら</h3><p>ログイン、引継ぎ、本日の到着・出発を確認します。</p></a>
+      <a class="card" href="reservation-guide.html#search"><span class="card-number">2</span><h3>予約を探す</h3><p>名前・予約番号・宿泊日から予約を検索します。</p></a>
+      <a class="card" href="room-assignment.html"><span class="card-number">3</span><h3>部屋を割り当てる</h3><p>未割当を確認し、部屋タイプ・定員・清掃状態を照合します。</p></a>
+      <a class="card" href="daily-operations.html#checkin"><span class="card-number">4</span><h3>チェックイン</h3><p>本人確認、部屋、支払い、キーのお渡しを進めます。</p></a>
+      <a class="card" href="daily-operations.html#checkout"><span class="card-number">5</span><h3>チェックアウト</h3><p>追加料金と未精算を確認して退室処理を行います。</p></a>
+      <a class="card" href="service-operations.html"><span class="card-number">6</span><h3>客室・清掃を確認</h3><p>未清掃の客室、部屋移動、故障・ブロックを確認します。</p></a>
+      <a class="card" href="daily-operations.html#handover"><span class="card-number">7</span><h3>引継ぎ・日次締め</h3><p>未対応事項を残し、責任者が営業日を締めます。</p></a>
+    </section>
+
+    <div class="section-heading"><h2>よくある「困った」</h2><p>慌てて変更する前に確認</p></div>
+    <section class="card-grid" aria-label="よくある問題">
+      <a class="card alert" href="troubleshooting.html#reservation-missing"><span class="tag">予約</span><h3>予約が見つからない</h3><p>検索条件、予約経路、サイトコントローラー連携を順番に確認します。</p></a>
+      <a class="card alert" href="troubleshooting.html#checkin-error"><span class="tag">到着</span><h3>チェックインできない</h3><p>予約状態・部屋割り・清掃・支払いを確認します。</p></a>
+      <a class="card alert" href="troubleshooting.html#save-error"><span class="tag">入力</span><h3>保存できない／エラーが出た</h3><p>必須項目と画面状態を確認し、二重登録を防ぎます。</p></a>
+    </section>
+
+    <div class="section-heading"><h2>マニュアルをまとめて読む</h2><p>役割に合うものを選択</p></div>
+    <section class="card-grid" aria-label="マニュアル一覧">
+      <a class="card" href="reservation-guide.html"><span class="tag front">フロント</span><h3>予約・変更・会計</h3><p>個人／団体予約、変更、料金、精算、領収書。</p></a>
+      <a class="card" href="room-assignment.html"><span class="tag front">重要</span><h3>部屋割り（アサイン）</h3><p>手動・自動・一括割当と、失敗時の確認。</p></a>
+      <a class="card" href="service-operations.html"><span class="tag front">フロント</span><h3>客室・清掃</h3><p>清掃状況、部屋移動、故障、客室ブロックの連携。</p></a>
+      <a class="card" href="front-operations.html"><span class="tag front">詳しい手順</span><h3>フロント運用 原本ドラフト</h3><p>公式PDFをもとにした従来版の詳細手順です。</p></a>
+      <a class="card manager" href="startup.html"><span class="tag manager">管理者</span><h3>初期設定・施設設定</h3><p>日常のフロント業務では原則変更しません。</p></a>
+      <a class="card" href="glossary.html"><span class="tag">用語</span><h3>やさしい用語集</h3><p>OTA、PMS、サイトコントローラーなどを説明します。</p></a>
+      <a class="card" href="quick-reference.html"><span class="tag">印刷用</span><h3>フロント早見表</h3><p>緊急時と毎日の確認項目を、1ページで印刷できます。</p></a>
+      <a class="card manager" href="HOTEL-SMART-front-manual-reference.html"><span class="tag manager">編集者</span><h3>公式資料との対応</h3><p>このドラフトの情報源と確認状況をまとめています。</p></a>
+    </section>
+
+    <div class="section-heading"><h2>操作する人の目安</h2><p>迷ったら上位担当者へ確認</p></div>
+    <table class="decision-table">
+      <thead><tr><th>担当</th><th>通常行う操作</th><th>単独で行わない操作</th></tr></thead>
+      <tbody><tr><td>フロントスタッフ</td><td>予約検索、手動部屋割り、宿泊者確認、チェックイン／アウト、清掃状況確認、引継ぎ</td><td>自動部屋割り設定、返金、外部予約の直接変更、連携停止、日次締め</td></tr><tr><td>責任者</td><td>割当失敗・料金差異・取消・返金の判断、誤操作の復旧、日次確認</td><td>契約・連携・権限に関わる変更は管理者確認</td></tr><tr><td>管理者</td><td>自動部屋割り、アカウント・権限・物件・料金・連携・初期設定</td><td>影響範囲不明の変更はHOTEL SMARTへ確認</td></tr></tbody>
+    </table>
+
+    <aside class="draft-note">
+      <strong>このページは現場確認前のドラフトです。</strong><br>
+      HOTEL SMART公式マニュアル（2024.1～）、オンライン記事一覧、2026年9月時点の実画面を照合しています。施設固有の料金・権限・締め手順は、あらきホテルの責任者確認後に確定してください。
+    </aside>
+  </main>
+
+  <footer class="footer">種子島あらきホテル　かんたんフロントマニュアル（ドラフト）</footer>
+  <script src="assets/manual.js"></script>
 </body>
 </html>
