@@ -447,24 +447,86 @@
       <!-- SCENE 4 -->
       <section class="scene" id="s4">
         <h2><span class="scene-num">4</span>予約の変更（パターン別）</h2>
-        <p class="path">対象予約の詳細ページ ＞ <b>予約情報</b>／<b>宿泊変更</b>／<b>宿泊者情報</b>／<b>設定</b></p>
-        <p class="lede">宿泊期間の変更、部屋の追加・削除・途中変更、宿泊者情報の変更、プランの変更など、よくある変更パターンをまとめました。</p>
+        <p class="path">対象予約の詳細ページ ＞ <b>予約情報</b>／<b>宿泊変更</b>／<b>宿泊者情報</b>／<b>設定</b>／<b>予約詳細のステータス（キャンセル）</b></p>
+        <p class="lede">宿泊期間の変更、部屋の追加・削除・途中変更、宿泊者情報の変更、プランの変更など、よくある変更パターンをまとめました。予約のキャンセルの手順も扱います。</p>
         <div class="body">
           <div class="callout warn"><span class="label">注意</span>サイトコントローラー経由で取り込まれた予約情報は、基本的には変更できません。変更はできるだけOTAやサイトコントローラー側で行い、それができない場合のみ該当予約の自動更新を停止してから管理画面で変更してください。また、日次締め済みのデータは変更できません。</div>
 
           <h3 class="sub">宿泊期間の変更</h3>
-          <p>《予約情報》欄より変更可能です。チェックイン日はクリックして表示されるポップアップで変更後の日付を入力し「移動する」を押します（「日程の移動に合わせて料金の利用日を変更する」「ブロックや他の予約との重複が発生する部屋割りを解除する」は初期値でチェック済み。不要な場合のみ外します）。チェックアウト日は直接入力または「カレンダー入力」から選択します。複数部屋で部屋ごとに期間が異なる場合は「部屋毎に設定する」から個別に変更します。</p>
+          <p>《予約情報》欄より変更可能です。チェックイン日はクリックして表示されるポップアップで変更後の日付を入力し「移動する」を押します。ポップアップには「日程の移動に合わせて料金の利用日が変更されます」と固定の説明文が表示され、チェックボックスは「ブロックや他の予約との重複が発生する部屋割りを解除する」の1つだけで、初期値でチェック済みでした（2026/10/05確認）。不要な場合のみ外します。チェックイン日の移動では泊数を保ったまま日程全体がずれ、「移動する」を押すとその場で保存されました（2026/10/05確認）。チェックアウト日は直接入力または「カレンダー入力」から選択します。チェックアウト日や泊数の変更は、画面下に表示される「変更を保存する」を押すまで保存されませんでした（2026/10/05確認）。複数部屋で部屋ごとに期間が異なる場合は「部屋毎に設定する」から個別に変更します。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-25-change-test-reserve.jpg" target="_blank" rel="noopener"><img src="screenshots/front-25-change-test-reserve.jpg" alt="変更前の予約詳細（2026/11/10〜11/12、2泊、部屋はBEKKAN 2）のスクリーンショット"></a>
+            <figcaption>変更前の予約詳細。日程は11/10〜11/12（2泊）、部屋はBEKKAN 2です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-26-extend-save-bar.jpg" target="_blank" rel="noopener"><img src="screenshots/front-26-extend-save-bar.jpg" alt="泊数を3にしてチェックアウト日が11/13に変わり、画面下に変更を保存するのバーが表示された状態のスクリーンショット"></a>
+            <figcaption>泊数を「3」にした状態。チェックアウト日が11/13に変わり、画面下に「変更を保存する」のバーが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-27-extended-3nights.jpg" target="_blank" rel="noopener"><img src="screenshots/front-27-extended-3nights.jpg" alt="保存後の予約詳細（11/10〜11/13、3泊）のスクリーンショット"></a>
+            <figcaption>「変更を保存する」を押した後の予約詳細。日程が11/10〜11/13（3泊）になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-28-checkin-move-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-28-checkin-move-dialog.jpg" alt="チェックイン日をクリックすると開くチェックイン日の移動画面のスクリーンショット"></a>
+            <figcaption>チェックイン日をクリックすると開く「チェックイン日の移動」画面。「日程の移動に合わせて料金の利用日が変更されます」の説明文と、「ブロックや他の予約との重複が発生する部屋割りを解除する」のチェックボックスが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-29-checkin-move-selected.jpg" target="_blank" rel="noopener"><img src="screenshots/front-29-checkin-move-selected.jpg" alt="チェックイン日の移動画面で移動先に11/11を選び、11/11〜11/14と表示された状態のスクリーンショット"></a>
+            <figcaption>移動先に11/11を選んだ状態。泊数を保ったまま、11/11〜11/14と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-30-checkin-moved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-30-checkin-moved.jpg" alt="移動後の予約詳細（11/11〜11/14、3泊）のスクリーンショット"></a>
+            <figcaption>「移動する」を押した後の予約詳細。日程が11/11〜11/14（3泊）になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
           <p>中抜け（連泊中の一部の日だけ部屋を空ける）が発生する場合は、《宿泊変更》の「部屋変更」で該当日の部屋をクリックし「割当解除」→ 再度クリックして「日程削除」→ 削除したい期間にチェックを入れて「削除する」の順に操作します。</p>
+          <div class="callout tip"><span class="label">ヒント</span>日付の欄にキーボードで数字を直接入力すると、入力途中の値に反応して警告が出ることがありました（2026/10/05確認）。泊数を変えるか、カレンダーから選ぶと確実です。</div>
 
           <h3 class="sub">部屋の追加／削除</h3>
-          <p><b>追加：</b>[部屋情報]で「部屋を追加する」を押すと部屋を追加できます。<br>
-          <b>削除：</b>[部屋情報]で削除したい部屋の鉛筆マークをクリックし、「部屋を削除する」を押します。</p>
+          <p>予約詳細の《予約情報》欄の「宿泊変更」を押し、「人数変更」で「部屋タイプを追加」を押します。追加する部屋タイプ・部屋数・部屋人数を入力して「保存」を押します。追加した部屋は部屋番号が未割り当てになるため、予約詳細の部屋割り当てで部屋を選ぶか「おまかせ割り当て」を使います。部屋を削除する場合は、同じ画面で削除する行の「×」を押して「保存」を押します（2026/10/05確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-36-room-type-added.jpg" target="_blank" rel="noopener"><img src="screenshots/front-36-room-type-added.jpg" alt="宿泊変更の人数変更で部屋タイプを追加し、BEKKAN ツイン（1部屋・1名）の行を加えた状態のスクリーンショット"></a>
+            <figcaption>「宿泊変更」→「人数変更」で「部屋タイプを追加」を押し、BEKKAN ツイン（1部屋・1名）の行を加えた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-37-room-added-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-37-room-added-detail.jpg" alt="部屋を追加した後の予約詳細（2部屋・2名、追加した部屋は部屋番号が未入力でおまかせ割り当てボタンあり）のスクリーンショット"></a>
+            <figcaption>追加後の予約詳細（2部屋・2名）。追加した部屋は部屋番号が「未入力」で、「おまかせ割り当て」ボタンが表示されます。この画面は部屋の途中変更を設定した後のため、「途中移動あり」と表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-38-room-row-deleted.jpg" target="_blank" rel="noopener"><img src="screenshots/front-38-room-row-deleted.jpg" alt="宿泊変更の人数変更で追加した行の×を押して削除した状態のスクリーンショット"></a>
+            <figcaption>追加した行の「×」を押して削除した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-39-room-deleted-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-39-room-deleted-detail.jpg" alt="部屋を削除した後の予約詳細（1部屋・1名に戻った状態）のスクリーンショット"></a>
+            <figcaption>削除後の予約詳細。1部屋・1名に戻っています。この画面は部屋の途中変更を設定した後のため、「途中移動あり」と表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout tip"><span class="label">ヒント</span>途中移動のある部屋は、宿泊変更画面で部屋数・人数・削除を変更できませんでした（2026/10/05確認）。人数の変更は、途中移動を設定する前に済ませてください。</div>
 
           <h3 class="sub">部屋の途中変更</h3>
           <p>連泊中に途中で部屋を移動する場合は、「宿泊変更」の［部屋変更］を開き、部屋が変わる日付の部屋をクリックして変更後の部屋を選択・保存します。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-31-stay-change-room-tab.jpg" target="_blank" rel="noopener"><img src="screenshots/front-31-stay-change-room-tab.jpg" alt="宿泊変更の部屋変更画面（泊ごとの部屋が並ぶ表）のスクリーンショット"></a>
+            <figcaption>「宿泊変更」→「部屋変更」の画面。泊ごとの部屋が日付順に並びます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-32-room-change-menu.jpg" target="_blank" rel="noopener"><img src="screenshots/front-32-room-change-menu.jpg" alt="2泊目の部屋を開いたメニュー（部屋の一覧、割当解除、日程削除、1泊分操作（途中移動））のスクリーンショット"></a>
+            <figcaption>2泊目の部屋を開いたメニュー。部屋の一覧のほか、「割当解除」「日程削除」「1泊分操作（途中移動）」があります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-33-midstay-move-set.jpg" target="_blank" rel="noopener"><img src="screenshots/front-33-midstay-move-set.jpg" alt="11/12以降がBEKKAN 1になり、2泊目に途中移動と表示された部屋変更画面のスクリーンショット"></a>
+            <figcaption>2泊目にBEKKAN 1を選んだ状態。11/12以降がBEKKAN 1になり、2泊目に「途中移動」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-34-midstay-move-saved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-34-midstay-move-saved.jpg" alt="途中移動を保存した後の予約詳細（部屋割り当てが1部屋（途中移動あり）でBEKKAN 2・BEKKAN 1の2行、右上に予約を分割ボタン）のスクリーンショット"></a>
+            <figcaption>保存後の予約詳細。部屋割り当てが「1部屋（途中移動あり）」になり、BEKKAN 2・BEKKAN 1の2行が表示されます。右上には「予約を分割」ボタンが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout tip"><span class="label">ヒント</span>後ろの泊の部屋を選ぶと「1部屋目において◯/◯からの部屋移動を設定します。よろしいですか？」と確認が表示され、その日以降の部屋がまとめて変わります。途中移動を設定すると、予約詳細に「予約を分割」ボタンが表示され、料金・精算情報の部屋数は実際の部屋数より多く数えられました（2026/10/05確認）。</div>
 
           <h3 class="sub">宿泊者情報の確認・変更</h3>
           <p>《宿泊者情報》にて「宿泊者台帳」をクリックすると、一覧で宿泊者情報の確認・編集、部屋の割り当て、宿泊者の追加・削除が行えます。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-35-guest-register.jpg" target="_blank" rel="noopener"><img src="screenshots/front-35-guest-register.jpg" alt="宿泊者台帳画面（1泊ごとに切り替え表示、氏名・性別・区分・連絡先・国籍などの列）のスクリーンショット"></a>
+            <figcaption>「宿泊者台帳」画面。1泊ごとに切り替えて表示し、氏名・フリガナ・性別・区分・電話・メール・国籍などを確認・入力します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
 
           <h3 class="sub">プランの変更</h3>
           <p>[プラン]で変更後のプランを選択後、[お食事]で「プランに合わせる」ボタンを押して保存します。保存後に《料金詳細》欄の「料金情報の再登録」から、変更後のプランに合わせた料金への変更が可能です。</p>
@@ -472,6 +534,32 @@
           <h3 class="sub">サイトコントローラーの自動更新停止</h3>
           <p>予約詳細ページ右側《設定》の［サイトコントローラー設定］にて、「この予約の自動更新を停止する」を押すと、サイトコントローラー経由の予約でも管理画面から変更操作ができるようになります。</p>
           <div class="callout warn"><span class="label">注意</span>停止後はOTAやサイトコントローラー上で予約内容やステータスの変更があっても反映されません。一度停止した後は、基本的に再開を行わないでください。再開すると、変更を行った内容が更新によって戻ってしまう可能性があります。</div>
+
+          <h3 class="sub">予約のキャンセル</h3>
+          <p>予約のキャンセルは、フロントスタッフの判断で行えます。</p>
+          <ol class="steps">
+            <li>予約詳細の右上のステータス（「未チェックイン ▼」）を押し、「キャンセルする」を選びます。</li>
+          </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-40-status-menu-cancel.jpg" target="_blank" rel="noopener"><img src="screenshots/front-40-status-menu-cancel.jpg" alt="予約詳細の右上のステータスを開いたメニュー（チェックイン済みにする、キャンセルする、削除する）のスクリーンショット"></a>
+            <figcaption>手順1：ステータスのメニュー。「チェックイン済みにする」「キャンセルする」「削除する」があります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <ol class="steps" start="2" style="counter-reset:step 1;">
+            <li>確認画面で内容を確かめて「キャンセルする」を押します。</li>
+          </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-41-cancel-confirm.jpg" target="_blank" rel="noopener"><img src="screenshots/front-41-cancel-confirm.jpg" alt="この予約をキャンセルしてよろしいですか？と表示された確認画面のスクリーンショット"></a>
+            <figcaption>手順2：確認画面「この予約をキャンセルしてよろしいですか？」。部屋の割り当ては削除されること、保存前の変更は破棄されることが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-42-cancelled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-42-cancelled.jpg" alt="キャンセル後の予約詳細（ステータスがキャンセル済み、部屋番号は未入力、オペレーターメモに操作履歴）のスクリーンショット"></a>
+            <figcaption>キャンセル後の予約詳細。ステータスが「キャンセル済み」になり、部屋番号は「未入力」、オペレーターメモに操作履歴（ホスト操作：キャンセル）が記録されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <ol class="steps" start="3" style="counter-reset:step 2;">
+            <li>キャンセルしたら、予約名・日程・キャンセルの理由を必ず責任者に報告します。</li>
+          </ol>
+          <div class="callout warn"><span class="label">注意</span>メニューには「削除する」もありますが、予約データそのものが消える操作です。通常の取り消しは「キャンセルする」を使い、予約を履歴に残してください。</div>
+          <div class="callout warn"><span class="label">注意</span>入金済みの予約をキャンセルする場合、返金の扱いは責任者の判断です。キャンセルの前に責任者へ確認してください。</div>
         </div>
       </section>
 
