@@ -279,10 +279,22 @@
     background:var(--panel);
     box-shadow:var(--shadow);
   }
+  figure.screenshot a{
+    display:block;
+    cursor:zoom-in;
+  }
+  figure.screenshot a:focus-visible{
+    outline:3px solid var(--ink-soft);
+    outline-offset:-3px;
+  }
   figure.screenshot img{
     display:block;
     width:100%;
     height:auto;
+  }
+  figure.screenshot .zoom-hint{
+    font-size:11px;
+    white-space:nowrap;
   }
   figure.screenshot figcaption{
     font-size:12.5px;
@@ -349,8 +361,8 @@
         <p class="lede">物件名・所在地・チェックイン時間など、その施設の"顔"になる情報です。物件名は日本語／英語／中国語／韓国語の4言語をタブで切り替えて個別に登録できます。</p>
         <div class="body">
           <figure class="screenshot">
-            <img src="screenshots/s1a-kihonjoho.jpg" alt="物件詳細ページの基本情報欄（物件名・所在地・角印設定など）のスクリーンショット">
-            <figcaption>物件詳細ページ上部「基本情報」欄。物件名・所在地・角印設定などを入力します。</figcaption>
+            <a href="screenshots/s1a-kihonjoho.jpg" target="_blank" rel="noopener"><img src="screenshots/s1a-kihonjoho.jpg" alt="物件詳細ページの基本情報欄（物件名・所在地・角印設定など）のスクリーンショット"></a>
+            <figcaption>物件詳細ページ上部「基本情報」欄。物件名・所在地・角印設定などを入力します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <ol class="steps">
             <li>【物件管理】＞【物件情報】の一覧から対象の物件名にある「詳細を見る」を押し、物件詳細ページを開きます。</li>
@@ -362,8 +374,8 @@
           </ol>
 
           <figure class="screenshot">
-            <img src="screenshots/s1b-checkin-settei.jpg" alt="外観写真・アクセスマップ・チェックイン/アウト時刻設定のスクリーンショット">
-            <figcaption>外観写真、アクセスマップ、チェックイン／チェックアウト時刻・アーリーチェックイン等の設定欄。</figcaption>
+            <a href="screenshots/s1b-checkin-settei.jpg" target="_blank" rel="noopener"><img src="screenshots/s1b-checkin-settei.jpg" alt="外観写真・アクセスマップ・チェックイン/アウト時刻設定のスクリーンショット"></a>
+            <figcaption>外観写真、アクセスマップ、チェックイン／チェックアウト時刻・アーリーチェックイン等の設定欄。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
           <table class="field">
@@ -389,8 +401,8 @@
         <p class="lede">「シングル」「ダブル」のような部屋タイプの器を先に作り、その後に物件詳細ページから実際の部屋番号を追加し、階層情報を紐づけます。</p>
         <div class="body">
           <figure class="screenshot">
-            <img src="screenshots/s2a-heyatype.jpg" alt="部屋タイプ登録欄（シングル・ダブル・ツイン・ファミリー）のスクリーンショット">
-            <figcaption>物件詳細ページ「部屋タイプ」欄。部屋タイプ名・デフォルト宿泊人数・定員を入力します。</figcaption>
+            <a href="screenshots/s2a-heyatype.jpg" target="_blank" rel="noopener"><img src="screenshots/s2a-heyatype.jpg" alt="部屋タイプ登録欄（シングル・ダブル・ツイン・ファミリー）のスクリーンショット"></a>
+            <figcaption>物件詳細ページ「部屋タイプ」欄。部屋タイプ名・デフォルト宿泊人数・定員を入力します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <ol class="steps">
             <li>物件詳細ページの「部屋タイプ」欄で、4言語タブを切り替えながら部屋タイプ名を入力します。</li>
@@ -401,8 +413,8 @@
           </ol>
 
           <figure class="screenshot">
-            <img src="screenshots/s2b-kaisou.jpg" alt="部屋タイプ追加ボタンと階層登録欄のスクリーンショット">
-            <figcaption>「部屋タイプを追加する」ボタンと、その下の「階層」登録欄（階層を追加する）。</figcaption>
+            <a href="screenshots/s2b-kaisou.jpg" target="_blank" rel="noopener"><img src="screenshots/s2b-kaisou.jpg" alt="部屋タイプ追加ボタンと階層登録欄のスクリーンショット"></a>
+            <figcaption>「部屋タイプを追加する」ボタンと、その下の「階層」登録欄（階層を追加する）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
           <div class="callout warn"><span class="label">注意</span>部屋タイプは後から名称変更すると、既存の予約・料金設定・プランとの紐づけ表示にも影響します。運用開始前に名称を確定させておくのがおすすめです。</div>
