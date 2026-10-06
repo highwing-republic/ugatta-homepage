@@ -415,6 +415,24 @@
             <tr><th>リピートメモ</th><td>同代表者による次回以降の予約に引き継がれるメモ。アレルギー情報など繰り返し対応が必要な情報を記載</td></tr>
             <tr><th>清掃時備考</th><td>この予約の準備段階にあたる清掃予定に共有される</td></tr>
           </table>
+          <p>予約詳細の《共有事項》欄では、リクエスト・オペレーターメモ・リピートメモを追加できます。リクエストとオペレーターメモは、種類（通常／重要／チェックイン時／チェックアウト前）を選んで登録します。リピートメモは次回以降の予約にも引き継がれるメモです。「重要」のメモがある予約は、開くたびに「共有事項をご確認ください。」と表示されます（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-55-request-input.jpg" target="_blank" rel="noopener"><img src="screenshots/front-55-request-input.jpg" alt="リクエストの入力画面（種類：通常、重要、チェックイン時、チェックアウト前）のスクリーンショット"></a>
+            <figcaption>リクエストの入力画面。種類（通常／重要／チェックイン時／チェックアウト前）を選んで内容を入力し、「保存」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-56-request-saved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-56-request-saved.jpg" alt="リクエスト登録後、画面上部に共有事項がありますと表示された予約詳細のスクリーンショット"></a>
+            <figcaption>登録後の予約詳細。画面上部に「共有事項があります(1)」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-57-operator-memo-important.jpg" target="_blank" rel="noopener"><img src="screenshots/front-57-operator-memo-important.jpg" alt="オペレーターメモで重要を選び、予約詳細ページにアラートを出すが表示された入力画面のスクリーンショット"></a>
+            <figcaption>オペレーターメモで「重要」を選ぶと、「予約詳細ページにアラートを出す」（初期値はオン）が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-58-shared-notes-all.jpg" target="_blank" rel="noopener"><img src="screenshots/front-58-shared-notes-all.jpg" alt="リクエスト・オペレーターメモ・リピートメモがそろった共有事項欄のスクリーンショット"></a>
+            <figcaption>リクエスト・オペレーターメモ・リピートメモがそろった状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout warn"><span class="label">注意</span>オペレーターメモやリピートメモを保存すると「オペレーターメモの更新内容をメールで送信しますか？」と確認が出ました（2026/10/06確認）。メールを送らない場合は「キャンセル」を選びます。メモ自体はどちらを選んでも保存されます。</div>
           <div class="callout tip"><span class="label">表示項目について</span>「仮予約」「リピートメモ」「清掃時備考」などは、施設の表示設定によって表示されない場合があります。見当たらない項目を無理に探さず、必要性を責任者へ確認してください。</div>
           <div class="callout tip"><span class="label">保存</span>入力内容を読み直し、「予約を登録する」を1回だけ押します。画面ヘルプに表示されるショートカットは <code>Ctrl+S</code> です。</div>
           <figure class="screenshot">
@@ -422,6 +440,22 @@
             <figcaption>画面下部の「予約を登録する」を押した後に表示される予約詳細画面。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>プラン未選択で予約を作成した際、「金額変更」に入力した金額が料金として登録されないことがありました（2026/10/05確認）。登録後は予約詳細の《料金詳細》で金額を確認し、0円の場合は「料金追加」から登録してください。</div>
+
+          <h3 class="sub">既存の予約をコピーして作る</h3>
+          <p>予約詳細の右上の「予約をコピー」を押すと、内容を引き継いだ新規予約画面が別タブで開きます。日程と予約経路を入れ直してから「予約を登録する」を押します。</p>
+          <p>代表者名・部屋タイプ・部屋数・人数は引き継がれますが、日程は当日、予約経路は「未選択」、部屋番号は未割り当て、共有事項は空欄になりました（2026/10/06確認）。日程と予約経路は必ず入れ直します。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-74-copy-form.jpg" target="_blank" rel="noopener"><img src="screenshots/front-74-copy-form.jpg" alt="予約をコピーで別タブに開いた新規予約画面（日程は当日、予約経路は未選択）のスクリーンショット"></a>
+            <figcaption>「予約をコピー」で別タブに開いた新規予約画面。代表者名・部屋タイプ・部屋数・人数は引き継がれ、日程は当日、予約経路は「未選択」になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-75-copy-form-edited.jpg" target="_blank" rel="noopener"><img src="screenshots/front-75-copy-form-edited.jpg" alt="コピーした新規予約画面で日程と予約経路を入れ直した状態のスクリーンショット"></a>
+            <figcaption>日程と予約経路を入れ直した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-76-copy-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-76-copy-result.jpg" alt="コピーして登録した予約の予約詳細（部屋番号は未入力、共有事項は空欄）のスクリーンショット"></a>
+            <figcaption>登録後の予約詳細。部屋番号は未割り当て（「未入力」）で、共有事項は空欄です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -439,6 +473,23 @@
             <li><b>宿泊変更（右列）</b>：「人数変更」で部屋タイプ・室数・人数を設定し、「金額変更」で部屋別・日別の料金を確認します。予約時点で部屋を決める場合は「部屋変更」から選びます。</li>
             <li><b>予約経路・予約受付日時（右列）</b>：予約を受けた経路と日時を入力・確認します。</li>
           </ol>
+          <p>「法人名・団体名」は、法人・団体マスタから選ぶ欄です（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-47-group-reserve-rooms.jpg" target="_blank" rel="noopener"><img src="screenshots/front-47-group-reserve-rooms.jpg" alt="新規予約の人数変更で部屋数2・部屋人数1にした状態（部屋：2 人数：2）のスクリーンショット"></a>
+            <figcaption>手順5：「人数変更」で部屋数を2、部屋人数を1にした状態。合計は「部屋：2　人数：2」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-48-group-reserve-room-rows.jpg" target="_blank" rel="noopener"><img src="screenshots/front-48-group-reserve-room-rows.jpg" alt="部屋変更に切り替えて部屋ごとの行が並んだ状態（未割り当て、2部屋目の代表者は未記入）のスクリーンショット"></a>
+            <figcaption>「部屋変更」に切り替えると、部屋ごとの行が並びます。部屋番号は「未割り当て」、2部屋目の代表者名は「（未記入）」です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-49-group-reserve-assigned.jpg" target="_blank" rel="noopener"><img src="screenshots/front-49-group-reserve-assigned.jpg" alt="部屋ごとにBEKKAN 1・BEKKAN 2を割り当てた部屋変更画面のスクリーンショット"></a>
+            <figcaption>部屋ごとにBEKKAN 1・BEKKAN 2を割り当てた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-50-group-reserve-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-50-group-reserve-detail.jpg" alt="登録後の予約詳細（2部屋・2名、予約を分割ボタンあり）のスクリーンショット"></a>
+            <figcaption>「予約を登録する」を押した後の予約詳細。2部屋・2名で登録され、右上に「予約を分割」ボタンが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
           <div class="callout warn"><span class="label">保存前の確認</span>室数・各部屋の人数・宿泊日・料金・宿泊者の割り当てを、団体全体と部屋ごとの両方で確認してください。</div>
           <div class="callout tip"><span class="label">ヒント</span>特定の部屋だけチェックインが遅い／チェックアウトが早い場合は、対象日付の部屋をクリックして「日程削除」→「この日までの日程を削除する」または「この日以降の日程を削除する」にチェックを入れて「削除する」を押します。利用のない日程の部屋はグレーで表示されます。</div>
         </div>
@@ -451,6 +502,26 @@
         <p class="lede">宿泊期間の変更、部屋の追加・削除・途中変更、宿泊者情報の変更、プランの変更など、よくある変更パターンをまとめました。予約のキャンセルの手順も扱います。</p>
         <div class="body">
           <div class="callout warn"><span class="label">注意</span>サイトコントローラー経由で取り込まれた予約情報は、基本的には変更できません。変更はできるだけOTAやサイトコントローラー側で行い、それができない場合のみ該当予約の自動更新を停止してから管理画面で変更してください。また、日次締め済みのデータは変更できません。</div>
+
+          <h3 class="sub">予約を探す</h3>
+          <p>画面上部の「スマート予約検索」に氏名やチェックインコードを入力して探します。条件を加える場合は「検索条件追加」を使います。【予約情報】の一覧では「条件を選択して絞り込み」で、本日チェックイン・本日登録された予約などの条件で絞り込めます。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-77-smart-search.jpg" target="_blank" rel="noopener"><img src="screenshots/front-77-smart-search.jpg" alt="スマート予約検索に氏名を入力した検索結果のスクリーンショット"></a>
+            <figcaption>「スマート予約検索」に氏名（例：テスト三郎）を入力した結果。【予約情報】の一覧に該当する予約が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-78-smart-search-conditions.jpg" target="_blank" rel="noopener"><img src="screenshots/front-78-smart-search-conditions.jpg" alt="スマート予約検索の検索条件追加（物件名、チェックイン、チェックアウト、キャンセルの表示など）のスクリーンショット"></a>
+            <figcaption>「検索条件追加」を開いた状態。物件名・チェックイン・チェックアウト・キャンセルの表示・一致方法・法人・団体の条件を加えられます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-79-filter-search-panel.jpg" target="_blank" rel="noopener"><img src="screenshots/front-79-filter-search-panel.jpg" alt="通常検索に切り替えた後の条件を選択して絞り込み画面のスクリーンショット"></a>
+            <figcaption>「通常検索に切り替え」後の「条件を選択して絞り込み」画面。本日チェックイン・本日チェックアウト・滞在中の予約・本日登録された予約などのチェックと、物件名・プラン・予約経路などの条件で絞り込めます。この画面では、スマート予約検索にチェックインコードを入れても0件でした。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-80-filter-search-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-80-filter-search-result.jpg" alt="本日登録された予約で絞り込んだ検索結果のスクリーンショット"></a>
+            <figcaption>「本日登録された予約」で絞り込んだ結果。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout warn"><span class="label">注意</span>作成した直後の予約が、スマート予約検索ですぐには見つからないことがありました（2026/10/06確認）。見つからない場合は、絞り込み検索で探してください。</div>
 
           <h3 class="sub">宿泊期間の変更</h3>
           <p>《予約情報》欄より変更可能です。チェックイン日はクリックして表示されるポップアップで変更後の日付を入力し「移動する」を押します。ポップアップには「日程の移動に合わせて料金の利用日が変更されます」と固定の説明文が表示され、チェックボックスは「ブロックや他の予約との重複が発生する部屋割りを解除する」の1つだけで、初期値でチェック済みでした（2026/10/05確認）。不要な場合のみ外します。チェックイン日の移動では泊数を保ったまま日程全体がずれ、「移動する」を押すとその場で保存されました（2026/10/05確認）。チェックアウト日は直接入力または「カレンダー入力」から選択します。チェックアウト日や泊数の変更は、画面下に表示される「変更を保存する」を押すまで保存されませんでした（2026/10/05確認）。複数部屋で部屋ごとに期間が異なる場合は「部屋毎に設定する」から個別に変更します。</p>
@@ -521,11 +592,84 @@
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>後ろの泊の部屋を選ぶと「1部屋目において◯/◯からの部屋移動を設定します。よろしいですか？」と確認が表示され、その日以降の部屋がまとめて変わります。途中移動を設定すると、予約詳細に「予約を分割」ボタンが表示され、料金・精算情報の部屋数は実際の部屋数より多く数えられました（2026/10/05確認）。</div>
 
+          <h3 class="sub">ルームチェンジ（部屋の入れ替え）</h3>
+          <p>予約詳細の部屋割り当てで、部屋番号の横にある入れ替えアイコンを押すと「ルームチェンジ」画面が開きます。変更先を選んで「変更する」を押します。予約が入っている部屋を選ぶと、その予約と部屋を入れ替えます。「変更する」を押すと確認なしでその場で反映されました（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-63-room-change-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-63-room-change-dialog.jpg" alt="部屋番号横の入れ替えアイコンで開いたルームチェンジ画面（変更元とおすすめの変更先）のスクリーンショット"></a>
+            <figcaption>部屋番号の横の入れ替えアイコンで開く「ルームチェンジ」画面。左に変更元、右におすすめの変更先が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-64-room-change-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-64-room-change-list.jpg" alt="他の候補を一覧で表示するで全部屋から変更先を選ぶ画面のスクリーンショット"></a>
+            <figcaption>「他の候補を一覧で表示する」で全部屋から選ぶ画面。部屋タイプが違う候補には「部屋タイプが違います」と表示されます。この例では、同じ予約のもう1部屋（BEKKAN 2）を選んでいます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-65-room-changed.jpg" target="_blank" rel="noopener"><img src="screenshots/front-65-room-changed.jpg" alt="ルームチェンジで部屋を入れ替えた後の予約詳細のスクリーンショット"></a>
+            <figcaption>入れ替え後の予約詳細。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+
+          <h3 class="sub">予約の分割</h3>
+          <p>複数部屋の予約を部屋ごとの予約に分けるときは、予約詳細の右上の「予約を分割」を押します。分割後の予約ごとに代表者氏名・連絡先を確認し、「保存」を押します。</p>
+          <p>保存すると「分割後の代表者連絡先が未入力です。予約の分割を継続しますか？」（連絡先が空の場合）、「この予約は削除され、2件の新しい予約が作成されます。分割を実行しますか？」と確認が出ます。元の予約は削除され、チェックインコードは新しく振り直されます。リクエストとオペレーターメモは分割後の全予約に、リピートメモは代表者の予約にだけ引き継がれました（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-66-split-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-66-split-dialog.jpg" alt="予約を分割画面（部屋ごとに分かれた予約の案）のスクリーンショット"></a>
+            <figcaption>「予約を分割」画面。部屋ごとに分かれた予約の案（部屋名・代表者氏名・連絡先・利用期間）が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-67-split-mail-off.jpg" target="_blank" rel="noopener"><img src="screenshots/front-67-split-mail-off.jpg" alt="予約を分割画面でメールを再送信するのチェックを外した状態のスクリーンショット"></a>
+            <figcaption>「メールを再送信する」（初期値はオン）のチェックを外した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-68-split-result-1.jpg" target="_blank" rel="noopener"><img src="screenshots/front-68-split-result-1.jpg" alt="分割後の1件目の予約詳細（オペレーターメモに分割の記録）のスクリーンショット"></a>
+            <figcaption>分割後の1件目の予約。オペレーターメモに、元の予約と分割後のチェックインコードが記録されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-69-split-result-2.jpg" target="_blank" rel="noopener"><img src="screenshots/front-69-split-result-2.jpg" alt="分割後の2件目の予約詳細（リピートメモは引き継がれていない）のスクリーンショット"></a>
+            <figcaption>分割後の2件目の予約。リクエストとオペレーターメモは引き継がれ、リピートメモは引き継がれていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+
+          <h3 class="sub">予約の統合・グルーピング</h3>
+          <p>【予約情報】の一覧でまとめたい予約にチェックを入れ、「チェックした予約の統合またはグルーピング」を押すと、「これらの予約を統合する」「これらの予約をグルーピングする」のボタンが表示されます。</p>
+          <p>「統合」は日程が連続する予約（ある予約のチェックアウト日が別の予約のチェックイン日）をつなぐ機能です。条件を満たさないと「これらの予約は統合できません」と表示されます。「グルーピング」は同じ日程の予約を1件にまとめる機能です（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-70-group-select-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-70-group-select-list.jpg" alt="予約情報の一覧で2件の予約にチェックを入れた状態のスクリーンショット"></a>
+            <figcaption>【予約情報】の一覧で2件の予約にチェックを入れた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-71-group-merge-buttons.jpg" target="_blank" rel="noopener"><img src="screenshots/front-71-group-merge-buttons.jpg" alt="チェックした予約の統合またはグルーピングで表示される2つのボタンのスクリーンショット"></a>
+            <figcaption>「チェックした予約の統合またはグルーピング」を押すと、選んだ予約の一覧と「これらの予約を統合する」「これらの予約をグルーピングする」が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-72-grouped-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-72-grouped-result.jpg" alt="グルーピング後に1件・2部屋・2名にまとまった状態のスクリーンショット"></a>
+            <figcaption>グルーピング後。1件（2部屋・2名）にまとまっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-73-grouped-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-73-grouped-detail.jpg" alt="グルーピング後の予約詳細（共有事項が2件分つながって表示）のスクリーンショット"></a>
+            <figcaption>グルーピング後の予約詳細。共有事項は元の2件分がつながって表示され、オペレーターメモにグルーピングの操作履歴が記録されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout warn"><span class="label">注意</span>グルーピングを実行すると「一度グルーピングした予約は元に戻せません」と確認が出ます。まとめた後の予約には、元の予約のゲスト情報・部屋・料金・支払いが集約され、ステータスなどはベースの予約のものだけが残ります（2026/10/06確認）。</div>
+
           <h3 class="sub">宿泊者情報の確認・変更</h3>
           <p>《宿泊者情報》にて「宿泊者台帳」をクリックすると、一覧で宿泊者情報の確認・編集、部屋の割り当て、宿泊者の追加・削除が行えます。</p>
           <figure class="screenshot">
             <a href="screenshots/front-35-guest-register.jpg" target="_blank" rel="noopener"><img src="screenshots/front-35-guest-register.jpg" alt="宿泊者台帳画面（1泊ごとに切り替え表示、氏名・性別・区分・連絡先・国籍などの列）のスクリーンショット"></a>
             <figcaption>「宿泊者台帳」画面。1泊ごとに切り替えて表示し、氏名・フリガナ・性別・区分・電話・メール・国籍などを確認・入力します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <p>宿泊者台帳の「引用」アイコンから、過去に宿泊したお客様の情報を引用できます。「引用する」を押すと「以下の宿泊者情報を設定しますか？」と、引用する内容が確認表示されます。引用後は台帳の「保存」を押します（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-51-guest-register-empty.jpg" target="_blank" rel="noopener"><img src="screenshots/front-51-guest-register-empty.jpg" alt="2部屋目の宿泊者が空欄の宿泊者台帳のスクリーンショット"></a>
+            <figcaption>複数部屋の予約の宿泊者台帳。2部屋目の宿泊者が空欄です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-52-guest-quote-search.jpg" target="_blank" rel="noopener"><img src="screenshots/front-52-guest-quote-search.jpg" alt="引用アイコンで開いた過去宿泊者情報の引用（氏名/フリガナ/電話番号/E-Mail、会社名で検索）のスクリーンショット"></a>
+            <figcaption>「引用」アイコンで開く「過去宿泊者情報の引用」。氏名／フリガナ／電話番号／E-Mail、会社名で検索します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-53-guest-quote-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-53-guest-quote-result.jpg" alt="過去宿泊者情報の検索結果（物件・利用期間・氏名など）と引用するボタンのスクリーンショット"></a>
+            <figcaption>検索結果。物件・予約受付日・利用期間・氏名などが表示されます。「引用する」で台帳に入れます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-54-guest-quoted.jpg" target="_blank" rel="noopener"><img src="screenshots/front-54-guest-quoted.jpg" alt="引用後の宿泊者台帳（2部屋目に宿泊者が入った状態）のスクリーンショット"></a>
+            <figcaption>引用後の台帳。2部屋目に宿泊者が入りました。最後に台帳の「保存」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
           <h3 class="sub">プランの変更</h3>
@@ -559,6 +703,11 @@
             <li>キャンセルしたら、予約名・日程・キャンセルの理由を必ず責任者に報告します。</li>
           </ol>
           <div class="callout warn"><span class="label">注意</span>メニューには「削除する」もありますが、予約データそのものが消える操作です。通常の取り消しは「キャンセルする」を使い、予約を履歴に残してください。</div>
+          <p>キャンセルと違い、「削除する」の確認画面に注意書きは表示されません。部屋が未割り当ての予約では、ステータスのメニューに「チェックイン済みにする」が表示されませんでした（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-81-delete-confirm.jpg" target="_blank" rel="noopener"><img src="screenshots/front-81-delete-confirm.jpg" alt="削除するを選んだときの確認画面（この予約情報を削除しますか？）のスクリーンショット"></a>
+            <figcaption>「削除する」を選んだときの確認画面「この予約情報を削除しますか？」。注意書きは表示されません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
           <div class="callout warn"><span class="label">注意</span>入金済みの予約をキャンセルする場合、返金の扱いは責任者の判断です。キャンセルの前に責任者へ確認してください。</div>
         </div>
       </section>
@@ -722,6 +871,26 @@
             <tr><th>チェックインメール送信／チェックアウトメール送信</th><td>チェック✓をいれた状態で「チェックイン」「チェックアウト」を押すと、そのタイミングで対応するメールが送信されます。【自動メール配信設定】で自動送信を「行わない」設定にしている場合、チェックを入れていてもメールは送信されません</td></tr>
           </table>
           <div class="callout tip"><span class="label">ヒント</span>料金明細・領収書を発行する場合は「領収書発行」ボタンから発行できます。宛名と備考欄以外の記載内容の修正が必要な場合は、予約詳細ページから発行してください。</div>
+
+          <h3 class="sub">部屋ごとのチェックイン（複数部屋の予約）</h3>
+          <p>複数部屋の予約では、予約詳細の右上のステータスから「チェックイン済みにする」を選び、チェックインする部屋だけを選んで実行できます。取り消す場合は、同じメニューの「チェックインを取り消す」で取り消す部屋を選びます。</p>
+          <p>チェックイン通知は、全部屋を選んだ場合だけ送れます。チェックイン日より前に実行すると「チェックイン日ではありませんが、チェックインしますか？」と確認が出ます（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-59-status-menu-checkin.jpg" target="_blank" rel="noopener"><img src="screenshots/front-59-status-menu-checkin.jpg" alt="予約詳細の右上のステータスを開いたメニュー（チェックイン済みにする、キャンセルする、削除する）のスクリーンショット"></a>
+            <figcaption>予約詳細の右上のステータス（「未チェックイン」）を押すと開くメニュー。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-60-room-checkin-select.jpg" target="_blank" rel="noopener"><img src="screenshots/front-60-room-checkin-select.jpg" alt="チェックイン済みにするでチェックインする部屋だけを選ぶ画面のスクリーンショット"></a>
+            <figcaption>「チェックイン済みにする」で、チェックインする部屋を選ぶ画面。この例ではBEKKAN 1だけを選んでいます。「全ての部屋を選択している場合のみ通知が可能です。」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-61-partial-checkin.jpg" target="_blank" rel="noopener"><img src="screenshots/front-61-partial-checkin.jpg" alt="一部の部屋だけチェックインし、ステータスが一部チェックインになった予約詳細のスクリーンショット"></a>
+            <figcaption>一部の部屋だけチェックインした状態。ステータスが「一部チェックイン」になります。「重要」の共有事項があるため、「共有事項をご確認ください。」も表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-62-checkin-undo-select.jpg" target="_blank" rel="noopener"><img src="screenshots/front-62-checkin-undo-select.jpg" alt="チェックインを取り消すで取り消す部屋を選ぶ画面のスクリーンショット"></a>
+            <figcaption>「チェックインを取り消す」で、取り消す部屋を選ぶ画面。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
         </div>
       </section>
 
