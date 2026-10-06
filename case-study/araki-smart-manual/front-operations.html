@@ -734,6 +734,15 @@
             <a href="screenshots/front-08-billing-registered.jpg" target="_blank" rel="noopener"><img src="screenshots/front-08-billing-registered.jpg" alt="料金登録後の料金詳細と、未収金が赤字で表示された料金・精算情報のスクリーンショット"></a>
             <figcaption>登録後の《料金詳細》。精算前は《料金・精算情報》欄に未収金が赤字で表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-82-charge-item-reset.jpg" target="_blank" rel="noopener"><img src="screenshots/front-82-charge-item-reset.jpg" alt="料金追加の画面で料金科目を選んだ直後に単価が0に戻った状態のスクリーンショット"></a>
+            <figcaption>手順2：料金科目を選んだ直後の《新規料金情報》。先に入力していた単価が0に戻り、「保存する」ボタンはまだ表示されていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-83-charge-input.jpg" target="_blank" rel="noopener"><img src="screenshots/front-83-charge-input.jpg" alt="料金科目と単価を入力し保存するボタンが表示された料金追加の画面のスクリーンショット"></a>
+            <figcaption>料金科目・単価を入力した状態。必要な項目がそろうと「保存する」ボタンが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout tip"><span class="label">ヒント</span>料金科目を選ぶと、先に入力した単価が0に戻りました（2026/10/06確認）。料金科目を選んでから単価を入力してください。「保存する」ボタンは、必要な項目がそろうと表示されます。</div>
           <table class="field">
             <caption>料金登録の入力項目</caption>
             <tr><th>料金科目</th><td>宿泊費／食事代など売上の内訳区分</td></tr>
@@ -764,12 +773,95 @@
             <a href="screenshots/front-14-payment-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-14-payment-done.jpg" alt="精算完了後に支払い情報が登録された状態のスクリーンショット"></a>
             <figcaption>精算完了後。《支払い情報》に日付・金額・種別・支払方法が登録され、未収金の表示が消えます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
+          <p>支払い方法の種別は「現金／決済代行サービス／クレジットカード／電子マネー／ID決済／行政補助金／その他」です。支払日の初期値は当日で、宿泊期間外の日付のまま保存すると「支払日が宿泊期間外に指定されています。保存を続行してよろしいですか？」と確認が出ました（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-84-select-payment-check.jpg" target="_blank" rel="noopener"><img src="screenshots/front-84-select-payment-check.jpg" alt="料金詳細で精算する部屋の明細にチェックを入れた状態のスクリーンショット"></a>
+            <figcaption>《料金詳細》で、精算する部屋（明細）にチェックを入れた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-85-select-payment-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-85-select-payment-dialog.jpg" alt="選択精算で開いた精算画面（チェックした分だけが支払額）のスクリーンショット"></a>
+            <figcaption>「選択精算」で開く精算画面。チェックした分だけが支払額になります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-86-select-payment-date.jpg" target="_blank" rel="noopener"><img src="screenshots/front-86-select-payment-date.jpg" alt="選択精算の画面で支払日をチェックイン日の11/20に変えた状態のスクリーンショット"></a>
+            <figcaption>支払日をチェックイン日（11/20）に変えた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-87-select-payment-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-87-select-payment-done.jpg" alt="選択精算後の料金・精算情報（支払い情報に1行追加、精算済みの明細はグレー）のスクリーンショット"></a>
+            <figcaption>精算後。《支払い情報》に1行追加され、精算済みの明細はチェックボックスがグレーになり選べなくなります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
           <h3 class="sub">金額を指定して精算する方法</h3>
           <ol class="steps">
             <li>「特殊精算（金額指定）」をクリックします。</li>
             <li>内訳（利用科目指定／金額指定／部屋指定）、支払い方法（事前決済／現地決済）、支払い日、金額を入力し「保存する」をクリックします。</li>
           </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-88-special-payment-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-88-special-payment-dialog.jpg" alt="特殊精算（金額指定）で開いた未収金の支払い画面（宿泊期間外ですの表示あり）のスクリーンショット"></a>
+            <figcaption>「特殊精算（金額指定）」で開く「未収金の支払い」画面。内訳は「料金科目指定／金額指定／部屋指定」から選びます。支払い日が宿泊期間外だと「宿泊期間外です」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-89-special-payment-filled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-89-special-payment-filled.jpg" alt="金額指定で3,000円、支払い日11/20を入力した未収金の支払い画面のスクリーンショット"></a>
+            <figcaption>金額指定で¥3,000、支払い日を11/20にした状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-90-special-payment-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-90-special-payment-done.jpg" alt="特殊精算後の料金・精算情報（総支払額・未収金が更新され、支払い情報に2行目が追加）のスクリーンショット"></a>
+            <figcaption>精算後。総支払額・未収金が更新され、《支払い情報》に2行目が追加されます。料金詳細の一番下には「未登録」の行ができています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-91-partial-payment-rows.jpg" target="_blank" rel="noopener"><img src="screenshots/front-91-partial-payment-rows.jpg" alt="料金詳細の未登録の行の中身（一部支払い済みの明細がマイナス3,000円とプラス3,000円の2件）のスクリーンショット"></a>
+            <figcaption>「未登録」の行を開いた中身。「一部支払い済み」の明細が−¥3,000と＋¥3,000の2件入っています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout warn"><span class="label">注意</span>金額指定で精算すると、料金詳細の一番下に部屋に紐づかない「未登録」の行が作られ、その中に「一部支払い済み」という調整用の明細が2件入ります（2026/10/06確認）。誤って登録された料金ではないので、削除しないでください。</div>
           <div class="callout tip"><span class="label">ヒント</span>複数部屋にまたがる未収金がある場合は、対象部屋・対象日を個別にチェックして精算範囲を絞り込めます。</div>
+
+          <h3 class="sub">予約に紐づかない売上（予約外_料金・精算機能）</h3>
+          <ol class="steps">
+            <li>左メニューの「売上管理」→「予約外_料金・精算機能」を開き、「新規作成」を押します。</li>
+            <li>物件・予約経路・法人団体を選んで「次へ」を押します。</li>
+            <li>「料金情報を追加する」で料金を登録します。</li>
+            <li>「精算をする」で支払いを登録し、「閉じる」で一覧に戻ります。</li>
+          </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-92-independent-bill-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-92-independent-bill-list.jpg" alt="予約外_料金・精算機能の一覧（登録前）のスクリーンショット"></a>
+            <figcaption>手順1：【売上管理】＞【予約外_料金・精算機能】の一覧（登録前）。「新規作成」から登録します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-93-independent-bill-new.jpg" target="_blank" rel="noopener"><img src="screenshots/front-93-independent-bill-new.jpg" alt="新規作成で開いた選択画面（物件・予約経路・法人・団体）のスクリーンショット"></a>
+            <figcaption>「新規作成」で開く選択画面（物件・予約経路・法人・団体）。物件の初期値は「種子島あらきホテル」です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-94-independent-bill-route.jpg" target="_blank" rel="noopener"><img src="screenshots/front-94-independent-bill-route.jpg" alt="物件を種子島あらき別館、予約経路をその他にした選択画面のスクリーンショット"></a>
+            <figcaption>手順2：物件を「種子島あらき別館」、予約経路を「その他」にした状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-95-independent-bill-empty.jpg" target="_blank" rel="noopener"><img src="screenshots/front-95-independent-bill-empty.jpg" alt="次への後の伝票画面（まだ料金がない状態）のスクリーンショット"></a>
+            <figcaption>「次へ」の後の伝票画面。まだ料金がない状態です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-96-independent-charge-form.jpg" target="_blank" rel="noopener"><img src="screenshots/front-96-independent-charge-form.jpg" alt="予約外の伝票で開いた料金情報の入力画面のスクリーンショット"></a>
+            <figcaption>手順3：「料金情報を追加する」で開く《新規料金情報》。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-97-independent-charge-filled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-97-independent-charge-filled.jpg" alt="単価500円と備考を入力した料金情報の入力画面のスクリーンショット"></a>
+            <figcaption>単価¥500と備考を入力した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-98-independent-charge-added.jpg" target="_blank" rel="noopener"><img src="screenshots/front-98-independent-charge-added.jpg" alt="料金登録後の伝票（未収金500円）のスクリーンショット"></a>
+            <figcaption>料金登録後の伝票。未収金が¥500と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-99-independent-payment.jpg" target="_blank" rel="noopener"><img src="screenshots/front-99-independent-payment.jpg" alt="精算をするで開いた未収金の支払い画面（内訳は料金科目指定と金額指定）のスクリーンショット"></a>
+            <figcaption>手順4：「精算をする」で開く「未収金の支払い」画面。内訳は「料金科目指定／金額指定」から選びます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-100-independent-paid.jpg" target="_blank" rel="noopener"><img src="screenshots/front-100-independent-paid.jpg" alt="精算後の伝票（支払いの行が追加）のスクリーンショット"></a>
+            <figcaption>精算後の伝票。支払いの行が追加されます。「閉じる」で一覧に戻ります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-101-independent-bill-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-101-independent-bill-result.jpg" alt="一覧に戻った状態（管理番号・料金合計・支払い方法・入金合計・未収金）のスクリーンショット"></a>
+            <figcaption>一覧に戻った状態。管理番号・料金合計・支払い方法・入金合計・未収金が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout warn"><span class="label">注意</span>新規作成の物件の初期値は「種子島あらきホテル」でした。別館の売上は物件を切り替えてから登録してください。「次へ」を押した時点で空の伝票が作られます。料金科目は現在「宿泊費」だけが登録されていて、物販などで使う場合は科目の追加が必要です（2026/10/06確認）。</div>
         </div>
       </section>
 
