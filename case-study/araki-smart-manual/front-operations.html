@@ -753,18 +753,42 @@
             <li>【売上管理】＞【日次締め機能】を開きます。</li>
             <li>対象物件と日次締め時刻を確認・選択します。</li>
             <li>注意事項を読み、「日次締め機能を有効化する」を実行します。</li>
+          </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-43-daily-closing-disabled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-43-daily-closing-disabled.jpg" alt="有効化前の日次締め画面（日次締め機能が有効化されていません、対象物件、日次締め時刻 毎日04:00、日次締め機能を有効化するボタン）のスクリーンショット"></a>
+            <figcaption>手順2〜3：有効化前の日次締め画面。「日次締め機能が有効化されていません」と表示され、対象物件と日次締め時刻（初期値は毎日04:00）を確認して「日次締め機能を有効化する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <p>「日次締め機能を有効化する」を押すと、ブラウザ標準の確認画面で「（物件名）の日次締め機能を有効化しますか？／一度有効化した場合、管理画面から無効化はできません。」と表示されました（2026/10/06確認）。</p>
+          <ol class="steps" start="4" style="counter-reset:step 3;">
             <li>担当者が締め画面を開けることと、決めた時刻・運用ルールを確認します。</li>
           </ol>
+          <div class="callout warn"><span class="label">注意</span>日次締め機能は、一度有効化すると管理画面から無効化できません。また、有効化した時点ですでにその日の締め時刻を過ぎていると、前日以前の分がその場で締め済みになりました（2026/10/06確認）。締め済みの日の予約・料金・精算は変更できなくなるため、有効化する前に、直しておくべき予約や精算が残っていないか確認してください。</div>
 
           <h3 class="sub">毎日の締め処理</h3>
+          <p>有効化後の日次締め画面には締めを実行するボタンはなく、設定した日次締め時刻に前日分が自動で締められました（2026/10/06確認）。日次締め画面では、締めの前に注意が必要な予約、精算情報、前受金情報を確認できます。最新の状態は「再取得」で読み込み直します。締め時刻の前にこの画面を確認し、注意点のある予約がないことを確かめてください。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-44-daily-closing-enabled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-44-daily-closing-enabled.jpg" alt="有効化後の日次締め画面（今日の日付、再取得と取得日時、注意点のある予約の一覧、精算情報、前受金情報）のスクリーンショット"></a>
+            <figcaption>有効化後の日次締め画面。今日の日付、「再取得」と取得日時、注意点のある予約の一覧（チェックインコード・ゲスト名など）、精算情報、前受金情報が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
           <ol class="steps">
             <li>【売上管理】＞【日次締め機能】にアクセスします。</li>
             <li>締め前に対応が必要な予約がないか確認します。対応が必要な予約がある場合、該当予約とエラーメッセージが表示されます。表示されているチェックインコードをクリックして該当予約の詳細を開き、対応します。</li>
             <li>精算情報にて、支払い方法別の金額が表示されるので、レジと金額が一致しているか確認します。</li>
-            <li>②と③に問題がなければ「日次締めを行う」を押して締めを行います。</li>
+            <li>②と③で問題があれば、締め時刻までに対応します。締めは、設定した日次締め時刻に自動で行われました（2026/10/06確認）。</li>
           </ol>
           <div class="callout warn"><span class="label">注意</span>日次締め済みのデータは変更できません。締める前に、当日分の予約・精算内容に誤りがないか必ず確認してください。</div>
-          <div class="callout tip"><span class="label">確認環境の状態</span>2026年9月18日の実画面では日次締め機能は無効でした。施設方針が確定するまでは有効化せず、ドラフト手順として扱ってください。</div>
+
+          <h3 class="sub">締めた後の状態</h3>
+          <p>締めが行われると、客室の状況表の日付が翌日に進みます。締め済みの日の予約詳細には「チェックイン日時が日次締めされているため、変更できません。」と表示され、日程やプランなどを変更できなくなります（2026/10/06確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-45-room-indicator-after-closing.jpg" target="_blank" rel="noopener"><img src="screenshots/front-45-room-indicator-after-closing.jpg" alt="締め後の客室の状況表（日付が翌日に進み、前日チェックアウトの部屋が清掃待ち）のスクリーンショット"></a>
+            <figcaption>締め後の【客室の状況表】。日付が翌日（10/6）に進み、前日にチェックアウトした部屋が「清掃待ち」になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-46-reserve-locked-after-closing.jpg" target="_blank" rel="noopener"><img src="screenshots/front-46-reserve-locked-after-closing.jpg" alt="締め済みの日の予約詳細（チェックイン日時が日次締めされているため、変更できませんと表示）のスクリーンショット"></a>
+            <figcaption>締め済みの日の予約詳細。「チェックイン日時が日次締めされているため、変更できません。」と表示され、日程やプランを変更できません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <div class="callout tip"><span class="label">確認環境の状態</span>種子島あらき別館：2026/10/06に日次締め機能を有効化（締め時刻は毎日04:00）。種子島あらきホテル：未有効化。</div>
         </div>
       </section>
 
