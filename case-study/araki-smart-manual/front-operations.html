@@ -989,16 +989,62 @@
       <!-- SCENE 9 -->
       <section class="scene" id="s9">
         <h2><span class="scene-num">9</span>部屋のブロック</h2>
-        <p class="path"><b>物件管理</b> ＞ 物件情報 ＞ 対象部屋の詳細 ＞ <b>ブロック設定</b></p>
+        <p class="path"><b>物件管理</b> ＞ 部屋情報 ＞ 詳細を見る ＞ <b>ブロック設定</b></p>
         <p class="lede">お部屋のメンテナンスや備品の故障など、一時的にお部屋の利用を停止したい場合はブロック機能を利用します。ブロックをした部屋には部屋割りができなくなります。</p>
         <div class="body">
+          <p>ブロックは部屋ごとの詳細画面の〖ブロック設定〗で設定します。部屋割り表のマスからは設定できませんでした（2026/10/07確認）。</p>
           <ol class="steps">
-            <li>【物件管理】＞【物件情報】から、ブロックを行いたい部屋の詳細に入ります。</li>
-            <li>［ブロック設定］にて、ブロックを行いたい期間を日時（開始日時〜終了日時）で指定します。複数期間をブロックする場合は「ブロック期間を追加する」から追加できます。</li>
+            <li>【物件管理】＞【部屋情報】の一覧で、ブロックしたい部屋の「詳細を見る」を押します。</li>
+            <li>〖ブロック設定〗で「ブロック期間を追加する」を押して行を追加します。</li>
+            <li>期間の欄を押し、カレンダーで開始日・終了日を選んで「OK」を押します。メモ欄にブロックの理由を入力します。</li>
             <li>「変更を保存する」で確定します。</li>
           </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-103-room-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-103-room-list.jpg" alt="物件管理の部屋情報の一覧のスクリーンショット"></a>
+            <figcaption>手順1：【物件管理】＞【部屋情報】の一覧。ブロックしたい部屋の「詳細を見る」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-104-room-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-104-room-detail.jpg" alt="部屋詳細のブロック設定欄（ブロック期間を追加するボタン）のスクリーンショット"></a>
+            <figcaption>部屋詳細の画面。下のほうに〖ブロック設定〗欄があります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-105-block-added.jpg" target="_blank" rel="noopener"><img src="screenshots/front-105-block-added.jpg" alt="ブロック期間を追加するで行を追加した状態（期間とメモの欄）のスクリーンショット"></a>
+            <figcaption>手順2：「ブロック期間を追加する」で行を追加した状態。期間とメモの欄が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-106-block-period-picker.jpg" target="_blank" rel="noopener"><img src="screenshots/front-106-block-period-picker.jpg" alt="ブロック期間のカレンダー（開始日・終了日を選んでOK）のスクリーンショット"></a>
+            <figcaption>手順3：期間の欄を押すとカレンダーが開きます。開始日・終了日を選んで「OK」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-107-block-memo.jpg" target="_blank" rel="noopener"><img src="screenshots/front-107-block-memo.jpg" alt="ブロックの期間とメモを入力した状態のスクリーンショット"></a>
+            <figcaption>期間とメモ（ブロックの理由）を入力した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-108-block-saved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-108-block-saved.jpg" alt="ブロック設定を保存した後の部屋詳細のスクリーンショット"></a>
+            <figcaption>手順4：「変更を保存する」を押した後の部屋詳細。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <p>ブロック中の部屋は部屋割り表で紫色になり、予約者名の代わりにメモが表示されます（2026/10/07確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-102-allocation-table.jpg" target="_blank" rel="noopener"><img src="screenshots/front-102-allocation-table.jpg" alt="ブロック前の部屋割り表のスクリーンショット"></a>
+            <figcaption>ブロック前の部屋割り表。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-109-block-on-allocation.jpg" target="_blank" rel="noopener"><img src="screenshots/front-109-block-on-allocation.jpg" alt="部屋割り表でブロックが紫色に表示された状態のスクリーンショット"></a>
+            <figcaption>ブロック後の部屋割り表。ブロックした期間が紫色になり、メモが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+
+          <h3 class="sub">ブロックを解除する</h3>
+          <p>同じ部屋詳細の〖ブロック設定〗で、解除する行の「×」を押してから「変更を保存する」を押します。確認画面は出ませんでした（2026/10/07確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-110-block-row-removed.jpg" target="_blank" rel="noopener"><img src="screenshots/front-110-block-row-removed.jpg" alt="ブロック設定の行を×で消した状態のスクリーンショット"></a>
+            <figcaption>「×」で行を消した状態。このあと「変更を保存する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <figure class="screenshot">
+            <a href="screenshots/front-111-allocation-unblocked.jpg" target="_blank" rel="noopener"><img src="screenshots/front-111-allocation-unblocked.jpg" alt="ブロック解除後の部屋割り表のスクリーンショット"></a>
+            <figcaption>解除後の部屋割り表。紫色の表示が消えています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
           <div class="callout warn"><span class="label">注意</span>すでに予約が入っている期間や、日次締めが完了している期間はブロック設定ができません。</div>
-          <div class="callout tip"><span class="label">確認状況</span>この導線と手順は公式フロント運用PDFで確認しています。確認環境には部屋データがなく、現在の実画面でのボタン位置と表示文言は未検証です。</div>
+          <div class="callout tip"><span class="label">確認状況</span>導線・ボタン名・表示は実画面で確認しました（2026/10/07確認）。上の「すでに予約が入っている期間や、日次締めが完了している期間はブロック設定ができません」は公式フロント運用PDFの記載で、実画面では未確認です。</div>
         </div>
       </section>
 
@@ -1026,27 +1072,36 @@
           <div class="callout warn"><span class="label">注意</span>日次締め機能は、一度有効化すると管理画面から無効化できません。また、有効化した時点ですでにその日の締め時刻を過ぎていると、前日以前の分がその場で締め済みになりました（2026/10/06確認）。締め済みの日の予約・料金・精算は変更できなくなるため、有効化する前に、直しておくべき予約や精算が残っていないか確認してください。</div>
 
           <h3 class="sub">毎日の締め処理</h3>
-          <p>有効化後の日次締め画面には締めを実行するボタンはなく、設定した日次締め時刻に前日分が自動で締められました（2026/10/06確認）。日次締め画面では、締めの前に注意が必要な予約、精算情報、前受金情報を確認できます。最新の状態は「再取得」で読み込み直します。締め時刻の前に責任者がこの画面を確認し、注意点のある予約がないことを確かめてください。</p>
+          <p>日次締め画面には、まだ締めていない日付（対象日）が表示されます。締め時刻（別館は毎日04:00）を過ぎると、画面の一番下に「日次の締めを行う」ボタンが表示されます。締め時刻の前はボタンが表示されず、締め時刻を過ぎても自動では締められません（2026/10/07確認）。日次締め画面では、締めの前に注意が必要な予約、精算情報、前受金情報を確認できます。最新の状態は「再取得」で読み込み直します。締めは責任者が行います。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-44-daily-closing-enabled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-44-daily-closing-enabled.jpg" alt="有効化後の日次締め画面（今日の日付、再取得と取得日時、注意点のある予約の一覧、精算情報、前受金情報）のスクリーンショット"></a>
-            <figcaption>有効化後の日次締め画面。今日の日付、「再取得」と取得日時、注意点のある予約の一覧（チェックインコード・ゲスト名など）、精算情報、前受金情報が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+            <a href="screenshots/front-44-daily-closing-enabled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-44-daily-closing-enabled.jpg" alt="有効化後の日次締め画面（対象日、再取得と取得日時、注意点のある予約の一覧、精算情報、前受金情報）のスクリーンショット"></a>
+            <figcaption>有効化後の日次締め画面（締め時刻の前）。対象日（まだ締めていない日付）、「再取得」と取得日時、注意点のある予約の一覧（チェックインコード・ゲスト名など）、精算情報、前受金情報が表示されます。締め時刻の前のため、「日次の締めを行う」ボタンは表示されていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <ol class="steps">
-            <li>【売上管理】＞【日次締め機能】にアクセスします。</li>
+            <li>締め時刻を過ぎたら、【売上管理】＞【日次締め機能】を開き、「再取得」で最新の状態にします。</li>
             <li>締め前に対応が必要な予約がないか確認します。対応が必要な予約がある場合、該当予約とエラーメッセージが表示されます。表示されているチェックインコードをクリックして該当予約の詳細を開き、対応します。</li>
             <li>精算情報にて、支払い方法別の金額が表示されるので、レジと金額が一致しているか確認します。</li>
-            <li>②と③で問題があれば、締め時刻までに対応します。締めは、設定した日次締め時刻に自動で行われました（2026/10/06確認）。</li>
+            <li>前受金情報もあわせて確認し、②と③に問題がなければ、画面の一番下の「日次の締めを行う」を押します。問題があれば、先に対応してから押します。</li>
           </ol>
+          <figure class="screenshot">
+            <a href="screenshots/front-112-daily-closing-button.jpg" target="_blank" rel="noopener"><img src="screenshots/front-112-daily-closing-button.jpg" alt="締め時刻を過ぎた後の日次締め画面（対象日10/06、予約外の精算500円、日次の締めを行うボタン）のスクリーンショット"></a>
+            <figcaption>締め時刻を過ぎた後の日次締め画面。対象日は10/06で、精算情報に予約外の精算（現金¥500）が表示され、画面の一番下に「日次の締めを行う」ボタンが表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
+          <p>「日次の締めを行う」を押すと、ブラウザ標準の確認画面で「（物件名）の（日付）分の売上・売掛金を締めますか？」と表示されます。OKすると対象日が翌日に進み、「集計処理中期間」が表示されました（2026/10/07確認）。</p>
+          <figure class="screenshot">
+            <a href="screenshots/front-113-daily-closing-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-113-daily-closing-done.jpg" alt="締めた後の日次締め画面（対象日が10/07に進み、集計処理中期間を表示）のスクリーンショット"></a>
+            <figcaption>締めた後の日次締め画面。対象日が10/07に進み、「集計処理中期間：2026/10/06〜2026/10/07」と表示されます。「日次の締めを行う」ボタンは消えます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+          </figure>
           <table class="field">
             <caption>日次締め画面に表示される注意の例と対応</caption>
             <tr><th>チェックイン漏れ</th><td>表示例：「チェックイン予定の予約ですが、チェックイン済みになっていません。」<br>お客様が到着済みであれば、チェックイン処理をします（<a href="#s8">シーン8</a>）。来館がない場合は、施設ルールに沿ってノーショーやキャンセルとして扱います（<a href="#s4">シーン4「予約のキャンセル」</a>）。</td></tr>
             <tr><th>未収金の残り</th><td>表示例：「チェックアウト済みですが、未収金が残っています。」<br>料金詳細と支払い情報を確認し、精算を登録します（<a href="#s6">シーン6</a>）。</td></tr>
           </table>
           <div class="callout tip"><span class="label">確認状況</span>表示例の文言は公式フロント運用マニュアルの画面例によるもので、現在の実画面ではまだ確認できていません（2026/10/06時点では「注意点のある予約はありません」と表示）。実際の文言が違う場合は、この表を更新してください。</div>
-          <div class="callout warn"><span class="label">注意</span>日次締め済みのデータは変更できません。締め時刻（別館は毎日04:00）になると前日分が締められるため、それまでに、締められる日の予約・精算内容に誤りがないか必ず確認してください。</div>
+          <div class="callout warn"><span class="label">注意</span>日次締め済みのデータは変更できません。「日次の締めを行う」を押す前に、締める日（対象日）の予約・精算内容に誤りがないか必ず確認してください。</div>
 
           <h3 class="sub">締めた後の状態</h3>
-          <p>締めが行われると、客室の状況表の日付が翌日に進みます。締め済みの日の予約詳細には「チェックイン日時が日次締めされているため、変更できません。」と表示され、日程やプランなどを変更できなくなります（2026/10/06確認）。</p>
+          <p>締めが行われると、客室の状況表の日付が翌日に進みます。締めるまでは、客室の状況表の日付は締めていない日のままです（2026/10/07確認）。締め済みの日の予約詳細には「チェックイン日時が日次締めされているため、変更できません。」と表示され、日程やプランなどを変更できなくなります（2026/10/06確認）。</p>
           <figure class="screenshot">
             <a href="screenshots/front-45-room-indicator-after-closing.jpg" target="_blank" rel="noopener"><img src="screenshots/front-45-room-indicator-after-closing.jpg" alt="締め後の客室の状況表（日付が翌日に進み、前日チェックアウトの部屋が清掃待ち）のスクリーンショット"></a>
             <figcaption>締め後の【客室の状況表】。日付が翌日（10/6）に進み、前日にチェックアウトした部屋が「清掃待ち」になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
