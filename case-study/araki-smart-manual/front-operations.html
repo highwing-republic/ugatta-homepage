@@ -439,7 +439,7 @@
             <a href="screenshots/front-05-reserve-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-05-reserve-detail.jpg" alt="予約を登録した後に表示される予約詳細画面のスクリーンショット"></a>
             <figcaption>画面下部の「予約を登録する」を押した後に表示される予約詳細画面。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
-          <div class="callout tip"><span class="label">ヒント</span>プラン未選択で予約を作成した際、「金額変更」に入力した金額が料金として登録されないことがありました（2026/10/05確認）。登録後は予約詳細の《料金詳細》で金額を確認し、0円の場合は「料金追加」から登録してください。</div>
+          <div class="callout tip"><span class="label">ヒント</span>プランを選ばずに予約を作成した場合、「金額変更」に入力した金額は料金として登録されませんでした（2026/10/05・10/07の2回確認）。公式マニュアルではプラン料金を使う予約で金額変更が反映されると説明されています。プランを使わない予約では、登録後に予約詳細の「料金追加」から宿泊費を登録してください。また、金額変更に入力したあと「人数変更」に切り替えると、入力した金額が消えることがありました。</div>
 
           <h3 class="sub">既存の予約をコピーして作る</h3>
           <p>予約詳細の右上の「予約をコピー」を押すと、内容を引き継いだ新規予約画面が別タブで開きます。日程と予約経路を入れ直してから「予約を登録する」を押します。</p>
@@ -521,7 +521,7 @@
             <a href="screenshots/front-80-filter-search-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-80-filter-search-result.jpg" alt="本日登録された予約で絞り込んだ検索結果のスクリーンショット"></a>
             <figcaption>「本日登録された予約」で絞り込んだ結果。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
-          <div class="callout warn"><span class="label">注意</span>作成した直後の予約が、スマート予約検索ですぐには見つからないことがありました（2026/10/06確認）。見つからない場合は、絞り込み検索で探してください。</div>
+          <div class="callout warn"><span class="label">注意</span>作成した直後の予約が、スマート予約検索ですぐには見つからないことがありました（2026/10/06確認）。スマート予約検索は、登録・取り込みから約3分間は検索に出ないことがあります（公式オンラインマニュアルより）。見つからない場合は、絞り込み検索で探してください。</div>
 
           <h3 class="sub">宿泊期間の変更</h3>
           <p>《予約情報》欄より変更可能です。チェックイン日はクリックして表示されるポップアップで変更後の日付を入力し「移動する」を押します。ポップアップには「日程の移動に合わせて料金の利用日が変更されます」と固定の説明文が表示され、チェックボックスは「ブロックや他の予約との重複が発生する部屋割りを解除する」の1つだけで、初期値でチェック済みでした（2026/10/05確認）。不要な場合のみ外します。チェックイン日の移動では泊数を保ったまま日程全体がずれ、「移動する」を押すとその場で保存されました（2026/10/05確認）。チェックアウト日は直接入力または「カレンダー入力」から選択します。チェックアウト日や泊数の変更は、画面下に表示される「変更を保存する」を押すまで保存されませんでした（2026/10/05確認）。複数部屋で部屋ごとに期間が異なる場合は「部屋毎に設定する」から個別に変更します。</p>
@@ -550,6 +550,7 @@
             <figcaption>「移動する」を押した後の予約詳細。日程が11/11〜11/14（3泊）になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>中抜け（連泊中の一部の日だけ部屋を空ける）が発生する場合は、《宿泊変更》の「部屋変更」で該当日の部屋をクリックし「割当解除」→ 再度クリックして「日程削除」→ 削除したい期間にチェックを入れて「削除する」の順に操作します。</p>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>チェックアウト日の延長は、《宿泊変更》の「部屋変更」で「全部屋の日数を追加」（部屋ごとに変える場合は「n部屋目のみ日数を追加」）を押し、追加する日数を入れて「追加する」でも行えます。</div>
           <div class="callout tip"><span class="label">ヒント</span>日付の欄にキーボードで数字を直接入力すると、入力途中の値に反応して警告が出ることがありました（2026/10/05確認）。泊数を変えるか、カレンダーから選ぶと確実です。</div>
 
           <h3 class="sub">部屋の追加／削除</h3>
@@ -606,6 +607,7 @@
             <a href="screenshots/front-65-room-changed.jpg" target="_blank" rel="noopener"><img src="screenshots/front-65-room-changed.jpg" alt="ルームチェンジで部屋を入れ替えた後の予約詳細のスクリーンショット"></a>
             <figcaption>入れ替え後の予約詳細。1部屋目がBEKKAN 2、2部屋目がBEKKAN 1に入れ替わりました（画像では部屋番号の欄が途中までしか表示されていません）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>ルームチェンジは、客室の状況表で部屋をクリックした詳細からも操作できます。変更先の候補は「空室 → 同じ部屋タイプ → 自動部屋割りの優先順 → 定員の小さい順」で表示されます。部屋割りが済んでいない予約ではボタンが表示されません。</div>
 
           <h3 class="sub">予約の分割</h3>
           <p>複数部屋の予約を部屋ごとの予約に分けるときは、予約詳細の右上の「予約を分割」を押します。分割後の予約ごとに代表者氏名・連絡先を確認し、「保存」を押します。</p>
@@ -626,6 +628,7 @@
             <a href="screenshots/front-69-split-result-2.jpg" target="_blank" rel="noopener"><img src="screenshots/front-69-split-result-2.jpg" alt="分割後の2件目の予約詳細（リピートメモは引き継がれていない）のスクリーンショット"></a>
             <figcaption>分割後の2件目の予約。リクエストとオペレーターメモは引き継がれ、リピートメモは引き継がれていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>3部屋以上の予約では、分割画面で部屋をドラッグ＆ドロップして、一部の部屋を同じ予約にまとめられます。</div>
 
           <h3 class="sub">予約の統合・グルーピング</h3>
           <p>【予約情報】の一覧でまとめたい予約にチェックを入れ、「チェックした予約の統合またはグルーピング」を押すと、「これらの予約を統合する」「これらの予約をグルーピングする」のボタンが表示されます。</p>
@@ -736,13 +739,13 @@
           </figure>
           <figure class="screenshot">
             <a href="screenshots/front-82-charge-item-reset.jpg" target="_blank" rel="noopener"><img src="screenshots/front-82-charge-item-reset.jpg" alt="料金追加の画面で料金科目を選んだ直後に単価が0に戻った状態のスクリーンショット"></a>
-            <figcaption>手順2：料金科目を選んだ直後の《新規料金情報》。先に入力していた単価が0に戻り、「保存する」ボタンはまだ表示されていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
+            <figcaption>手順2：料金科目（宿泊費）を選んだ直後の《新規料金情報》。料金科目マスターの単価（0円）が自動で入るため、先に入力していた単価が0になりました。「保存する」ボタンはまだ表示されていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
             <a href="screenshots/front-83-charge-input.jpg" target="_blank" rel="noopener"><img src="screenshots/front-83-charge-input.jpg" alt="料金科目と単価を入力し保存するボタンが表示された料金追加の画面のスクリーンショット"></a>
             <figcaption>料金科目・単価を入力した状態。必要な項目がそろうと「保存する」ボタンが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
-          <div class="callout tip"><span class="label">ヒント</span>料金科目を選ぶと、先に入力した単価が0に戻りました（2026/10/06確認）。料金科目を選んでから単価を入力してください。「保存する」ボタンは、必要な項目がそろうと表示されます。</div>
+          <div class="callout tip"><span class="label">ヒント</span>料金科目を選ぶと、料金科目マスターに登録された単価・消費税が自動で入ります。この施設の「宿泊費」はマスターの単価が0円のため、先に入力した単価が0になりました（2026/10/06確認）。料金科目を選んでから単価を入力してください。「保存する」ボタンは、必要な項目がそろうと表示されます。</div>
           <table class="field">
             <caption>料金登録の入力項目</caption>
             <tr><th>料金科目</th><td>宿泊費／食事代など売上の内訳区分</td></tr>
@@ -751,6 +754,7 @@
             <tr><th>決済</th><td>決済連携している場合のみ表示・選択可能</td></tr>
           </table>
           <div class="cov-note">部屋別・日別に料金登録がない箇所は赤で表示されるため、登録漏れの目視確認に使えます。</div>
+          <div class="callout warn"><span class="label">注意</span>精算済みの料金は変更・削除できません。料金を直すときは、先に《支払い情報》の「詳細」から精算を削除し、その後に料金を変更・削除します（公式オンラインマニュアルより）。</div>
         </div>
       </section>
 
@@ -790,6 +794,7 @@
             <a href="screenshots/front-87-select-payment-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-87-select-payment-done.jpg" alt="選択精算後の料金・精算情報（支払い情報に1行追加、精算済みの明細はグレー）のスクリーンショット"></a>
             <figcaption>精算後。《支払い情報》に1行追加され、精算済みの明細はチェックボックスがグレーになり選べなくなります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
+          <p>精算済みの料金を直すときは、先に精算を削除する必要があります（<a href="#s5">シーン5</a>の注意を参照）。</p>
           <h3 class="sub">金額を指定して精算する方法</h3>
           <ol class="steps">
             <li>「特殊精算（金額指定）」をクリックします。</li>
@@ -862,6 +867,7 @@
             <figcaption>一覧に戻った状態。管理番号・料金合計・支払い方法・入金合計・未収金が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>新規作成の物件の初期値は「種子島あらきホテル」でした。別館の売上は物件を切り替えてから登録してください。「次へ」を押した時点で空の伝票が作られます。料金科目は現在「宿泊費」だけが登録されていて、物販などで使う場合は科目の追加が必要です（2026/10/06確認）。</div>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>伝票の「返金入力」で、料金と精算を1回の操作で取り消せます。料金科目は指定できないため、科目を指定したい場合はその科目でマイナスの料金を登録します。日次締め後の金額修正にも使います。</div>
         </div>
       </section>
 
@@ -891,6 +897,7 @@
             <figcaption>但し書きを入力した状態（例：「ご宿泊代」）。内容を確認したら「発行する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>チェックアウト日より前にチェックアウトした予約では、作成画面の「ご出発日」が実際にチェックアウトした日で表示されました（2026/10/05確認）。宛名・日付・但し書きは発行前に確認し、必要に応じて修正してください。</div>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>領収書は、客室の状況表の部屋の詳細からも発行できます。「領収項目に絞る」にチェックを入れると、現地決済など領収書の対象になる精算に紐づく項目だけで作成します。</div>
           <h3 class="sub">確認・発行</h3>
           <p>作成した書類は《履歴》に一覧表示され、「ダウンロード」からPDFを確認できます。ダウンロードしてメールなどで送付・印刷してお客様にお渡しください。HOTEL SMARTからの共有機能はありません。</p>
           <figure class="screenshot">
@@ -967,6 +974,7 @@
           <h3 class="sub">部屋ごとのチェックイン（複数部屋の予約）</h3>
           <p>複数部屋の予約では、予約詳細の右上のステータスから「チェックイン済みにする」を選び、チェックインする部屋だけを選んで実行できます。取り消す場合は、同じメニューの「チェックインを取り消す」で取り消す部屋を選びます。</p>
           <p>チェックイン通知は、全部屋を選んだ場合だけ送れます。チェックイン日より前に実行すると「チェックイン日ではありませんが、チェックインしますか？」と確認が出ます（2026/10/06確認）。</p>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>部屋ごとのチェックインを使うには、物件詳細の［部屋別チェックイン］を「許可する」にしておく必要があります（別館は設定済み）。タブレットでのチェックインでは部屋別にできません。</div>
           <figure class="screenshot">
             <a href="screenshots/front-59-status-menu-checkin.jpg" target="_blank" rel="noopener"><img src="screenshots/front-59-status-menu-checkin.jpg" alt="予約詳細の右上のステータスを開いたメニュー（チェックイン済みにする、キャンセルする、削除する）のスクリーンショット"></a>
             <figcaption>予約詳細の右上のステータス（「未チェックイン」）を押すと開くメニュー。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
@@ -1066,6 +1074,7 @@
             <a href="screenshots/front-111-allocation-unblocked.jpg" target="_blank" rel="noopener"><img src="screenshots/front-111-allocation-unblocked.jpg" alt="ブロック解除後の部屋割り表のスクリーンショット"></a>
             <figcaption>解除後の部屋割り表。紫色の表示が消えています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>日次締め済みの日付のブロックは変更・削除できません。ブロック中の部屋は予約詳細の部屋選択で「×」が付いて選べず、残室数（在庫）からも外れます。客室の状況表でも紫色で表示され、クリックすると部屋詳細（ブロック設定）が別タブで開きます。</div>
           <div class="callout warn"><span class="label">注意</span>すでに予約が入っている期間や、日次締めが完了している期間はブロック設定ができません。</div>
           <div class="callout tip"><span class="label">確認状況</span>導線・ボタン名・表示は実画面で確認しました（2026/10/07確認）。上の「すでに予約が入っている期間や、日次締めが完了している期間はブロック設定ができません」は公式フロント運用PDFの記載で、実画面では未確認です。</div>
         </div>
@@ -1092,7 +1101,7 @@
           <ol class="steps" start="4" style="counter-reset:step 3;">
             <li>担当者が締め画面を開けることと、決めた時刻・運用ルールを確認します。</li>
           </ol>
-          <div class="callout warn"><span class="label">注意</span>日次締め機能は、一度有効化すると管理画面から無効化できません。また、有効化した時点ですでにその日の締め時刻を過ぎていると、前日以前の分がその場で締め済みになりました（2026/10/06確認）。締め済みの日の予約・料金・精算は変更できなくなるため、有効化する前に、直しておくべき予約や精算が残っていないか確認してください。</div>
+          <div class="callout warn"><span class="label">注意</span>日次締め機能は、一度有効化すると管理画面から無効化できません。また、有効化した時点ですでにその日の締め時刻を過ぎていると、前日以前の分がその場で締め済みになりました（2026/10/06確認）。締め済みの日の予約・料金・精算は変更できなくなるため、有効化する前に、直しておくべき予約や精算が残っていないか確認してください。締め時刻は一度設定すると変更できません（公式オンラインマニュアルより）。</div>
 
           <h3 class="sub">毎日の締め処理</h3>
           <p>日次締め画面には、まだ締めていない日付（対象日）が表示されます。締め時刻（別館は毎日04:00）を過ぎると、画面の一番下に「日次の締めを行う」ボタンが表示されます。締め時刻の前はボタンが表示されず、締め時刻を過ぎても自動では締められません（2026/10/07確認）。日次締め画面では、締めの前に注意が必要な予約、精算情報、前受金情報を確認できます。最新の状態は「再取得」で読み込み直します。締めは責任者が行います。</p>
@@ -1115,6 +1124,7 @@
             <a href="screenshots/front-113-daily-closing-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-113-daily-closing-done.jpg" alt="締めた後の日次締め画面（対象日が10/07に進み、集計処理中期間を表示）のスクリーンショット"></a>
             <figcaption>締めた後の日次締め画面。対象日が10/07に進み、「集計処理中期間：2026/10/06〜2026/10/07」と表示されます。「日次の締めを行う」ボタンは消えます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>日次締め画面のエラー（注意点のある予約）は、チェックイン予定なのに未チェックイン、チェックアウト予定なのに未チェックアウト、チェックアウト済みで未収金が残っている、オプション販売が未承認、の予約が対象です。チェックインコードから予約詳細に移れます。</div>
           <table class="field">
             <caption>日次締め画面に表示される注意の例と対応</caption>
             <tr><th>チェックイン漏れ</th><td>表示例：「チェックイン予定の予約ですが、チェックイン済みになっていません。」<br>お客様が到着済みであれば、チェックイン処理をします（<a href="#s8">シーン8</a>）。来館がない場合は、施設ルールに沿ってノーショーやキャンセルとして扱います（<a href="#s4">シーン4「予約のキャンセル」</a>）。</td></tr>
@@ -1125,6 +1135,7 @@
 
           <h3 class="sub">締めた後の状態</h3>
           <p>締めが行われると、客室の状況表の日付が翌日に進みます。締めるまでは、客室の状況表の日付は締めていない日のままです（2026/10/07確認）。締め済みの日の予約詳細には「チェックイン日時が日次締めされているため、変更できません。」と表示され、日程やプランなどを変更できなくなります（2026/10/06確認）。</p>
+          <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>締め後も、料金科目の追加、チェックアウト日時の延長、食事区分の追加、メモの更新、メール送信、マイページからのお客様情報の更新はできます。締め後に金額の調整が必要な場合は、まだ締めていない日付で修正するか、予約外_料金・精算で登録します。</div>
           <figure class="screenshot">
             <a href="screenshots/front-45-room-indicator-after-closing.jpg" target="_blank" rel="noopener"><img src="screenshots/front-45-room-indicator-after-closing.jpg" alt="締め後の客室の状況表（日付が翌日に進み、前日チェックアウトの部屋が清掃待ち）のスクリーンショット"></a>
             <figcaption>締め後の【客室の状況表】。日付が翌日（10/6）に進み、前日にチェックアウトした部屋が「清掃待ち」になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
