@@ -7,68 +7,50 @@
 <title>HOTEL SMART フロント運用マニュアル（シーン別）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f5f6f4;
-    --panel:#ffffff;
-    --ink:#1c2622;
-    --ink-soft:#4d5a54;
-    --line:#dfe3df;
-    --accent:#2f6f5e;
-    --accent-soft:#e7f1ec;
-    --accent-ink:#1f4f42;
-    --warn-bg:#fdf3e7;
-    --warn-line:#e8b979;
-    --warn-ink:#7a4c15;
-    --tip-bg:#eef4fb;
-    --tip-line:#a9c7e6;
-    --tip-ink:#264a6e;
-    --code-bg:#eef0ec;
-    --shadow: 0 1px 2px rgba(28,38,34,.06);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#141815;
-      --panel:#1b211d;
-      --ink:#eef1ee;
-      --ink-soft:#a9b3ac;
-      --line:#2c332e;
-      --accent:#5fb89b;
-      --accent-soft:#1d2d27;
-      --accent-ink:#8fd3bc;
-      --warn-bg:#2b2416;
-      --warn-line:#7a5a26;
-      --warn-ink:#e8c078;
-      --tip-bg:#182530;
-      --tip-line:#2f4f6e;
-      --tip-ink:#a9cdf0;
-      --code-bg:#232b26;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#141815;
-    --panel:#1b211d;
-    --ink:#eef1ee;
-    --ink-soft:#a9b3ac;
-    --line:#2c332e;
-    --accent:#5fb89b;
-    --accent-soft:#1d2d27;
-    --accent-ink:#8fd3bc;
-    --warn-bg:#2b2416;
-    --warn-line:#7a5a26;
-    --warn-ink:#e8c078;
-    --tip-bg:#182530;
-    --tip-line:#2f4f6e;
-    --tip-ink:#a9cdf0;
-    --code-bg:#232b26;
+    /* Brand tokens matched to Shukuhaku DX Lab (lab.ugatta-llc.com, css/site-shell.css) */
+    --lab-font-sans:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    --lab-navy:#17324d;
+    --lab-navy-deep:#14293f;
+    --lab-teal:#2b6474;
+    --lab-teal-tint:#e7f1f3;
+    --lab-surface:#f5f7f8;
+    --lab-surface-soft:#eef2f5;
+    --lab-card:#fff;
+    --lab-white:#fff;
+    --lab-border:#dbe3e8;
+    --lab-border-strong:#c4d3dc;
+    --lab-ink:#22303b;
+    --lab-ink-soft:#5a6875;
+    --lab-gold:#b8913f;
+    --lab-gold-tint:#fff8e6;
+    --lab-gold-ink:#6e5324;
+
+    --bg:var(--lab-surface);
+    --panel:var(--lab-card);
+    --ink:var(--lab-ink);
+    --ink-soft:var(--lab-ink-soft);
+    --line:var(--lab-border);
+    --accent:var(--lab-teal);
+    --accent-soft:var(--lab-teal-tint);
+    --accent-ink:var(--lab-navy);
+    --warn-bg:var(--lab-gold-tint);
+    --warn-line:var(--lab-gold);
+    --warn-ink:var(--lab-gold-ink);
+    --tip-bg:var(--lab-surface-soft);
+    --tip-line:var(--lab-border-strong);
+    --tip-ink:var(--lab-navy);
+    --code-bg:var(--lab-surface-soft);
+    --shadow: 0 1px 2px rgba(23,50,77,.06);
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
     background:var(--bg);
     color:var(--ink);
-    font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+    font-family:var(--lab-font-sans);
     line-height:1.8;
     font-size:16px;
   }
@@ -102,7 +84,7 @@
   }
   header.hero .backlink:hover{color:var(--ink);}
   header.hero h1{
-    font-family:"Zen Maru Gothic","Zen Kaku Gothic New",sans-serif;
+    font-family:var(--lab-font-sans);
     font-weight:700;
     font-size:clamp(28px,4vw,40px);
     margin:10px 0 14px;
@@ -181,7 +163,7 @@
     font-size:13px;
     color:var(--ink-soft);
     margin:0 0 20px 40px;
-    font-family:monospace;
+    font-family:var(--lab-font-sans);
   }
   .path b{color:var(--accent-ink); font-weight:600;}
   .scene .lede{
@@ -312,8 +294,8 @@
 </style>
 </head>
 <body>
-<div style="background:#0d2c43;color:#fff;padding:.7rem 1rem;text-align:center;font-weight:700">
-  <a href="index.html" style="color:#fff">← かんたんフロントマニュアルのトップへ戻る</a>
+<div style="background:var(--lab-navy-deep);color:var(--lab-white);padding:.7rem 1rem;text-align:center;font-weight:700">
+  <a href="index.html" style="color:var(--lab-white)">← かんたんフロントマニュアルのトップへ戻る</a>
 </div>
 <div class="layout">
   <nav class="toc">
