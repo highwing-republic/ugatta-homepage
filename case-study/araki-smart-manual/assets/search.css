@@ -1,0 +1,99 @@
+/* かんたんフロントマニュアル サイト内検索（assets/search.js と組で使う）
+   色は manual.css と front-operations / startup の両方で定義されている --lab-* を使う */
+.site-search { position: relative; }
+.site-search-input {
+  width: 100%;
+  font: inherit;
+  font-size: .9rem;
+  padding: .45rem .75rem;
+  border-radius: 8px;
+  border: 1px solid var(--lab-border-strong, #c4d3dc);
+  background: var(--lab-card, #fff);
+  color: var(--lab-ink, #22303b);
+}
+.site-search-input:focus { outline: 3px solid rgba(43, 100, 116, .25); border-color: var(--lab-teal, #2b6474); }
+
+/* 濃い色のヘッダー・帯の中に置く検索ボックス */
+.site-search--dark .site-search-input {
+  background: rgba(255, 255, 255, .12);
+  border-color: rgba(255, 255, 255, .35);
+  color: var(--lab-white, #fff);
+}
+.site-search--dark .site-search-input::placeholder { color: rgba(255, 255, 255, .7); }
+.site-search--dark .site-search-input:focus { background: var(--lab-card, #fff); color: var(--lab-ink, #22303b); outline-color: rgba(255, 255, 255, .35); }
+.site-search--dark .site-search-input:focus::placeholder { color: var(--lab-ink-soft, #5a6875); }
+
+/* トップページの大きな検索ボックス */
+.site-search--hero { margin-top: 1.2rem; max-width: 46rem; }
+.site-search--hero .site-search-input { font-size: 1.1rem; padding: .85rem 1.1rem; border: 2px solid var(--lab-border-strong, #c4d3dc); border-radius: 12px; }
+.site-search--hero .site-search-results { left: 0; right: 0; width: auto; }
+
+/* 候補 */
+.site-search-results {
+  position: absolute;
+  z-index: 60;
+  top: calc(100% + 6px);
+  right: 0;
+  width: min(34rem, calc(100vw - 1.5rem));
+  max-height: min(70vh, 34rem);
+  overflow-y: auto;
+  background: var(--lab-card, #fff);
+  color: var(--lab-ink, #22303b);
+  border: 1px solid var(--lab-border-strong, #c4d3dc);
+  border-radius: 12px;
+  box-shadow: 0 14px 32px rgba(23, 50, 77, .18);
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.site-search-results[hidden] { display: none; }
+.site-search-item {
+  display: block;
+  padding: .65rem .9rem;
+  border-bottom: 1px solid var(--lab-border, #dbe3e8);
+  color: var(--lab-ink, #22303b);
+  text-decoration: none;
+}
+.site-search-item:last-child { border-bottom: 0; }
+.site-search-item:hover, .site-search-item.is-active { background: var(--lab-teal-tint, #e7f1f3); }
+.site-search-path { display: block; font-weight: 700; color: var(--lab-navy, #17324d); font-size: .92rem; }
+.site-search-snippet { display: block; color: var(--lab-ink-soft, #5a6875); font-size: .82rem; margin-top: .15rem; }
+.site-search-results mark { background: var(--lab-gold-tint, #fff8e6); color: inherit; box-shadow: inset 0 -2px 0 var(--lab-gold, #b8913f); padding: 0 1px; }
+.site-search-empty { padding: .9rem; font-size: .9rem; }
+.site-search-empty a { color: var(--lab-teal, #2b6474); font-weight: 700; }
+
+/* manual.css のページ：ヘッダーのナビの右に置く */
+.site-header .site-search { flex: 0 1 15rem; min-width: 10rem; }
+
+/* front-operations / startup：上部の帯 */
+.manual-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem 1rem;
+  flex-wrap: wrap;
+  background: var(--lab-navy-deep, #14293f);
+  color: var(--lab-white, #fff);
+  padding: .6rem 1rem;
+  font-weight: 700;
+}
+.manual-topbar > a { color: var(--lab-white, #fff); }
+.manual-topbar .site-search { flex: 0 1 18rem; min-width: 12rem; }
+
+/* 検索結果から移動した見出しを一瞬ハイライトする */
+@keyframes site-search-flash { 0%, 35% { background-color: var(--lab-gold-tint, #fff8e6); box-shadow: 0 0 0 6px var(--lab-gold-tint, #fff8e6); } 100% { background-color: transparent; box-shadow: 0 0 0 6px transparent; } }
+h2:target, h3:target, .site-search-flash { animation: site-search-flash 2.6s ease-out; border-radius: 4px; }
+
+@media (max-width: 860px) {
+  .site-header .site-search { flex: 1 1 12rem; margin-left: auto; }
+  .manual-topbar .site-search { flex: 1 1 100%; }
+  .manual-topbar .site-search-results { left: 0; right: 0; width: auto; }
+  html { scroll-padding-top: 120px; }
+}
+@media (max-width: 580px) {
+  .site-header .header-inner { flex-wrap: wrap; }
+  .site-header .site-search { flex: 1 1 100%; }
+  .site-search-results { left: 0; right: 0; width: auto; }
+  html { scroll-padding-top: 150px; }
+}
+@media print { .site-search, .manual-topbar .site-search { display: none !important; } }

@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/search.css">
 <style>
   :root{
     /* Brand tokens matched to Shukuhaku DX Lab (lab.ugatta-llc.com, css/site-shell.css) */
@@ -294,8 +295,9 @@
 </style>
 </head>
 <body>
-<div style="background:var(--lab-navy-deep);color:var(--lab-white);padding:.7rem 1rem;text-align:center;font-weight:700">
-  <a href="index.html" style="color:var(--lab-white)">← かんたんフロントマニュアルのトップへ戻る</a>
+<div class="manual-topbar">
+  <a href="index.html">← かんたんフロントマニュアルのトップへ戻る</a>
+  <form class="site-search site-search--dark" role="search" data-site-search><input type="search" class="site-search-input" placeholder="操作を検索（例：返金）" aria-label="マニュアル内を検索" autocomplete="off" enterkeyhint="search"></form>
 </div>
 <div class="layout">
   <nav class="toc">
@@ -340,7 +342,7 @@
 
       <!-- SCENE 1 -->
       <section class="scene" id="s1">
-        <h2><span class="scene-num">1</span>物件の基本情報を登録する</h2>
+        <h2 id="s1-title"><span class="scene-num">1</span>物件の基本情報を登録する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 物件名の「詳細を見る」 ＞ <b>基本情報</b>（ページ上部）</p>
         <p class="lede">物件名・所在地・チェックイン時間など、その施設の"顔"になる情報です。物件名は日本語／英語／中国語／韓国語の4言語をタブで切り替えて個別に登録できます。</p>
         <div class="body">
@@ -380,7 +382,7 @@
 
       <!-- SCENE 2 -->
       <section class="scene" id="s2">
-        <h2><span class="scene-num">2</span>部屋タイプ・部屋・階層を登録する</h2>
+        <h2 id="s2-title"><span class="scene-num">2</span>部屋タイプ・部屋・階層を登録する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>部屋タイプ／階層</b>セクション（部屋の追加は同じ物件詳細ページ下部の「部屋を追加する」）</p>
         <p class="lede">「シングル」「ダブル」のような部屋タイプの器を先に作り、その後に物件詳細ページから実際の部屋番号を追加し、階層情報を紐づけます。</p>
         <div class="body">
@@ -407,7 +409,7 @@
 
       <!-- SCENE 3 (客室の状況表のレイアウト) -->
       <section class="scene" id="s-layout">
-        <h2><span class="scene-num">3</span>客室の状況表のレイアウト</h2>
+        <h2 id="s-layout-title"><span class="scene-num">3</span>客室の状況表のレイアウト</h2>
         <p class="path"><b>客室の状況表</b> ＞ 画面右下「レイアウト変更」</p>
         <p class="lede">客室の状況表で全部屋の状態を一目で見られるよう、部屋を建物の階ごとに並べます。新しく登録した部屋は「未配置の部屋」に横一列で並ぶだけなので、登録後に必ず配置します。</p>
         <div class="body">
@@ -454,7 +456,7 @@
 
       <!-- SCENE 3 -->
       <section class="scene" id="s3">
-        <h2><span class="scene-num">4</span>お食事メニュー（食事項目）を設定する</h2>
+        <h2 id="s3-title"><span class="scene-num">4</span>お食事メニュー（食事項目）を設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>食事設定／食事項目</b>セクション</p>
         <p class="lede">朝食・夕食などお食事の提供がある施設向けの設定です。予約時にプランへ自動反映させたり、食事場所・提供時間を管理できます。</p>
         <div class="callout warn"><span class="label">あらきホテルでは現在使用しません</span>現在は食事提供がないため、この設定は変更しないでください。将来食事提供を開始する場合に、責任者とHOTEL SMARTへ確認して設定します。</div>
@@ -470,7 +472,7 @@
 
       <!-- SCENE 4 -->
       <section class="scene" id="s4">
-        <h2><span class="scene-num">5</span>予約画面の表示項目を選ぶ（予約詳細表示設定）</h2>
+        <h2 id="s4-title"><span class="scene-num">5</span>予約画面の表示項目を選ぶ（予約詳細表示設定）</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>予約詳細表示設定</b>セクション</p>
         <p class="lede">予約作成・予約詳細画面に表示する項目の「表示する／表示しない」を、施設の運用に合わせて絞り込めます。使わない項目を非表示にすると、フロント業務中の画面がすっきりします。</p>
         <div class="body">
@@ -489,7 +491,7 @@
 
       <!-- SCENE 5 -->
       <section class="scene" id="s5">
-        <h2><span class="scene-num">6</span>部屋割り表の初期設定</h2>
+        <h2 id="s5-title"><span class="scene-num">6</span>部屋割り表の初期設定</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>部屋割り表設定</b>セクション</p>
         <p class="lede">【予約管理】＞【部屋割り表】画面を開いたときの初期表示を決める設定です。</p>
         <div class="body">
@@ -501,7 +503,7 @@
 
       <!-- SCENE 6 -->
       <section class="scene" id="s6">
-        <h2><span class="scene-num">7</span>付帯設備・手配品を登録する</h2>
+        <h2 id="s6-title"><span class="scene-num">7</span>付帯設備・手配品を登録する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>付帯設備／手配品</b>セクション</p>
         <p class="lede">会議室・駐車場・レンタサイクルなど「設備」の予約枠と、アメニティやレンタル品といった「手配品」を、それぞれ個別に登録します。</p>
         <div class="body">
@@ -515,7 +517,7 @@
 
       <!-- SCENE 7 -->
       <section class="scene" id="s7">
-        <h2><span class="scene-num">8</span>通知設定（誰に何を知らせるか）</h2>
+        <h2 id="s7-title"><span class="scene-num">8</span>通知設定（誰に何を知らせるか）</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>通知設定</b>セクション（右カラム）</p>
         <p class="lede">スタッフ向けの社内通知です。お客様への自動メールとは別物なので混同しないよう注意してください。</p>
         <div class="body">
@@ -534,7 +536,7 @@
 
       <!-- SCENE 8 -->
       <section class="scene" id="s8">
-        <h2><span class="scene-num">9</span>請求書・領収書まわりの設定</h2>
+        <h2 id="s8-title"><span class="scene-num">9</span>請求書・領収書まわりの設定</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>利用明細兼領収書・請求書 角印設定</b>／<b>社内共有情報</b>／<b>明細書設定</b>セクション（右カラム）</p>
         <div class="body">
           <table class="field">
@@ -550,7 +552,7 @@
 
       <!-- SCENE 9 -->
       <section class="scene" id="s9">
-        <h2><span class="scene-num">10</span>チェックイン用タブレットを設定する</h2>
+        <h2 id="s9-title"><span class="scene-num">10</span>チェックイン用タブレットを設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>タブレット表示設定</b></p>
         <div class="pillrow">
           <span class="pill">言語選択</span><span class="pill">チェックイン/アウト選択</span><span class="pill">本人確認</span>
@@ -559,7 +561,7 @@
         </div>
         <p class="lede">宿泊者が実際に触れるタブレット画面そのものを作り込む、初期設定の中でも特に項目数が多いセクションです。上から順に設定すると迷いません。</p>
         <div class="body">
-          <h3 style="font-size:16px;margin:0 0 6px;">① 本人確認の方式を決める（ページ設定）</h3>
+          <h3 id="s9-identity" style="font-size:16px;margin:0 0 6px;">① 本人確認の方式を決める（ページ設定）</h3>
           <table class="field">
             <tr><th>らくらくチェックイン</th><td>本人確認や書類入力の一部を省略し、チェックインを短時間化するモード</td></tr>
             <tr><th>タブレットによるチェックアウト</th><td>タブレット上でのセルフチェックアウトを行うかどうか</td></tr>
@@ -570,24 +572,24 @@
             <tr><th>無操作でトップに戻る秒数</th><td>一定時間操作がない場合に画面をリセットするまでの秒数</td></tr>
           </table>
 
-          <h3 style="font-size:16px;margin:2em 0 6px;">② チェックインコードまわり</h3>
+          <h3 id="s9-checkin-code" style="font-size:16px;margin:2em 0 6px;">② チェックインコードまわり</h3>
           <table class="field">
             <tr><th>チェックインコード入力欄（4言語）</th><td>タブレット上に表示する物件名の多言語表記</td></tr>
             <tr><th>チェックインコード不要チェックイン/チェックアウト</th><td>コード入力を省略できるようにするか</td></tr>
             <tr><th>チェックインコード受付期間</th><td>チェックアウト予定時刻の何時間後まで、そのコードでの受付を許可するか</td></tr>
           </table>
 
-          <h3 style="font-size:16px;margin:2em 0 6px;">③ チュートリアル・契約確認</h3>
+          <h3 id="s9-tutorial" style="font-size:16px;margin:2em 0 6px;">③ チュートリアル・契約確認</h3>
           <table class="field">
             <tr><th>チュートリアル（ウェルカムメッセージ）</th><td>4言語で入力可能な、宿泊者が最初に見る案内文</td></tr>
             <tr><th>契約確認・同意方法</th><td>チェックボックス／サイン、から選択</td></tr>
             <tr><th>宿泊約款・定期借家契約</th><td>「現地タブレットに表示する」を選ぶとチェックイン時に表示・同意取得</td></tr>
           </table>
 
-          <h3 style="font-size:16px;margin:2em 0 6px;">④ お客様情報入力</h3>
+          <h3 id="s9-guest-info" style="font-size:16px;margin:2em 0 6px;">④ お客様情報入力</h3>
           <p>氏名カナ・都道府県・国籍・職業・生年月日・性別・前泊地／行先地・旅券番号・顔写真・身分証明書・体温計・ワクチン接種証明書・陰性証明書など、多数の項目ごとに「必須」「代表者のみ」をチェックで指定できます。「＋項目を追加する」で言語・国籍セグメント別の入力パターンを追加することも可能です。加えて「お客様情報入力（カスタム質問）」から施設独自の質問も追加できます。</p>
 
-          <h3 style="font-size:16px;margin:2em 0 6px;">⑤ チェックイン完了・チェックアウト画面</h3>
+          <h3 id="s9-complete" style="font-size:16px;margin:2em 0 6px;">⑤ チェックイン完了・チェックアウト画面</h3>
           <table class="field">
             <tr><th>入室案内</th><td>部屋番号・鍵番号などの案内文（多言語）</td></tr>
             <tr><th>部屋情報印刷</th><td>印刷しない／部屋番号のみ／部屋番号と鍵番号／印刷メッセージのみ、から選択</td></tr>
@@ -601,7 +603,7 @@
 
       <!-- SCENE 10 -->
       <section class="scene" id="s10">
-        <h2><span class="scene-num">11</span>お客様への自動メールを設定する</h2>
+        <h2 id="s10-title"><span class="scene-num">11</span>お客様への自動メールを設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>自動メール配信設定</b></p>
         <p class="lede">予約から宿泊後までの各タイミングで、お客様に自動送信するメールをテンプレート単位で作り込みます。件名・本文には差し込みキーワード（例：[代表者名] [お客様マイページのURL]）が使えます。</p>
         <div class="body">
@@ -619,7 +621,7 @@
 
       <!-- SCENE 11 -->
       <section class="scene" id="s11">
-        <h2><span class="scene-num">12</span>お客様マイページを設定する</h2>
+        <h2 id="s11-title"><span class="scene-num">12</span>お客様マイページを設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>お客様マイページ設定</b></p>
         <p class="lede">宿泊前後にお客様がWebブラウザから確認できる専用ページの、入力項目と表示内容を設定します。</p>
         <div class="body">
@@ -637,7 +639,7 @@
 
       <!-- SCENE 12 -->
       <section class="scene" id="s12">
-        <h2><span class="scene-num">13</span>自動部屋割りを設定する</h2>
+        <h2 id="s12-title"><span class="scene-num">13</span>自動部屋割りを設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>自動部屋割り設定</b></p>
         <div class="body">
           <table class="field">
@@ -654,7 +656,7 @@
 
       <!-- SCENE 13 -->
       <section class="scene" id="s13">
-        <h2><span class="scene-num">14</span>精算画面の支払い方法を選ぶ</h2>
+        <h2 id="s13-title"><span class="scene-num">14</span>精算画面の支払い方法を選ぶ</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>支払い方法設定</b></p>
         <p class="lede">精算画面に並ぶ支払い方法の選択肢を、実際に使うものだけに絞り込みます。カテゴリーは「売掛無し」「予約経路」「決済代行サービス」「クレジットカード」「電子マネー」「ID決済」「売掛」「行政補助金」「前受」「アクワイアラー」「その他」の11カテゴリー、数十種類の決済手段が用意されています。</p>
         <div class="body">
@@ -669,13 +671,13 @@
 
       <!-- SCENE 14 -->
       <section class="scene" id="s14">
-        <h2><span class="scene-num">15</span>共通マスタ・税設定を確認する</h2>
+        <h2 id="s14-title"><span class="scene-num">15</span>共通マスタ・税設定を確認する</h2>
         <p class="path">画面左下の <b>設定</b> ＞ <b>マスターデータ設定</b>／<b>入湯税・宿泊税設定</b></p>
         <p class="lede">料金科目や税の計算に関わる全施設共通の設定です。日常のフロント操作では変更せず、運用開始時または制度変更時に管理者が確認します。</p>
         <div class="body">
           <div class="callout warn"><span class="label">管理者専用</span>変更すると予約料金・精算・帳票へ影響する可能性があります。あらきホテルの責任者が承認した内容だけを登録し、変更前後の設定を記録してください。</div>
 
-          <h3 class="sub">マスターデータ設定</h3>
+          <h3 id="s14-master" class="sub">マスターデータ設定</h3>
           <ol class="steps">
             <li>「マスターデータ設定」を開き、料金登録で使用する料金科目が登録済みか確認します。</li>
             <li>料金科目の名称や画面に表示される設定が、現在の会計ルールと一致しているか確認します。</li>
@@ -683,7 +685,7 @@
             <li>テスト予約で料金明細・領収書への表示を確認してから本運用に使用します。</li>
           </ol>
 
-          <h3 class="sub">入湯税・宿泊税設定</h3>
+          <h3 id="s14-tax" class="sub">入湯税・宿泊税設定</h3>
           <ol class="steps">
             <li>「入湯税・宿泊税設定」を開き、対象物件・税の種類・適用条件・金額・適用期間を確認します。</li>
             <li>自治体の最新制度、課税／免税条件、開始日を責任者または会計担当と照合します。</li>
@@ -691,7 +693,7 @@
           </ol>
           <div class="callout warn"><span class="label">要確認</span>契約内容や権限により、項目名・入力欄・計算方法が異なる可能性があります。税率や免税条件を推測で入力せず、実画面と自治体ルールを照合してください。</div>
 
-          <h3 class="sub">「設定」にあるその他の管理画面</h3>
+          <h3 id="s14-other" class="sub">「設定」にあるその他の管理画面</h3>
           <table class="field">
             <tr><th>宿泊予約サイト手数料設定</th><td>予約経路ごとの手数料を扱う設定。契約書と照合して管理者が設定</td></tr>
             <tr><th>売掛先設定</th><td>法人・旅行会社などの請求先を扱う設定。経理ルール確定後に登録</td></tr>
@@ -704,7 +706,7 @@
 
       <!-- SCENE 15 -->
       <section class="scene" id="s15">
-        <h2><span class="scene-num">16</span>外部サービス連携を確認する</h2>
+        <h2 id="s15-title"><span class="scene-num">16</span>外部サービス連携を確認する</h2>
         <p class="path">サイドバー下部の <b>オプション機能</b></p>
         <p class="lede">外部サービスや機器をHOTEL SMARTと連携するための管理画面です。通常のフロント業務では操作しません。</p>
         <div class="body">
@@ -728,5 +730,6 @@
     </footer>
   </div>
 </div>
+<script src="assets/search.js" defer></script>
 </body>
 </html>

@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/manual.css">
+  <link rel="stylesheet" href="assets/search.css">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -24,25 +25,36 @@
         <a href="troubleshooting.html">困ったとき</a>
         <a href="glossary.html">用語集</a>
       </nav>
+      <form class="site-search site-search--dark" role="search" data-site-search><input type="search" class="site-search-input" placeholder="操作を検索（例：返金）" aria-label="マニュアル内を検索" autocomplete="off" enterkeyhint="search"></form>
     </div>
   </header>
 
   <main id="main" class="page">
-    <section class="hero">
+    <section class="hero hero-search">
       <p class="eyebrow">HOTEL SMART 操作ガイド</p>
-      <h1>今やりたい作業から探す</h1>
-      <p>画面の名前が分からなくても大丈夫です。「予約を探す」「チェックイン」など、目的から手順を選んでください。</p>
-      <div class="meta-row"><span class="tag">更新 2026-10-07（ドラフト）</span><span class="tag">フロント向け</span></div>
+      <h1>操作に困ったら、ここで検索</h1>
+      <p>「返金」「アサイン」「CO」など、思いついた言葉で探せます。候補を押すと、その手順の見出しへ直接移動します。</p>
+      <form class="site-search site-search--hero" role="search" data-site-search><input type="search" class="site-search-input" placeholder="例：返金、部屋を移す、領収書、日次締め" aria-label="マニュアル内を検索" autocomplete="off" enterkeyhint="search"></form>
+      <a class="quick-link" href="quick-reference.html">印刷用のフロント早見表を開く</a>
+      <div class="meta-row"><span class="tag">更新 2026-10-10（ドラフト）</span><span class="tag">フロント向け</span></div>
     </section>
 
-    <section class="search-panel" aria-label="マニュアル検索">
-      <form class="search-row" data-manual-search>
-        <label for="manual-search" class="skip-link">やりたいことを検索</label>
-        <input id="manual-search" type="search" placeholder="例：予約が見つからない、領収書、清掃" autocomplete="off">
-        <button type="submit">検索</button>
-      </form>
-      <p class="search-hint">短い言葉で検索できます。Enterキーまたは「検索」を押してください。</p>
-      <div class="search-results" data-search-results aria-live="polite"></div>
+    <section aria-labelledby="common-tasks">
+      <div class="section-heading"><h2 id="common-tasks">よくある操作</h2><p>押すと手順の見出しへ移動</p></div>
+      <div class="task-links">
+        <a href="daily-operations.html#checkin-title">チェックインする</a>
+        <a href="daily-operations.html#checkout-title">チェックアウトする</a>
+        <a href="reservation-guide.html#individual-title">予約を新しく作る</a>
+        <a href="front-operations.html#scene4-cancel">予約をキャンセルする</a>
+        <a href="front-operations.html#scene4-room-change">部屋を移す（ルームチェンジ）</a>
+        <a href="room-assignment.html#manual-detail-title">部屋を割り当てる</a>
+        <a href="front-operations.html#scene4-period">延泊・減泊</a>
+        <a href="front-operations.html#scene9">部屋をブロックする</a>
+        <a href="front-operations.html#scene6">精算する</a>
+        <a href="front-operations.html#scene7">領収書を出す</a>
+        <a href="front-operations.html#scene6-refund">返金する</a>
+        <a href="daily-operations.html#daily-close-title">日次締め</a>
+      </div>
     </section>
 
     <section aria-labelledby="basic-rules">
@@ -55,37 +67,37 @@
       </div>
     </section>
 
-    <div class="section-heading"><h2>今日のフロント業務</h2><p>左上から順番に確認</p></div>
+    <div class="section-heading"><h2 id="today-tasks">今日のフロント業務</h2><p>左上から順番に確認</p></div>
     <section class="card-grid" aria-label="日次業務">
-      <a class="card" href="daily-operations.html#shift-start"><span class="card-number">1</span><h3>出勤したら</h3><p>ログイン、引継ぎ、本日の到着・出発を確認します。</p></a>
-      <a class="card" href="reservation-guide.html#search"><span class="card-number">2</span><h3>予約を探す</h3><p>名前・予約番号・宿泊日から予約を検索します。</p></a>
-      <a class="card" href="room-assignment.html"><span class="card-number">3</span><h3>部屋を割り当てる</h3><p>未割当を確認し、部屋タイプ・定員・清掃状態を照合します。</p></a>
-      <a class="card" href="daily-operations.html#checkin"><span class="card-number">4</span><h3>チェックイン</h3><p>本人確認、部屋、支払い、キーのお渡しを進めます。</p></a>
-      <a class="card" href="daily-operations.html#checkout"><span class="card-number">5</span><h3>チェックアウト</h3><p>追加料金と未精算を確認して退室処理を行います。</p></a>
-      <a class="card" href="service-operations.html"><span class="card-number">6</span><h3>客室・清掃を確認</h3><p>未清掃の客室、部屋移動、故障・ブロックを確認します。</p></a>
-      <a class="card" href="daily-operations.html#handover"><span class="card-number">7</span><h3>引継ぎ・日次締め</h3><p>未対応事項を残し、締め時刻を過ぎたら責任者が予約・精算を確認して締めます。</p></a>
+      <a class="card" href="daily-operations.html#shift-start"><span class="card-number">1</span><h3 id="task-shift-start">出勤したら</h3><p>ログイン、引継ぎ、本日の到着・出発を確認します。</p></a>
+      <a class="card" href="reservation-guide.html#search"><span class="card-number">2</span><h3 id="task-search">予約を探す</h3><p>名前・予約番号・宿泊日から予約を検索します。</p></a>
+      <a class="card" href="room-assignment.html"><span class="card-number">3</span><h3 id="task-assign">部屋を割り当てる</h3><p>未割当を確認し、部屋タイプ・定員・清掃状態を照合します。</p></a>
+      <a class="card" href="daily-operations.html#checkin"><span class="card-number">4</span><h3 id="task-checkin">チェックイン</h3><p>本人確認、部屋、支払い、キーのお渡しを進めます。</p></a>
+      <a class="card" href="daily-operations.html#checkout"><span class="card-number">5</span><h3 id="task-checkout">チェックアウト</h3><p>追加料金と未精算を確認して退室処理を行います。</p></a>
+      <a class="card" href="service-operations.html"><span class="card-number">6</span><h3 id="task-room-cleaning">客室・清掃を確認</h3><p>未清掃の客室、部屋移動、故障・ブロックを確認します。</p></a>
+      <a class="card" href="daily-operations.html#handover"><span class="card-number">7</span><h3 id="task-handover-close">引継ぎ・日次締め</h3><p>未対応事項を残し、締め時刻を過ぎたら責任者が予約・精算を確認して締めます。</p></a>
     </section>
 
-    <div class="section-heading"><h2>よくある「困った」</h2><p>慌てて変更する前に確認</p></div>
+    <div class="section-heading"><h2 id="common-trouble">よくある「困った」</h2><p>慌てて変更する前に確認</p></div>
     <section class="card-grid" aria-label="よくある問題">
-      <a class="card alert" href="troubleshooting.html#reservation-missing"><span class="tag">予約</span><h3>予約が見つからない</h3><p>検索条件、予約経路、サイトコントローラー連携を順番に確認します。</p></a>
-      <a class="card alert" href="troubleshooting.html#checkin-error"><span class="tag">到着</span><h3>チェックインできない</h3><p>予約状態・部屋割り・清掃・支払いを確認します。</p></a>
-      <a class="card alert" href="troubleshooting.html#save-error"><span class="tag">入力</span><h3>保存できない／エラーが出た</h3><p>必須項目と画面状態を確認し、二重登録を防ぎます。</p></a>
+      <a class="card alert" href="troubleshooting.html#reservation-missing"><span class="tag">予約</span><h3 id="trouble-missing">予約が見つからない</h3><p>検索条件、予約経路、サイトコントローラー連携を順番に確認します。</p></a>
+      <a class="card alert" href="troubleshooting.html#checkin-error"><span class="tag">到着</span><h3 id="trouble-checkin">チェックインできない</h3><p>予約状態・部屋割り・清掃・支払いを確認します。</p></a>
+      <a class="card alert" href="troubleshooting.html#save-error"><span class="tag">入力</span><h3 id="trouble-save">保存できない／エラーが出た</h3><p>必須項目と画面状態を確認し、二重登録を防ぎます。</p></a>
     </section>
 
-    <div class="section-heading"><h2>マニュアルをまとめて読む</h2><p>役割に合うものを選択</p></div>
+    <div class="section-heading"><h2 id="manual-list">マニュアルをまとめて読む</h2><p>役割に合うものを選択</p></div>
     <section class="card-grid" aria-label="マニュアル一覧">
-      <a class="card" href="reservation-guide.html"><span class="tag front">フロント</span><h3>予約・変更・会計</h3><p>個人／団体予約、変更、料金、精算、領収書。</p></a>
-      <a class="card" href="room-assignment.html"><span class="tag front">重要</span><h3>部屋割り（アサイン）</h3><p>手動・自動・一括割当と、失敗時の確認。</p></a>
-      <a class="card" href="service-operations.html"><span class="tag front">フロント</span><h3>客室・清掃</h3><p>清掃状況、部屋移動、故障、客室ブロックの連携。</p></a>
-      <a class="card" href="front-operations.html"><span class="tag front">詳しい手順</span><h3>フロント運用 原本ドラフト</h3><p>公式PDFをもとにした従来版の詳細手順です。</p></a>
-      <a class="card manager" href="startup.html"><span class="tag manager">管理者</span><h3>初期設定・施設設定</h3><p>日常のフロント業務では原則変更しません。</p></a>
-      <a class="card" href="glossary.html"><span class="tag">用語</span><h3>やさしい用語集</h3><p>OTA、PMS、サイトコントローラーなどを説明します。</p></a>
-      <a class="card" href="quick-reference.html"><span class="tag">印刷用</span><h3>フロント早見表</h3><p>緊急時と毎日の確認項目を、1ページで印刷できます。</p></a>
-      <a class="card manager" href="HOTEL-SMART-front-manual-reference.html"><span class="tag manager">編集者</span><h3>公式資料との対応</h3><p>このドラフトの情報源と確認状況をまとめています。</p></a>
+      <a class="card" href="reservation-guide.html"><span class="tag front">フロント</span><h3 id="list-reservation">予約・変更・会計</h3><p>個人／団体予約、変更、料金、精算、領収書。</p></a>
+      <a class="card" href="room-assignment.html"><span class="tag front">重要</span><h3 id="list-assignment">部屋割り（アサイン）</h3><p>手動・自動・一括割当と、失敗時の確認。</p></a>
+      <a class="card" href="service-operations.html"><span class="tag front">フロント</span><h3 id="list-service">客室・清掃</h3><p>清掃状況、部屋移動、故障、客室ブロックの連携。</p></a>
+      <a class="card" href="front-operations.html"><span class="tag front">詳しい手順</span><h3 id="list-front-ops">フロント運用 原本ドラフト</h3><p>公式PDFをもとにした従来版の詳細手順です。</p></a>
+      <a class="card manager" href="startup.html"><span class="tag manager">管理者</span><h3 id="list-startup">初期設定・施設設定</h3><p>日常のフロント業務では原則変更しません。</p></a>
+      <a class="card" href="glossary.html"><span class="tag">用語</span><h3 id="list-glossary">やさしい用語集</h3><p>OTA、PMS、サイトコントローラーなどを説明します。</p></a>
+      <a class="card" href="quick-reference.html"><span class="tag">印刷用</span><h3 id="list-quick-ref">フロント早見表</h3><p>緊急時と毎日の確認項目を、1ページで印刷できます。</p></a>
+      <a class="card manager" href="HOTEL-SMART-front-manual-reference.html"><span class="tag manager">編集者</span><h3 id="list-reference">公式資料との対応</h3><p>このドラフトの情報源と確認状況をまとめています。</p></a>
     </section>
 
-    <div class="section-heading"><h2>操作する人の目安</h2><p>迷ったら上位担当者へ確認</p></div>
+    <div class="section-heading"><h2 id="operator-roles">操作する人の目安</h2><p>迷ったら上位担当者へ確認</p></div>
     <table class="decision-table">
       <thead><tr><th>担当</th><th>通常行う操作</th><th>単独で行わない操作</th></tr></thead>
       <tbody><tr><td>フロントスタッフ</td><td>予約検索、手動部屋割り、宿泊者確認、チェックイン／アウト、清掃状況確認、引継ぎ、予約のキャンセル（実施後に責任者へ報告）</td><td>自動部屋割り設定、返金、外部予約の直接変更、連携停止、日次締めの有効化・締め時刻の設定</td></tr><tr><td>責任者</td><td>割当失敗・料金差異・返金の判断、誤操作の復旧、日次確認</td><td>契約・連携・権限に関わる変更は管理者確認</td></tr><tr><td>管理者</td><td>自動部屋割り、アカウント・権限・物件・料金・連携・初期設定</td><td>影響範囲不明の変更はHOTEL SMARTへ確認</td></tr></tbody>
@@ -98,6 +110,6 @@
   </main>
 
   <footer class="footer">種子島あらきホテル　かんたんフロントマニュアル（ドラフト）</footer>
-  <script src="assets/manual.js"></script>
+  <script src="assets/search.js" defer></script>
 </body>
 </html>

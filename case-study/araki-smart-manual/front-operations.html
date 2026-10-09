@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/search.css">
 <style>
   :root{
     /* Brand tokens matched to Shukuhaku DX Lab (lab.ugatta-llc.com, css/site-shell.css) */
@@ -294,8 +295,9 @@
 </style>
 </head>
 <body>
-<div style="background:var(--lab-navy-deep);color:var(--lab-white);padding:.7rem 1rem;text-align:center;font-weight:700">
-  <a href="index.html" style="color:var(--lab-white)">← かんたんフロントマニュアルのトップへ戻る</a>
+<div class="manual-topbar">
+  <a href="index.html">← かんたんフロントマニュアルのトップへ戻る</a>
+  <form class="site-search site-search--dark" role="search" data-site-search><input type="search" class="site-search-input" placeholder="操作を検索（例：返金）" aria-label="マニュアル内を検索" autocomplete="off" enterkeyhint="search"></form>
 </div>
 <div class="layout">
   <nav class="toc">
@@ -331,16 +333,16 @@
 
       <!-- SCENE 1 -->
       <section class="scene" id="s1">
-        <h2><span class="scene-num">1</span>ログイン／ログアウト</h2>
+        <h2 id="scene1"><span class="scene-num">1</span>ログイン／ログアウト</h2>
         <p class="path">ブラウザ（Chrome）＞ <b>https://connect.hotelsmart.jp/host/login</b></p>
         <p class="lede">フロント業務を始める前に、管理画面へのログイン・ログアウトの手順をスタッフ全員に周知しておきます。</p>
         <div class="body">
-          <h3 class="sub">ログイン</h3>
+          <h3 id="scene1-login" class="sub">ログイン</h3>
           <ol class="steps">
             <li>ブラウザ（Chrome）で <code>https://connect.hotelsmart.jp/host/login</code> にアクセスします。</li>
             <li>ログインID・パスワードを入力し、「ログイン」を押します。</li>
           </ol>
-          <h3 class="sub">ログアウト</h3>
+          <h3 id="scene1-logout" class="sub">ログアウト</h3>
           <ol class="steps">
             <li>管理画面右上のアカウント名をクリックします。</li>
             <li>「ログアウト」を押します。</li>
@@ -351,17 +353,17 @@
 
       <!-- SCENE 2 -->
       <section class="scene" id="s2">
-        <h2><span class="scene-num">2</span>予約作成（個人予約）</h2>
+        <h2 id="scene2"><span class="scene-num">2</span>予約作成（個人予約）</h2>
         <p class="path"><b>予約管理</b> ＞ 【予約情報】／【残室管理】／【客室の状況表】のいずれか</p>
         <p class="lede">電話受付やウォークインの予約を作成する方法です。予約作成画面には3通りの入り口があります。</p>
         <div class="body">
-          <h3 class="sub">A. 予約管理＞【予約情報】から</h3>
+          <h3 id="scene2-from-reservations" class="sub">A. 予約管理＞【予約情報】から</h3>
           <p>一覧画面の「新規予約」を押すと予約作成画面が開きます。画面ヘルプに表示されるショートカットは <code>Ctrl+A</code> です。</p>
 
-          <h3 class="sub">B. 予約管理＞【残室管理】から</h3>
+          <h3 id="scene2-from-inventory" class="sub">B. 予約管理＞【残室管理】から</h3>
           <p>各部屋タイプと空室数が表示されるので、予約を作成したい日付・部屋タイプの残室数をクリックすると、指定した日付と部屋タイプが入った状態で予約作成画面が開きます。</p>
 
-          <h3 class="sub">C. 【客室の状況表】から</h3>
+          <h3 id="scene2-from-indicator" class="sub">C. 【客室の状況表】から</h3>
           <p>空室をクリックして開くポップアップ画面で「新規予約」をクリックすると、客室の状況表で選択した日付・部屋からの予約作成画面が開きます。</p>
           <figure class="screenshot">
             <a href="screenshots/front-01-room-indicator.jpg" target="_blank" rel="noopener"><img src="screenshots/front-01-room-indicator.jpg" alt="物件を種子島あらきホテルにした客室の状況表（2026年10月9日）のスクリーンショット"></a>
@@ -376,7 +378,7 @@
             <figcaption>新規予約の入力画面（新しいタブで開きます）。客室の状況表で選んだ日付・部屋があらかじめ入り、この例では10/9〜10/10の1泊、シングルB 1室1名が入った状態で開きます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
-          <h3 class="sub">＜予約入力方法＞</h3>
+          <h3 id="scene2-input" class="sub">＜予約入力方法＞</h3>
           <p>現在の予約作成画面は2列構成です。左列を上から入力し、続いて右列を確認すると見落としを減らせます。</p>
           <ol class="steps">
             <li><b>代表者情報（左列）</b>：代表者氏名・フリガナ・連絡先（電話番号／メールアドレス）を入力します。過去に宿泊のあるお客様は時計マークから登録済み情報を引用できます。</li>
@@ -423,7 +425,7 @@
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>プランを選ばずに予約を作成した場合、「金額変更」に入力した金額は料金として登録されませんでした（2026/10/05・10/07の2回確認）。公式マニュアルではプラン料金を使う予約で金額変更が反映されると説明されています。プランを使わない予約では、登録後に予約詳細の「料金追加」から宿泊費を登録してください。また、金額変更に入力したあと「人数変更」に切り替えると、入力した金額が消えることがありました。</div>
 
-          <h3 class="sub">既存の予約をコピーして作る</h3>
+          <h3 id="scene2-copy" class="sub">既存の予約をコピーして作る</h3>
           <p>予約詳細の右上の「予約をコピー」を押すと、内容を引き継いだ新規予約画面が別タブで開きます。日程と予約経路を入れ直してから「予約を登録する」を押します。</p>
           <p>代表者名・部屋タイプ・部屋数・人数は引き継がれますが、日程は当日、予約経路は「未選択」、部屋番号は未割り当て、共有事項は空欄になりました（2026/10/06確認）。日程と予約経路は必ず入れ直します。</p>
           <figure class="screenshot">
@@ -443,7 +445,7 @@
 
       <!-- SCENE 3 -->
       <section class="scene" id="s3">
-        <h2><span class="scene-num">3</span>予約作成（団体予約）</h2>
+        <h2 id="scene3"><span class="scene-num">3</span>予約作成（団体予約）</h2>
         <p class="path"><b>予約管理</b> ＞ 【予約情報】 ＞ 「新規予約」 ＞ <b>宿泊変更</b></p>
         <p class="lede">団体予約専用の入口はありません。個人予約と同じ新規予約画面を開き、「宿泊変更」で複数部屋・複数人数を設定します。</p>
         <div class="body">
@@ -479,13 +481,13 @@
 
       <!-- SCENE 4 -->
       <section class="scene" id="s4">
-        <h2><span class="scene-num">4</span>予約の変更（パターン別）</h2>
+        <h2 id="scene4"><span class="scene-num">4</span>予約の変更（パターン別）</h2>
         <p class="path">対象予約の詳細ページ ＞ <b>予約情報</b>／<b>宿泊変更</b>／<b>宿泊者情報</b>／<b>設定</b>／<b>予約詳細のステータス（キャンセル）</b>／<b>部屋割り当てのルームチェンジ</b>／<b>予約を分割</b>　＋　<b>スマート予約検索</b>／<b>【予約情報】の一覧</b>（予約を探す・統合・グルーピング）</p>
         <p class="lede">宿泊期間の変更、部屋の追加・削除・途中変更、宿泊者情報の変更、プランの変更など、よくある変更パターンをまとめました。予約のキャンセルの手順も扱います。あわせて、予約の探し方、ルームチェンジ（部屋の入れ替え）、予約の分割、予約の統合・グルーピングも扱います。</p>
         <div class="body">
           <div class="callout warn"><span class="label">注意</span>サイトコントローラー経由で取り込まれた予約情報は、基本的には変更できません。変更はできるだけOTAやサイトコントローラー側で行い、それができない場合のみ該当予約の自動更新を停止してから管理画面で変更してください。また、日次締め済みのデータは変更できません。</div>
 
-          <h3 class="sub">予約を探す</h3>
+          <h3 id="scene4-search" class="sub">予約を探す</h3>
           <p>画面上部の「スマート予約検索」に氏名やチェックインコードを入力して探します。条件を加える場合は「検索条件追加」を使います。【予約情報】の一覧では「条件を選択して絞り込み」で、本日チェックイン・本日登録された予約などの条件で絞り込めます。</p>
           <figure class="screenshot">
             <a href="screenshots/front-77-smart-search.jpg" target="_blank" rel="noopener"><img src="screenshots/front-77-smart-search.jpg" alt="スマート予約検索に氏名を入力した検索結果のスクリーンショット"></a>
@@ -505,7 +507,7 @@
           </figure>
           <div class="callout warn"><span class="label">注意</span>作成した直後の予約が、スマート予約検索ですぐには見つからないことがありました（2026/10/06確認）。スマート予約検索は、登録・取り込みから約3分間は検索に出ないことがあります（公式オンラインマニュアルより）。見つからない場合は、絞り込み検索で探してください。</div>
 
-          <h3 class="sub">宿泊期間の変更</h3>
+          <h3 id="scene4-period" class="sub">宿泊期間の変更</h3>
           <p>《予約情報》欄より変更可能です。チェックイン日はクリックして表示されるポップアップで変更後の日付を入力し「移動する」を押します。ポップアップには「日程の移動に合わせて料金の利用日が変更されます」と固定の説明文が表示され、チェックボックスは「ブロックや他の予約との重複が発生する部屋割りを解除する」の1つだけで、初期値でチェック済みでした（2026/10/05確認）。不要な場合のみ外します。チェックイン日の移動では泊数を保ったまま日程全体がずれ、「移動する」を押すとその場で保存されました（2026/10/05確認）。チェックアウト日は直接入力または「カレンダー入力」から選択します。チェックアウト日や泊数の変更は、画面下に表示される「変更を保存する」を押すまで保存されませんでした（2026/10/05確認）。複数部屋で部屋ごとに期間が異なる場合は「部屋毎に設定する」から個別に変更します。</p>
           <figure class="screenshot">
             <a href="screenshots/front-25-change-test-reserve.jpg" target="_blank" rel="noopener"><img src="screenshots/front-25-change-test-reserve.jpg" alt="変更前の予約詳細（2026/11/10〜11/12、2泊、部屋はBEKKAN 2）のスクリーンショット"></a>
@@ -559,7 +561,7 @@
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>日付の欄にキーボードで数字を直接入力すると、入力途中の値に反応して警告が出ることがありました（2026/10/05確認）。泊数を変えるか、カレンダーから選ぶと確実です。</div>
 
-          <h3 class="sub">部屋の追加／削除</h3>
+          <h3 id="scene4-add-remove-room" class="sub">部屋の追加／削除</h3>
           <p>予約詳細の《予約情報》欄の「宿泊変更」を押し、「人数変更」で「部屋タイプを追加」を押します。追加する部屋タイプ・部屋数・部屋人数を入力して「保存」を押します。追加した部屋は部屋番号が未割り当てになるため、予約詳細の部屋割り当てで部屋を選ぶか「おまかせ割り当て」を使います。部屋を削除する場合は、同じ画面で削除する行の「×」を押して「保存」を押します（2026/10/05確認）。</p>
           <figure class="screenshot">
             <a href="screenshots/front-36-room-type-added.jpg" target="_blank" rel="noopener"><img src="screenshots/front-36-room-type-added.jpg" alt="宿泊変更の人数変更で部屋タイプを追加し、BEKKAN ツイン（1部屋・1名）の行を加えた状態のスクリーンショット"></a>
@@ -579,7 +581,7 @@
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>途中移動のある部屋は、宿泊変更画面で部屋数・人数・削除を変更できませんでした（2026/10/05確認）。人数の変更は、途中移動を設定する前に済ませてください。</div>
 
-          <h3 class="sub">部屋の途中変更</h3>
+          <h3 id="scene4-midstay-move" class="sub">部屋の途中変更</h3>
           <p>連泊中に途中で部屋を移動する場合は、「宿泊変更」の［部屋変更］を開き、部屋が変わる日付の部屋をクリックして変更後の部屋を選択・保存します。</p>
           <figure class="screenshot">
             <a href="screenshots/front-31-stay-change-room-tab.jpg" target="_blank" rel="noopener"><img src="screenshots/front-31-stay-change-room-tab.jpg" alt="宿泊変更の部屋変更画面（泊ごとの部屋が並ぶ表）のスクリーンショット"></a>
@@ -599,7 +601,7 @@
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>後ろの泊の部屋を選ぶと「1部屋目において◯/◯からの部屋移動を設定します。よろしいですか？」と確認が表示され、その日以降の部屋がまとめて変わります。途中移動を設定すると、予約詳細に「予約を分割」ボタンが表示され、料金・精算情報の部屋数は実際の部屋数より多く数えられました（2026/10/05確認）。</div>
 
-          <h3 class="sub">ルームチェンジ（部屋の入れ替え）</h3>
+          <h3 id="scene4-room-change" class="sub">ルームチェンジ（部屋の入れ替え）</h3>
           <p>予約詳細の部屋割り当てで、部屋番号の横にある入れ替えアイコンを押すと「ルームチェンジ」画面が開きます。変更先を選んで「変更する」を押します。予約が入っている部屋を選ぶと、その予約と部屋を入れ替えます。「変更する」を押すと確認なしでその場で反映されました（2026/10/06確認）。同じ氏名の過去の予約があると、代表者氏名の下に「リピートユーザーの可能性があります。」と表示されます（2026/10/09確認）。</p>
           <figure class="screenshot">
             <a href="screenshots/front-63-room-change-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-63-room-change-dialog.jpg" alt="部屋番号横の入れ替えアイコンで開いたルームチェンジ画面（変更元とおすすめの変更先）のスクリーンショット"></a>
@@ -625,7 +627,7 @@
           <div class="callout warn"><span class="label">注意</span>同じ部屋タイプに空きがないと、おすすめに別の部屋タイプ（例：シングルBの予約にカプセル）が出て、「部屋タイプが違います」と表示されます。おすすめをそのまま選ばず、部屋タイプを確認してから選んでください（2026/10/09確認）。</div>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>変更先の候補は「空室 → 同じ部屋タイプ → 自動部屋割りの優先順 → 定員の小さい順」で表示されます。部屋割りが済んでいない予約ではボタンが表示されません。</div>
 
-          <h3 class="sub">予約の分割</h3>
+          <h3 id="scene4-split" class="sub">予約の分割</h3>
           <p>複数部屋の予約を部屋ごとの予約に分けるときは、予約詳細の右上の「予約を分割」を押します。分割後の予約ごとに代表者氏名・連絡先を確認し、「保存」を押します。</p>
           <p>保存すると「分割後の代表者連絡先が未入力です。予約の分割を継続しますか？」（連絡先が空の場合）、「この予約は削除され、2件の新しい予約が作成されます。分割を実行しますか？」と確認が出ます。元の予約は削除され、チェックインコードは新しく振り直されます。リクエストとオペレーターメモは分割後の全予約に、リピートメモは代表者の予約にだけ引き継がれました（2026/10/06確認）。</p>
           <figure class="screenshot">
@@ -660,7 +662,7 @@
           </figure>
           <div class="callout warn"><span class="label">注意</span>まとめた行の代表者氏名が空のまま保存すると、予約一覧で「（名前未入力）」になります。保存前に、行ごとに代表者氏名を入れてください。「メールを再送信する」は行ごとにあるので、送らない場合はすべて外します（2026/10/09確認）。</div>
 
-          <h3 class="sub">予約の統合・グルーピング</h3>
+          <h3 id="scene4-merge" class="sub">予約の統合・グルーピング</h3>
           <p>【予約情報】の一覧でまとめたい予約にチェックを入れ、「チェックした予約の統合またはグルーピング」を押すと、「これらの予約を統合する」「これらの予約をグルーピングする」のボタンが表示されます。</p>
           <p>「統合」は日程が連続する予約（ある予約のチェックアウト日が別の予約のチェックイン日）をつなぐ機能です。条件を満たさないと「これらの予約は統合できません」と表示されます。「グルーピング」は同じ日程の予約を1件にまとめる機能です（2026/10/06確認）。</p>
           <figure class="screenshot">
@@ -681,7 +683,7 @@
           </figure>
           <div class="callout warn"><span class="label">注意</span>グルーピングを実行すると「一度グルーピングした予約は元に戻せません」と確認が出ます。まとめた後の予約には、元の予約のゲスト情報・部屋・料金・支払いが集約され、ステータスなどはベースの予約のものだけが残ります（2026/10/06確認）。</div>
 
-          <h3 class="sub">宿泊者情報の確認・変更</h3>
+          <h3 id="scene4-guest-info" class="sub">宿泊者情報の確認・変更</h3>
           <p>《宿泊者情報》にて「宿泊者台帳」をクリックすると、一覧で宿泊者情報の確認・編集、部屋の割り当て、宿泊者の追加・削除が行えます。</p>
           <figure class="screenshot">
             <a href="screenshots/front-35-guest-register.jpg" target="_blank" rel="noopener"><img src="screenshots/front-35-guest-register.jpg" alt="宿泊者台帳画面（1泊ごとに切り替え表示、氏名・性別・区分・連絡先・国籍などの列）のスクリーンショット"></a>
@@ -705,14 +707,14 @@
             <figcaption>引用後の台帳。2部屋目に宿泊者が入りました。最後に台帳の「保存」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
-          <h3 class="sub">プランの変更</h3>
+          <h3 id="scene4-plan" class="sub">プランの変更</h3>
           <p>[プラン]で変更後のプランを選択後、[お食事]で「プランに合わせる」ボタンを押して保存します。保存後に《料金詳細》欄の「料金情報の再登録」から、変更後のプランに合わせた料金への変更が可能です。</p>
 
-          <h3 class="sub">サイトコントローラーの自動更新停止</h3>
+          <h3 id="scene4-stop-auto-update" class="sub">サイトコントローラーの自動更新停止</h3>
           <p>予約詳細ページ右側《設定》の［サイトコントローラー設定］にて、「この予約の自動更新を停止する」を押すと、サイトコントローラー経由の予約でも管理画面から変更操作ができるようになります。</p>
           <div class="callout warn"><span class="label">注意</span>停止後はOTAやサイトコントローラー上で予約内容やステータスの変更があっても反映されません。一度停止した後は、基本的に再開を行わないでください。再開すると、変更を行った内容が更新によって戻ってしまう可能性があります。</div>
 
-          <h3 class="sub">予約のキャンセル</h3>
+          <h3 id="scene4-cancel" class="sub">予約のキャンセル</h3>
           <p>予約のキャンセルは、フロントスタッフの判断で行えます。</p>
           <ol class="steps">
             <li>予約詳細の右上のステータス（「未チェックイン ▼」）を押し、「キャンセルする」を選びます。</li>
@@ -747,7 +749,7 @@
 
       <!-- SCENE 5 -->
       <section class="scene" id="s5">
-        <h2><span class="scene-num">5</span>料金情報（売上）の登録</h2>
+        <h2 id="scene5"><span class="scene-num">5</span>料金情報（売上）の登録</h2>
         <p class="path">予約詳細ページ下部 ＜ <b>料金・精算情報</b> ＞ 料金詳細</p>
         <p class="lede">料金詳細は「部屋別料金」と「日別料金」で表示を切り替え可能です。部屋毎／日毎に展開式で表示され、それぞれの段階で料金の登録ができます。</p>
         <div class="body">
@@ -790,11 +792,11 @@
 
       <!-- SCENE 6 -->
       <section class="scene" id="s6">
-        <h2><span class="scene-num">6</span>精算情報の登録</h2>
+        <h2 id="scene6"><span class="scene-num">6</span>精算情報の登録</h2>
         <p class="path">予約詳細ページ下部 ＜ <b>料金・精算情報</b> ＞ 支払情報　＋　<b>売上管理</b> ＞ <b>予約外_料金・精算機能</b>（予約に紐づかない売上）</p>
         <p class="lede">精算は「一括精算」「料金選択して精算」「金額指定して精算（特殊精算）」の3つの方法で行えます。あわせて、予約に紐づかない売上（予約外_料金・精算機能）の登録と精算も扱います。</p>
         <div class="body">
-          <h3 class="sub">一括精算／料金選択をして精算する方法</h3>
+          <h3 id="scene6-bulk-payment" class="sub">一括精算／料金選択をして精算する方法</h3>
           <ol class="steps">
             <li>全ての未収金を精算する場合は「一括精算」、料金を指定して精算する場合は該当の料金を選択して「選択精算」をクリックします。</li>
             <li>支払い方法・種別を選択し、ポイントの有無、支払日を入力して「精算する」をクリックします。ここで対象の料金を選択し直すことも可能です。</li>
@@ -825,7 +827,7 @@
             <figcaption>精算後。《支払い情報》に1行追加され、精算済みの明細はチェックボックスがグレーになり選べなくなります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>精算済みの料金を直すときは、先に精算を削除する必要があります（<a href="#s5">シーン5</a>の注意を参照）。</p>
-          <h3 class="sub">金額を指定して精算する方法</h3>
+          <h3 id="scene6-amount-payment" class="sub">金額を指定して精算する方法</h3>
           <ol class="steps">
             <li>「特殊精算（金額指定）」をクリックします。</li>
             <li>内訳（料金科目指定／金額指定／部屋指定）、支払い方法（事前決済／現地決済）、支払い日、金額を入力し「保存する」をクリックします。</li>
@@ -849,7 +851,7 @@
           <div class="callout warn"><span class="label">注意</span>金額指定で精算すると、料金詳細の一番下に部屋に紐づかない「未登録」の行が作られ、その中に「一部支払い済み」という調整用の明細が2件入ります（2026/10/06確認）。誤って登録された料金ではないので、削除しないでください。</div>
           <div class="callout tip"><span class="label">ヒント</span>複数部屋にまたがる未収金がある場合は、対象部屋・対象日を個別にチェックして精算範囲を絞り込めます。</div>
 
-          <h3 class="sub">予約に紐づかない売上（予約外_料金・精算機能）</h3>
+          <h3 id="scene6-independent-bill" class="sub">予約に紐づかない売上（予約外_料金・精算機能）</h3>
           <ol class="steps">
             <li>左メニューの「売上管理」→「予約外_料金・精算機能」を開き、「新規作成」を押します。</li>
             <li>物件・予約経路・法人団体を選んで「次へ」を押します。</li>
@@ -897,6 +899,7 @@
             <figcaption>一覧に戻った状態。管理番号・料金合計・支払い方法・入金合計・未収金が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>新規作成の物件の初期値は「種子島あらきホテル」でした。別館の売上は物件を切り替えてから登録してください。「次へ」を押した時点で空の伝票が作られます。料金科目は現在「宿泊費」だけが登録されていて、物販などで使う場合は科目の追加が必要です（2026/10/06確認）。</div>
+          <h3 class="sub" id="scene6-refund">返金入力</h3>
           <div class="callout tip"><span class="label">返金入力</span>返金は、【売上管理】→【予約外_料金・精算機能】→ 伝票の「詳細を開く」→ 下にある「返金入力」から入力します。「返金入力」画面の項目は、内訳（金額）、支払い方法（「返金」の下に現金など2つの選択）、支払い日、備考、支払い額で、「保存する」で登録します。予約詳細の《料金・精算情報》には「返金入力」のボタンは見つかりませんでした。今回は画面を開いて確認しただけで、保存はしていません。返金後の伝票の表示は未確認です（2026/10/09確認）。</div>
           <figure class="screenshot">
             <a href="screenshots/front-128-independent-bill-refund-button.jpg" target="_blank" rel="noopener"><img src="screenshots/front-128-independent-bill-refund-button.jpg" alt="予約外の伝票の詳細（下に閉じると返金入力のボタン）のスクリーンショット"></a>
@@ -912,11 +915,11 @@
 
       <!-- SCENE 7 -->
       <section class="scene" id="s7">
-        <h2><span class="scene-num">7</span>利用明細・領収書の発行</h2>
+        <h2 id="scene7"><span class="scene-num">7</span>利用明細・領収書の発行</h2>
         <p class="path">予約詳細ページ ＞ <b>利用明細・領収書</b></p>
         <p class="lede">《利用明細・領収書》欄から発行します。作成時点で《料金詳細》に登録されている内容が画面に反映されます。</p>
         <div class="body">
-          <h3 class="sub">作成</h3>
+          <h3 id="scene7-create" class="sub">作成</h3>
           <ol class="steps">
             <li>対象の部屋（複数部屋予約は該当部屋のみチェック）を選択し、プラン仕訳した料金を宿泊費にまとめて発行する場合は「プラン仕訳料金を統合する」にチェックを入れて、「明細・領収書作成」を押します。</li>
           </ol>
@@ -956,22 +959,22 @@
             <figcaption>予約詳細の《利用明細・領収書》欄。「プラン仕訳料金を統合する」の下に「領収項目に絞る」があり、履歴に状況表から発行した分を含む2件が並んでいます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>「領収項目に絞る」にチェックを入れると、現地決済など領収書の対象になる精算に紐づく項目だけで作成します。</div>
-          <h3 class="sub">確認・発行</h3>
+          <h3 id="scene7-issue" class="sub">確認・発行</h3>
           <p>作成した書類は《履歴》に一覧表示され、「ダウンロード」からPDFを確認できます。ダウンロードしてメールなどで送付・印刷してお客様にお渡しください。HOTEL SMARTからの共有機能はありません。</p>
           <figure class="screenshot">
             <a href="screenshots/front-24-invoice-history.jpg" target="_blank" rel="noopener"><img src="screenshots/front-24-invoice-history.jpg" alt="発行後の履歴（明細番号・枝番・作成日時・ダウンロード・有効）のスクリーンショット"></a>
             <figcaption>発行後の《履歴》。明細番号・枝番・作成日時が表示され、「ダウンロード」からPDFを確認できます。「有効」欄で有効な書類を管理します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
-          <h3 class="sub">再発行</h3>
+          <h3 id="scene7-reissue" class="sub">再発行</h3>
           <p>同じ内容のものを再発行する場合は「現在の日時で再作成」を押します。明細番号は変わらず新しい枝番が採番されます。</p>
-          <h3 class="sub">修正・追加</h3>
+          <h3 id="scene7-edit" class="sub">修正・追加</h3>
           <p>一度発行したものと違う内容で発行する場合は「明細・領収書作成」から新規に作成してください。新たな明細番号が採番されます。複数の履歴がある場合は、有効欄でチェックを入れて管理します。</p>
         </div>
       </section>
 
       <!-- SCENE 8 -->
       <section class="scene" id="s8">
-        <h2><span class="scene-num">8</span>チェックイン／チェックアウト</h2>
+        <h2 id="scene8"><span class="scene-num">8</span>チェックイン／チェックアウト</h2>
         <p class="path">【客室の状況表】</p>
         <p class="lede">フロントでの有人対応でチェックイン／アウトを行う方法です。操作は【客室の状況表】にて行います。チェックアウト日より前などで状況表から操作できない場合は、予約詳細のステータスから行います（下の注意を参照）。</p>
         <div class="body">
@@ -1045,7 +1048,7 @@
           </table>
           <div class="callout tip"><span class="label">ヒント</span>料金明細・領収書を発行する場合は「領収書発行」ボタンから発行できます。宛名と備考欄以外の記載内容の修正が必要な場合は、予約詳細ページから発行してください。</div>
 
-          <h3 class="sub">部屋ごとのチェックイン（複数部屋の予約）</h3>
+          <h3 id="scene8-room-checkin" class="sub">部屋ごとのチェックイン（複数部屋の予約）</h3>
           <p>複数部屋の予約では、予約詳細の右上のステータスから「チェックイン済みにする」を選び、チェックインする部屋だけを選んで実行できます。取り消す場合は、同じメニューの「チェックインを取り消す」で取り消す部屋を選びます。</p>
           <p>チェックイン通知は、全部屋を選んだ場合だけ送れます。チェックイン日より前に実行すると「チェックイン日ではありませんが、チェックインしますか？」と確認が出ます（2026/10/06確認）。</p>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>部屋ごとのチェックインを使うには、物件詳細の［部屋別チェックイン］を「許可する」にしておく必要があります。タブレットでのチェックインでは部屋別にできません。</div>
@@ -1094,7 +1097,7 @@
 
       <!-- SCENE 9 -->
       <section class="scene" id="s9">
-        <h2><span class="scene-num">9</span>部屋のブロック</h2>
+        <h2 id="scene9"><span class="scene-num">9</span>部屋のブロック</h2>
         <p class="path"><b>物件管理</b> ＞ 部屋情報 ＞ 詳細を見る ＞ <b>ブロック設定</b></p>
         <p class="lede">お部屋のメンテナンスや備品の故障など、一時的にお部屋の利用を停止したい場合はブロック機能を利用します。ブロックをした部屋には部屋割りができなくなります。</p>
         <div class="body">
@@ -1139,7 +1142,7 @@
             <figcaption>ブロック後の部屋割り表。415の10/28が紫色（ブロック中）になり、メモが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
-          <h3 class="sub">ブロックを解除する</h3>
+          <h3 id="scene9-unblock" class="sub">ブロックを解除する</h3>
           <p>同じ部屋詳細の〖ブロック設定〗で、解除する行の「×」を押してから「変更を保存する」を押します。確認画面は出ませんでした（2026/10/07確認）。</p>
           <figure class="screenshot">
             <a href="screenshots/front-110-block-row-removed.jpg" target="_blank" rel="noopener"><img src="screenshots/front-110-block-row-removed.jpg" alt="ブロック設定の行を×で消した状態のスクリーンショット"></a>
@@ -1171,11 +1174,11 @@
 
       <!-- SCENE 10 -->
       <section class="scene" id="s10">
-        <h2><span class="scene-num">10</span>日次締め</h2>
+        <h2 id="scene10"><span class="scene-num">10</span>日次締め</h2>
         <p class="path"><b>売上管理</b> ＞ <b>日次締め機能</b></p>
         <p class="lede">日次締め機能を利用すると、締めを行った日付の予約情報を確定させることができます。また、客室の状況表の日付の切り替えが行われます。</p>
         <div class="body">
-          <h3 class="sub">初回のみ：管理者が機能を有効にする</h3>
+          <h3 id="scene10-enable" class="sub">初回のみ：管理者が機能を有効にする</h3>
           <div class="callout warn"><span class="label">管理者専用</span>日次締め機能の有効化と締め時刻の設定は管理者が行います。種子島あらき別館は2026/10/06に有効化済み（毎日04:00）、種子島あらきホテルは2026/10/09に有効化済み（毎日04:00）です（2026/10/09確認）。</div>
           <ol class="steps">
             <li>【売上管理】＞【日次締め機能】を開きます。</li>
@@ -1192,7 +1195,7 @@
           </ol>
           <div class="callout warn"><span class="label">注意</span>日次締め機能は、一度有効化すると管理画面から無効化できません。また、有効化した時点ですでにその日の締め時刻を過ぎていると、前日以前の分がその場で締め済みになりました（2026/10/06確認）。締め済みの日の予約・料金・精算は変更できなくなるため、有効化する前に、直しておくべき予約や精算が残っていないか確認してください。締め時刻は一度設定すると変更できません（公式オンラインマニュアルより）。</div>
 
-          <h3 class="sub">毎日の締め処理</h3>
+          <h3 id="scene10-daily" class="sub">毎日の締め処理</h3>
           <p>日次締め画面には、まだ締めていない日付（対象日）が表示されます。締め時刻（別館は毎日04:00）を過ぎると、画面の一番下に「日次の締めを行う」ボタンが表示されます。締め時刻の前はボタンが表示されず、締め時刻を過ぎても自動では締められません（2026/10/07確認）。日次締め画面では、締めの前に注意が必要な予約、精算情報、前受金情報を確認できます。最新の状態は「再取得」で読み込み直します。締めは責任者が行います。</p>
           <figure class="screenshot">
             <a href="screenshots/front-44-daily-closing-enabled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-44-daily-closing-enabled.jpg" alt="有効化後の日次締め画面（種子島あらきホテル、対象日2026年10月09日、再取得と取得日時、チェックイン予定なのに未チェックインの予約の一覧）のスクリーンショット"></a>
@@ -1222,7 +1225,7 @@
           <div class="callout tip"><span class="label">確認状況</span>「チェックイン漏れ」の表示例の文言は、実画面でも同じ文言で表示されました（2026/10/09確認、上の画面）。「未収金の残り」の文言は公式フロント運用マニュアルの画面例によるもので、実画面ではまだ確認できていません。実際の文言が違う場合は、この表を更新してください。</div>
           <div class="callout warn"><span class="label">注意</span>日次締め済みのデータは変更できません。「日次の締めを行う」を押す前に、締める日（対象日）の予約・精算内容に誤りがないか必ず確認してください。</div>
 
-          <h3 class="sub">締めた後の状態</h3>
+          <h3 id="scene10-after" class="sub">締めた後の状態</h3>
           <p>締めが行われると、客室の状況表の日付が翌日に進みます。締めるまでは、客室の状況表の日付は締めていない日のままです（2026/10/07確認）。締め済みの日の予約詳細には「チェックイン日時が日次締めされているため、変更できません。」と表示され、日程やプランなどを変更できなくなります（2026/10/06確認）。</p>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>締め後も、料金科目の追加、チェックアウト日時の延長、食事区分の追加、メモの更新、メール送信、マイページからのお客様情報の更新はできます。締め後に金額の調整が必要な場合は、まだ締めていない日付で修正するか、予約外_料金・精算で登録します。</div>
           <figure class="screenshot">
@@ -1245,5 +1248,6 @@
     </footer>
   </div>
 </div>
+<script src="assets/search.js" defer></script>
 </body>
 </html>
