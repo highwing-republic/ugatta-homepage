@@ -302,6 +302,7 @@
     <ol>
       <li><a href="#s1">物件の基本情報を登録する</a></li>
       <li><a href="#s2">部屋タイプ・部屋・階層を登録する</a></li>
+      <li><a href="#s-layout">客室の状況表のレイアウト</a></li>
       <li><a href="#s3">お食事メニューを設定する</a></li>
       <li><a href="#s4">予約画面の表示項目を選ぶ</a></li>
       <li><a href="#s5">部屋割り表の初期設定</a></li>
@@ -403,9 +404,52 @@
         </div>
       </section>
 
+      <!-- SCENE 3 (客室の状況表のレイアウト) -->
+      <section class="scene" id="s-layout">
+        <h2><span class="scene-num">3</span>客室の状況表のレイアウト</h2>
+        <p class="path"><b>客室の状況表</b> ＞ 画面右下「レイアウト変更」</p>
+        <p class="lede">客室の状況表で全部屋の状態を一目で見られるよう、部屋を建物の階ごとに並べます。新しく登録した部屋は「未配置の部屋」に横一列で並ぶだけなので、登録後に必ず配置します。</p>
+        <div class="body">
+          <table class="field">
+            <caption>あらきホテルの配置ルール（2026/10/09確認）</caption>
+            <tr><th>行</th><th>内容</th><th>部屋</th></tr>
+            <tr><td>1</td><td>5階</td><td>501、502</td></tr>
+            <tr><td>2</td><td>4階</td><td>402、404〜413、416、419、420（14室）</td></tr>
+            <tr><td>3</td><td>3階</td><td>302〜314、316、319、320（16室）</td></tr>
+            <tr><td>4</td><td>2階</td><td>202〜209、260〜263（コンドミニアム）（12室）</td></tr>
+            <tr><td>5</td><td>キャビン</td><td>1〜24</td></tr>
+            <tr><td>6</td><td>カプセル</td><td>CP1〜CP20</td></tr>
+            <tr><td>7</td><td>赤尾木荘</td><td>赤1〜赤6</td></tr>
+          </table>
+          <ul>
+            <li>上の行から5階→2階の降順、その下にキャビン・カプセル・赤尾木荘の順に並べます。各行の中は部屋番号の小さい順に左から並べます。</li>
+            <li>2026/10/09に、この配置で全94室を設定済みです（未配置の部屋は0室）（2026/10/09確認）。</li>
+            <li>別館（4室）は別の物件として、それぞれの客室の状況表で配置します。</li>
+          </ul>
+
+          <ol class="steps">
+            <li>客室の状況表を開き、物件で「種子島あらきホテル」を選びます。</li>
+            <li>画面右下の「レイアウト変更」を押します。「部屋の配置を変更しますか？」と確認が出るので OK を押すと、編集モードになります（配置枠の上下左右に⊕ボタンが表示されます）。</li>
+            <li>「未配置の部屋」から部屋をドラッグ＆ドロップして、配置ルールの位置に置きます。マス（行・列）が足りないときは、配置枠の上下左右の⊕ボタンで追加します。</li>
+            <li>配置が終わったら、もう一度「レイアウト変更」を押します。「配置変更を保存しますか？」と確認が出るので OK を押すと保存されます。</li>
+          </ol>
+
+          <div class="callout warn"><span class="label">注意</span>
+            <ul>
+              <li>「レイアウト変更」を押さずにほかの画面へ移ると、配置は保存されません。</li>
+              <li>保存すると、部屋が置かれていない端の行・列は自動で削られます。</li>
+              <li>部屋を新しく登録したときは「未配置の部屋」に表示されるので、配置ルールに従って同じ手順で配置します。</li>
+              <li>部屋数が多く画面に収まらない行（キャビン24室など）は横スクロールで表示されます。全体を見たいときは、画面上部の「縮小表示」や全画面表示を使います。</li>
+            </ul>
+          </div>
+
+          <div class="callout tip"><span class="label">ヒント</span>部屋情報（物件管理 ＞ 部屋情報 ＞ 詳細を見る）の「階数」は、2026/10/09時点で未設定（未指定）です（2026/10/09確認）。部屋割り表の「フロア」での絞り込みに使う項目と考えられるため、必要に応じて設定を検討します（要確認）。</div>
+        </div>
+      </section>
+
       <!-- SCENE 3 -->
       <section class="scene" id="s3">
-        <h2><span class="scene-num">3</span>お食事メニュー（食事項目）を設定する</h2>
+        <h2><span class="scene-num">4</span>お食事メニュー（食事項目）を設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>食事設定／食事項目</b>セクション</p>
         <p class="lede">朝食・夕食などお食事の提供がある施設向けの設定です。予約時にプランへ自動反映させたり、食事場所・提供時間を管理できます。</p>
         <div class="callout warn"><span class="label">あらきホテルでは現在使用しません</span>現在は食事提供がないため、この設定は変更しないでください。将来食事提供を開始する場合に、責任者とHOTEL SMARTへ確認して設定します。</div>
@@ -421,7 +465,7 @@
 
       <!-- SCENE 4 -->
       <section class="scene" id="s4">
-        <h2><span class="scene-num">4</span>予約画面の表示項目を選ぶ（予約詳細表示設定）</h2>
+        <h2><span class="scene-num">5</span>予約画面の表示項目を選ぶ（予約詳細表示設定）</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>予約詳細表示設定</b>セクション</p>
         <p class="lede">予約作成・予約詳細画面に表示する項目の「表示する／表示しない」を、施設の運用に合わせて絞り込めます。使わない項目を非表示にすると、フロント業務中の画面がすっきりします。</p>
         <div class="body">
@@ -440,7 +484,7 @@
 
       <!-- SCENE 5 -->
       <section class="scene" id="s5">
-        <h2><span class="scene-num">5</span>部屋割り表の初期設定</h2>
+        <h2><span class="scene-num">6</span>部屋割り表の初期設定</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>部屋割り表設定</b>セクション</p>
         <p class="lede">【予約管理】＞【部屋割り表】画面を開いたときの初期表示を決める設定です。</p>
         <div class="body">
@@ -452,7 +496,7 @@
 
       <!-- SCENE 6 -->
       <section class="scene" id="s6">
-        <h2><span class="scene-num">6</span>付帯設備・手配品を登録する</h2>
+        <h2><span class="scene-num">7</span>付帯設備・手配品を登録する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>付帯設備／手配品</b>セクション</p>
         <p class="lede">会議室・駐車場・レンタサイクルなど「設備」の予約枠と、アメニティやレンタル品といった「手配品」を、それぞれ個別に登録します。</p>
         <div class="body">
@@ -466,7 +510,7 @@
 
       <!-- SCENE 7 -->
       <section class="scene" id="s7">
-        <h2><span class="scene-num">7</span>通知設定（誰に何を知らせるか）</h2>
+        <h2><span class="scene-num">8</span>通知設定（誰に何を知らせるか）</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>通知設定</b>セクション（右カラム）</p>
         <p class="lede">スタッフ向けの社内通知です。お客様への自動メールとは別物なので混同しないよう注意してください。</p>
         <div class="body">
@@ -485,7 +529,7 @@
 
       <!-- SCENE 8 -->
       <section class="scene" id="s8">
-        <h2><span class="scene-num">8</span>請求書・領収書まわりの設定</h2>
+        <h2><span class="scene-num">9</span>請求書・領収書まわりの設定</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ <b>利用明細兼領収書・請求書 角印設定</b>／<b>社内共有情報</b>／<b>明細書設定</b>セクション（右カラム）</p>
         <div class="body">
           <table class="field">
@@ -501,7 +545,7 @@
 
       <!-- SCENE 9 -->
       <section class="scene" id="s9">
-        <h2><span class="scene-num">9</span>チェックイン用タブレットを設定する</h2>
+        <h2><span class="scene-num">10</span>チェックイン用タブレットを設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>タブレット表示設定</b></p>
         <div class="pillrow">
           <span class="pill">言語選択</span><span class="pill">チェックイン/アウト選択</span><span class="pill">本人確認</span>
@@ -552,7 +596,7 @@
 
       <!-- SCENE 10 -->
       <section class="scene" id="s10">
-        <h2><span class="scene-num">10</span>お客様への自動メールを設定する</h2>
+        <h2><span class="scene-num">11</span>お客様への自動メールを設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>自動メール配信設定</b></p>
         <p class="lede">予約から宿泊後までの各タイミングで、お客様に自動送信するメールをテンプレート単位で作り込みます。件名・本文には差し込みキーワード（例：[代表者名] [お客様マイページのURL]）が使えます。</p>
         <div class="body">
@@ -570,7 +614,7 @@
 
       <!-- SCENE 11 -->
       <section class="scene" id="s11">
-        <h2><span class="scene-num">11</span>お客様マイページを設定する</h2>
+        <h2><span class="scene-num">12</span>お客様マイページを設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>お客様マイページ設定</b></p>
         <p class="lede">宿泊前後にお客様がWebブラウザから確認できる専用ページの、入力項目と表示内容を設定します。</p>
         <div class="body">
@@ -588,7 +632,7 @@
 
       <!-- SCENE 12 -->
       <section class="scene" id="s12">
-        <h2><span class="scene-num">12</span>自動部屋割りを設定する</h2>
+        <h2><span class="scene-num">13</span>自動部屋割りを設定する</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>自動部屋割り設定</b></p>
         <div class="body">
           <table class="field">
@@ -605,7 +649,7 @@
 
       <!-- SCENE 13 -->
       <section class="scene" id="s13">
-        <h2><span class="scene-num">13</span>精算画面の支払い方法を選ぶ</h2>
+        <h2><span class="scene-num">14</span>精算画面の支払い方法を選ぶ</h2>
         <p class="path"><b>物件管理</b> ＞ <b>物件情報</b> ＞ 詳細を見る ＞ 「設定」内 <b>支払い方法設定</b></p>
         <p class="lede">精算画面に並ぶ支払い方法の選択肢を、実際に使うものだけに絞り込みます。カテゴリーは「売掛無し」「予約経路」「決済代行サービス」「クレジットカード」「電子マネー」「ID決済」「売掛」「行政補助金」「前受」「アクワイアラー」「その他」の11カテゴリー、数十種類の決済手段が用意されています。</p>
         <div class="body">
@@ -620,7 +664,7 @@
 
       <!-- SCENE 14 -->
       <section class="scene" id="s14">
-        <h2><span class="scene-num">14</span>共通マスタ・税設定を確認する</h2>
+        <h2><span class="scene-num">15</span>共通マスタ・税設定を確認する</h2>
         <p class="path">画面左下の <b>設定</b> ＞ <b>マスターデータ設定</b>／<b>入湯税・宿泊税設定</b></p>
         <p class="lede">料金科目や税の計算に関わる全施設共通の設定です。日常のフロント操作では変更せず、運用開始時または制度変更時に管理者が確認します。</p>
         <div class="body">
@@ -655,7 +699,7 @@
 
       <!-- SCENE 15 -->
       <section class="scene" id="s15">
-        <h2><span class="scene-num">15</span>外部サービス連携を確認する</h2>
+        <h2><span class="scene-num">16</span>外部サービス連携を確認する</h2>
         <p class="path">サイドバー下部の <b>オプション機能</b></p>
         <p class="lede">外部サービスや機器をHOTEL SMARTと連携するための管理画面です。通常のフロント業務では操作しません。</p>
         <div class="body">
