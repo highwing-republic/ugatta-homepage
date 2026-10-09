@@ -51,7 +51,7 @@
     background:var(--bg);
     color:var(--ink);
     font-family:var(--lab-font-sans);
-    line-height:1.8;
+    line-height:1.9;
     font-size:16px;
   }
   a{color:var(--accent-ink);}
@@ -136,7 +136,7 @@
   nav.toc a:hover{color:var(--ink); border-left-color:var(--line);}
   main{padding:8px 32px 100px;min-width:0;}
   section.scene{
-    padding:44px 0;
+    padding:64px 0 44px;
     border-bottom:1px solid var(--line);
     scroll-margin-top:16px;
   }
@@ -177,7 +177,7 @@
     counter-increment:step;
     position:relative;
     padding-left:34px;
-    margin-bottom:16px;
+    margin-bottom:1.4rem;
   }
   .steps li::before{
     content:counter(step);
@@ -253,8 +253,9 @@
     border-left:3px solid var(--line);
     padding-left:12px;
   }
+  h3.sub{margin-top:2em;}
   figure.screenshot{
-    margin:0 0 22px;
+    margin:1.5em 0;
     border:1px solid var(--line);
     border-radius:10px;
     overflow:hidden;
@@ -569,24 +570,24 @@
             <tr><th>無操作でトップに戻る秒数</th><td>一定時間操作がない場合に画面をリセットするまでの秒数</td></tr>
           </table>
 
-          <h3 style="font-size:16px;margin:18px 0 6px;">② チェックインコードまわり</h3>
+          <h3 style="font-size:16px;margin:2em 0 6px;">② チェックインコードまわり</h3>
           <table class="field">
             <tr><th>チェックインコード入力欄（4言語）</th><td>タブレット上に表示する物件名の多言語表記</td></tr>
             <tr><th>チェックインコード不要チェックイン/チェックアウト</th><td>コード入力を省略できるようにするか</td></tr>
             <tr><th>チェックインコード受付期間</th><td>チェックアウト予定時刻の何時間後まで、そのコードでの受付を許可するか</td></tr>
           </table>
 
-          <h3 style="font-size:16px;margin:18px 0 6px;">③ チュートリアル・契約確認</h3>
+          <h3 style="font-size:16px;margin:2em 0 6px;">③ チュートリアル・契約確認</h3>
           <table class="field">
             <tr><th>チュートリアル（ウェルカムメッセージ）</th><td>4言語で入力可能な、宿泊者が最初に見る案内文</td></tr>
             <tr><th>契約確認・同意方法</th><td>チェックボックス／サイン、から選択</td></tr>
             <tr><th>宿泊約款・定期借家契約</th><td>「現地タブレットに表示する」を選ぶとチェックイン時に表示・同意取得</td></tr>
           </table>
 
-          <h3 style="font-size:16px;margin:18px 0 6px;">④ お客様情報入力</h3>
+          <h3 style="font-size:16px;margin:2em 0 6px;">④ お客様情報入力</h3>
           <p>氏名カナ・都道府県・国籍・職業・生年月日・性別・前泊地／行先地・旅券番号・顔写真・身分証明書・体温計・ワクチン接種証明書・陰性証明書など、多数の項目ごとに「必須」「代表者のみ」をチェックで指定できます。「＋項目を追加する」で言語・国籍セグメント別の入力パターンを追加することも可能です。加えて「お客様情報入力（カスタム質問）」から施設独自の質問も追加できます。</p>
 
-          <h3 style="font-size:16px;margin:18px 0 6px;">⑤ チェックイン完了・チェックアウト画面</h3>
+          <h3 style="font-size:16px;margin:2em 0 6px;">⑤ チェックイン完了・チェックアウト画面</h3>
           <table class="field">
             <tr><th>入室案内</th><td>部屋番号・鍵番号などの案内文（多言語）</td></tr>
             <tr><th>部屋情報印刷</th><td>印刷しない／部屋番号のみ／部屋番号と鍵番号／印刷メッセージのみ、から選択</td></tr>
