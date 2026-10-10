@@ -8,6 +8,9 @@
 - 入力は、公式サイトの記事一覧ページをブラウザで「名前を付けて保存」した HTML か、
   一覧をコピーして貼り付けたテキスト。
   - HTML：公式サイト（pms-manual.xxxaz.jp）へのリンクを記事として拾い、直前の見出しをカテゴリにする。
+    /category/… へのリンク（メニューのカテゴリ）は「カテゴリ一覧」として取り込む（親カテゴリがあればそれをカテゴリ名にする）。
+    トップページ（/）を保存したものではカテゴリだけ、マニュアル一覧（/manual）を保存したものでは記事も取り込める。
+  - 複数のファイルを渡すと、まとめて1つの索引にする。
   - テキスト：URL を含む行を「記事名 URL」、URL を含まない行をカテゴリ名として読む。
 - assets/official-manual-index.json に {category, title, url} の一覧を書き出す。
   記事の本文は取り込まない（タイトルとリンクだけ。本文の転載は許諾が無いため）。
@@ -21,7 +24,7 @@ import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import unquote, urljoin, urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "assets" / "official-manual-index.json"
@@ -34,9 +37,20 @@ def squash(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+SKIP_PATHS = ("/wp-", "/feed", "/comments", "/tag/", "/author/", "/xmlrpc", "/news")
+
+
 def is_article(url: str) -> bool:
     u = urlparse(url)
-    return u.netloc == HOST and u.path not in ("", "/") and not u.path.startswith(("/wp-", "/feed", "/tag/", "/author/"))
+    return u.netloc == HOST and u.path not in ("", "/") and not u.path.startswith(SKIP_PATHS)
+
+
+def category_of(url: str) -> str | None:
+    """/category/親/子 → 親、/category/親 → 「カテゴリ一覧」。カテゴリページでなければ None。"""
+    parts = [unquote(x) for x in urlparse(url).path.strip("/").split("/")]
+    if len(parts) < 2 or parts[0] != "category":
+        return None
+    return parts[1] if len(parts) >= 3 else "カテゴリ一覧"
 
 
 class LinkParser(HTMLParser):
@@ -50,7 +64,7 @@ class LinkParser(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
-        if tag in ("script", "style", "nav", "footer", "header"):
+        if tag in ("script", "style", "footer"):
             self.skip += 1
         elif tag in ("h1", "h2", "h3", "h4") and not self.skip:
             self.heading = ""
@@ -60,7 +74,7 @@ class LinkParser(HTMLParser):
                 self.link = {"url": href.split("#")[0], "text": ""}
 
     def handle_endtag(self, tag):
-        if tag in ("script", "style", "nav", "footer", "header") and self.skip:
+        if tag in ("script", "style", "footer") and self.skip:
             self.skip -= 1
         elif tag in ("h1", "h2", "h3", "h4") and self.heading is not None:
             text = squash(self.heading)
@@ -69,8 +83,9 @@ class LinkParser(HTMLParser):
             self.heading = None
         elif tag == "a" and self.link:
             title = squash(self.link["text"])
+            cat = category_of(self.link["url"])
             if title:
-                self.items.append({"category": self.category, "title": title, "url": self.link["url"]})
+                self.items.append({"category": cat or self.category, "title": title, "url": self.link["url"]})
             self.link = None
 
     def handle_data(self, data):
@@ -104,19 +119,32 @@ def from_text(text: str) -> list[dict]:
 
 
 def main() -> None:
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         sys.exit(__doc__)
-    src = Path(sys.argv[1])
-    text = src.read_text(encoding="utf-8", errors="replace")
-    items = from_html(text) if "<a " in text.lower() else from_text(text)
     seen, out = set(), []
-    for it in items:
-        if it["url"] in seen:
-            continue
-        seen.add(it["url"])
-        out.append(it)
-    if not out:
-        sys.exit(f"{src}: {HOST} の記事へのリンクが見つかりませんでした")
+    for arg in sys.argv[1:]:
+        src = Path(arg)
+        text = src.read_text(encoding="utf-8", errors="replace")
+        items = from_html(text) if "<a " in text.lower() else from_text(text)
+        n = 0
+        for it in items:
+            if it["url"] in seen:
+                continue
+            seen.add(it["url"])
+            out.append(it)
+            n += 1
+        if not n:
+            sys.exit(f"{src}: {HOST} の記事へのリンクが見つかりませんでした")
+    # 子カテゴリの親は URL の slug（例：settings）なので、親カテゴリページの表示名に置き換える
+    by_path = {urlparse(e["url"]).path.strip("/"): e["title"] for e in out}
+    for e in out:
+        parts = [unquote(x) for x in urlparse(e["url"]).path.strip("/").split("/")]
+        if len(parts) >= 3 and parts[0] == "category":
+            e["category"] = by_path.get("/".join(urlparse(e["url"]).path.strip("/").split("/")[:2]), e["category"])
+        elif not e["category"]:
+            e["category"] = "ガイド"
+    # 記事を先、カテゴリページを後ろに（同点の検索結果で記事が上に来るように）
+    out.sort(key=lambda e: category_of(e["url"]) is not None)
     body = ",\n".join(json.dumps(e, ensure_ascii=False) for e in out)
     OUTPUT.write_text("[\n" + body + "\n]\n", encoding="utf-8", newline="\n")
     cats = len({e["category"] for e in out})

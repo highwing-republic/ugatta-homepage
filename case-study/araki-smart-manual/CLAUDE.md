@@ -28,5 +28,5 @@
 - 作り直すときは、公式サイトの記事一覧ページを保存した HTML か、一覧を貼り付けたテキストを渡して実行する（公式サイトは自動取得を拒否しているため、スクリプトはネットに接続しない）。
 
   ```
-  python case-study/araki-smart-manual/scripts/import_official_index.py 記事一覧.html
+  python case-study/araki-smart-manual/scripts/import_official_index.py トップ.html 記事一覧.html
   ```
