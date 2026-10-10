@@ -10,7 +10,11 @@
   - HTML：公式サイト（pms-manual.xxxaz.jp）へのリンクを記事として拾い、直前の見出しをカテゴリにする。
     /category/… へのリンク（メニューのカテゴリ）は「カテゴリ一覧」として取り込む（親カテゴリがあればそれをカテゴリ名にする）。
     トップページ（/）を保存したものではカテゴリだけ、マニュアル一覧（/manual）を保存したものでは記事も取り込める。
-  - 複数のファイルを渡すと、まとめて1つの索引にする。
+  - JSON：公式サイトの WordPress REST API をブラウザで開いて保存したもの。
+      https://pms-manual.xxxaz.jp/wp-json/wp/v2/categories?per_page=100
+      https://pms-manual.xxxaz.jp/wp-json/wp/v2/posts?per_page=100&page=1 （page=2 も）
+    posts の各記事を、categories の名前（親カテゴリがあれば「親 › 子」）付きで取り込む。
+  - 複数のファイルを渡すと、まとめて1つの索引にする（categories の JSON を先に渡す）。
   - テキスト：URL を含む行を「記事名 URL」、URL を含まない行をカテゴリ名として読む。
 - assets/official-manual-index.json に {category, title, url} の一覧を書き出す。
   記事の本文は取り込まない（タイトルとリンクだけ。本文の転載は許諾が無いため）。
@@ -118,6 +122,43 @@ def from_text(text: str) -> list[dict]:
     return items
 
 
+def strip_tags(s: str) -> str:
+    import html as _html
+    return squash(_html.unescape(re.sub(r"<[^>]+>", " ", s)))
+
+
+WP_CATEGORIES: dict[int, dict] = {}
+
+
+def wp_category_name(cid: int) -> str:
+    c = WP_CATEGORIES.get(cid)
+    if not c:
+        return ""
+    parent = WP_CATEGORIES.get(c.get("parent") or 0)
+    return f"{parent['name']} › {c['name']}" if parent else c["name"]
+
+
+def from_json(data) -> list[dict]:
+    """WordPress REST API の categories / posts の JSON。"""
+    items: list[dict] = []
+    if not isinstance(data, list):
+        return items
+    for o in data:
+        if not isinstance(o, dict) or "link" not in o:
+            continue
+        if "parent" in o and "count" in o and "title" not in o:  # categories
+            WP_CATEGORIES[o["id"]] = {"name": strip_tags(o.get("name", "")), "parent": o.get("parent", 0)}
+            continue
+        title = o.get("title")
+        title = strip_tags(title.get("rendered", "")) if isinstance(title, dict) else strip_tags(str(title or ""))
+        if not title or not is_article(o["link"]):
+            continue
+        cats = [wp_category_name(c) for c in (o.get("categories") or [])]
+        cats = [c for c in cats if c]
+        items.append({"category": " / ".join(cats), "title": title, "url": o["link"]})
+    return items
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         sys.exit(__doc__)
@@ -125,7 +166,14 @@ def main() -> None:
     for arg in sys.argv[1:]:
         src = Path(arg)
         text = src.read_text(encoding="utf-8", errors="replace")
-        items = from_html(text) if "<a " in text.lower() else from_text(text)
+        if text.lstrip().startswith("["):
+            items = from_json(json.loads(text))
+            if not items:  # categories だけのファイルは、記事を出さない
+                continue
+        elif "<a " in text.lower():
+            items = from_html(text)
+        else:
+            items = from_text(text)
         n = 0
         for it in items:
             if it["url"] in seen:
@@ -141,7 +189,7 @@ def main() -> None:
         parts = [unquote(x) for x in urlparse(e["url"]).path.strip("/").split("/")]
         if len(parts) >= 3 and parts[0] == "category":
             e["category"] = by_path.get("/".join(urlparse(e["url"]).path.strip("/").split("/")[:2]), e["category"])
-        elif not e["category"]:
+        elif not e["category"] and category_of(e["url"]) is None and urlparse(e["url"]).path.count("/") <= 1:
             e["category"] = "ガイド"
     # 記事を先、カテゴリページを後ろに（同点の検索結果で記事が上に来るように）
     out.sort(key=lambda e: category_of(e["url"]) is not None)

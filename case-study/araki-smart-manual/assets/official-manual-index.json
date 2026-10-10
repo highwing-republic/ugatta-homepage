@@ -31,5 +31,9 @@
 {"category": "カテゴリ一覧", "title": "タブレット", "url": "https://pms-manual.xxxaz.jp/category/%e3%82%bf%e3%83%96%e3%83%ac%e3%83%83%e3%83%88"},
 {"category": "カテゴリ一覧", "title": "通知設定", "url": "https://pms-manual.xxxaz.jp/category/notification"},
 {"category": "その他設定", "title": "マスターデータ設定", "url": "https://pms-manual.xxxaz.jp/category/settings/%e3%83%9e%e3%82%b9%e3%82%bf%e3%83%bc%e3%83%87%e3%83%bc%e3%82%bf%e8%a8%ad%e5%ae%9a"},
-{"category": "その他設定", "title": "入湯税・宿泊税設定", "url": "https://pms-manual.xxxaz.jp/category/settings/%e5%85%a5%e6%b9%af%e7%a8%8e%e3%83%bb%e5%ae%bf%e6%b3%8a%e7%a8%8e%e8%a8%ad%e5%ae%9a"}
+{"category": "その他設定", "title": "入湯税・宿泊税設定", "url": "https://pms-manual.xxxaz.jp/category/settings/%e5%85%a5%e6%b9%af%e7%a8%8e%e3%83%bb%e5%ae%bf%e6%b3%8a%e7%a8%8e%e8%a8%ad%e5%ae%9a"},
+{"category": "カテゴリ一覧", "title": "キャンセル料請求", "url": "https://pms-manual.xxxaz.jp/category/%e3%82%ad%e3%83%a3%e3%83%b3%e3%82%bb%e3%83%ab%e6%96%99%e8%ab%8b%e6%b1%82"},
+{"category": "カテゴリ一覧", "title": "契約関連", "url": "https://pms-manual.xxxaz.jp/category/%e5%a5%91%e7%b4%84%e9%96%a2%e9%80%a3"},
+{"category": "カテゴリ一覧", "title": "よくある質問", "url": "https://pms-manual.xxxaz.jp/category/%e3%82%88%e3%81%8f%e3%81%82%e3%82%8b%e8%b3%aa%e5%95%8f"},
+{"category": "カテゴリ一覧", "title": "その他", "url": "https://pms-manual.xxxaz.jp/category/%e3%81%9d%e3%81%ae%e4%bb%96"}
 ]
