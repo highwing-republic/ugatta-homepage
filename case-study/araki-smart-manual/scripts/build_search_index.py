@@ -5,7 +5,7 @@
     python case-study/araki-smart-manual/scripts/build_search_index.py
 
 - 各ページを h2 / h3 ごとの節に分け、assets/search-index.json に書き出す。
-- 本文テキストには figcaption（画像のキャプション）も含む。1節2,000字で打ち切る。
+- 本文テキストには figcaption（画像のキャプション）も含む。1節6,000字で打ち切る。
 - すべての h2 / h3 に id が必要（検索結果はその id へ直接リンクする）。id の無い見出しがあるとエラーで止まる。
 
 運用ルール: ページを更新したら必ずこのスクリプトを再実行し、
@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "assets" / "search-index.json"
-MAX_TEXT = 2000
+MAX_TEXT = 6000
 
 # 検索結果の並び（同点のとき）はこの順。index.html は他ページへのリンク集なので対象外。
 PAGES = [
