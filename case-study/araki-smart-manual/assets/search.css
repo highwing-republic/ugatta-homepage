@@ -91,6 +91,8 @@ mark.site-search-hl { background: var(--lab-gold-tint, #fff8e6); color: inherit;
 .search-result-page { display: inline-block; font-size: .75rem; font-weight: 700; color: var(--lab-teal, #2b6474); background: var(--lab-teal-tint, #e7f1f3); border-radius: 999px; padding: .1rem .55rem; }
 .search-result-heading { display: block; margin-top: .3rem; font-weight: 700; font-size: 1.02rem; color: var(--lab-navy, #17324d); }
 .search-result-snippet { display: block; margin-top: .25rem; font-size: .88rem; color: var(--lab-ink-soft, #5a6875); line-height: 1.7; }
+.search-result.is-official .search-result-page { color: var(--lab-gold-ink, #6e5324); background: var(--lab-gold-tint, #fff8e6); }
+.site-search-external { display: inline-block; margin-left: .5rem; font-size: .75rem; font-weight: 700; color: var(--lab-teal, #2b6474); white-space: nowrap; }
 .search-results mark, .search-status mark { background: var(--lab-gold-tint, #fff8e6); color: inherit; box-shadow: inset 0 -2px 0 var(--lab-gold, #b8913f); padding: 0 1px; }
 
 /* manual.css のページ：ヘッダーのナビの右に置く */

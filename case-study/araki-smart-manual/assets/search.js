@@ -5,6 +5,8 @@
  * - 依存ライブラリなし。ページ内の [data-site-search] フォームに検索機能を付ける。
  * - URL の ?q=語 で検索語を渡すと、最初の検索ボックスに入れて検索する。
  *   search.html では、[data-search-page] の中に全件の結果一覧を出す。
+ * - assets/official-manual-index.json（公式オンラインマニュアルの記事名とURL。
+ *   scripts/import_official_index.py で作る）も検索し、ヒットしたら公式の記事へリンクする。
  * - 結果のリンクには ?hl=語 を付け、移動先の節の中で一致した語を強調表示する。
  */
 (function () {
@@ -16,6 +18,9 @@
   var scriptSrc = (document.currentScript && document.currentScript.src) || "assets/search.js";
   var INDEX_URL = new URL("search-index.json", scriptSrc).href;
   var SYNONYMS_URL = new URL("search-synonyms.json", scriptSrc).href;
+  var OFFICIAL_URL = new URL("official-manual-index.json", scriptSrc).href;
+  var OFFICIAL_PAGE = "official";
+  var OFFICIAL_TITLE = "公式マニュアル";
   var currentPage = location.pathname.split("/").pop() || "index.html";
 
   // ---------- 正規化（NFKC・小文字・カタカナ→ひらがな） ----------
@@ -53,7 +58,8 @@
     if (dataPromise) return dataPromise;
     dataPromise = Promise.all([
       fetch(INDEX_URL).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }),
-      fetch(SYNONYMS_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
+      fetch(SYNONYMS_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
+      fetch(OFFICIAL_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
     ]).then(function (res) {
       var pageOrder = {};
       var entries = res[0].map(function (e, i) {
@@ -62,6 +68,16 @@
           page: e.page, pageTitle: e.pageTitle, anchor: e.anchor, heading: e.heading, text: e.text,
           nh: normalize(e.heading), nt: normalize(e.text), order: i
         };
+      });
+      // 公式オンラインマニュアルの記事（記事名とカテゴリだけ。同点ならこのマニュアルの節より後ろ）
+      (res[2] || []).forEach(function (o, i) {
+        if (!o || !o.title || !o.url) return;
+        pageOrder[OFFICIAL_PAGE] = Object.keys(pageOrder).length;
+        var text = o.category ? "カテゴリ：" + o.category : "";
+        entries.push({
+          page: OFFICIAL_PAGE, pageTitle: OFFICIAL_TITLE, anchor: "", heading: o.title, text: text, url: o.url,
+          nh: normalize(o.title), nt: normalize(text), order: entries.length + i
+        });
       });
       entries.forEach(function (e) { e.pageRank = pageOrder[e.page]; });
       // 語 → 同じ組のほかの語。組の先頭の語（代表語）には canon を付ける
@@ -252,7 +268,16 @@
   }
 
   function resultHref(e, query) {
+    if (e.url) return e.url;
     return e.page + "?hl=" + encodeURIComponent(query) + "#" + e.anchor;
+  }
+
+  // 公式マニュアルの記事は別タブで開く
+  function linkAttrs(e) {
+    return e.url ? ' target="_blank" rel="noopener"' : "";
+  }
+  function externalMark(e) {
+    return e.url ? '<span class="site-search-external">公式サイトで開く ↗</span>' : "";
   }
 
   // 文字列中の一致語を <mark> で囲んだ HTML を返す
@@ -352,9 +377,9 @@
           box.innerHTML = (note ? '<div class="site-search-note">' + escapeHtml(note) + "</div>" : "") +
             res.hits.slice(0, MAX_RESULTS).map(function (h) {
               var e = h.e;
-              return '<a class="site-search-item" role="option" aria-selected="false" href="' + escapeHtml(resultHref(e, q)) + '">' +
+              return '<a class="site-search-item" role="option" aria-selected="false" href="' + escapeHtml(resultHref(e, q)) + '"' + linkAttrs(e) + ">" +
                 '<span class="site-search-path">' + escapeHtml(e.pageTitle) + " › " + highlight(e.heading, words) + "</span>" +
-                '<span class="site-search-snippet">' + snippet(e.text, words) + "</span></a>";
+                '<span class="site-search-snippet">' + snippet(e.text, words) + externalMark(e) + "</span></a>";
             }).join("") +
             '<a class="site-search-all" href="search.html?q=' + encodeURIComponent(q) + '">' +
             (res.total > MAX_RESULTS ? "すべての結果を見る（" + res.total + "件）" : "結果一覧ページで見る（" + res.total + "件）") + "</a>";
@@ -530,10 +555,10 @@
           : "「" + q + "」は見つかりませんでした。別の言い方（例：「取消」→「キャンセル」）や、短い言葉でお試しください。";
         list.innerHTML = shown.map(function (h) {
           var e = h.e;
-          return '<li><a class="search-result" href="' + escapeHtml(resultHref(e, q)) + '">' +
+          return '<li><a class="search-result' + (e.url ? " is-official" : "") + '" href="' + escapeHtml(resultHref(e, q)) + '"' + linkAttrs(e) + ">" +
             '<span class="search-result-page">' + escapeHtml(e.pageTitle) + "</span>" +
             '<span class="search-result-heading">' + highlight(e.heading, words) + "</span>" +
-            '<span class="search-result-snippet">' + snippet(e.text, words, PAGE_SNIPPET_LEN) + "</span></a></li>";
+            '<span class="search-result-snippet">' + snippet(e.text, words, PAGE_SNIPPET_LEN) + externalMark(e) + "</span></a></li>";
         }).join("");
       }).catch(function () {
         status.textContent = "検索データを読み込めませんでした。ページを再読み込みしてください。";

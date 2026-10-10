@@ -20,3 +20,13 @@
   ```
   python -m http.server 8000   # case-study/araki-smart-manual で実行し、http://localhost:8000/ を開く
   ```
+
+## 公式オンラインマニュアルの記事索引
+
+- `assets/official-manual-index.json` に、HOTEL SMART 公式オンラインマニュアル（pms-manual.xxxaz.jp）の記事名・カテゴリ・URLを置く。検索でヒットすると「公式マニュアル」として表示し、公式サイトの記事を別タブで開く。
+- 記事の本文は取り込まない（転載の許諾は画像8点分だけ）。タイトルとリンクだけにする。
+- 作り直すときは、公式サイトの記事一覧ページを保存した HTML か、一覧を貼り付けたテキストを渡して実行する（公式サイトは自動取得を拒否しているため、スクリプトはネットに接続しない）。
+
+  ```
+  python case-study/araki-smart-manual/scripts/import_official_index.py 記事一覧.html
+  ```
