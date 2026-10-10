@@ -25,8 +25,9 @@
 
 - `assets/official-manual-index.json` に、HOTEL SMART 公式オンラインマニュアル（pms-manual.xxxaz.jp）の記事名・カテゴリ・URLを置く。検索でヒットすると「公式マニュアル」として表示し、公式サイトの記事を別タブで開く。
 - 記事の本文は取り込まない（転載の許諾は画像8点分だけ）。タイトルとリンクだけにする。
-- 作り直すときは、公式サイトの記事一覧ページを保存した HTML か、一覧を貼り付けたテキストを渡して実行する（公式サイトは自動取得を拒否しているため、スクリプトはネットに接続しない）。
+- 作り直すときは、公式サイトのトップ・マニュアル一覧・各カテゴリページ（/category/…、2ページ目以降も）を保存した HTML を全部まとめて渡して実行する。スクリプトはネットに接続しない。
+  - 公式サイトは robots.txt で自動取得を断っており、WordPress の API（/wp-json）も 403 になる。2026-10-10 の取り込みは、オーナーの了承を得てカテゴリページを3秒間隔で取得した。自動取得をやり直すときは、改めてオーナーに確認する。
 
   ```
-  python case-study/araki-smart-manual/scripts/import_official_index.py トップ.html 記事一覧.html
+  python case-study/araki-smart-manual/scripts/import_official_index.py トップ.html マニュアル一覧.html カテゴリ/*.html
   ```

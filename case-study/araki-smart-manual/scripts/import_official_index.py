@@ -9,7 +9,8 @@
   一覧をコピーして貼り付けたテキスト。
   - HTML：公式サイト（pms-manual.xxxaz.jp）へのリンクを記事として拾い、直前の見出しをカテゴリにする。
     /category/… へのリンク（メニューのカテゴリ）は「カテゴリ一覧」として取り込む（親カテゴリがあればそれをカテゴリ名にする）。
-    トップページ（/）を保存したものではカテゴリだけ、マニュアル一覧（/manual）を保存したものでは記事も取り込める。
+    トップページ（/）やマニュアル一覧（/manual）ではカテゴリ、各カテゴリページ（/category/…）では記事を取り込む。
+    カード型の一覧（<a> の中に見出しと説明文）は、見出しだけを記事名にする。
   - JSON：公式サイトの WordPress REST API をブラウザで開いて保存したもの。
       https://pms-manual.xxxaz.jp/wp-json/wp/v2/categories?per_page=100
       https://pms-manual.xxxaz.jp/wp-json/wp/v2/posts?per_page=100&page=1 （page=2 も）
@@ -41,12 +42,14 @@ def squash(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+SKIP_EXACT = {"/test"}  # 公式サイト側の検証用ページ
 SKIP_PATHS = ("/wp-", "/feed", "/comments", "/tag/", "/author/", "/xmlrpc", "/news")
 
 
 def is_article(url: str) -> bool:
     u = urlparse(url)
-    return u.netloc == HOST and u.path not in ("", "/") and not u.path.startswith(SKIP_PATHS)
+    return (u.netloc == HOST and u.path not in ("", "/") and not u.path.startswith(SKIP_PATHS)
+            and u.path.rstrip("/") not in SKIP_EXACT and not re.search(r"/page/\d+/?$", u.path))  # 一覧の2ページ目以降へのリンク
 
 
 def category_of(url: str) -> str | None:
@@ -84,19 +87,21 @@ class LinkParser(HTMLParser):
             text = squash(self.heading)
             if text and not self.link:
                 self.category = text
+            elif text and self.link:  # カード型の一覧：<a> の中の見出しだけを記事名にする（説明文は使わない）
+                self.link["title"] = text
             self.heading = None
         elif tag == "a" and self.link:
-            title = squash(self.link["text"])
+            title = self.link.get("title") or squash(self.link["text"])
             cat = category_of(self.link["url"])
             if title:
                 self.items.append({"category": cat or self.category, "title": title, "url": self.link["url"]})
             self.link = None
 
     def handle_data(self, data):
+        if self.heading is not None:
+            self.heading += data
         if self.link is not None:
             self.link["text"] += data
-        elif self.heading is not None:
-            self.heading += data
 
 
 def from_html(text: str) -> list[dict]:
@@ -182,7 +187,9 @@ def main() -> None:
             out.append(it)
             n += 1
         if not n:
-            sys.exit(f"{src}: {HOST} の記事へのリンクが見つかりませんでした")
+            print(f"{src}: 新しい記事へのリンクはありませんでした", file=sys.stderr)
+    if not out:
+        sys.exit(f"{HOST} の記事へのリンクが見つかりませんでした")
     # 子カテゴリの親は URL の slug（例：settings）なので、親カテゴリページの表示名に置き換える
     by_path = {urlparse(e["url"]).path.strip("/"): e["title"] for e in out}
     for e in out:
