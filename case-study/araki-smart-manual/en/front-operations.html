@@ -221,7 +221,6 @@
     color:var(--accent-ink);
     font-weight:600;
     width:26%;
-    white-space:nowrap;
   }
   table.field tr:last-child td, table.field tr:last-child th{border-bottom:none;}
   .callout{
@@ -1499,7 +1498,7 @@
         <p class="lede">The daily closing feature finalizes the reservation information for the date you close. It also moves the date of the room status chart forward.</p>
         <div class="body">
           <h3 id="scene10-enable" class="sub">First time only: an administrator enables the feature</h3>
-          <div class="callout warn"><span class="label">Administrators only</span>An administrator enables the daily closing feature and sets the closing time. Tanegashima Araki Annex was enabled on 2026-10-06 (daily at 04:00), and Tanegashima Araki Hotel was enabled on 2026-10-09 (daily at 04:00) and is closed through 10/09 (done 2026-10-10 07:05) (checked 2026-10-09).</div>
+          <div class="callout warn"><span class="label">Administrators only</span>An administrator enables the daily closing feature and sets the closing time. Tanegashima Araki Annex was enabled on 2026-10-06 (daily at 04:00), and Tanegashima Araki Hotel was enabled on 2026-10-09 (daily at 04:00) and is closed through 10/09 (done 2026-10-10 07:05) (checked 2026-10-10).</div>
           <ol class="steps">
             <li>Open <span translate="no" lang="ja">【売上管理】</span><span translate="no" lang="ja">＞</span><span translate="no" lang="ja">【日次締め機能】</span> (Sales management > Daily closing).</li>
             <li>Check and select the target property and the daily closing time.</li>
@@ -1554,7 +1553,7 @@
           <div class="callout tip"><span class="label">From the official online manual</span>Errors on the daily closing screen (reservations needing attention) cover the following 6 kinds of reservations (from the official manual updated 2026-10-07): due to check in but not checked in / due to check out with an outstanding balance / due to check out with an overpayment / due to check out but not checked out / checked out with an outstanding balance / checked out with an overpayment. The check-in code takes you to the reservation details. When there are none, <span translate="no" lang="ja">「注意点のある予約はありません」</span> (No reservations need attention) is shown.</div>
           <table class="field">
             <caption>Examples of warnings on the daily closing screen and what to do</caption>
-            <tr><th>Missed check-in</th><td>Example: <span translate="no" lang="ja">「チェックイン予定の予約ですが、チェックイン済みになっていません。」</span> (This reservation is due to check in but has not been checked in.)<br>If the guest has arrived, do the check-in (<a href="#s8">Scene 8</a>). If the guest has not come, handle it as a no-show or cancellation according to the property's rules (<a href="#s4">Scene 4 "Canceling a reservation"</a>). If you close while it is a no-show, it stays in sales. If you are going to cancel it, do so before closing (after closing, the cancellation status cannot be changed) (from the official manual).</td></tr>
+            <tr><th>Missed check-in</th><td>Example: <span translate="no" lang="ja">「チェックイン予定の予約ですが、チェックイン済みになっていません。」</span> (This reservation is due to check in but has not been checked in.)<br>If the guest has arrived, do the check-in (<a href="#s8">Scene 8</a>). If the guest has not come, handle it as a no-show or cancellation according to the property's rules (<a href="#scene4-cancel">Scene 4 "Canceling a reservation"</a>). If you close while it is a no-show, it stays in sales. If you are going to cancel it, do so before closing (after closing, the cancellation status cannot be changed) (from the official manual).</td></tr>
             <tr><th>Outstanding balance remaining</th><td>Example: <span translate="no" lang="ja">「チェックアウト予定の予約ですが、未収金が残っています。」</span> (This reservation is due to check out but has an outstanding balance.) (checked 2026-10-10)<br>Check the charge details and payment information, and register the payment (<a href="#s6">Scene 6</a>).</td></tr>
             <tr><th>Checked out but outstanding balance</th><td>(An item in the official manual. The wording on Araki Hotel's real screen is not yet confirmed)<br>The payment was not registered after check-out. Check the charge details and payment information, and register the payment (<a href="#s6">Scene 6</a>).</td></tr>
             <tr><th>Overpayment remaining</th><td>(An item in the official manual. The wording on Araki Hotel's real screen is not yet confirmed)<br>More has been paid than the charges. Check for a payment registered twice or a missing charge, and bring the difference to 0 by refunding or correcting the charges. Consult the manager about what to do.</td></tr>
@@ -1586,6 +1585,6 @@
     </footer>
   </div>
 </div>
-<script src="../assets/search.js?v=3886911cf4" defer></script>
+<script src="../assets/search.js?v=08b679272d" defer></script>
 </body>
 </html>
