@@ -7,6 +7,8 @@
 - 各ページを h2 / h3 ごとの節に分け、assets/search-index.json に書き出す。
 - 本文テキストには figcaption（画像のキャプション）も含む。1節6,000字で打ち切る。
 - すべての h2 / h3 に id が必要（検索結果はその id へ直接リンクする）。id の無い見出しがあるとエラーで止まる。
+- 翻訳版（en/*.html など。TRANSLATIONS 参照）も同じように assets/search-index-<言語>.json に書き出す。
+  翻訳版のページの検索はこちらを使う。
 
 運用ルール: ページを更新したら必ずこのスクリプトを再実行し、
 assets/search-index.json も同じ commit に含めること。
@@ -37,6 +39,21 @@ PAGES = [
     ("glossary.html", "用語集"),
     ("HOTEL-SMART-front-manual-reference.html", "公式資料との対応"),
 ]
+
+# 翻訳版：言語コード → ページ一覧（<言語>/ の同じファイル名。見出しの id も日本語版と同じ）
+PAGES_EN = [
+    ("daily-operations.html", "Daily tasks"),
+    ("reservation-guide.html", "Reservations & billing"),
+    ("room-assignment.html", "Room assignment"),
+    ("service-operations.html", "Rooms & cleaning"),
+    ("troubleshooting.html", "Troubleshooting"),
+    ("front-operations.html", "Front desk operations"),
+    ("startup.html", "Initial setup"),
+    ("quick-reference.html", "Quick reference"),
+    ("glossary.html", "Glossary"),
+    ("HOTEL-SMART-front-manual-reference.html", "Official documents map"),
+]
+TRANSLATIONS = {"en": PAGES_EN}
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 BLOCK = {"p", "div", "li", "ul", "ol", "td", "th", "tr", "table", "figcaption", "figure", "section",
@@ -145,12 +162,12 @@ def squash(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
-def build() -> list[dict]:
+def build(pages=PAGES, base: Path = ROOT) -> list[dict]:
     entries: list[dict] = []
     errors: list[str] = []
-    for page, title in PAGES:
+    for page, title in pages:
         parser = SectionParser(page)
-        parser.feed((ROOT / page).read_text(encoding="utf-8"))
+        parser.feed((base / page).read_text(encoding="utf-8"))
         parser.close()
         errors += parser.errors
         seen = set()
@@ -166,11 +183,16 @@ def build() -> list[dict]:
     return entries
 
 
-def main() -> None:
-    entries = build()
+def write(entries: list[dict], output: Path, n_pages: int) -> None:
     body = ",\n".join(json.dumps(e, ensure_ascii=False) for e in entries)
-    OUTPUT.write_text("[\n" + body + "\n]\n", encoding="utf-8", newline="\n")
-    print(f"{OUTPUT.relative_to(ROOT)}: {len(entries)} sections from {len(PAGES)} pages")
+    output.write_text("[\n" + body + "\n]\n", encoding="utf-8", newline="\n")
+    print(f"{output.relative_to(ROOT)}: {len(entries)} sections from {n_pages} pages")
+
+
+def main() -> None:
+    write(build(), OUTPUT, len(PAGES))
+    for lang, pages in TRANSLATIONS.items():
+        write(build(pages, ROOT / lang), ROOT / "assets" / f"search-index-{lang}.json", len(pages))
 
 
 if __name__ == "__main__":

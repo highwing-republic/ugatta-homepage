@@ -63,7 +63,9 @@
     margin:0 auto;
   }
   @media (max-width:860px){
-    .layout{grid-template-columns:1fr;}
+    .layout{grid-template-columns:minmax(0,1fr);}
+    main table{display:block;overflow-x:auto;}
+    main code,main p{overflow-wrap:anywhere;}
     nav.toc{display:none;}
   }
   header.hero{
@@ -293,10 +295,11 @@
     max-width:660px;
   }
 </style>
-</head>
+<link rel="alternate" hreflang="ja" href="front-operations.html"><link rel="alternate" hreflang="en" href="en/front-operations.html"></head>
 <body>
 <div class="manual-topbar">
   <a href="index.html">← かんたんフロントマニュアルのトップへ戻る</a>
+  <span class="lang-switch" role="group" aria-label="Language"><a href="en/front-operations.html" hreflang="en" lang="en" data-lang-switch>English</a></span>
   <form class="site-search site-search--dark" role="search" data-site-search><input type="search" class="site-search-input" placeholder="操作を検索（例：返金）" aria-label="マニュアル内を検索" autocomplete="off" enterkeyhint="search"></form>
 </div>
 <div class="layout">

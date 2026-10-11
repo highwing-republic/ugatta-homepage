@@ -31,3 +31,18 @@
   ```
   python case-study/araki-smart-manual/scripts/import_official_index.py トップ.html マニュアル一覧.html カテゴリ/*.html
   ```
+
+## 翻訳版（英語 en/ など）
+
+- 英語版は `en/` に日本語版と同じファイル名・同じ見出し id で置く。画像・CSS・JS は日本語版のものを共用（`../assets/`・`../screenshots/`）。
+- 各ページの言語の切り替えリンクと hreflang は `scripts/make_lang_page.py` が付ける。ページや言語を足したら `--switch-only` で付け直す。
+- 翻訳のルール（画面のボタン名は日本語のまま＋英語、「公式マニュアルより」「あらきホテルでは未確認」の訳し方、公式の記事名は訳さない など）は `en/TRANSLATION.md`。
+- 日本語ページを直したら、翻訳版のずれを確かめる。変わった節（見出し id 単位）が一覧に出るので、その節だけ訳し直して記録する。
+
+  ```
+  python case-study/araki-smart-manual/scripts/translation_status.py                 # 訳し直しが要る節
+  python case-study/araki-smart-manual/scripts/translation_status.py --lang en --mark ページ.html#見出しid
+  ```
+
+- 検索インデックスは翻訳版の分（`assets/search-index-en.json`）も `build_search_index.py` が一緒に作る。英語の言い換えは `assets/search-synonyms-en.json`。
+- 言語を足す（例：ミャンマー語 `my/`）ときは、`make_lang_page.py` の `LANGS`、`build_search_index.py` の `TRANSLATIONS`、`assets/search.js` の文言（`T`）に加える。
