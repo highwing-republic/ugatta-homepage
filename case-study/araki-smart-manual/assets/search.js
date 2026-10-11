@@ -8,6 +8,10 @@
  * - assets/official-manual-index.json（公式オンラインマニュアルの記事名とURL。
  *   scripts/import_official_index.py で作る）も検索し、ヒットしたら公式の記事へリンクする。
  * - 結果のリンクには ?hl=語 を付け、移動先の節の中で一致した語を強調表示する。
+ * - 翻訳版（en/*.html など。<html lang="en">）では assets/search-index-<言語>.json と
+ *   assets/search-synonyms-<言語>.json（＋日本語の言い換え辞書）を使い、表示もその言語にする（文言が無い言語は英語）。
+ *   英語の検索語は、よくある語（how, to, the など）を除き、語尾（-s, -ed, -ing）をそろえて探し直す。
+ * - [data-lang-switch] の言語の切り替えリンクは、今の見出し（#id）を引き継いで移動する。
  */
 (function () {
   "use strict";
@@ -16,18 +20,87 @@
   var SNIPPET_LEN_DEFAULT = 60;
   var PAGE_SNIPPET_LEN = 140; // 結果一覧ページの抜粋の長さ
   var scriptSrc = (document.currentScript && document.currentScript.src) || "assets/search.js";
-  var INDEX_URL = new URL("search-index.json", scriptSrc).href;
+  var LANG = (document.documentElement.lang || "ja").toLowerCase().split("-")[0];
+  var TRANSLATED = LANG !== "ja";  // 翻訳版のページ
+  var EN = LANG === "en";          // 英語の語尾そろえ・よくある語の除外を使う
+  var INDEX_URL = new URL(TRANSLATED ? "search-index-" + LANG + ".json" : "search-index.json", scriptSrc).href;
   var SYNONYMS_URL = new URL("search-synonyms.json", scriptSrc).href;
+  var SYNONYMS_LANG_URL = new URL("search-synonyms-" + LANG + ".json", scriptSrc).href;
   var OFFICIAL_URL = new URL("official-manual-index.json", scriptSrc).href;
   var OFFICIAL_PAGE = "official";
-  var OFFICIAL_TITLE = "公式マニュアル";
+
+  // 画面の文言（日本語版／英語版）
+  var STRINGS = {
+    en: {
+    official: "Official manual (Japanese)",
+    category: "Category: ",
+    openOfficial: "Open on the official site (Japanese) ↗",
+    notFound: 'Nothing found. See <a href="troubleshooting.html">Troubleshooting</a> or try other words.',
+    loadError: "Could not load the search data. Please reload the page.",
+    seeAll: function (n) { return "See all results (" + n + ")"; },
+    seeList: function (n) { return "Open the results page (" + n + ")"; },
+    q: function (w) { return "\u201c" + w + "\u201d"; },
+    sep: ", ",
+    noteSplit: function (w) { return "Searched for " + w; },
+    noteAny: function (w) { return "No section contains all words, so sections with any of " + w + " are shown"; },
+    noteFuzzy: function (w) { return "No exact match, so similar words" + (w ? " (" + w + ")" : "") + " were used"; },
+    hlBar: function (q, n) { return "Highlighting words that match \u201c" + q + "\u201d (" + n + ")"; },
+    hlClear: "Clear highlights",
+    titleResults: function (q) { return "Results for \u201c" + q + "\u201d | Araki Hotel"; },
+    titleSearch: "Search | Araki Hotel",
+    prompt: "Type an operation or a word to look up.",
+    all: function (n) { return "All (" + n + ")"; },
+    count: function (n) { return " (" + n + ")"; },
+    found: function (q, n, note) { return n + " result" + (n === 1 ? "" : "s") + " for \u201c" + q + "\u201d." + (note ? " " + note + "." : ""); },
+    none: function (q) { return "Nothing found for \u201c" + q + "\u201d. Try another word (for example \u201ccancel\u201d instead of \u201cvoid\u201d) or a shorter one."; }
+    },
+    ja: {
+    official: "公式マニュアル",
+    category: "カテゴリ：",
+    openOfficial: "公式サイトで開く ↗",
+    notFound: '見つかりません。<a href="troubleshooting.html">『困ったとき』</a>を見るか、用語を変えてお試しください',
+    loadError: "検索データを読み込めませんでした。ページを再読み込みしてください。",
+    seeAll: function (n) { return "すべての結果を見る（" + n + "件）"; },
+    seeList: function (n) { return "結果一覧ページで見る（" + n + "件）"; },
+    q: function (w) { return "「" + w + "」"; },
+    sep: "",
+    noteSplit: function (w) { return w + "に分けて探しました"; },
+    noteAny: function (w) { return "すべてを含む節が無いため、" + w + "のどれかを含む節を出しています"; },
+    noteFuzzy: function (w) { return "そのままでは見つからないため、似た言葉" + w + "で探しました"; },
+    hlBar: function (q, n) { return "「" + q + "」に一致した語を強調表示しています（" + n + "か所）"; },
+    hlClear: "強調を消す",
+    titleResults: function (q) { return "「" + q + "」の検索結果｜あらきホテル"; },
+    titleSearch: "検索｜あらきホテル",
+    prompt: "調べたい操作や言葉を入れてください。",
+    all: function (n) { return "すべて（" + n + "）"; },
+    count: function (n) { return "（" + n + "）"; },
+    found: function (q, n, note) { return "「" + q + "」で " + n + " 件見つかりました。" + (note ? note + "。" : ""); },
+    none: function (q) { return "「" + q + "」は見つかりませんでした。別の言い方（例：「取消」→「キャンセル」）や、短い言葉でお試しください。"; }
+    }
+  };
+  var T = STRINGS[LANG] || STRINGS.en;  // 文言の無い翻訳版は英語で表示
   var currentPage = location.pathname.split("/").pop() || "index.html";
 
   // ---------- 正規化（NFKC・小文字・カタカナ→ひらがな） ----------
   function normalize(s) {
-    return String(s).normalize("NFKC").toLowerCase().replace(/[ァ-ヶ]/g, function (c) {
+    var n = String(s).normalize("NFKC").toLowerCase().replace(/[ァ-ヶ]/g, function (c) {
       return String.fromCharCode(c.charCodeAt(0) - 0x60);
     });
+    // 英語版：「check-in」「check in」「checkin」をそろえるため、ハイフンは無視する
+    return EN ? n.replace(/[-\u2010\u2011]/g, "") : n;
+  }
+
+  // ---------- 英語の検索語（よくある語を除き、語尾をそろえる） ----------
+  var STOP_EN = {};
+  ("a an the to of for in on at by with and or how do does can could i we you my our your is are be it this that " +
+   "what when where which who want wants need needs should please way ways guest guests").split(" ").forEach(function (w) { STOP_EN[w] = 1; });
+  function stemEn(w) {
+    if (!/^[a-z]+$/.test(w) || w.length <= 4) return w;
+    if (/ies$/.test(w)) return w.slice(0, -3) + "y";
+    if (/(ing|ed)$/.test(w) && w.length > 5) return w.replace(/(ing|ed)$/, "").replace(/([bdglmnprt])\1$/, "$1");
+    if (/(ches|shes|sses|xes)$/.test(w)) return w.slice(0, -2);
+    if (/s$/.test(w) && !/ss$/.test(w)) return w.slice(0, -1);
+    return w;
   }
 
   // 元の文字列と、正規化後の各文字が元のどの位置に対応するかの表を作る（スニペット・ハイライト用）
@@ -56,10 +129,14 @@
   var dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
+    function optional(url) {
+      return fetch(url).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
+    }
     dataPromise = Promise.all([
       fetch(INDEX_URL).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }),
-      fetch(SYNONYMS_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
-      fetch(OFFICIAL_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
+      optional(SYNONYMS_URL),
+      optional(OFFICIAL_URL),
+      TRANSLATED ? optional(SYNONYMS_LANG_URL) : Promise.resolve([])
     ]).then(function (res) {
       var pageOrder = {};
       var entries = res[0].map(function (e, i) {
@@ -73,16 +150,16 @@
       (res[2] || []).forEach(function (o, i) {
         if (!o || !o.title || !o.url) return;
         pageOrder[OFFICIAL_PAGE] = Object.keys(pageOrder).length;
-        var text = o.category ? "カテゴリ：" + o.category : "";
+        var text = o.category ? T.category + o.category : "";
         entries.push({
-          page: OFFICIAL_PAGE, pageTitle: OFFICIAL_TITLE, anchor: "", heading: o.title, text: text, url: o.url,
+          page: OFFICIAL_PAGE, pageTitle: T.official, anchor: "", heading: o.title, text: text, url: o.url,
           nh: normalize(o.title), nt: normalize(text), order: entries.length + i
         });
       });
       entries.forEach(function (e) { e.pageRank = pageOrder[e.page]; });
       // 語 → 同じ組のほかの語。組の先頭の語（代表語）には canon を付ける
       var synonymMap = {};
-      (res[1] || []).forEach(function (group) {
+      (res[3] || []).concat(res[1] || []).forEach(function (group) {
         var ng = group.map(normalize);
         ng.forEach(function (w) {
           var others = ng.filter(function (x) { return x !== w; }).map(function (x) { return { s: x, canon: x === ng[0] }; });
@@ -222,8 +299,14 @@
 
     var original = terms.map(function (t) { return t.term; }).join(" ");
     var pieces = [];
+    if (EN) {
+      // 英語：よくある語を除き、語尾をそろえる（refunds → refund、changing → chang）
+      terms = expandTerms(terms.filter(function (t) { return !STOP_EN[t.term]; })
+        .map(function (t) { return stemEn(t.term); }).join(" ") || original, data.synonymMap);
+    }
     terms.forEach(function (t) {
-      var p = splitPhrase(t.term, data.synonymKeys);
+      // 英語の語は区切らない（「ci」「co」のような短い辞書語を単語の途中で切り出さないため）
+      var p = TRANSLATED && /^[\x00-\x7f]+$/.test(t.term) ? [t.term] : splitPhrase(t.term, data.synonymKeys);
       pieces = pieces.concat(p.length ? p : [t.term]);
     });
     var split = expandTerms(pieces.join(" "), data.synonymMap);
@@ -260,10 +343,10 @@
   }
 
   function modeNote(res) {
-    var w = res.terms.map(function (t) { return "「" + t.term + "」"; }).join("");
-    if (res.mode === "split") return w + "に分けて探しました";
-    if (res.mode === "any") return "すべてを含む節が無いため、" + w + "のどれかを含む節を出しています";
-    if (res.mode === "fuzzy") return "そのままでは見つからないため、似た言葉" + (res.bigram ? "" : w) + "で探しました";
+    var w = res.terms.map(function (t) { return T.q(t.term); }).join(T.sep);
+    if (res.mode === "split") return T.noteSplit(w);
+    if (res.mode === "any") return T.noteAny(w);
+    if (res.mode === "fuzzy") return T.noteFuzzy(res.bigram ? "" : w);
     return "";
   }
 
@@ -277,7 +360,7 @@
     return e.url ? ' target="_blank" rel="noopener"' : "";
   }
   function externalMark(e) {
-    return e.url ? '<span class="site-search-external">公式サイトで開く ↗</span>' : "";
+    return e.url ? '<span class="site-search-external">' + T.openOfficial + "</span>" : "";
   }
 
   // 文字列中の一致語を <mark> で囲んだ HTML を返す
@@ -372,7 +455,7 @@
         var words = matchWords(res);
         var note = modeNote(res);
         if (!res.hits.length) {
-          box.innerHTML = '<div class="site-search-empty">見つかりません。<a href="troubleshooting.html">『困ったとき』</a>を見るか、用語を変えてお試しください</div>';
+          box.innerHTML = '<div class="site-search-empty">' + T.notFound + "</div>";
         } else {
           box.innerHTML = (note ? '<div class="site-search-note">' + escapeHtml(note) + "</div>" : "") +
             res.hits.slice(0, MAX_RESULTS).map(function (h) {
@@ -382,12 +465,12 @@
                 '<span class="site-search-snippet">' + snippet(e.text, words) + externalMark(e) + "</span></a>";
             }).join("") +
             '<a class="site-search-all" href="search.html?q=' + encodeURIComponent(q) + '">' +
-            (res.total > MAX_RESULTS ? "すべての結果を見る（" + res.total + "件）" : "結果一覧ページで見る（" + res.total + "件）") + "</a>";
+            (res.total > MAX_RESULTS ? T.seeAll(res.total) : T.seeList(res.total)) + "</a>";
         }
         active = -1;
         open();
       }).catch(function () {
-        box.innerHTML = '<div class="site-search-empty">検索データを読み込めませんでした。ページを再読み込みしてください。</div>';
+        box.innerHTML = '<div class="site-search-empty">' + T.loadError + "</div>";
         open();
       });
     }
@@ -450,7 +533,10 @@
     clearHighlights();
     if (!el || !query) return;
     loadData().then(function (data) {
-      var words = matchWords(search(query, data)).filter(function (w) { return w.length >= 2 || /[^぀-ゟ]/.test(w); });
+      var words = matchWords(search(query, data)).filter(function (w) {
+        if (EN && /^[a-z]+$/.test(w)) return w.length >= 3 && !STOP_EN[w];
+        return w.length >= 2 || /[^぀-ゟ]/.test(w);
+      });
       if (!words.length) return;
       var nodes = [];
       var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, null);
@@ -485,8 +571,7 @@
       var bar = document.createElement("div");
       bar.className = "site-search-hlbar";
       bar.setAttribute("role", "status");
-      bar.innerHTML = "「" + escapeHtml(query) + "」に一致した語を強調表示しています（" + count + "か所）" +
-        '<button type="button">強調を消す</button>';
+      bar.innerHTML = escapeHtml(T.hlBar(query, count)) + '<button type="button">' + T.hlClear + "</button>";
       bar.querySelector("button").addEventListener("click", function () {
         clearHighlights();
         if (history.replaceState) {
@@ -530,8 +615,8 @@
         if (q) u.searchParams.set("q", q); else u.searchParams.delete("q");
         history.replaceState(null, "", u.href);
       }
-      document.title = (q ? "「" + q + "」の検索結果｜" : "検索｜") + "あらきホテル";
-      if (!q) { status.textContent = "調べたい操作や言葉を入れてください。"; filters.innerHTML = ""; list.innerHTML = ""; return; }
+      document.title = q ? T.titleResults(q) : T.titleSearch;
+      if (!q) { status.textContent = T.prompt; filters.innerHTML = ""; list.innerHTML = ""; return; }
       loadData().then(function (data) {
         if (input.value.trim() !== q) return;
         var res = search(q, data);
@@ -543,16 +628,14 @@
         });
         if (activePage && !(activePage in counts)) activePage = "";
         titles.sort(function (a, b) { return a.pageRank - b.pageRank; });
-        filters.innerHTML = res.hits.length ? ['<button type="button" data-page=""' + (activePage ? "" : ' aria-pressed="true"') + ">すべて（" + res.total + "）</button>"]
+        filters.innerHTML = res.hits.length ? ['<button type="button" data-page=""' + (activePage ? "" : ' aria-pressed="true"') + ">" + T.all(res.total) + "</button>"]
           .concat(titles.map(function (e) {
             return '<button type="button" data-page="' + escapeHtml(e.page) + '"' + (activePage === e.page ? ' aria-pressed="true"' : "") + ">" +
-              escapeHtml(e.pageTitle) + "（" + counts[e.page] + "）</button>";
+              escapeHtml(e.pageTitle) + T.count(counts[e.page]) + "</button>";
           })).join("") : "";
         var shown = res.hits.filter(function (h) { return !activePage || h.e.page === activePage; });
         var note = modeNote(res);
-        status.textContent = res.hits.length
-          ? "「" + q + "」で " + res.total + " 件見つかりました。" + (note ? note + "。" : "")
-          : "「" + q + "」は見つかりませんでした。別の言い方（例：「取消」→「キャンセル」）や、短い言葉でお試しください。";
+        status.textContent = res.hits.length ? T.found(q, res.total, note) : T.none(q);
         list.innerHTML = shown.map(function (h) {
           var e = h.e;
           return '<li><a class="search-result' + (e.url ? " is-official" : "") + '" href="' + escapeHtml(resultHref(e, q)) + '"' + linkAttrs(e) + ">" +
@@ -561,7 +644,7 @@
             '<span class="search-result-snippet">' + snippet(e.text, words, PAGE_SNIPPET_LEN) + externalMark(e) + "</span></a></li>";
         }).join("");
       }).catch(function () {
-        status.textContent = "検索データを読み込めませんでした。ページを再読み込みしてください。";
+        status.textContent = T.loadError;
       });
     }
 
@@ -579,7 +662,22 @@
     if (!input.value) input.focus();
   }
 
+  // 日本語⇄English の切り替えでは、今見ている見出しの位置（#id）を引き継ぐ
+  function setupLangSwitch() {
+    var links = document.querySelectorAll("a[data-lang-switch]");
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", function (ev) {
+        var a = ev.currentTarget;
+        var u = new URL(a.getAttribute("href"), location.href);
+        if (location.search && /search\.html$/.test(u.pathname)) u.search = location.search;
+        if (location.hash) u.hash = location.hash;
+        a.href = u.href;
+      });
+    }
+  }
+
   function init() {
+    setupLangSwitch();
     var forms = document.querySelectorAll("[data-site-search]");
     var widgets = [];
     for (var i = 0; i < forms.length; i++) { var w = setup(forms[i]); if (w) widgets.push(w); }
