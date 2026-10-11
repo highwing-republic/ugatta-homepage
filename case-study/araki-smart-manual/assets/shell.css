@@ -39,7 +39,8 @@ a { text-decoration-thickness: 1px; text-underline-offset: .18em; }
 .skip-link:focus { left: 1rem; top: 1rem; z-index: 99; background: var(--lab-card); padding: .7rem 1rem; }
 .site-header { position: sticky; top: 0; z-index: 20; background: var(--lab-navy-deep); color: var(--lab-white); border-bottom: 1px solid #000; }
 .header-inner { max-width: 1180px; margin: auto; padding: .55rem 1.1rem; display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1rem; }
-.brand { color: var(--lab-white); text-decoration: none; font-weight: 600; letter-spacing: .06em; white-space: nowrap; font-family: var(--lab-font-serif); font-size: 1.05rem; }
+.brand { display: flex; align-items: center; gap: .6rem; color: var(--lab-white); text-decoration: none; font-weight: 600; letter-spacing: .06em; white-space: nowrap; font-family: var(--lab-font-serif); font-size: 1.05rem; }
+.brand-mark { height: 38px; width: auto; flex: 0 0 auto; filter: invert(1) brightness(1.08); }  /* ロゴ（墨色）を白抜きにして濃い背景に置く */
 .brand small { display: block; font-size: .68rem; font-weight: 400; color: var(--lab-on-dark); line-height: 1.3; letter-spacing: .08em; }
 .global-nav { margin-left: auto; display: flex; gap: .1rem; flex-wrap: wrap; justify-content: flex-end; }
 .global-nav a { color: var(--lab-on-dark); text-decoration: none; padding: .3rem .5rem; border-bottom: 1px solid transparent; font-size: .88rem; white-space: nowrap; }
@@ -52,6 +53,7 @@ a { text-decoration-thickness: 1px; text-underline-offset: .18em; }
 @media (max-width: 860px) {
   html { scroll-padding-top: 108px; }
   .header-inner { padding: .5rem .75rem; }
+  .brand-mark { height: 32px; }
   .site-header .site-search { flex: 1 1 10rem; margin-left: auto; }
   .global-nav { order: 10; flex: 1 1 100%; margin: 0 -.25rem; justify-content: flex-start; gap: 0; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
   .global-nav::-webkit-scrollbar { display: none; }

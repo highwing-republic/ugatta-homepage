@@ -38,7 +38,8 @@ button, input { font: inherit; }
 .hero p { max-width: 46rem; margin: .8rem 0 0; color: var(--lab-on-dark); }
 .hero .tag { color: var(--navy-dark); background: var(--lab-teal-tint); }
 /* トップの検索：候補の一覧がはみ出して表示されるよう、飾りの円は出さない */
-.hero.hero-search { overflow: visible; z-index: 5; }
+.hero.hero-search { overflow: visible; z-index: 5; background: linear-gradient(100deg, rgba(30,30,30,.86) 0%, rgba(30,30,30,.72) 55%, rgba(30,30,30,.6) 100%), url("hero-bg.webp") center 60% / cover no-repeat var(--navy); }
+.hero-logo { display: block; height: 112px; width: auto; margin: 0 0 1.1rem; filter: invert(1) brightness(1.08); }  /* あらきホテルのロゴ（白抜き） */
 .hero.hero-search::after { display: none; }
 .task-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
 .task-links a { display: block; background: var(--lab-card); border: 1px solid var(--line); border-left: 5px solid var(--teal); border-radius: 3px; padding: .75rem 1rem; color: var(--navy); font-weight: 700; text-decoration: none; }
@@ -132,6 +133,8 @@ button, input { font: inherit; }
 
 @media (max-width: 580px) {
   body { line-height: 1.8; }
+  .hero.hero-search { background-image: linear-gradient(rgba(30,30,30,.84), rgba(30,30,30,.74)), url("hero-bg-960.webp"); }
+  .hero-logo { height: 84px; }
   .page { padding: 1rem .75rem 3rem; }
   .hero { border-radius: 3px; padding: 1.5rem 1.1rem; }
   .hero h1 { font-size: 1.55rem; }
@@ -148,6 +151,8 @@ button, input { font: inherit; }
 }
 
 @media print {
+  .hero.hero-search { background: var(--navy); }
+  .hero-logo { filter: none; }
   .side-nav, .search-panel { display: none !important; }
   body { background: var(--lab-white); }
   .page { max-width: none; padding: 0; }

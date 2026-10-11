@@ -49,12 +49,13 @@ FORM_RE = re.compile(r'<form class="site-search[^"]*"[^>]*data-site-search>.*?</
 
 def header_html(lang: str, page: str, lang_switch: str, form: str) -> str:
     name, sub = BRAND[lang]
+    prefix = "" if lang == "ja" else "../"
     links = "".join(
         f'<a{" aria-current=\"page\"" if f == page else ""} href="{f}">{label}</a>' for f, label in NAV[lang]
     )
     return (
         f'<header class="site-header"><div class="header-inner">'
-        f'<a class="brand" href="index.html">{name}<small>{sub}</small></a>'
+        f'<a class="brand" href="index.html"><img class="brand-mark" src="{prefix}assets/logo-araki.svg" alt="" width="52" height="80"><span>{name}<small>{sub}</small></span></a>'
         f'<nav class="global-nav" aria-label="{NAV_LABEL[lang]}">{links}</nav>'
         f'{lang_switch}{form}</div></header>'
     )
