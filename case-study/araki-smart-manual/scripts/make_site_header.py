@@ -2,7 +2,7 @@
 
 - <header class="site-header">…</header>（無ければ旧 .manual-topbar の帯）を、ブランド＋主要メニュー＋言語切替＋検索の
   共通ヘッダーに置き換える。言語切替（.lang-switch）と検索フォーム（form[data-site-search]）は、ページにある物をそのまま使う。
-- <head> に assets/shell.css（配色・書体・ヘッダーの共通CSS）と明朝体のフォント読み込みを入れる。
+- <head> に assets/shell.css（配色・書体・ヘッダーの共通CSS）とフォント読み込みを入れる。
 - ページを足したとき・メニューを変えたときは、これを実行してから build_search_index.py を実行する。
 
     python case-study/araki-smart-manual/scripts/make_site_header.py
@@ -38,7 +38,7 @@ NAV = {
 BRAND = {"ja": ("あらきホテル", "かんたんフロントマニュアル"), "en": ("Araki Hotel", "Front Desk Quick Manual")}
 NAV_LABEL = {"ja": "主要メニュー", "en": "Main menu"}
 SKIP = {"ja": "本文へ移動", "en": "Skip to main content"}
-FONT = '<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">'
+FONT = '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">'
 
 HEADER_RE = re.compile(r'<header class="site-header[^"]*">.*?</header>', re.S)
 TOPBAR_RE = re.compile(r'<div class="manual-topbar">.*?</div>\n?', re.S)
