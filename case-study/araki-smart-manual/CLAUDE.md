@@ -8,6 +8,7 @@
   python case-study/araki-smart-manual/scripts/build_search_index.py
   ```
 
+- このスクリプトは、全ページの CSS・JS への参照に `?v=内容のハッシュ` も付け直す。CSS・JS・検索データを直したときも必ず実行する（実行しないと、公開後もしばらくブラウザに古いファイルが残り、英語ページで日本語の検索結果が出るなどの食い違いが起きる）。
 - 新しく h2 / h3 を足すときは、英数字の短い id を付ける（例：`id="scene6-refund"`）。id の無い見出しがあるとスクリプトはエラーで止まる。
 - 既存の id は変えない（検索結果・トップページの「よくある操作」・他ページからのリンクが壊れる）。
 - 言い換え（同義語・読みがな）は `assets/search-synonyms.json` に追加する。同じ配列の語は、どれで検索しても互いにヒットする。
@@ -21,6 +22,25 @@
   python -m http.server 8000   # case-study/araki-smart-manual で実行し、http://localhost:8000/ を開く
   ```
 
+## 見た目（配色・書体）とヘッダー
+
+- 配色・書体は Shukuhaku DX Lab と同じ紺・青緑・ゴシック体（Noto Sans JP）。色と書体のトークン（`--lab-*`）は `assets/shell.css` だけで定義する。`assets/manual.css` と フロント運用編・初期設定編の `<style>` は、そのトークンを参照するだけで色の値を書かない（2026-10-11：一時 水墨画風にしたが、オーナーの指示で元の色調に戻した）。
+- ヘッダー（ロゴ・ブランド・主要メニュー・言語切替・検索）は全ページ共通。メニューの項目やページを変えたら、次を実行してから `build_search_index.py` を実行する。
+
+  ```
+  python case-study/araki-smart-manual/scripts/make_site_header.py
+  ```
+
+- 860px 以下ではメニューを隠さず 2 行目に横スクロールで出す。フロント運用編・初期設定編の目次（`nav.toc` の `details[data-toc]`）はスマホで折りたたみ、PC では search.js が常に開く。
+- 各ページのフッターの更新日は、commit の直前に次で git の日付にそろえる（手で書かない）。
+
+  ```
+  python case-study/araki-smart-manual/scripts/update_page_dates.py
+  ```
+
+- 画像には `loading="lazy" decoding="async"` を付ける（フロント運用編は 164 枚あるため）。
+- あらきホテルのロゴは `assets/logo-araki.svg`（墨色。紺の背景では CSS の invert で白抜き）。トップのヒーローの背景は `assets/hero-bg.webp`（港から見たホテルの写真。元の色のまま幅 1920 に縮小、スマホ用は hero-bg-960.webp）。紺の帯を重ねて白い文字と検索ボックスを載せる。
+
 ## 公式オンラインマニュアルの記事索引
 
 - `assets/official-manual-index.json` に、HOTEL SMART 公式オンラインマニュアル（pms-manual.xxxaz.jp）の記事名・カテゴリ・URLを置く。検索でヒットすると「公式マニュアル」として表示し、公式サイトの記事を別タブで開く。
@@ -31,3 +51,19 @@
   ```
   python case-study/araki-smart-manual/scripts/import_official_index.py トップ.html マニュアル一覧.html カテゴリ/*.html
   ```
+
+## 翻訳版（英語 en/ など）
+
+- 英語版は `en/` に日本語版と同じファイル名・同じ見出し id で置く。画像・CSS・JS は日本語版のものを共用（`../assets/`・`../screenshots/`）。
+- 各ページの言語の切り替えリンクと hreflang は `scripts/make_lang_page.py` が付ける。ページや言語を足したら `--switch-only` で付け直す。
+- 翻訳のルール（画面のボタン名は日本語のまま＋英語、「公式マニュアルより」「あらきホテルでは未確認」の訳し方、公式の記事名は訳さない など）は `en/TRANSLATION.md`。
+- 日本語ページを直したら、翻訳版のずれを確かめる。変わった節（見出し id 単位）が一覧に出るので、その節だけ訳し直して記録する。
+
+  ```
+  python case-study/araki-smart-manual/scripts/translation_status.py                 # 訳し直しが要る節
+  python case-study/araki-smart-manual/scripts/translation_status.py --lang en --mark ページ.html#見出しid
+  ```
+
+- 英語版を直したら `scripts/protect_japanese.py` を実行する。英語版の中の日本語（画面のボタン名・公式の記事名）を `translate="no"` で囲み、ミャンマー人スタッフが Chrome / Edge の翻訳で英語版をミャンマー語にして読んでも、日本語の画面名が残るようにする（2026-10-11 オーナー判断：ミャンマー語版は作らず、ブラウザの翻訳で読む）。
+- 検索インデックスは翻訳版の分（`assets/search-index-en.json`）も `build_search_index.py` が一緒に作る。英語の言い換えは `assets/search-synonyms-en.json`。
+- 言語を足す（例：確認済みのミャンマー語訳を載せる `my/`）ときは、`make_lang_page.py` の `LANGS`、`build_search_index.py` の `TRANSLATIONS`、`assets/search.js` の文言（`T`）に加える。
