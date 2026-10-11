@@ -22,6 +22,25 @@
   python -m http.server 8000   # case-study/araki-smart-manual で実行し、http://localhost:8000/ を開く
   ```
 
+## 見た目（配色・書体）とヘッダー
+
+- 配色は水墨画風のグレースケール（和紙・淡墨・中墨・濃墨）、書体は明朝（Noto Serif JP）。色と書体のトークン（`--lab-*`）は `assets/shell.css` だけで定義する。`assets/manual.css` と フロント運用編・初期設定編の `<style>` は、そのトークンを参照するだけで色の値を書かない。
+- 朱（`--lab-red`）は「止める」「禁止」の印にだけ使う（落款の色）。注意は墨の濃淡（縁の太さ・二重線）で区別する。
+- ヘッダー（ブランド・主要メニュー・言語切替・検索）は全ページ共通。メニューの項目やページを変えたら、次を実行してから `build_search_index.py` を実行する。
+
+  ```
+  python case-study/araki-smart-manual/scripts/make_site_header.py
+  ```
+
+- 860px 以下ではメニューを隠さず 2 行目に横スクロールで出す。フロント運用編・初期設定編の目次（`nav.toc` の `details[data-toc]`）はスマホで折りたたみ、PC では search.js が常に開く。
+- 各ページのフッターの更新日は、commit の直前に次で git の日付にそろえる（手で書かない）。
+
+  ```
+  python case-study/araki-smart-manual/scripts/update_page_dates.py
+  ```
+
+- 画像には `loading="lazy" decoding="async"` を付ける（フロント運用編は 164 枚あるため）。
+
 ## 公式オンラインマニュアルの記事索引
 
 - `assets/official-manual-index.json` に、HOTEL SMART 公式オンラインマニュアル（pms-manual.xxxaz.jp）の記事名・カテゴリ・URLを置く。検索でヒットすると「公式マニュアル」として表示し、公式サイトの記事を別タブで開く。

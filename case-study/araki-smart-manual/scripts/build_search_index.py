@@ -205,12 +205,13 @@ def stamp_versions() -> None:
     """ページから assets の CSS・JS への参照に ?v=ハッシュ を付ける（内容が変わったときだけ URL が変わる）。"""
     assets = ROOT / "assets"
     versions = {
+        "shell.css": file_hash(assets / "shell.css"),
         "manual.css": file_hash(assets / "manual.css"),
         "search.css": file_hash(assets / "search.css"),
         # 検索データ（JSON）が変わったときも search.js の URL を変え、search.js がその v を JSON の取得に付ける
         "search.js": file_hash(assets / "search.js", *sorted(assets.glob("*.json"))),
     }
-    ref = re.compile(r'((?:\.\./)?assets/(manual\.css|search\.css|search\.js))(?:\?v=[0-9a-f]+)?"')
+    ref = re.compile(r'((?:\.\./)?assets/(shell\.css|manual\.css|search\.css|search\.js))(?:\?v=[0-9a-f]+)?"')
     pages = list(ROOT.glob("*.html")) + [p for lang in TRANSLATIONS for p in (ROOT / lang).glob("*.html")]
     for page in pages:
         html = page.read_text(encoding="utf-8")

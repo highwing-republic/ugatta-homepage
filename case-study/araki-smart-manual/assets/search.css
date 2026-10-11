@@ -6,26 +6,26 @@
   font: inherit;
   font-size: .9rem;
   padding: .45rem .75rem;
-  border-radius: 8px;
-  border: 1px solid var(--lab-border-strong, #c4d3dc);
-  background: var(--lab-card, #fff);
-  color: var(--lab-ink, #22303b);
+  border-radius: 3px;
+  border: 1px solid var(--lab-border-strong, #b9b5ab);
+  background: var(--lab-card, #f8f6f1);
+  color: var(--lab-ink, #1c1b19);
 }
-.site-search-input:focus { outline: 3px solid rgba(43, 100, 116, .25); border-color: var(--lab-teal, #2b6474); }
+.site-search-input:focus { outline: 3px solid rgba(28, 27, 25, .18); border-color: var(--lab-teal, #4d4c48); }
 
 /* 濃い色のヘッダー・帯の中に置く検索ボックス */
 .site-search--dark .site-search-input {
   background: rgba(255, 255, 255, .12);
   border-color: rgba(255, 255, 255, .35);
-  color: var(--lab-white, #fff);
+  color: var(--lab-white, #f8f6f1);
 }
 .site-search--dark .site-search-input::placeholder { color: rgba(255, 255, 255, .7); }
-.site-search--dark .site-search-input:focus { background: var(--lab-card, #fff); color: var(--lab-ink, #22303b); outline-color: rgba(255, 255, 255, .35); }
-.site-search--dark .site-search-input:focus::placeholder { color: var(--lab-ink-soft, #5a6875); }
+.site-search--dark .site-search-input:focus { background: var(--lab-card, #f8f6f1); color: var(--lab-ink, #1c1b19); outline-color: rgba(255, 255, 255, .35); }
+.site-search--dark .site-search-input:focus::placeholder { color: var(--lab-ink-soft, #5e5c56); }
 
 /* トップページの大きな検索ボックス */
 .site-search--hero { margin-top: 1.2rem; max-width: 46rem; }
-.site-search--hero .site-search-input { font-size: 1.1rem; padding: .85rem 1.1rem; border: 2px solid var(--lab-border-strong, #c4d3dc); border-radius: 12px; }
+.site-search--hero .site-search-input { font-size: 1.1rem; padding: .85rem 1.1rem; border: 2px solid var(--lab-border-strong, #b9b5ab); border-radius: 3px; }
 .site-search--hero .site-search-results { left: 0; right: 0; width: auto; }
 
 /* 候補 */
@@ -37,11 +37,11 @@
   width: min(34rem, calc(100vw - 1.5rem));
   max-height: min(70vh, 34rem);
   overflow-y: auto;
-  background: var(--lab-card, #fff);
-  color: var(--lab-ink, #22303b);
-  border: 1px solid var(--lab-border-strong, #c4d3dc);
-  border-radius: 12px;
-  box-shadow: 0 14px 32px rgba(23, 50, 77, .18);
+  background: var(--lab-card, #f8f6f1);
+  color: var(--lab-ink, #1c1b19);
+  border: 1px solid var(--lab-border-strong, #b9b5ab);
+  border-radius: 3px;
+  box-shadow: 0 14px 32px rgba(28, 27, 25, .14);
   text-align: left;
   font-weight: 400;
   line-height: 1.6;
@@ -50,74 +50,61 @@
 .site-search-item {
   display: block;
   padding: .65rem .9rem;
-  border-bottom: 1px solid var(--lab-border, #dbe3e8);
-  color: var(--lab-ink, #22303b);
+  border-bottom: 1px solid var(--lab-border, #d8d5cd);
+  color: var(--lab-ink, #1c1b19);
   text-decoration: none;
 }
 .site-search-item:last-child { border-bottom: 0; }
-.site-search-item:hover, .site-search-item.is-active { background: var(--lab-teal-tint, #e7f1f3); }
-.site-search-path { display: block; font-weight: 700; color: var(--lab-navy, #17324d); font-size: .92rem; }
-.site-search-snippet { display: block; color: var(--lab-ink-soft, #5a6875); font-size: .82rem; margin-top: .15rem; }
-.site-search-results mark { background: var(--lab-gold-tint, #fff8e6); color: inherit; box-shadow: inset 0 -2px 0 var(--lab-gold, #b8913f); padding: 0 1px; }
+.site-search-item:hover, .site-search-item.is-active { background: var(--lab-teal-tint, #ebe9e3); }
+.site-search-path { display: block; font-weight: 700; color: var(--lab-navy, #2b2b2b); font-size: .92rem; }
+.site-search-snippet { display: block; color: var(--lab-ink-soft, #5e5c56); font-size: .82rem; margin-top: .15rem; }
+.site-search-results mark { background: var(--lab-gold-tint, #e4e1d8); color: inherit; box-shadow: inset 0 -2px 0 var(--lab-ink, #1c1b19); padding: 0 1px; }
 .site-search-empty { padding: .9rem; font-size: .9rem; }
-.site-search-empty a { color: var(--lab-teal, #2b6474); font-weight: 700; }
+.site-search-empty a { color: var(--lab-teal, #4d4c48); font-weight: 700; }
 
 /* 候補の上の補足（言葉を分けて探したときなど）と、下の「すべての結果を見る」 */
-.site-search-note { padding: .5rem .9rem; font-size: .8rem; color: var(--lab-ink-soft, #5a6875); background: var(--lab-surface, #f5f7f8); border-bottom: 1px solid var(--lab-border, #dbe3e8); }
-.site-search-all { display: block; padding: .6rem .9rem; text-align: center; font-size: .88rem; font-weight: 700; color: var(--lab-teal, #2b6474); background: var(--lab-surface, #f5f7f8); border-top: 1px solid var(--lab-border, #dbe3e8); text-decoration: none; position: sticky; bottom: 0; }
-.site-search-all:hover { background: var(--lab-teal-tint, #e7f1f3); }
+.site-search-note { padding: .5rem .9rem; font-size: .8rem; color: var(--lab-ink-soft, #5e5c56); background: var(--lab-surface, #f4f2ec); border-bottom: 1px solid var(--lab-border, #d8d5cd); }
+.site-search-all { display: block; padding: .6rem .9rem; text-align: center; font-size: .88rem; font-weight: 700; color: var(--lab-teal, #4d4c48); background: var(--lab-surface, #f4f2ec); border-top: 1px solid var(--lab-border, #d8d5cd); text-decoration: none; position: sticky; bottom: 0; }
+.site-search-all:hover { background: var(--lab-teal-tint, #ebe9e3); }
 
 /* 移動先のページでの強調表示 */
-mark.site-search-hl { background: var(--lab-gold-tint, #fff8e6); color: inherit; box-shadow: inset 0 -3px 0 var(--lab-gold, #b8913f); padding: 0 1px; border-radius: 2px; }
+mark.site-search-hl { background: var(--lab-gold-tint, #e4e1d8); color: inherit; box-shadow: inset 0 -3px 0 var(--lab-ink, #1c1b19); padding: 0 1px; border-radius: 2px; }
 .site-search-hlbar {
   position: fixed; z-index: 70; left: 50%; bottom: 1rem; transform: translateX(-50%);
   display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; justify-content: center;
-  max-width: calc(100vw - 2rem); padding: .55rem .9rem; border-radius: 999px;
-  background: var(--lab-navy-deep, #14293f); color: var(--lab-white, #fff);
-  font-size: .85rem; box-shadow: 0 10px 24px rgba(23, 50, 77, .25);
+  max-width: calc(100vw - 2rem); padding: .55rem .9rem; border-radius: 3px;
+  background: var(--lab-navy-deep, #1e1e1e); color: var(--lab-white, #f8f6f1);
+  font-size: .85rem; box-shadow: 0 10px 24px rgba(28, 27, 25, .25);
 }
-.site-search-hlbar button { font: inherit; font-weight: 700; color: var(--lab-navy-deep, #14293f); background: var(--lab-white, #fff); border: 0; border-radius: 999px; padding: .2rem .8rem; cursor: pointer; }
+.site-search-hlbar button { font: inherit; font-weight: 700; color: var(--lab-navy-deep, #1e1e1e); background: var(--lab-white, #f8f6f1); border: 0; border-radius: 3px; padding: .2rem .8rem; cursor: pointer; }
 
 /* 結果一覧ページ（search.html） */
 .search-page-form { margin-top: 1rem; max-width: 46rem; }
-.search-page-form .site-search-input { font-size: 1.1rem; padding: .85rem 1.1rem; border: 2px solid var(--lab-border-strong, #c4d3dc); border-radius: 12px; }
-.search-status { margin: 1.2rem 0 .6rem; font-weight: 700; color: var(--lab-navy, #17324d); }
+.search-page-form .site-search-input { font-size: 1.1rem; padding: .85rem 1.1rem; border: 2px solid var(--lab-border-strong, #b9b5ab); border-radius: 3px; }
+.search-status { margin: 1.2rem 0 .6rem; font-weight: 700; color: var(--lab-navy, #2b2b2b); }
 .search-filters { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
-.search-filters button { font: inherit; font-size: .85rem; padding: .3rem .8rem; border-radius: 999px; border: 1px solid var(--lab-border-strong, #c4d3dc); background: var(--lab-card, #fff); color: var(--lab-ink, #22303b); cursor: pointer; }
-.search-filters button[aria-pressed="true"] { background: var(--lab-teal, #2b6474); border-color: var(--lab-teal, #2b6474); color: var(--lab-white, #fff); font-weight: 700; }
+.search-filters button { font: inherit; font-size: .85rem; padding: .3rem .8rem; border-radius: 3px; border: 1px solid var(--lab-border-strong, #b9b5ab); background: var(--lab-card, #f8f6f1); color: var(--lab-ink, #1c1b19); cursor: pointer; }
+.search-filters button[aria-pressed="true"] { background: var(--lab-teal, #4d4c48); border-color: var(--lab-teal, #4d4c48); color: var(--lab-white, #f8f6f1); font-weight: 700; }
 .search-results { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
-.search-result { display: block; padding: .9rem 1.1rem; border: 1px solid var(--lab-border, #dbe3e8); border-radius: 12px; background: var(--lab-card, #fff); color: var(--lab-ink, #22303b); text-decoration: none; }
-.search-result:hover, .search-result:focus { border-color: var(--lab-teal, #2b6474); background: var(--lab-teal-tint, #e7f1f3); }
-.search-result-page { display: inline-block; font-size: .75rem; font-weight: 700; color: var(--lab-teal, #2b6474); background: var(--lab-teal-tint, #e7f1f3); border-radius: 999px; padding: .1rem .55rem; }
-.search-result-heading { display: block; margin-top: .3rem; font-weight: 700; font-size: 1.02rem; color: var(--lab-navy, #17324d); }
-.search-result-snippet { display: block; margin-top: .25rem; font-size: .88rem; color: var(--lab-ink-soft, #5a6875); line-height: 1.7; }
-.search-result.is-official .search-result-page { color: var(--lab-gold-ink, #6e5324); background: var(--lab-gold-tint, #fff8e6); }
-.site-search-external { display: inline-block; margin-left: .5rem; font-size: .75rem; font-weight: 700; color: var(--lab-teal, #2b6474); white-space: nowrap; }
-.search-results mark, .search-status mark { background: var(--lab-gold-tint, #fff8e6); color: inherit; box-shadow: inset 0 -2px 0 var(--lab-gold, #b8913f); padding: 0 1px; }
+.search-result { display: block; padding: .9rem 1.1rem; border: 1px solid var(--lab-border, #d8d5cd); border-radius: 3px; background: var(--lab-card, #f8f6f1); color: var(--lab-ink, #1c1b19); text-decoration: none; }
+.search-result:hover, .search-result:focus { border-color: var(--lab-teal, #4d4c48); background: var(--lab-teal-tint, #ebe9e3); }
+.search-result-page { display: inline-block; font-size: .75rem; font-weight: 700; color: var(--lab-teal, #4d4c48); background: var(--lab-teal-tint, #ebe9e3); border-radius: 3px; padding: .1rem .55rem; }
+.search-result-heading { display: block; margin-top: .3rem; font-weight: 700; font-size: 1.02rem; color: var(--lab-navy, #2b2b2b); }
+.search-result-snippet { display: block; margin-top: .25rem; font-size: .88rem; color: var(--lab-ink-soft, #5e5c56); line-height: 1.7; }
+.search-result.is-official .search-result-page { color: var(--lab-gold-ink, #2b2b2b); background: var(--lab-gold-tint, #e4e1d8); }
+.site-search-external { display: inline-block; margin-left: .5rem; font-size: .75rem; font-weight: 700; color: var(--lab-teal, #4d4c48); white-space: nowrap; }
+.search-results mark, .search-status mark { background: var(--lab-gold-tint, #e4e1d8); color: inherit; box-shadow: inset 0 -2px 0 var(--lab-ink, #1c1b19); padding: 0 1px; }
 
 /* manual.css のページ：ヘッダーのナビの右に置く */
 .site-header .site-search { flex: 0 1 15rem; min-width: 10rem; }
 
-/* front-operations / startup：上部の帯 */
-.manual-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: .6rem 1rem;
-  flex-wrap: wrap;
-  background: var(--lab-navy-deep, #14293f);
-  color: var(--lab-white, #fff);
-  padding: .6rem 1rem;
-  font-weight: 700;
-}
-.manual-topbar > a { color: var(--lab-white, #fff); }
 
 /* 言語の切り替え（日本語／English／…。ヘッダー・上部バー） */
 .lang-switch { flex: 0 0 auto; display: flex; gap: .3rem; }
 .lang-switch a {
-  color: var(--lab-white, #fff);
+  color: var(--lab-white, #f8f6f1);
   border: 1px solid rgba(255, 255, 255, .55);
-  border-radius: 999px;
+  border-radius: 3px;
   padding: .25rem .75rem;
   font-size: .85rem;
   font-weight: 700;
@@ -125,18 +112,15 @@ mark.site-search-hl { background: var(--lab-gold-tint, #fff8e6); color: inherit;
   text-decoration: none;
   white-space: nowrap;
 }
-.lang-switch a:hover, .lang-switch a:focus-visible { background: var(--lab-teal, #0f7c7c); border-color: var(--lab-teal, #0f7c7c); color: var(--lab-white, #fff); }
-.manual-topbar > .lang-switch { margin-left: auto; }
-.manual-topbar .site-search { flex: 0 1 18rem; min-width: 12rem; }
+.lang-switch a:hover, .lang-switch a:focus-visible { background: var(--lab-teal, #4d4c48); border-color: var(--lab-teal, #4d4c48); color: var(--lab-white, #f8f6f1); }
 
 /* 検索結果から移動した見出しを一瞬ハイライトする */
-@keyframes site-search-flash { 0%, 35% { background-color: var(--lab-gold-tint, #fff8e6); box-shadow: 0 0 0 6px var(--lab-gold-tint, #fff8e6); } 100% { background-color: transparent; box-shadow: 0 0 0 6px transparent; } }
+@keyframes site-search-flash { 0%, 35% { background-color: var(--lab-gold-tint, #e4e1d8); box-shadow: 0 0 0 6px var(--lab-gold-tint, #e4e1d8); } 100% { background-color: transparent; box-shadow: 0 0 0 6px transparent; } }
 h2:target, h3:target, .site-search-flash { animation: site-search-flash 2.6s ease-out; border-radius: 4px; }
 
 @media (max-width: 860px) {
   .site-header .site-search { flex: 1 1 12rem; margin-left: auto; }
-  .manual-topbar .site-search { flex: 1 1 100%; }
-  .manual-topbar .site-search-results { left: 0; right: 0; width: auto; }
+  .site-header .site-search-results { left: 0; right: 0; width: auto; }
   html { scroll-padding-top: 120px; }
 }
 @media (max-width: 580px) {

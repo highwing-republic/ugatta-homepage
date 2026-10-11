@@ -7,27 +7,11 @@
 <title>HOTEL SMART フロント運用マニュアル（シーン別）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/search.css?v=7b9550ee2c">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shell.css?v=db8827bdef"><link rel="stylesheet" href="assets/search.css?v=096a08b05f">
 <style>
   :root{
-    /* Brand tokens matched to Shukuhaku DX Lab (lab.ugatta-llc.com, css/site-shell.css) */
-    --lab-font-sans:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-    --lab-navy:#17324d;
-    --lab-navy-deep:#14293f;
-    --lab-teal:#2b6474;
-    --lab-teal-tint:#e7f1f3;
-    --lab-surface:#f5f7f8;
-    --lab-surface-soft:#eef2f5;
-    --lab-card:#fff;
-    --lab-white:#fff;
-    --lab-border:#dbe3e8;
-    --lab-border-strong:#c4d3dc;
-    --lab-ink:#22303b;
-    --lab-ink-soft:#5a6875;
-    --lab-gold:#b8913f;
-    --lab-gold-tint:#fff8e6;
-    --lab-gold-ink:#6e5324;
+    /* 配色と書体のトークン（--lab-*）は assets/shell.css で定義する */
 
     --bg:var(--lab-surface);
     --panel:var(--lab-card);
@@ -44,7 +28,7 @@
     --tip-line:var(--lab-border-strong);
     --tip-ink:var(--lab-navy);
     --code-bg:var(--lab-surface-soft);
-    --shadow: 0 1px 2px rgba(23,50,77,.06);
+    --shadow: 0 1px 0 rgba(28,27,25,.06);
   }
   *{box-sizing:border-box;}
   body{
@@ -88,8 +72,8 @@
   header.hero .backlink:hover{color:var(--ink);}
   header.hero h1{
     font-family:var(--lab-font-sans);
-    font-weight:700;
-    font-size:clamp(28px,4vw,40px);
+    font-weight:600;
+    font-size:clamp(26px,3.6vw,36px);
     margin:10px 0 14px;
     line-height:1.35;
   }
@@ -101,9 +85,9 @@
   }
   nav.toc{
     position:sticky;
-    top:0;
+    top:64px;
     align-self:start;
-    height:100vh;
+    height:calc(100vh - 64px);
     overflow-y:auto;
     padding:32px 20px 40px 32px;
     border-right:1px solid var(--line);
@@ -141,7 +125,7 @@
   section.scene{
     padding:64px 0 44px;
     border-bottom:1px solid var(--line);
-    scroll-margin-top:16px;
+    scroll-margin-top:76px;
   }
   section.scene:last-child{border-bottom:none;}
   .scene-num{
@@ -187,7 +171,7 @@
     position:absolute;
     left:0; top:1px;
     width:22px;height:22px;
-    border-radius:6px;
+    border-radius:3px;
     background:var(--panel);
     border:1px solid var(--line);
     color:var(--accent-ink);
@@ -224,7 +208,7 @@
   }
   table.field tr:last-child td, table.field tr:last-child th{border-bottom:none;}
   .callout{
-    border-radius:10px;
+    border-radius:3px;
     padding:14px 16px;
     margin:16px 0;
     font-size:14.5px;
@@ -237,7 +221,7 @@
   .pill{
     font-size:12.5px;
     padding:4px 10px;
-    border-radius:999px;
+    border-radius:3px;
     background:var(--panel);
     border:1px solid var(--line);
     color:var(--ink-soft);
@@ -259,7 +243,7 @@
   figure.screenshot{
     margin:1.5em 0;
     border:1px solid var(--line);
-    border-radius:10px;
+    border-radius:3px;
     overflow:hidden;
     background:var(--panel);
     box-shadow:var(--shadow);
@@ -296,14 +280,11 @@
 </style>
 <link rel="alternate" hreflang="ja" href="front-operations.html"><link rel="alternate" hreflang="en" href="en/front-operations.html"></head>
 <body>
-<div class="manual-topbar">
-  <a href="index.html">← かんたんフロントマニュアルのトップへ戻る</a>
-  <span class="lang-switch" role="group" aria-label="Language" translate="no"><a href="en/front-operations.html" hreflang="en" lang="en" data-lang-switch>English</a></span>
-  <form class="site-search site-search--dark" role="search" data-site-search><input type="search" class="site-search-input" placeholder="操作を検索（例：返金）" aria-label="マニュアル内を検索" autocomplete="off" enterkeyhint="search"></form>
-</div>
+<a class="skip-link" href="#main">本文へ移動</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="index.html">あらきホテル<small>かんたんフロントマニュアル</small></a><nav class="global-nav" aria-label="主要メニュー"><a href="daily-operations.html">1日の業務</a><a href="reservation-guide.html">予約・会計</a><a href="room-assignment.html">部屋割り</a><a href="service-operations.html">客室・清掃</a><a href="troubleshooting.html">困ったとき</a><a href="glossary.html">用語集</a><a href="quick-reference.html">早見表</a></nav><span class="lang-switch" role="group" aria-label="Language" translate="no"><a href="en/front-operations.html" hreflang="en" lang="en" data-lang-switch>English</a></span><form class="site-search site-search--dark" role="search" data-site-search><input type="search" class="site-search-input" placeholder="操作を検索（例：返金）" aria-label="マニュアル内を検索" autocomplete="off" enterkeyhint="search"></form></div></header>
 <div class="layout">
   <nav class="toc">
-    <div class="toc-title">フロント運用編・目次</div>
+    <details data-toc><summary class="toc-title">フロント運用編・目次</summary>
     <ol>
       <li><a href="#s1">ログイン／ログアウト</a></li>
       <li><a href="#s2">予約作成（個人予約）</a></li>
@@ -315,12 +296,11 @@
       <li><a href="#s8">チェックイン／チェックアウト</a></li>
       <li><a href="#s9">部屋のブロック</a></li>
       <li><a href="#s10">日次締め</a></li>
-    </ol>
+    </ol></details>
   </nav>
 
   <div>
     <header class="hero">
-      <a class="backlink" href="./index.html">← マニュアル一覧に戻る</a>
       <div class="eyebrow">HOTEL SMART シーン別運用マニュアル／フロント運用編</div>
       <h1>電話受付・ウォークインの予約作成から日次締めまで。フロント業務を場面ごとに解説します</h1>
       <p>
@@ -331,7 +311,7 @@
       </p>
     </header>
 
-    <main>
+    <main id="main">
 
       <!-- SCENE 1 -->
       <section class="scene" id="s1">
@@ -350,7 +330,7 @@
             <li>「ログアウト」を押します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/official/official-09-logout-menu.png" target="_blank" rel="noopener"><img src="screenshots/official/official-09-logout-menu.png" alt="公式マニュアルの画面例：右上の人型アイコンを押して開くメニューの「ログアウト」"></a>
+            <a href="screenshots/official/official-09-logout-menu.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-09-logout-menu.png" alt="公式マニュアルの画面例：右上の人型アイコンを押して開くメニューの「ログアウト」"></a>
             <figcaption>右上の人型アイコンを押すと開くメニュー。一番下の「ログアウト」（赤枠）を押します（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>共有端末で運用する場合は、シフト交代のタイミングで毎回ログアウトする運用ルールを決めておくと安全です。ログイン画面の「ログイン情報を保持する」にチェックを入れると7日間、入れないと12時間ログインが続きます（公式マニュアルより）。共有端末ではチェックを入れないでください。推奨環境はパソコンのChromeです（公式マニュアルより）。</div>
@@ -380,7 +360,7 @@
           <p>各部屋タイプと空室数が表示されるので、予約を作成したい日付・部屋タイプの残室数をクリックすると、指定した日付と部屋タイプが入った状態で予約作成画面が開きます。</p>
           <p>公式マニュアルでの見方の要点です（あらきホテルでは未確認）。部屋タイプが決まっていないときは［全部屋タイプ合計］の数字をクリックします。残室0のマスはグレー、マイナス（オーバーブッキングのおそれ）は赤で表示されます。表示期間中ずっと残室0の部屋タイプは表示されません。表示期間の初期値は本日から2週間で、最大1か月まで表示できます。数字をクリックすると、予約作成画面は別タブで開きます（公式マニュアルより）。</p>
           <figure class="screenshot">
-            <a href="screenshots/official/official-10-inventory-vacancy.png" target="_blank" rel="noopener"><img src="screenshots/official/official-10-inventory-vacancy.png" alt="公式マニュアルの画面例：残室管理の画面（物件名と期間の指定欄、部屋タイプごと・日ごとの残室数）"></a>
+            <a href="screenshots/official/official-10-inventory-vacancy.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-10-inventory-vacancy.png" alt="公式マニュアルの画面例：残室管理の画面（物件名と期間の指定欄、部屋タイプごと・日ごとの残室数）"></a>
             <figcaption>【残室管理】の画面。上の赤枠で物件名と表示期間を選びます。残室0のマスはグレー、マイナスのマスは赤で表示されます（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">残室管理のメモ（公式マニュアルより）</span>【残室管理】には、日付に付けるメモを残せます。在庫に関わるイベント、忘れ物、次のシフトへの引継ぎなどの共有に使います（あらきホテルでは未確認）。
@@ -394,15 +374,15 @@
           <h3 id="scene2-from-indicator" class="sub">C. 【客室の状況表】から</h3>
           <p>空室をクリックして開くポップアップ画面で「新規予約」をクリックすると、客室の状況表で選択した日付・部屋からの予約作成画面が開きます。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-01-room-indicator.jpg" target="_blank" rel="noopener"><img src="screenshots/front-01-room-indicator.jpg" alt="物件を種子島あらきホテルにした客室の状況表（2026年10月9日）のスクリーンショット"></a>
+            <a href="screenshots/front-01-room-indicator.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-01-room-indicator.jpg" alt="物件を種子島あらきホテルにした客室の状況表（2026年10月9日）のスクリーンショット"></a>
             <figcaption>【客室の状況表】（10/9、物件は「種子島あらきホテル」）。上から5階（501・502）、4階（401〜）、3階（301〜）の順に部屋が並びます。物件を切り替えると、その物件の部屋が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-02-room-popup-new-reserve.jpg" target="_blank" rel="noopener"><img src="screenshots/front-02-room-popup-new-reserve.jpg" alt="空室をクリックして開いた部屋情報ポップアップと新規予約ボタンのスクリーンショット"></a>
+            <a href="screenshots/front-02-room-popup-new-reserve.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-02-room-popup-new-reserve.jpg" alt="空室をクリックして開いた部屋情報ポップアップと新規予約ボタンのスクリーンショット"></a>
             <figcaption>空室の206（シングルB）をクリックして開いた部屋情報のポップアップ。「新規予約」を押して予約作成画面へ進みます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-03-reserve-form.jpg" target="_blank" rel="noopener"><img src="screenshots/front-03-reserve-form.jpg" alt="日付と部屋が入力済みの状態で開いた新規予約の入力画面のスクリーンショット"></a>
+            <a href="screenshots/front-03-reserve-form.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-03-reserve-form.jpg" alt="日付と部屋が入力済みの状態で開いた新規予約の入力画面のスクリーンショット"></a>
             <figcaption>新規予約の入力画面（新しいタブで開きます）。客室の状況表で選んだ日付・部屋があらかじめ入り、この例では10/9〜10/10の1泊、シングルB 1室1名が入った状態で開きます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
@@ -426,7 +406,7 @@
             確定したらチェックを外して本予約にするのを忘れないでください。</div>
           <div class="callout tip"><span class="label">人数が当日まで決まらないとき（公式マニュアルより）</span>タブレットのチェックインでは、必須にした入力項目を埋めないと先に進めません。人数が確定しない予約は、少ないほうの人数で登録しておき、増えた分の宿泊者は後から宿泊者台帳に手で入れます。また、宿泊者ごとに宿泊期間を変えることはできません（部屋ごとなら変えられます）。連泊の途中で1名だけ先に帰る場合などは、オペレーターメモなどに書いて共有します。</div>
           <figure class="screenshot">
-            <a href="screenshots/front-04-reserve-form-filled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-04-reserve-form-filled.jpg" alt="新規予約画面で代表者氏名・人数・予約経路を入力した状態のスクリーンショット"></a>
+            <a href="screenshots/front-04-reserve-form-filled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-04-reserve-form-filled.jpg" alt="新規予約画面で代表者氏名・人数・予約経路を入力した状態のスクリーンショット"></a>
             <figcaption>代表者氏名（左列）、人数・予約経路（右列）を入力した状態。予約経路はプルダウン（電話予約／自社HP／その他）から選びます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <table class="field">
@@ -438,26 +418,26 @@
           </table>
           <p>予約詳細の《共有事項》欄では、リクエスト・オペレーターメモ・リピートメモを追加できます。リクエストとオペレーターメモは、種類（通常／重要／チェックイン時／チェックアウト前）を選んで登録します。リピートメモは次回以降の予約にも引き継がれるメモです。「重要」のメモがある予約は、開くたびに「共有事項をご確認ください。」と表示されます（2026/10/06確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-55-request-input.jpg" target="_blank" rel="noopener"><img src="screenshots/front-55-request-input.jpg" alt="リクエストの入力画面（種類：通常、重要、チェックイン時、チェックアウト前）のスクリーンショット"></a>
+            <a href="screenshots/front-55-request-input.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-55-request-input.jpg" alt="リクエストの入力画面（種類：通常、重要、チェックイン時、チェックアウト前）のスクリーンショット"></a>
             <figcaption>リクエストの入力画面。種類（通常／重要／チェックイン時／チェックアウト前）を選んで内容を入力し、「保存」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-56-request-saved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-56-request-saved.jpg" alt="リクエスト登録後、画面上部に共有事項がありますと表示された予約詳細のスクリーンショット"></a>
+            <a href="screenshots/front-56-request-saved.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-56-request-saved.jpg" alt="リクエスト登録後、画面上部に共有事項がありますと表示された予約詳細のスクリーンショット"></a>
             <figcaption>登録後の予約詳細。画面上部に「共有事項があります(1)」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-57-operator-memo-important.jpg" target="_blank" rel="noopener"><img src="screenshots/front-57-operator-memo-important.jpg" alt="オペレーターメモで重要を選び、予約詳細ページにアラートを出すが表示された入力画面のスクリーンショット"></a>
+            <a href="screenshots/front-57-operator-memo-important.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-57-operator-memo-important.jpg" alt="オペレーターメモで重要を選び、予約詳細ページにアラートを出すが表示された入力画面のスクリーンショット"></a>
             <figcaption>オペレーターメモで「重要」を選ぶと、「予約詳細ページにアラートを出す」（初期値はオン）が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-58-shared-notes-all.jpg" target="_blank" rel="noopener"><img src="screenshots/front-58-shared-notes-all.jpg" alt="リクエスト・オペレーターメモ・リピートメモがそろった共有事項欄のスクリーンショット"></a>
+            <a href="screenshots/front-58-shared-notes-all.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-58-shared-notes-all.jpg" alt="リクエスト・オペレーターメモ・リピートメモがそろった共有事項欄のスクリーンショット"></a>
             <figcaption>リクエスト・オペレーターメモ・リピートメモがそろった状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>オペレーターメモやリピートメモを保存すると「オペレーターメモの更新内容をメールで送信しますか？」と確認が出ました（2026/10/06確認）。メールを送らない場合は「キャンセル」を選びます。メモ自体はどちらを選んでも保存されます。公式マニュアルでは、ここでOKを押したときの通知メールは、お客様ではなく契約者（施設）として登録したメールアドレスに届くとされています。オペレーターメモは、もともと電話対応の記録や本人確認の経緯を残すためのメモです（公式マニュアルより。届き先は、あらきホテルでは未確認）。</div>
           <div class="callout tip"><span class="label">表示項目について</span>「仮予約」「リピートメモ」「清掃時備考」などは、施設の表示設定によって表示されない場合があります。見当たらない項目を無理に探さず、必要性を責任者へ確認してください。</div>
           <div class="callout tip"><span class="label">保存</span>入力内容を読み直し、「予約を登録する」を1回だけ押します。画面ヘルプに表示されるショートカットは <code>Ctrl+S</code> です。</div>
           <figure class="screenshot">
-            <a href="screenshots/front-05-reserve-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-05-reserve-detail.jpg" alt="予約を登録した後に表示される予約詳細画面のスクリーンショット"></a>
+            <a href="screenshots/front-05-reserve-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-05-reserve-detail.jpg" alt="予約を登録した後に表示される予約詳細画面のスクリーンショット"></a>
             <figcaption>画面下部の「予約を登録する」を押した後に表示される予約詳細画面。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">保存した後に確認できること（公式マニュアルより）</span>予約詳細の〖予約情報〗にある［付帯情報］を開くと、次のことができます（あらきホテルでは未確認）。
@@ -475,15 +455,15 @@
           <p>代表者名・部屋タイプ・部屋数・人数は引き継がれますが、日程は当日、予約経路は「未選択」、部屋番号は未割り当て、共有事項は空欄になりました（2026/10/06確認）。日程と予約経路は必ず入れ直します。</p>
           <p>公式マニュアルでは、コピーするとチェックイン日が当日になり、泊数は元の予約のまま引き継がれるとされています。プラン・食事・法人団体も引き継がれます（プランが期限切れ、法人団体が取引期間外のときはアラートが出ます）。部屋ごとに宿泊期間が違う予約はコピーできません（公式マニュアルより。あらきホテルでは未確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-74-copy-form.jpg" target="_blank" rel="noopener"><img src="screenshots/front-74-copy-form.jpg" alt="予約をコピーで別タブに開いた新規予約画面（日程は当日、予約経路は未選択）のスクリーンショット"></a>
+            <a href="screenshots/front-74-copy-form.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-74-copy-form.jpg" alt="予約をコピーで別タブに開いた新規予約画面（日程は当日、予約経路は未選択）のスクリーンショット"></a>
             <figcaption>「予約をコピー」で別タブに開いた新規予約画面。代表者名・部屋タイプ・部屋数・人数は引き継がれ、日程は当日、予約経路は「未選択」になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-75-copy-form-edited.jpg" target="_blank" rel="noopener"><img src="screenshots/front-75-copy-form-edited.jpg" alt="コピーした新規予約画面で日程と予約経路を入れ直した状態のスクリーンショット"></a>
+            <a href="screenshots/front-75-copy-form-edited.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-75-copy-form-edited.jpg" alt="コピーした新規予約画面で日程と予約経路を入れ直した状態のスクリーンショット"></a>
             <figcaption>日程と予約経路を入れ直した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-76-copy-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-76-copy-result.jpg" alt="コピーして登録した予約の予約詳細（部屋番号は未入力、共有事項は空欄）のスクリーンショット"></a>
+            <a href="screenshots/front-76-copy-result.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-76-copy-result.jpg" alt="コピーして登録した予約の予約詳細（部屋番号は未入力、共有事項は空欄）のスクリーンショット"></a>
             <figcaption>登録後の予約詳細。部屋番号は未割り当て（「未入力」）で、共有事項は空欄です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
@@ -535,23 +515,23 @@
           </ol>
           <p>「法人名・団体名」は、法人・団体マスタから選ぶ欄です（2026/10/06確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-47-group-reserve-rooms.jpg" target="_blank" rel="noopener"><img src="screenshots/front-47-group-reserve-rooms.jpg" alt="新規予約の人数変更で部屋数2・部屋人数1にした状態（部屋：2 人数：2）のスクリーンショット"></a>
+            <a href="screenshots/front-47-group-reserve-rooms.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-47-group-reserve-rooms.jpg" alt="新規予約の人数変更で部屋数2・部屋人数1にした状態（部屋：2 人数：2）のスクリーンショット"></a>
             <figcaption>手順5：「人数変更」で部屋タイプをツイン、部屋数を2、部屋人数を1にした状態。合計は「部屋：2　人数：2」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-11-stay-change-amount-tab.png" target="_blank" rel="noopener"><img src="screenshots/official/official-11-stay-change-amount-tab.png" alt="公式マニュアルの画面例：宿泊変更の金額変更タブ（部屋ごと・日ごとの宿泊費の表）"></a>
+            <a href="screenshots/official/official-11-stay-change-amount-tab.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-11-stay-change-amount-tab.png" alt="公式マニュアルの画面例：宿泊変更の金額変更タブ（部屋ごと・日ごとの宿泊費の表）"></a>
             <figcaption>「宿泊変更」の「金額変更」タブ。部屋ごと・日ごとの宿泊費を表で確認し、直せます（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-48-group-reserve-room-rows.jpg" target="_blank" rel="noopener"><img src="screenshots/front-48-group-reserve-room-rows.jpg" alt="部屋変更に切り替えて部屋ごとの行が並んだ状態（未割り当て、2部屋目の代表者は未記入）のスクリーンショット"></a>
+            <a href="screenshots/front-48-group-reserve-room-rows.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-48-group-reserve-room-rows.jpg" alt="部屋変更に切り替えて部屋ごとの行が並んだ状態（未割り当て、2部屋目の代表者は未記入）のスクリーンショット"></a>
             <figcaption>「部屋変更」に切り替えると、部屋ごとの行が並びます。部屋番号は「未割り当て」、2部屋目の代表者名は「（未記入）」です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-49-group-reserve-assigned.jpg" target="_blank" rel="noopener"><img src="screenshots/front-49-group-reserve-assigned.jpg" alt="1部屋目に414、2部屋目に417を割り当てた部屋変更画面のスクリーンショット"></a>
+            <a href="screenshots/front-49-group-reserve-assigned.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-49-group-reserve-assigned.jpg" alt="1部屋目に414、2部屋目に417を割り当てた部屋変更画面のスクリーンショット"></a>
             <figcaption>1部屋目に414、2部屋目に417を割り当てた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-50-group-reserve-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-50-group-reserve-detail.jpg" alt="登録後の予約詳細（2部屋・2名、予約を分割ボタンあり）のスクリーンショット"></a>
+            <a href="screenshots/front-50-group-reserve-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-50-group-reserve-detail.jpg" alt="登録後の予約詳細（2部屋・2名、予約を分割ボタンあり）のスクリーンショット"></a>
             <figcaption>「予約を登録する」を押した後の予約詳細。2部屋（ツイン414・417）・2名で登録され、右上に「予約を分割」ボタンが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">保存前の確認</span>室数・各部屋の人数・宿泊日・料金・宿泊者の割り当てを、団体全体と部屋ごとの両方で確認してください。</div>
@@ -562,7 +542,7 @@
             </ul>
           </div>
           <figure class="screenshot">
-            <a href="screenshots/official/official-12-room-change-unused-dates.png" target="_blank" rel="noopener"><img src="screenshots/official/official-12-room-change-unused-dates.png" alt="公式マニュアルの画面例：部屋変更の表で、使わない日のマスがグレーになった部屋と「11部屋目のみ日数を追加」"></a>
+            <a href="screenshots/official/official-12-room-change-unused-dates.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-12-room-change-unused-dates.png" alt="公式マニュアルの画面例：部屋変更の表で、使わない日のマスがグレーになった部屋と「11部屋目のみ日数を追加」"></a>
             <figcaption>日程を削った部屋の例。使わない日のマスはグレーになります。行の右の「〇部屋目のみ日数を追加」で、その部屋だけ日程を足せます（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
@@ -591,19 +571,19 @@
           <h3 id="scene4-search" class="sub">予約を探す</h3>
           <p>画面上部の「スマート予約検索」に氏名やチェックインコードを入力して探します。条件を加える場合は「検索条件追加」を使います。【予約情報】の一覧では「条件を選択して絞り込み」で、本日チェックイン・本日登録された予約などの条件で絞り込めます。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-77-smart-search.jpg" target="_blank" rel="noopener"><img src="screenshots/front-77-smart-search.jpg" alt="スマート予約検索に氏名を入力した検索結果のスクリーンショット"></a>
+            <a href="screenshots/front-77-smart-search.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-77-smart-search.jpg" alt="スマート予約検索に氏名を入力した検索結果のスクリーンショット"></a>
             <figcaption>「スマート予約検索」に氏名（例：テスト三郎）を入力した結果。【予約情報】の一覧に該当する予約が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-78-smart-search-conditions.jpg" target="_blank" rel="noopener"><img src="screenshots/front-78-smart-search-conditions.jpg" alt="スマート予約検索の検索条件追加（物件名、チェックイン、チェックアウト、キャンセルの表示など）のスクリーンショット"></a>
+            <a href="screenshots/front-78-smart-search-conditions.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-78-smart-search-conditions.jpg" alt="スマート予約検索の検索条件追加（物件名、チェックイン、チェックアウト、キャンセルの表示など）のスクリーンショット"></a>
             <figcaption>「検索条件追加」を開いた状態。物件名・チェックイン・チェックアウト・キャンセルの表示・一致方法・法人・団体の条件を加えられます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-79-filter-search-panel.jpg" target="_blank" rel="noopener"><img src="screenshots/front-79-filter-search-panel.jpg" alt="通常検索に切り替えた後の条件を選択して絞り込み画面のスクリーンショット"></a>
+            <a href="screenshots/front-79-filter-search-panel.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-79-filter-search-panel.jpg" alt="通常検索に切り替えた後の条件を選択して絞り込み画面のスクリーンショット"></a>
             <figcaption>「通常検索に切り替え」後の「条件を選択して絞り込み」画面。本日チェックイン・本日チェックアウト・滞在中の予約・本日登録された予約などのチェックと、物件名・プラン・予約経路などの条件で絞り込めます。この画面では、スマート予約検索にチェックインコードを入れても0件でした（通常検索に切り替えた状態での結果です）。公式マニュアルでは、チェックインコードもスマート予約検索の対象とされています。登録から約3分は検索に出ないこともあるため、0件のときは時間を置いて探し直してください。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-80-filter-search-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-80-filter-search-result.jpg" alt="本日登録された予約で絞り込んだ検索結果のスクリーンショット"></a>
+            <a href="screenshots/front-80-filter-search-result.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-80-filter-search-result.jpg" alt="本日登録された予約で絞り込んだ検索結果のスクリーンショット"></a>
             <figcaption>「本日登録された予約」で絞り込んだ結果。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>作成した直後の予約が、スマート予約検索ですぐには見つからないことがありました（2026/10/06確認）。スマート予約検索は、登録・取り込みから約3分間は検索に出ないことがあります（公式オンラインマニュアルより）。見つからない場合は、絞り込み検索で探してください。</div>
@@ -612,32 +592,32 @@
           <h3 id="scene4-period" class="sub">宿泊期間の変更</h3>
           <p>《予約情報》欄より変更可能です。チェックイン日はクリックして表示されるポップアップで変更後の日付を入力し「移動する」を押します。ポップアップには「日程の移動に合わせて料金の利用日が変更されます」と固定の説明文が表示され、チェックボックスは「ブロックや他の予約との重複が発生する部屋割りを解除する」の1つだけで、初期値でチェック済みでした（2026/10/05確認）。不要な場合のみ外します。チェックイン日の移動では泊数を保ったまま日程全体がずれ、「移動する」を押すとその場で保存されました（2026/10/05確認）。チェックアウト日は直接入力または「カレンダー入力」から選択します。チェックアウト日や泊数の変更は、画面下に表示される「変更を保存する」を押すまで保存されませんでした（2026/10/05確認）。複数部屋で部屋ごとに期間が異なる場合は「部屋毎に設定する」から個別に変更します。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-25-change-test-reserve.jpg" target="_blank" rel="noopener"><img src="screenshots/front-25-change-test-reserve.jpg" alt="変更前の予約詳細（2026/11/10〜11/12、2泊、部屋はBEKKAN 2）のスクリーンショット"></a>
+            <a href="screenshots/front-25-change-test-reserve.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-25-change-test-reserve.jpg" alt="変更前の予約詳細（2026/11/10〜11/12、2泊、部屋はBEKKAN 2）のスクリーンショット"></a>
             <figcaption>変更前の予約詳細。日程は11/10〜11/12（2泊）、部屋はBEKKAN 2です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-26-extend-save-bar.jpg" target="_blank" rel="noopener"><img src="screenshots/front-26-extend-save-bar.jpg" alt="泊数を3にしてチェックアウト日が11/13に変わり、画面下に変更を保存するのバーが表示された状態のスクリーンショット"></a>
+            <a href="screenshots/front-26-extend-save-bar.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-26-extend-save-bar.jpg" alt="泊数を3にしてチェックアウト日が11/13に変わり、画面下に変更を保存するのバーが表示された状態のスクリーンショット"></a>
             <figcaption>泊数を「3」にした状態。チェックアウト日が11/13に変わり、画面下に「変更を保存する」のバーが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-27-extended-3nights.jpg" target="_blank" rel="noopener"><img src="screenshots/front-27-extended-3nights.jpg" alt="保存後の予約詳細（11/10〜11/13、3泊）のスクリーンショット"></a>
+            <a href="screenshots/front-27-extended-3nights.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-27-extended-3nights.jpg" alt="保存後の予約詳細（11/10〜11/13、3泊）のスクリーンショット"></a>
             <figcaption>「変更を保存する」を押した後の予約詳細。日程が11/10〜11/13（3泊）になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-28-checkin-move-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-28-checkin-move-dialog.jpg" alt="チェックイン日をクリックすると開くチェックイン日の移動画面のスクリーンショット"></a>
+            <a href="screenshots/front-28-checkin-move-dialog.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-28-checkin-move-dialog.jpg" alt="チェックイン日をクリックすると開くチェックイン日の移動画面のスクリーンショット"></a>
             <figcaption>チェックイン日をクリックすると開く「チェックイン日の移動」画面。「日程の移動に合わせて料金の利用日が変更されます」の説明文と、「ブロックや他の予約との重複が発生する部屋割りを解除する」のチェックボックスが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-29-checkin-move-selected.jpg" target="_blank" rel="noopener"><img src="screenshots/front-29-checkin-move-selected.jpg" alt="チェックイン日の移動画面で移動先に11/11を選び、11/11〜11/14と表示された状態のスクリーンショット"></a>
+            <a href="screenshots/front-29-checkin-move-selected.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-29-checkin-move-selected.jpg" alt="チェックイン日の移動画面で移動先に11/11を選び、11/11〜11/14と表示された状態のスクリーンショット"></a>
             <figcaption>移動先に11/11を選んだ状態。泊数を保ったまま、11/11〜11/14と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-30-checkin-moved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-30-checkin-moved.jpg" alt="移動後の予約詳細（11/11〜11/14、3泊）のスクリーンショット"></a>
+            <a href="screenshots/front-30-checkin-moved.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-30-checkin-moved.jpg" alt="移動後の予約詳細（11/11〜11/14、3泊）のスクリーンショット"></a>
             <figcaption>「移動する」を押した後の予約詳細。日程が11/11〜11/14（3泊）になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>中抜け（連泊中の一部の日だけ部屋を空ける）が発生する場合は、《宿泊変更》の「部屋変更」で中抜けする日の部屋をクリックし、「日程削除」→「この日のみを削除する」を選んで「削除する」を押します（公式マニュアルより）。日程削除の画面には「この日のみ」「この日までの」「この日以降の」「一連の日程」を削除する4つの選択肢があり、中抜けでは「この日のみ」を選びます（公式マニュアルの画面例より）。先に「割当解除」を押す必要があるかは、あらきホテルの実画面では未確認です。</p>
           <figure class="screenshot">
-            <a href="screenshots/official/official-06-reduce-stay.png" target="_blank" rel="noopener"><img src="screenshots/official/official-06-reduce-stay.png" alt="公式マニュアルの画面例：宿泊変更の部屋変更で、日付の列の削除を押して全部屋の日程を減らす画面"></a>
+            <a href="screenshots/official/official-06-reduce-stay.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-06-reduce-stay.png" alt="公式マニュアルの画面例：宿泊変更の部屋変更で、日付の列の削除を押して全部屋の日程を減らす画面"></a>
             <figcaption>減泊・日程削除の画面例（公式マニュアルの画面例。デモ施設の画面です）。「部屋変更」で日付の列の「削除」を押すと、その日の日程を全部屋まとめて削除できます。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>チェックアウト日の延長は、《宿泊変更》の「部屋変更」からも行えます（2026/10/09確認）。</p>
@@ -650,23 +630,23 @@
           </ol>
           <p>部屋ごとに延ばすときは、各行の右にある「1部屋目のみ日数を追加」を使います（ボタンがあることを確認）。下の例では、追加した10/24にも同じ部屋（414）が入り、保存後は10/23〜10/25の2泊になりました（2026/10/09確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-121-extend-days-buttons.jpg" target="_blank" rel="noopener"><img src="screenshots/front-121-extend-days-buttons.jpg" alt="宿泊変更の部屋変更画面（右上に全部屋の日数を追加、行の右に1部屋目のみ日数を追加）のスクリーンショット"></a>
+            <a href="screenshots/front-121-extend-days-buttons.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-121-extend-days-buttons.jpg" alt="宿泊変更の部屋変更画面（右上に全部屋の日数を追加、行の右に1部屋目のみ日数を追加）のスクリーンショット"></a>
             <figcaption>手順1〜2：「宿泊変更」→「部屋変更」の画面。右上に「全部屋の日数を追加」、行の右に「1部屋目のみ日数を追加」があります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-122-extend-days-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-122-extend-days-dialog.jpg" alt="宿泊日数追加画面（全部屋に追加する日数を入力してください、初期値1泊）のスクリーンショット"></a>
+            <a href="screenshots/front-122-extend-days-dialog.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-122-extend-days-dialog.jpg" alt="宿泊日数追加画面（全部屋に追加する日数を入力してください、初期値1泊）のスクリーンショット"></a>
             <figcaption>手順3：「宿泊日数追加」画面。「全部屋に追加する日数を入力してください」「※部屋料金には前日指定が反映されます」と表示され、日数の初期値は1泊です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-123-extend-days-added.jpg" target="_blank" rel="noopener"><img src="screenshots/front-123-extend-days-added.jpg" alt="10/24の列が増え、414が入った部屋変更画面のスクリーンショット"></a>
+            <a href="screenshots/front-123-extend-days-added.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-123-extend-days-added.jpg" alt="10/24の列が増え、414が入った部屋変更画面のスクリーンショット"></a>
             <figcaption>手順4：「追加する」を押した後。10/24の列が増え、同じ部屋（414）が入っています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-124-extend-days-saved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-124-extend-days-saved.jpg" alt="保存後の予約詳細（10/23〜10/25、2泊）のスクリーンショット"></a>
+            <a href="screenshots/front-124-extend-days-saved.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-124-extend-days-saved.jpg" alt="保存後の予約詳細（10/23〜10/25、2泊）のスクリーンショット"></a>
             <figcaption>手順5：「保存」を押した後の予約詳細。日程が10/23〜10/25（2泊）になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-05-extend-stay.png" target="_blank" rel="noopener"><img src="screenshots/official/official-05-extend-stay.png" alt="公式マニュアルの画面例：宿泊変更でチェックアウト日を変更して延泊する画面"></a>
+            <a href="screenshots/official/official-05-extend-stay.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-05-extend-stay.png" alt="公式マニュアルの画面例：宿泊変更でチェックアウト日を変更して延泊する画面"></a>
             <figcaption>延泊（チェックアウト日の変更）の画面例（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>日付の欄にキーボードで数字を直接入力すると、入力途中の値に反応して警告が出ることがありました（2026/10/05確認）。泊数を変えるか、カレンダーから選ぶと確実です。</div>
@@ -687,19 +667,19 @@
           <h3 id="scene4-add-remove-room" class="sub">部屋の追加／削除</h3>
           <p>予約詳細の《予約情報》欄の「宿泊変更」を押し、「人数変更」で「部屋タイプを追加」を押します。追加する部屋タイプ・部屋数・部屋人数を入力して「保存」を押します。追加した部屋は部屋番号が未割り当てになるため、予約詳細の部屋割り当てで部屋を選ぶか「おまかせ割り当て」を使います。部屋を削除する場合は、同じ画面で削除する行の「×」を押して「保存」を押します（2026/10/05確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-36-room-type-added.jpg" target="_blank" rel="noopener"><img src="screenshots/front-36-room-type-added.jpg" alt="宿泊変更の人数変更で部屋タイプを追加し、BEKKAN ツイン（1部屋・1名）の行を加えた状態のスクリーンショット"></a>
+            <a href="screenshots/front-36-room-type-added.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-36-room-type-added.jpg" alt="宿泊変更の人数変更で部屋タイプを追加し、BEKKAN ツイン（1部屋・1名）の行を加えた状態のスクリーンショット"></a>
             <figcaption>「宿泊変更」→「人数変更」で「部屋タイプを追加」を押し、BEKKAN ツイン（1部屋・1名）の行を加えた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-37-room-added-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-37-room-added-detail.jpg" alt="部屋を追加した後の予約詳細（2部屋・2名、追加した部屋は部屋番号が未入力でおまかせ割り当てボタンあり）のスクリーンショット"></a>
+            <a href="screenshots/front-37-room-added-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-37-room-added-detail.jpg" alt="部屋を追加した後の予約詳細（2部屋・2名、追加した部屋は部屋番号が未入力でおまかせ割り当てボタンあり）のスクリーンショット"></a>
             <figcaption>追加後の予約詳細（2部屋・2名）。追加した部屋は部屋番号が「未入力」で、「おまかせ割り当て」ボタンが表示されます。この画面は部屋の途中変更を設定した後のため、「途中移動あり」と表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-38-room-row-deleted.jpg" target="_blank" rel="noopener"><img src="screenshots/front-38-room-row-deleted.jpg" alt="宿泊変更の人数変更で追加した行の×を押して削除した状態のスクリーンショット"></a>
+            <a href="screenshots/front-38-room-row-deleted.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-38-room-row-deleted.jpg" alt="宿泊変更の人数変更で追加した行の×を押して削除した状態のスクリーンショット"></a>
             <figcaption>追加した行の「×」を押して削除した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-39-room-deleted-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-39-room-deleted-detail.jpg" alt="部屋を削除した後の予約詳細（1部屋・1名に戻った状態）のスクリーンショット"></a>
+            <a href="screenshots/front-39-room-deleted-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-39-room-deleted-detail.jpg" alt="部屋を削除した後の予約詳細（1部屋・1名に戻った状態）のスクリーンショット"></a>
             <figcaption>削除後の予約詳細。1部屋・1名に戻っています。この画面は部屋の途中変更を設定した後のため、「途中移動あり」と表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>途中移動のある部屋は、宿泊変更画面で部屋数・人数・削除を変更できませんでした（2026/10/05確認）。人数の変更は、途中移動を設定する前に済ませてください。</div>
@@ -707,19 +687,19 @@
           <h3 id="scene4-midstay-move" class="sub">部屋の途中変更</h3>
           <p>連泊中に途中で部屋を移動する場合は、「宿泊変更」の［部屋変更］を開き、部屋が変わる日付の部屋をクリックして変更後の部屋を選択・保存します。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-31-stay-change-room-tab.jpg" target="_blank" rel="noopener"><img src="screenshots/front-31-stay-change-room-tab.jpg" alt="宿泊変更の部屋変更画面（泊ごとの部屋が並ぶ表）のスクリーンショット"></a>
+            <a href="screenshots/front-31-stay-change-room-tab.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-31-stay-change-room-tab.jpg" alt="宿泊変更の部屋変更画面（泊ごとの部屋が並ぶ表）のスクリーンショット"></a>
             <figcaption>「宿泊変更」→「部屋変更」の画面。泊ごとの部屋が日付順に並びます。この例では10/20・10/21の2泊とも401です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-32-room-change-menu.jpg" target="_blank" rel="noopener"><img src="screenshots/front-32-room-change-menu.jpg" alt="2泊目の部屋を開いたメニュー（部屋の一覧、割当解除、日程削除、1泊分操作（途中移動））のスクリーンショット"></a>
+            <a href="screenshots/front-32-room-change-menu.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-32-room-change-menu.jpg" alt="2泊目の部屋を開いたメニュー（部屋の一覧、割当解除、日程削除、1泊分操作（途中移動））のスクリーンショット"></a>
             <figcaption>2泊目の部屋を開いたメニュー。部屋の一覧のほか、「割当解除」「日程削除」「1泊分操作（途中移動）」があります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-33-midstay-move-set.jpg" target="_blank" rel="noopener"><img src="screenshots/front-33-midstay-move-set.jpg" alt="1泊目が401、2泊目が403になり、2泊目に途中移動と表示された部屋変更画面のスクリーンショット"></a>
+            <a href="screenshots/front-33-midstay-move-set.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-33-midstay-move-set.jpg" alt="1泊目が401、2泊目が403になり、2泊目に途中移動と表示された部屋変更画面のスクリーンショット"></a>
             <figcaption>2泊目に403を選んだ状態。1泊目は401のまま、2泊目（10/21）以降が403になり、2泊目に「途中移動」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-34-midstay-move-saved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-34-midstay-move-saved.jpg" alt="途中移動を保存した後の予約詳細（部屋割り当てが1部屋（途中移動あり）で401・403の2行）のスクリーンショット"></a>
+            <a href="screenshots/front-34-midstay-move-saved.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-34-midstay-move-saved.jpg" alt="途中移動を保存した後の予約詳細（部屋割り当てが1部屋（途中移動あり）で401・403の2行）のスクリーンショット"></a>
             <figcaption>保存後の予約詳細。部屋割り当てが「1部屋（途中移動あり）」になり、401・403の2行が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>後ろの泊の部屋を選ぶと「1部屋目において◯/◯からの部屋移動を設定します。よろしいですか？」と確認が表示され、その日以降の部屋がまとめて変わります。途中移動を設定すると、予約詳細に「予約を分割」ボタンが表示され、料金・精算情報の部屋数は実際の部屋数より多く数えられました（2026/10/05確認）。ただし、ボタンが出ても、途中移動のある予約は分割できません。公式マニュアルでは、保存時に「更新に失敗しました。」と出て分割できず、サポートへの問い合わせが必要とされています（あらきホテルでは未確認）。</div>
@@ -727,24 +707,24 @@
           <h3 id="scene4-room-change" class="sub">ルームチェンジ（部屋の入れ替え）</h3>
           <p>予約詳細の部屋割り当てで、部屋番号の横にある入れ替えアイコンを押すと「ルームチェンジ」画面が開きます。変更先を選んで「変更する」を押します。予約が入っている部屋を選ぶと、その予約と部屋を入れ替えます。「変更する」を押すと確認なしでその場で反映されました（2026/10/06確認）。同じ氏名の過去の予約があると、代表者氏名の下に「リピートユーザーの可能性があります。」と表示されます（2026/10/09確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-63-room-change-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-63-room-change-dialog.jpg" alt="部屋番号横の入れ替えアイコンで開いたルームチェンジ画面（変更元とおすすめの変更先）のスクリーンショット"></a>
+            <a href="screenshots/front-63-room-change-dialog.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-63-room-change-dialog.jpg" alt="部屋番号横の入れ替えアイコンで開いたルームチェンジ画面（変更元とおすすめの変更先）のスクリーンショット"></a>
             <figcaption>部屋番号の横の入れ替えアイコンで開く「ルームチェンジ」画面。この例では変更元が401（ツイン、10/20〜10/22の2泊）で、おすすめの変更先に空室の414が表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-64-room-change-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-64-room-change-list.jpg" alt="他の候補を一覧で表示するで出る、同じ部屋タイプ（ツイン）の空室の一覧のスクリーンショット"></a>
+            <a href="screenshots/front-64-room-change-list.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-64-room-change-list.jpg" alt="他の候補を一覧で表示するで出る、同じ部屋タイプ（ツイン）の空室の一覧のスクリーンショット"></a>
             <figcaption>「他の候補を一覧で表示する」で出る変更先の一覧。同じ部屋タイプ（ツイン）の空室（414・301・403・417・201・318・418…）が並びます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-65-room-changed.jpg" target="_blank" rel="noopener"><img src="screenshots/front-65-room-changed.jpg" alt="ルームチェンジで部屋を入れ替えた後の予約詳細のスクリーンショット"></a>
+            <a href="screenshots/front-65-room-changed.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-65-room-changed.jpg" alt="ルームチェンジで部屋を入れ替えた後の予約詳細のスクリーンショット"></a>
             <figcaption>ルームチェンジ後の予約詳細（403へ変更済み。画像では部屋番号の欄は表示されていません）。同じ氏名の過去の予約があるため、代表者氏名の下に「リピートユーザーの可能性があります。」と表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>ルームチェンジは、客室の状況表からも操作できます。状況表で部屋をクリックし、詳細の「ルームチェンジ」を押すと、予約詳細から開くのと同じ「ルームチェンジ」画面が開きます。「変更する」を押すと、その場で反映されます（2026/10/09確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-133-indicator-roomchange-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-133-indicator-roomchange-dialog.jpg" alt="客室の状況表から開いたルームチェンジ画面（変更元209 シングルB、おすすめにCP2 カプセルと部屋タイプが違いますの表示）のスクリーンショット"></a>
+            <a href="screenshots/front-133-indicator-roomchange-dialog.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-133-indicator-roomchange-dialog.jpg" alt="客室の状況表から開いたルームチェンジ画面（変更元209 シングルB、おすすめにCP2 カプセルと部屋タイプが違いますの表示）のスクリーンショット"></a>
             <figcaption>客室の状況表から開いた「ルームチェンジ」画面。変更元は209（シングルB）ですが、おすすめにCP2（カプセル）が出て「部屋タイプが違います」と表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-134-indicator-roomchange-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-134-indicator-roomchange-list.jpg" alt="他の候補を一覧で表示するで出た候補一覧（候補ごとに部屋タイプが違いますの表示）のスクリーンショット"></a>
+            <a href="screenshots/front-134-indicator-roomchange-list.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-134-indicator-roomchange-list.jpg" alt="他の候補を一覧で表示するで出た候補一覧（候補ごとに部屋タイプが違いますの表示）のスクリーンショット"></a>
             <figcaption>「他の候補を一覧で表示する」の一覧。この例では、候補ごとに「部屋タイプが違います」と表示されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>同じ部屋タイプに空きがないと、おすすめに別の部屋タイプ（例：シングルBの予約にカプセル）が出て、「部屋タイプが違います」と表示されます。おすすめをそのまま選ばず、部屋タイプを確認してから選んでください（2026/10/09確認）。</div>
@@ -754,33 +734,33 @@
           <p>複数部屋の予約を部屋ごとの予約に分けるときは、予約詳細の右上の「予約を分割」を押します。分割後の予約ごとに代表者氏名・連絡先を確認し、「保存」を押します。</p>
           <p>保存すると「分割後の代表者連絡先が未入力です。予約の分割を継続しますか？」（連絡先が空の場合）、「この予約は削除され、2件の新しい予約が作成されます。分割を実行しますか？」と確認が出ます。元の予約は削除され、チェックインコードは新しく振り直されます。リクエストとオペレーターメモは分割後の全予約に、リピートメモは代表者の予約にだけ引き継がれました（2026/10/06確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-66-split-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-66-split-dialog.jpg" alt="予約を分割画面（部屋ごとに分かれた予約の案）のスクリーンショット"></a>
+            <a href="screenshots/front-66-split-dialog.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-66-split-dialog.jpg" alt="予約を分割画面（部屋ごとに分かれた予約の案）のスクリーンショット"></a>
             <figcaption>「予約を分割」画面。部屋ごとに分かれた予約の案（部屋名・代表者氏名・連絡先・利用期間）が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-67-split-mail-off.jpg" target="_blank" rel="noopener"><img src="screenshots/front-67-split-mail-off.jpg" alt="予約を分割画面でメールを再送信するのチェックを外した状態のスクリーンショット"></a>
+            <a href="screenshots/front-67-split-mail-off.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-67-split-mail-off.jpg" alt="予約を分割画面でメールを再送信するのチェックを外した状態のスクリーンショット"></a>
             <figcaption>「メールを再送信する」（初期値はオン）のチェックを外した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-68-split-result-1.jpg" target="_blank" rel="noopener"><img src="screenshots/front-68-split-result-1.jpg" alt="分割後の1件目の予約詳細（オペレーターメモに分割の記録）のスクリーンショット"></a>
+            <a href="screenshots/front-68-split-result-1.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-68-split-result-1.jpg" alt="分割後の1件目の予約詳細（オペレーターメモに分割の記録）のスクリーンショット"></a>
             <figcaption>分割後の1件目の予約。オペレーターメモに、元の予約と分割後のチェックインコードが記録されています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-69-split-result-2.jpg" target="_blank" rel="noopener"><img src="screenshots/front-69-split-result-2.jpg" alt="分割後の2件目の予約詳細（リピートメモは引き継がれていない）のスクリーンショット"></a>
+            <a href="screenshots/front-69-split-result-2.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-69-split-result-2.jpg" alt="分割後の2件目の予約詳細（リピートメモは引き継がれていない）のスクリーンショット"></a>
             <figcaption>分割後の2件目の予約。リクエストとオペレーターメモは引き継がれ、リピートメモは引き継がれていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>3部屋以上の予約では、分割画面で部屋をドラッグ＆ドロップして、一部の部屋を同じ予約にまとめられます（2026/10/09確認）。3部屋（415・417・418）の予約で「予約を分割」を開くと、部屋ごとに3行の案が並びます。部屋名のラベル（例：418）を別の行へドラッグすると、その行が2部屋（417・418、2人）になり、空いた行には「（ここにドラッグ＆ドロップしてください）」と表示されます。</p>
           <p>保存すると、415の予約と417・418の予約の2件になりました。元の予約は削除され、チェックインコードは新しく振り直されます。オペレーターメモに「［ホスト操作：予約分割により作成］」と、元・分割後のチェックインコードが残ります（2026/10/09確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-125-split-3rooms.jpg" target="_blank" rel="noopener"><img src="screenshots/front-125-split-3rooms.jpg" alt="3部屋（415・417・418）の予約を予約を分割で開いた画面（部屋ごとに3行の案）のスクリーンショット"></a>
+            <a href="screenshots/front-125-split-3rooms.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-125-split-3rooms.jpg" alt="3部屋（415・417・418）の予約を予約を分割で開いた画面（部屋ごとに3行の案）のスクリーンショット"></a>
             <figcaption>3部屋（415・417・418）の予約の「予約を分割」画面。部屋ごとに3行の案が並びます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-126-split-drag-merged.jpg" target="_blank" rel="noopener"><img src="screenshots/front-126-split-drag-merged.jpg" alt="418を2行目へドラッグし、2行目が417・418（2人）、3行目が空になった分割画面のスクリーンショット"></a>
+            <a href="screenshots/front-126-split-drag-merged.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-126-split-drag-merged.jpg" alt="418を2行目へドラッグし、2行目が417・418（2人）、3行目が空になった分割画面のスクリーンショット"></a>
             <figcaption>418のラベルを2行目へドラッグした状態。2行目が417・418（2人）になり、空いた3行目には「（ここにドラッグ＆ドロップしてください）」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-127-split-merged-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-127-split-merged-result.jpg" alt="分割後の417・418の予約詳細（部屋割り当て2部屋、オペレーターメモに分割の記録）のスクリーンショット"></a>
+            <a href="screenshots/front-127-split-merged-result.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-127-split-merged-result.jpg" alt="分割後の417・418の予約詳細（部屋割り当て2部屋、オペレーターメモに分割の記録）のスクリーンショット"></a>
             <figcaption>分割後の417・418の予約。部屋割り当てが2部屋になり、オペレーターメモに「［ホスト操作：予約分割により作成］」と元・分割後のチェックインコードが残ります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>まとめた行の代表者氏名が空のまま保存すると、予約一覧で「（名前未入力）」になります。保存前に、行ごとに代表者氏名を入れてください。「メールを再送信する」は行ごとにあるので、送らない場合はすべて外します（2026/10/09確認）。</div>
@@ -811,19 +791,19 @@
           <p>【予約情報】の一覧でまとめたい予約にチェックを入れ、「チェックした予約の統合またはグルーピング」を押すと、「これらの予約を統合する」「これらの予約をグルーピングする」のボタンが表示されます。</p>
           <p>「統合」は日程が連続する予約（ある予約のチェックアウト日が別の予約のチェックイン日）をつなぐ機能です。条件を満たさないと「これらの予約は統合できません」と表示されます。「グルーピング」は同じ日程の予約を1件にまとめる機能です（2026/10/06確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-70-group-select-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-70-group-select-list.jpg" alt="予約情報の一覧で2件の予約にチェックを入れた状態のスクリーンショット"></a>
+            <a href="screenshots/front-70-group-select-list.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-70-group-select-list.jpg" alt="予約情報の一覧で2件の予約にチェックを入れた状態のスクリーンショット"></a>
             <figcaption>【予約情報】の一覧で2件の予約にチェックを入れた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-71-group-merge-buttons.jpg" target="_blank" rel="noopener"><img src="screenshots/front-71-group-merge-buttons.jpg" alt="チェックした予約の統合またはグルーピングで表示される2つのボタンのスクリーンショット"></a>
+            <a href="screenshots/front-71-group-merge-buttons.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-71-group-merge-buttons.jpg" alt="チェックした予約の統合またはグルーピングで表示される2つのボタンのスクリーンショット"></a>
             <figcaption>「チェックした予約の統合またはグルーピング」を押すと、選んだ予約の一覧と「これらの予約を統合する」「これらの予約をグルーピングする」が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-72-grouped-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-72-grouped-result.jpg" alt="グルーピング後に1件・2部屋・2名にまとまった状態のスクリーンショット"></a>
+            <a href="screenshots/front-72-grouped-result.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-72-grouped-result.jpg" alt="グルーピング後に1件・2部屋・2名にまとまった状態のスクリーンショット"></a>
             <figcaption>グルーピング後。1件（2部屋・2名）にまとまっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-73-grouped-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-73-grouped-detail.jpg" alt="グルーピング後の予約詳細（共有事項が2件分つながって表示）のスクリーンショット"></a>
+            <a href="screenshots/front-73-grouped-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-73-grouped-detail.jpg" alt="グルーピング後の予約詳細（共有事項が2件分つながって表示）のスクリーンショット"></a>
             <figcaption>グルーピング後の予約詳細。共有事項は元の2件分がつながって表示され、オペレーターメモにグルーピングの操作履歴が記録されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>グルーピングを実行すると「一度グルーピングした予約は元に戻せません」と確認が出ます。まとめた後の予約には、元の予約のゲスト情報・部屋・料金・支払いが集約され、ステータスなどはベースの予約のものだけが残ります（2026/10/06確認）。</div>
@@ -848,29 +828,29 @@
           <h3 id="scene4-guest-info" class="sub">宿泊者情報の確認・変更</h3>
           <p>《宿泊者情報》にて「宿泊者台帳」をクリックすると、一覧で宿泊者情報の確認・編集、部屋の割り当て、宿泊者の追加・削除が行えます。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-35-guest-register.jpg" target="_blank" rel="noopener"><img src="screenshots/front-35-guest-register.jpg" alt="宿泊者台帳画面（1泊ごとに切り替え表示、氏名・性別・区分・連絡先・国籍などの列）のスクリーンショット"></a>
+            <a href="screenshots/front-35-guest-register.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-35-guest-register.jpg" alt="宿泊者台帳画面（1泊ごとに切り替え表示、氏名・性別・区分・連絡先・国籍などの列）のスクリーンショット"></a>
             <figcaption>「宿泊者台帳」画面。1泊ごとに切り替えて表示し、氏名・フリガナ・性別・区分・電話・メール・国籍などを確認・入力します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-20-guest-name-link.png" target="_blank" rel="noopener"><img src="screenshots/official/official-20-guest-name-link.png" alt="公式マニュアルの画面例：宿泊者情報の一覧で、氏名のリンク（赤枠）"></a>
+            <a href="screenshots/official/official-20-guest-name-link.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-20-guest-name-link.png" alt="公式マニュアルの画面例：宿泊者情報の一覧で、氏名のリンク（赤枠）"></a>
             <figcaption>〖宿泊者情報〗の一覧。氏名はリンクになっていて、押すとそのお客様の詳細ページが開きます（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>宿泊者台帳の「引用」アイコンから、過去に宿泊したお客様の情報を引用できます。「引用する」を押すと「以下の宿泊者情報を設定しますか？」と、引用する内容が確認表示されます。引用後は台帳の「保存」を押します（2026/10/06確認）。</p>
           <p>公式マニュアルでは、引用で入るのは氏名・フリガナ・メールアドレス・電話番号・郵便番号・都道府県・住所・国籍・性別・子供の区分とされています。検索で会社名も入れると、氏名などと会社名の両方が合う宿泊者だけが出ます。検索結果の「詳細を開く」で、引用元の予約を別タブで確認できます（公式マニュアルより。あらきホテルでは未確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-51-guest-register-empty.jpg" target="_blank" rel="noopener"><img src="screenshots/front-51-guest-register-empty.jpg" alt="2部屋目の宿泊者が空欄の宿泊者台帳のスクリーンショット"></a>
+            <a href="screenshots/front-51-guest-register-empty.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-51-guest-register-empty.jpg" alt="2部屋目の宿泊者が空欄の宿泊者台帳のスクリーンショット"></a>
             <figcaption>複数部屋の予約の宿泊者台帳。2部屋目の宿泊者が空欄です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-52-guest-quote-search.jpg" target="_blank" rel="noopener"><img src="screenshots/front-52-guest-quote-search.jpg" alt="引用アイコンで開いた過去宿泊者情報の引用（氏名/フリガナ/電話番号/E-Mail、会社名で検索）のスクリーンショット"></a>
+            <a href="screenshots/front-52-guest-quote-search.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-52-guest-quote-search.jpg" alt="引用アイコンで開いた過去宿泊者情報の引用（氏名/フリガナ/電話番号/E-Mail、会社名で検索）のスクリーンショット"></a>
             <figcaption>「引用」アイコンで開く「過去宿泊者情報の引用」。氏名／フリガナ／電話番号／E-Mail、会社名で検索します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-53-guest-quote-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-53-guest-quote-result.jpg" alt="過去宿泊者情報の検索結果（物件・利用期間・氏名など）と引用するボタンのスクリーンショット"></a>
+            <a href="screenshots/front-53-guest-quote-result.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-53-guest-quote-result.jpg" alt="過去宿泊者情報の検索結果（物件・利用期間・氏名など）と引用するボタンのスクリーンショット"></a>
             <figcaption>検索結果。物件・予約受付日・利用期間・氏名などが表示されます。「引用する」で台帳に入れます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-54-guest-quoted.jpg" target="_blank" rel="noopener"><img src="screenshots/front-54-guest-quoted.jpg" alt="引用後の宿泊者台帳（2部屋目に宿泊者が入った状態）のスクリーンショット"></a>
+            <a href="screenshots/front-54-guest-quoted.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-54-guest-quoted.jpg" alt="引用後の宿泊者台帳（2部屋目に宿泊者が入った状態）のスクリーンショット"></a>
             <figcaption>引用後の台帳。2部屋目に宿泊者が入りました。最後に台帳の「保存」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
@@ -893,23 +873,23 @@
           <h3 id="scene4-plan" class="sub">プランの変更</h3>
           <p>[プラン]で変更後のプランを選択後、[お食事]で「プランに合わせる」ボタンを押して保存します。保存後に《料金詳細》欄の「料金情報の再登録」から、変更後のプランに合わせた料金への変更が可能です。［お食事］の「プランに合わせる」ボタンは、公式マニュアルには出てこない手順で、あらきホテルの実画面でも未確認です。</p>
           <figure class="screenshot">
-            <a href="screenshots/official/official-14-rate-reregister-button.png" target="_blank" rel="noopener"><img src="screenshots/official/official-14-rate-reregister-button.png" alt="公式マニュアルの画面例：料金詳細の右下にある料金情報の再登録ボタン"></a>
+            <a href="screenshots/official/official-14-rate-reregister-button.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-14-rate-reregister-button.png" alt="公式マニュアルの画面例：料金詳細の右下にある料金情報の再登録ボタン"></a>
             <figcaption>《料金詳細》の右下にある「料金情報の再登録」ボタン。赤枠で示しています（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>一部の日や一部の宿泊者だけプランを変えるときは、「宿泊変更」→「個別プラン変更」を使います。この場合も、画面の表示や集計には初日のプランが使われます。食事の内容は〖予約情報〗の「食事変更」から、日ごと・宿泊者ごとに変えられます（公式マニュアルより。あらきホテルでは未確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/official/official-15-individual-plan-change.png" target="_blank" rel="noopener"><img src="screenshots/official/official-15-individual-plan-change.png" alt="公式マニュアルの画面例：宿泊変更の個別プラン変更タブで、日ごと・部屋ごとにプランを選ぶ画面"></a>
+            <a href="screenshots/official/official-15-individual-plan-change.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-15-individual-plan-change.png" alt="公式マニュアルの画面例：宿泊変更の個別プラン変更タブで、日ごと・部屋ごとにプランを選ぶ画面"></a>
             <figcaption>「宿泊変更」→「個別プラン変更」。日ごと・部屋ごとのマスを押してプランを選びます。プルダウンには「個別設定解除」「プランなしにする」もあります（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-16-meal-change-button.png" target="_blank" rel="noopener"><img src="screenshots/official/official-16-meal-change-button.png" alt="公式マニュアルの画面例：予約情報のお食事の行にある食事変更ボタン"></a>
+            <a href="screenshots/official/official-16-meal-change-button.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-16-meal-change-button.png" alt="公式マニュアルの画面例：予約情報のお食事の行にある食事変更ボタン"></a>
             <figcaption>〖予約情報〗の「お食事」の行にある「食事変更」ボタン。赤枠で示しています（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
           <h3 id="scene4-stop-auto-update" class="sub">サイトコントローラーの自動更新停止</h3>
           <p>公式マニュアルでは、予約詳細の〖共有事項〗欄にある［サイトコントローラー自動更新］（状態は「自動更新中」と表示）の「停止する」を押すと、サイトコントローラー経由の予約でも管理画面から変更できるようになる、とされています（2025年以降の公式記事もこの形です）。このマニュアルの以前の版では「右側《設定》の［サイトコントローラー設定］で『この予約の自動更新を停止する』」と書いていましたが、旧画面の表記の可能性があります。あらきホテルの実画面での場所とボタン名は未確認です。停止すると、オペレーターメモに停止の記録が自動で残るので、あとから誰がいつ止めたかを確認できます（公式マニュアルより）。</p>
           <figure class="screenshot">
-            <a href="screenshots/official/official-13-site-controller-stop-update.png" target="_blank" rel="noopener"><img src="screenshots/official/official-13-site-controller-stop-update.png" alt="公式マニュアルの画面例：共有事項のサイトコントローラー自動更新の欄（自動更新中と停止するボタン）"></a>
+            <a href="screenshots/official/official-13-site-controller-stop-update.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-13-site-controller-stop-update.png" alt="公式マニュアルの画面例：共有事項のサイトコントローラー自動更新の欄（自動更新中と停止するボタン）"></a>
             <figcaption>〖共有事項〗の［サイトコントローラー自動更新］。「自動更新中」の横に「停止する」ボタンがあります（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>停止後はOTAやサイトコントローラー上で予約内容やステータスの変更があっても反映されません。一度停止した後は、基本的に再開を行わないでください。再開すると、変更を行った内容が更新によって戻ってしまう可能性があります。</div>
@@ -921,18 +901,18 @@
             <li>予約詳細の右上のステータス（「未チェックイン ▼」）を押し、「キャンセルする」を選びます。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-40-status-menu-cancel.jpg" target="_blank" rel="noopener"><img src="screenshots/front-40-status-menu-cancel.jpg" alt="予約詳細の右上のステータスを開いたメニュー（チェックイン済みにする、キャンセルする、削除する）のスクリーンショット"></a>
+            <a href="screenshots/front-40-status-menu-cancel.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-40-status-menu-cancel.jpg" alt="予約詳細の右上のステータスを開いたメニュー（チェックイン済みにする、キャンセルする、削除する）のスクリーンショット"></a>
             <figcaption>手順1：ステータスのメニュー。「チェックイン済みにする」「キャンセルする」「削除する」があります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <ol class="steps" start="2" style="counter-reset:step 1;">
             <li>確認画面で内容を確かめて「キャンセルする」を押します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-41-cancel-confirm.jpg" target="_blank" rel="noopener"><img src="screenshots/front-41-cancel-confirm.jpg" alt="この予約をキャンセルしてよろしいですか？と表示された確認画面のスクリーンショット"></a>
+            <a href="screenshots/front-41-cancel-confirm.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-41-cancel-confirm.jpg" alt="この予約をキャンセルしてよろしいですか？と表示された確認画面のスクリーンショット"></a>
             <figcaption>手順2：確認画面「この予約をキャンセルしてよろしいですか？」。部屋の割り当ては削除されること、保存前の変更は破棄されることが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-42-cancelled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-42-cancelled.jpg" alt="キャンセル後の予約詳細（ステータスがキャンセル済み、部屋番号は未入力、オペレーターメモに操作履歴）のスクリーンショット"></a>
+            <a href="screenshots/front-42-cancelled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-42-cancelled.jpg" alt="キャンセル後の予約詳細（ステータスがキャンセル済み、部屋番号は未入力、オペレーターメモに操作履歴）のスクリーンショット"></a>
             <figcaption>キャンセル後の予約詳細。ステータスが「キャンセル済み」になり、部屋番号は「未入力」、オペレーターメモに操作履歴（ホスト操作：キャンセル）が記録されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <ol class="steps" start="3" style="counter-reset:step 2;">
@@ -941,7 +921,7 @@
           <div class="callout warn"><span class="label">注意</span>メニューには「削除する」もありますが、予約データそのものが消える操作です。「削除する」はテスト予約の後片付け専用で、本番の予約には使いません。通常の取り消しは「キャンセルする」を使い、予約を履歴に残してください。公式マニュアルでは、テスト予約は宿泊者台帳で代表者名を「test」にして保存してから削除する手順になっています。チェックイン済みの予約（先にチェックインを取り消す）と、宿泊期間が日次締め済みの予約は削除できません（公式マニュアルより）。</div>
           <p>キャンセルと違い、「削除する」の確認画面に注意書きは表示されません。部屋が未割り当ての予約では、ステータスのメニューに「チェックイン済みにする」が表示されませんでした（2026/10/06確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-81-delete-confirm.jpg" target="_blank" rel="noopener"><img src="screenshots/front-81-delete-confirm.jpg" alt="削除するを選んだときの確認画面（この予約情報を削除しますか？）のスクリーンショット"></a>
+            <a href="screenshots/front-81-delete-confirm.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-81-delete-confirm.jpg" alt="削除するを選んだときの確認画面（この予約情報を削除しますか？）のスクリーンショット"></a>
             <figcaption>「削除する」を選んだときの確認画面「この予約情報を削除しますか？」。注意書きは表示されません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>入金済みの予約をキャンセルする場合、返金の扱いは責任者の判断です。キャンセルの前に責任者へ確認してください。</div>
@@ -961,23 +941,23 @@
             <li>表示された《新規料金情報》に、料金科目・利用日・部屋・単価・数量・決済（決済連携している場合のみ表示）・備考を入力して保存します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-06-billing-add.jpg" target="_blank" rel="noopener"><img src="screenshots/front-06-billing-add.jpg" alt="料金追加を押して開いた新規料金情報の入力画面のスクリーンショット"></a>
+            <a href="screenshots/front-06-billing-add.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-06-billing-add.jpg" alt="料金追加を押して開いた新規料金情報の入力画面のスクリーンショット"></a>
             <figcaption>手順1：「料金追加」を押すと《新規料金情報》の入力画面が開きます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-07-billing-filled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-07-billing-filled.jpg" alt="新規料金情報で料金科目に宿泊費、単価に10000円を入力した状態のスクリーンショット"></a>
+            <a href="screenshots/front-07-billing-filled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-07-billing-filled.jpg" alt="新規料金情報で料金科目に宿泊費、単価に10000円を入力した状態のスクリーンショット"></a>
             <figcaption>手順2：料金科目・利用日・部屋・単価などを入力した状態。小計は自動計算されます。入力後「保存する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-08-billing-registered.jpg" target="_blank" rel="noopener"><img src="screenshots/front-08-billing-registered.jpg" alt="料金登録後の料金詳細と、未収金が赤字で表示された料金・精算情報のスクリーンショット"></a>
+            <a href="screenshots/front-08-billing-registered.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-08-billing-registered.jpg" alt="料金登録後の料金詳細と、未収金が赤字で表示された料金・精算情報のスクリーンショット"></a>
             <figcaption>登録後の《料金詳細》。精算前は《料金・精算情報》欄に未収金が赤字で表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-82-charge-item-reset.jpg" target="_blank" rel="noopener"><img src="screenshots/front-82-charge-item-reset.jpg" alt="料金追加の画面で料金科目を選んだ直後に単価が0に戻った状態のスクリーンショット"></a>
+            <a href="screenshots/front-82-charge-item-reset.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-82-charge-item-reset.jpg" alt="料金追加の画面で料金科目を選んだ直後に単価が0に戻った状態のスクリーンショット"></a>
             <figcaption>手順2：料金科目（宿泊費）を選んだ直後の《新規料金情報》。料金科目マスターの単価（0円）が自動で入るため、先に入力していた単価が0になりました。「保存する」ボタンはまだ表示されていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-83-charge-input.jpg" target="_blank" rel="noopener"><img src="screenshots/front-83-charge-input.jpg" alt="料金科目と単価を入力し保存するボタンが表示された料金追加の画面のスクリーンショット"></a>
+            <a href="screenshots/front-83-charge-input.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-83-charge-input.jpg" alt="料金科目と単価を入力し保存するボタンが表示された料金追加の画面のスクリーンショット"></a>
             <figcaption>料金科目・単価を入力した状態。必要な項目がそろうと「保存する」ボタンが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>料金科目を選ぶと、料金科目マスターに登録された単価・消費税が自動で入ります。この施設の「宿泊費」はマスターの単価が0円のため、先に入力した単価が0になりました（2026/10/06確認）。料金科目を選んでから単価を入力してください。「保存する」ボタンは、必要な項目がそろうと表示されます。</div>
@@ -991,19 +971,19 @@
           <div class="cov-note">料金詳細の赤い表示は、宿泊費の付け漏れ・二重登録の目印です。公式マニュアルでは、大項目が「宿泊費」の料金について、宿泊日なのに宿泊費がない、同じ部屋・同じ日に宿泊費が2件以上ある、日付や部屋を指定していない宿泊費がある、のどれかに当たると赤くなるとされています。サイトコントローラー経由の予約は対象外で、大項目を設定していないアカウントでは赤くなりません（公式マニュアルより）。上の front-08 で1万円を登録しても部屋の行が赤いままなのは、宿泊費以外の扱いになった可能性がありますが、理由は未確認です。</div>
           <div class="callout warn"><span class="label">注意</span>精算済みの料金は変更・削除できません。料金を直すときは、先に《支払い情報》の「詳細」から精算を削除し、その後に料金を変更・削除します（公式オンラインマニュアルより）。</div>
           <figure class="screenshot">
-            <a href="screenshots/official/official-17-payment-detail-link.png" target="_blank" rel="noopener"><img src="screenshots/official/official-17-payment-detail-link.png" alt="公式マニュアルの画面例：支払情報の一覧の確認／編集列にある詳細リンク"></a>
+            <a href="screenshots/official/official-17-payment-detail-link.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-17-payment-detail-link.png" alt="公式マニュアルの画面例：支払情報の一覧の確認／編集列にある詳細リンク"></a>
             <figcaption>精算を消すときの入口。〖支払情報〗の行の右にある「詳細」（赤枠）を押します（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-22-payment-edit-delete.png" target="_blank" rel="noopener"><img src="screenshots/official/official-22-payment-edit-delete.png" alt="公式マニュアルの画面例：支払い情報の編集画面（内訳、支払い方法、支払日、備考、支払い額、保存すると削除する）"></a>
+            <a href="screenshots/official/official-22-payment-edit-delete.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-22-payment-edit-delete.png" alt="公式マニュアルの画面例：支払い情報の編集画面（内訳、支払い方法、支払日、備考、支払い額、保存すると削除する）"></a>
             <figcaption>「詳細」で開く支払い情報の画面。内訳・支払い方法・支払日などを直すときは「保存する」、精算を消すときは右下の「削除する」を押します（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-18-charge-detail-links.png" target="_blank" rel="noopener"><img src="screenshots/official/official-18-charge-detail-links.png" alt="公式マニュアルの画面例：料金詳細を展開した状態で、科目名の宿泊費のリンクと日ごとの料金追加ボタン"></a>
+            <a href="screenshots/official/official-18-charge-detail-links.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-18-charge-detail-links.png" alt="公式マニュアルの画面例：料金詳細を展開した状態で、科目名の宿泊費のリンクと日ごとの料金追加ボタン"></a>
             <figcaption>料金を直すときの入口。《料金詳細》を展開し、直したい料金の科目名（例：宿泊費、赤枠）を押します。日ごとの行にも「料金追加」があります（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-19-charge-edit-delete.png" target="_blank" rel="noopener"><img src="screenshots/official/official-19-charge-edit-delete.png" alt="公式マニュアルの画面例：料金情報の編集画面（保存すると右下の削除する）"></a>
+            <a href="screenshots/official/official-19-charge-edit-delete.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-19-charge-edit-delete.png" alt="公式マニュアルの画面例：料金情報の編集画面（保存すると右下の削除する）"></a>
             <figcaption>科目名を押すと開く料金情報の画面。内容を直して「保存する」、料金を消すときは右下の「削除する」を押します（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">料金の直し方（公式オンラインマニュアルより）</span>料金は、〖料金詳細〗で直したい料金の科目名をクリックし、開いた画面で内容を直して「保存する」、消すときは「削除する」を押します。精算は〖支払情報〗の「詳細」から開いて削除します。プラン料金から作られた宿泊費は「宿泊変更」→「金額変更」でも直せますが、サイトコントローラー経由の料金と、料金詳細から登録した料金は「金額変更」の欄に出てきません。日次締めした日の料金・精算は変更できないため、調整は予約外_料金・精算で行います（<a href="#scene6-independent-bill">シーン6</a>）。あらきホテルの実画面では未確認です。</div>
@@ -1022,30 +1002,30 @@
             <li>支払い方法・種別を選択し、ポイントの有無、支払日を入力して「精算する」をクリックします。ここで対象の料金を選択し直すことも可能です。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-13-bulk-payment.jpg" target="_blank" rel="noopener"><img src="screenshots/front-13-bulk-payment.jpg" alt="一括精算の入力画面で支払い方法・種別・支払日を指定するスクリーンショット"></a>
+            <a href="screenshots/front-13-bulk-payment.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-13-bulk-payment.jpg" alt="一括精算の入力画面で支払い方法・種別・支払日を指定するスクリーンショット"></a>
             <figcaption>手順2：一括精算の入力画面。支払い方法（事前決済／現地決済）・種別・ポイント・支払日を指定して「精算する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-14-payment-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-14-payment-done.jpg" alt="精算完了後に支払い情報が登録された状態のスクリーンショット"></a>
+            <a href="screenshots/front-14-payment-done.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-14-payment-done.jpg" alt="精算完了後に支払い情報が登録された状態のスクリーンショット"></a>
             <figcaption>精算完了後。《支払い情報》に日付・金額・種別・支払方法が登録され、未収金の表示が消えます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>支払い方法の種別は「現金／決済代行サービス／クレジットカード／電子マネー／ID決済／行政補助金／その他」です。支払日の初期値は当日で、宿泊期間外の日付のまま保存すると「支払日が宿泊期間外に指定されています。保存を続行してよろしいですか？」と確認が出ました（2026/10/06確認）。</p>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>精算画面に出る支払い方法は、物件ごとの設定（物件管理＞物件情報＞支払い方法設定の「表示する／表示しない」）で決まります。必要な支払い方法が出ないときは、管理者に表示の設定を頼みます。前受金を設定した法人・団体の予約では、精算画面の支払い方法で「前受金の取り崩し」を選び、取崩日を指定します（前受金報告書などへの反映は、取崩日の締めと集計が終わった後）。法人の前受金を使うときだけ必要な操作です（くわしくは下の<a href="#scene6-corporate-payment">「法人・団体の前受金・売掛（後日精算）」</a>）。</div>
           <div class="callout tip"><span class="label">クーポンを2種類使うとき（公式マニュアルより）</span>1つ目は支払い方法の種別「行政補助金」の「地域クーポン」を選び、2つ目は売掛先として法人・団体を予約に付けて、その売掛で精算すると併用できます。もともと法人・団体の予約で売掛先がある場合や、3種類以上を使う場合は、この方法では登録しきれないので「その他」の支払い方法を使います（あらきホテルでは未確認）。</div>
           <figure class="screenshot">
-            <a href="screenshots/front-84-select-payment-check.jpg" target="_blank" rel="noopener"><img src="screenshots/front-84-select-payment-check.jpg" alt="料金詳細で精算する部屋の明細にチェックを入れた状態のスクリーンショット"></a>
+            <a href="screenshots/front-84-select-payment-check.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-84-select-payment-check.jpg" alt="料金詳細で精算する部屋の明細にチェックを入れた状態のスクリーンショット"></a>
             <figcaption>《料金詳細》で、精算する部屋（明細）にチェックを入れた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-85-select-payment-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-85-select-payment-dialog.jpg" alt="選択精算で開いた精算画面（チェックした分だけが支払額）のスクリーンショット"></a>
+            <a href="screenshots/front-85-select-payment-dialog.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-85-select-payment-dialog.jpg" alt="選択精算で開いた精算画面（チェックした分だけが支払額）のスクリーンショット"></a>
             <figcaption>「選択精算」で開く精算画面。チェックした分だけが支払額になります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-86-select-payment-date.jpg" target="_blank" rel="noopener"><img src="screenshots/front-86-select-payment-date.jpg" alt="選択精算の画面で支払日をチェックイン日の11/20に変えた状態のスクリーンショット"></a>
+            <a href="screenshots/front-86-select-payment-date.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-86-select-payment-date.jpg" alt="選択精算の画面で支払日をチェックイン日の11/20に変えた状態のスクリーンショット"></a>
             <figcaption>支払日をチェックイン日（11/20）に変えた状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-87-select-payment-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-87-select-payment-done.jpg" alt="選択精算後の料金・精算情報（支払い情報に1行追加、精算済みの明細はグレー）のスクリーンショット"></a>
+            <a href="screenshots/front-87-select-payment-done.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-87-select-payment-done.jpg" alt="選択精算後の料金・精算情報（支払い情報に1行追加、精算済みの明細はグレー）のスクリーンショット"></a>
             <figcaption>精算後。《支払い情報》に1行追加され、精算済みの明細はチェックボックスがグレーになり選べなくなります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>精算済みの料金を直すときは、先に精算を削除する必要があります（<a href="#s5">シーン5</a>の注意を参照）。</p>
@@ -1055,19 +1035,19 @@
             <li>内訳（料金科目指定／金額指定／部屋指定）、支払い方法（事前決済／現地決済）、支払い日、金額を入力し「保存する」をクリックします。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-88-special-payment-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-88-special-payment-dialog.jpg" alt="特殊精算（金額指定）で開いた未収金の支払い画面（宿泊期間外ですの表示あり）のスクリーンショット"></a>
+            <a href="screenshots/front-88-special-payment-dialog.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-88-special-payment-dialog.jpg" alt="特殊精算（金額指定）で開いた未収金の支払い画面（宿泊期間外ですの表示あり）のスクリーンショット"></a>
             <figcaption>「特殊精算（金額指定）」で開く「未収金の支払い」画面。内訳は「料金科目指定／金額指定／部屋指定」から選びます。支払い日が宿泊期間外だと「宿泊期間外です」と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-89-special-payment-filled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-89-special-payment-filled.jpg" alt="金額指定で3,000円、支払い日11/20を入力した未収金の支払い画面のスクリーンショット"></a>
+            <a href="screenshots/front-89-special-payment-filled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-89-special-payment-filled.jpg" alt="金額指定で3,000円、支払い日11/20を入力した未収金の支払い画面のスクリーンショット"></a>
             <figcaption>金額指定で¥3,000、支払い日を11/20にした状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-90-special-payment-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-90-special-payment-done.jpg" alt="特殊精算後の料金・精算情報（総支払額・未収金が更新され、支払い情報に2行目が追加）のスクリーンショット"></a>
+            <a href="screenshots/front-90-special-payment-done.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-90-special-payment-done.jpg" alt="特殊精算後の料金・精算情報（総支払額・未収金が更新され、支払い情報に2行目が追加）のスクリーンショット"></a>
             <figcaption>精算後。総支払額・未収金が更新され、《支払い情報》に2行目が追加されます。料金詳細の一番下には「未登録」の行ができています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-91-partial-payment-rows.jpg" target="_blank" rel="noopener"><img src="screenshots/front-91-partial-payment-rows.jpg" alt="料金詳細の未登録の行の中身（一部支払い済みの明細がマイナス3,000円とプラス3,000円の2件）のスクリーンショット"></a>
+            <a href="screenshots/front-91-partial-payment-rows.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-91-partial-payment-rows.jpg" alt="料金詳細の未登録の行の中身（一部支払い済みの明細がマイナス3,000円とプラス3,000円の2件）のスクリーンショット"></a>
             <figcaption>「未登録」の行を開いた中身。「一部支払い済み」の明細が−¥3,000と＋¥3,000の2件入っています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>金額指定で精算すると、料金詳細の一番下に部屋に紐づかない「未登録」の行が作られ、その中に「一部支払い済み」という調整用の明細が2件入ります（2026/10/06確認）。誤って登録された料金ではないので、削除しないでください。</div>
@@ -1082,43 +1062,43 @@
             <li>「精算をする」で支払いを登録し、「閉じる」で一覧に戻ります。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-92-independent-bill-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-92-independent-bill-list.jpg" alt="予約外_料金・精算機能の一覧（登録前）のスクリーンショット"></a>
+            <a href="screenshots/front-92-independent-bill-list.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-92-independent-bill-list.jpg" alt="予約外_料金・精算機能の一覧（登録前）のスクリーンショット"></a>
             <figcaption>手順1：【売上管理】＞【予約外_料金・精算機能】の一覧（登録前）。「新規作成」から登録します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-93-independent-bill-new.jpg" target="_blank" rel="noopener"><img src="screenshots/front-93-independent-bill-new.jpg" alt="新規作成で開いた選択画面（物件・予約経路・法人・団体）のスクリーンショット"></a>
+            <a href="screenshots/front-93-independent-bill-new.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-93-independent-bill-new.jpg" alt="新規作成で開いた選択画面（物件・予約経路・法人・団体）のスクリーンショット"></a>
             <figcaption>「新規作成」で開く選択画面（物件・予約経路・法人・団体）。物件の初期値は「種子島あらきホテル」です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-94-independent-bill-route.jpg" target="_blank" rel="noopener"><img src="screenshots/front-94-independent-bill-route.jpg" alt="物件を種子島あらき別館、予約経路をその他にした選択画面のスクリーンショット"></a>
+            <a href="screenshots/front-94-independent-bill-route.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-94-independent-bill-route.jpg" alt="物件を種子島あらき別館、予約経路をその他にした選択画面のスクリーンショット"></a>
             <figcaption>手順2：物件を「種子島あらき別館」、予約経路を「その他」にした状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-95-independent-bill-empty.jpg" target="_blank" rel="noopener"><img src="screenshots/front-95-independent-bill-empty.jpg" alt="次への後の伝票画面（まだ料金がない状態）のスクリーンショット"></a>
+            <a href="screenshots/front-95-independent-bill-empty.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-95-independent-bill-empty.jpg" alt="次への後の伝票画面（まだ料金がない状態）のスクリーンショット"></a>
             <figcaption>「次へ」の後の伝票画面。まだ料金がない状態です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-96-independent-charge-form.jpg" target="_blank" rel="noopener"><img src="screenshots/front-96-independent-charge-form.jpg" alt="予約外の伝票で開いた料金情報の入力画面のスクリーンショット"></a>
+            <a href="screenshots/front-96-independent-charge-form.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-96-independent-charge-form.jpg" alt="予約外の伝票で開いた料金情報の入力画面のスクリーンショット"></a>
             <figcaption>手順3：「料金情報を追加する」で開く《新規料金情報》。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-97-independent-charge-filled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-97-independent-charge-filled.jpg" alt="単価500円と備考を入力した料金情報の入力画面のスクリーンショット"></a>
+            <a href="screenshots/front-97-independent-charge-filled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-97-independent-charge-filled.jpg" alt="単価500円と備考を入力した料金情報の入力画面のスクリーンショット"></a>
             <figcaption>単価¥500と備考を入力した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-98-independent-charge-added.jpg" target="_blank" rel="noopener"><img src="screenshots/front-98-independent-charge-added.jpg" alt="料金登録後の伝票（未収金500円）のスクリーンショット"></a>
+            <a href="screenshots/front-98-independent-charge-added.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-98-independent-charge-added.jpg" alt="料金登録後の伝票（未収金500円）のスクリーンショット"></a>
             <figcaption>料金登録後の伝票。未収金が¥500と表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-99-independent-payment.jpg" target="_blank" rel="noopener"><img src="screenshots/front-99-independent-payment.jpg" alt="精算をするで開いた未収金の支払い画面（内訳は料金科目指定と金額指定）のスクリーンショット"></a>
+            <a href="screenshots/front-99-independent-payment.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-99-independent-payment.jpg" alt="精算をするで開いた未収金の支払い画面（内訳は料金科目指定と金額指定）のスクリーンショット"></a>
             <figcaption>手順4：「精算をする」で開く「未収金の支払い」画面。内訳は「料金科目指定／金額指定」から選びます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-100-independent-paid.jpg" target="_blank" rel="noopener"><img src="screenshots/front-100-independent-paid.jpg" alt="精算後の伝票（支払いの行が追加）のスクリーンショット"></a>
+            <a href="screenshots/front-100-independent-paid.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-100-independent-paid.jpg" alt="精算後の伝票（支払いの行が追加）のスクリーンショット"></a>
             <figcaption>精算後の伝票。支払いの行が追加されます。「閉じる」で一覧に戻ります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-101-independent-bill-result.jpg" target="_blank" rel="noopener"><img src="screenshots/front-101-independent-bill-result.jpg" alt="一覧に戻った状態（管理番号・料金合計・支払い方法・入金合計・未収金）のスクリーンショット"></a>
+            <a href="screenshots/front-101-independent-bill-result.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-101-independent-bill-result.jpg" alt="一覧に戻った状態（管理番号・料金合計・支払い方法・入金合計・未収金）のスクリーンショット"></a>
             <figcaption>一覧に戻った状態。管理番号・料金合計・支払い方法・入金合計・未収金が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>新規作成の物件の初期値は「種子島あらきホテル」でした。別館の売上は物件を切り替えてから登録してください。「次へ」を押した時点で空の伝票が作られます。料金科目は現在「宿泊費」だけが登録されていて、物販などで使う場合は科目の追加が必要です（2026/10/06確認）。</div>
@@ -1132,15 +1112,15 @@
           <h3 class="sub" id="scene6-refund">返金入力</h3>
           <div class="callout tip"><span class="label">返金入力</span>返金は、【売上管理】→【予約外_料金・精算機能】→ 伝票の「詳細を開く」→ 下にある「返金入力」から入力します。「返金入力」画面の項目は、内訳（金額）、支払い方法（「返金」の下に現金など2つの選択）、支払い日、備考、支払い額で、「保存する」で登録します。予約詳細の《料金・精算情報》には「返金入力」のボタンは見つかりませんでした。今回は画面を開いて確認しただけで、保存はしていません。返金後の伝票の表示は未確認です（2026/10/09確認）。</div>
           <figure class="screenshot">
-            <a href="screenshots/front-128-independent-bill-refund-button.jpg" target="_blank" rel="noopener"><img src="screenshots/front-128-independent-bill-refund-button.jpg" alt="予約外の伝票の詳細（下に閉じると返金入力のボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-128-independent-bill-refund-button.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-128-independent-bill-refund-button.jpg" alt="予約外の伝票の詳細（下に閉じると返金入力のボタン）のスクリーンショット"></a>
             <figcaption>予約外の伝票の詳細。下に「閉じる」と「返金入力」のボタンがあります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-129-refund-input-form.jpg" target="_blank" rel="noopener"><img src="screenshots/front-129-refund-input-form.jpg" alt="返金入力画面（内訳、支払い方法、支払い日、備考、支払い額、保存する）のスクリーンショット"></a>
+            <a href="screenshots/front-129-refund-input-form.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-129-refund-input-form.jpg" alt="返金入力画面（内訳、支払い方法、支払い日、備考、支払い額、保存する）のスクリーンショット"></a>
             <figcaption>「返金入力」画面。内訳（金額）、支払い方法（「返金」の下に現金など）、支払い日、備考、支払い額を入れて「保存する」で登録します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-21-refund-bill-result.png" target="_blank" rel="noopener"><img src="screenshots/official/official-21-refund-bill-result.png" alt="公式マニュアルの画面例：返金入力を保存した後の予約外伝票（返金の料金と返金の精算の2行）"></a>
+            <a href="screenshots/official/official-21-refund-bill-result.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-21-refund-bill-result.png" alt="公式マニュアルの画面例：返金入力を保存した後の予約外伝票（返金の料金と返金の精算の2行）"></a>
             <figcaption>返金入力を保存した後の伝票の例。料金科目「返金」のマイナスの料金（種別：調整金）と、種別「返金」のマイナスの精算（例：現金）の2行が入ります（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>伝票の「返金入力」で、料金と精算を1回の操作で取り消せます。公式の手順では、既存の伝票を開くのではなく、「新規作成」で物件・予約経路・法人団体を選んで新しい伝票を作り、そこで「返金入力」を押します（返金を別の伝票として登録する形）。どちらのやり方で運用するかは責任者が決めてください。返金後の伝票の表示は、あらきホテルでは引き続き未確認です。料金科目は指定できないため、科目を指定したい場合はその科目でマイナスの料金を登録します。日次締め後の金額修正にも使います。</div>
@@ -1148,7 +1128,7 @@
           <p>【売上管理】→【滞在中精算チェックリスト】を開き、物件と日付を選ぶと、その日に滞在中の予約（チェックアウト日当日の予約を含む）が1行ずつ表示されます（2026/10/10確認）。</p>
           <p>列は、チェックインコード・代表者名・部屋番号・チェックイン・チェックアウト・利用総額・総支払額・前受金の取崩総額・未収金・法人団体名・前受金残高です。未収金は赤字で表示されます。チェックインコードをクリックすると予約詳細に移れます。右上の「csvダウンロード」で、同じ内容をCSVで保存できます（2026/10/10確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-158-stay-payment-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-158-stay-payment-list.jpg" alt="滞在中精算チェックリスト（種子島あらきホテル、2026/10/10、未収金6,650円が赤字で表示された一覧とcsvダウンロードボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-158-stay-payment-list.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-158-stay-payment-list.jpg" alt="滞在中精算チェックリスト（種子島あらきホテル、2026/10/10、未収金6,650円が赤字で表示された一覧とcsvダウンロードボタン）のスクリーンショット"></a>
             <figcaption>【売上管理】→【滞在中精算チェックリスト】（種子島あらきホテル、2026/10/10）。滞在中の予約が1行ずつ並び、この例では未収金 ¥6,650 が赤字で表示されています。右上に「csvダウンロード」があります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>日次締めの画面にも未収金の注意は出ますが、それは締めのタイミングです。この画面なら日中いつでも、未収金の残っている部屋をまとめて確認できます。チェックアウト前の見落としを防ぐため、朝と夕方の確認をおすすめします。</div>
@@ -1181,44 +1161,44 @@
             <li>対象の部屋（複数部屋予約は該当部屋のみチェック）を選択し、プラン仕訳した料金を宿泊費にまとめて発行する場合は「プラン仕訳料金を統合する」にチェックを入れて、「明細・領収書作成」を押します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-21-invoice-section.jpg" target="_blank" rel="noopener"><img src="screenshots/front-21-invoice-section.jpg" alt="予約詳細の利用明細・領収書欄（部屋の選択と明細・領収書作成ボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-21-invoice-section.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-21-invoice-section.jpg" alt="予約詳細の利用明細・領収書欄（部屋の選択と明細・領収書作成ボタン）のスクリーンショット"></a>
             <figcaption>手順1：予約詳細の《利用明細・領収書》欄。対象の部屋を選択し、「明細・領収書作成」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <ol class="steps" start="2" style="counter-reset:step 1;">
             <li>《利用明細・領収書作成》画面で、言語設定（日本語／英語／中国語／韓国語）・税区分・宛名・敬称・ご到着日・ご出発日・備考・項目明細・部屋番号・ご利用日・金額・領収金額・但し書きを確認し「発行する」を押します。変更が必要な場合はここで記載内容を修正します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-22-invoice-form.jpg" target="_blank" rel="noopener"><img src="screenshots/front-22-invoice-form.jpg" alt="利用明細・領収書作成画面（言語設定・税区分・宛名・ご到着日・ご出発日・項目明細・領収金額・但し書き）のスクリーンショット"></a>
+            <a href="screenshots/front-22-invoice-form.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-22-invoice-form.jpg" alt="利用明細・領収書作成画面（言語設定・税区分・宛名・ご到着日・ご出発日・項目明細・領収金額・但し書き）のスクリーンショット"></a>
             <figcaption>手順2：《利用明細・領収書作成》画面。言語設定・税区分・宛名・ご到着日／ご出発日・項目明細・領収金額・但し書きを確認します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-23-invoice-form-filled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-23-invoice-form-filled.jpg" alt="利用明細・領収書作成画面で但し書きにご宿泊代と入力した状態のスクリーンショット"></a>
+            <a href="screenshots/front-23-invoice-form-filled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-23-invoice-form-filled.jpg" alt="利用明細・領収書作成画面で但し書きにご宿泊代と入力した状態のスクリーンショット"></a>
             <figcaption>但し書きを入力した状態（例：「ご宿泊代」）。内容を確認したら「発行する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">ヒント</span>チェックアウト日より前にチェックアウトした予約では、作成画面の「ご出発日」が実際にチェックアウトした日で表示されました（2026/10/05確認）。宛名・日付・但し書きは発行前に確認し、必要に応じて修正してください。</div>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>但し書きは、領収金額があるときだけ入力できます。精算を登録する前に作ると但し書きが入れられず、利用明細だけになるので、先に精算を登録してから作成します。但し書きの決まった文言を初期値にする設定はなく、毎回入力します。宛名は、代表者名・法人団体名・領収書発行リクエストで入力された宛名・任意の宛名から選べます。「プラン仕訳料金を統合する」の初期値は、物件詳細の〖明細書設定〗で決まります（敬称・宛名の選択肢は、予約詳細からの作成画面ではあらきホテルでは未確認）。</div>
           <p>領収書は、客室の状況表からも発行できます（2026/10/09確認）。状況表で部屋をクリックし、詳細の［料金情報］にある「領収書発行」を押すと、「領収書発行」画面が開きます。画面の項目は、言語（日本語／英語／中国語／韓国語）、宛名、敬称（様）、ご到着日、ご出発日、備考、項目（料金項目・支払い項目）、ご利用金額、お預かり金額、ご請求金額、領収金額です。「発行する」で発行します。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-130-indicator-popup-receipt-roomchange.jpg" target="_blank" rel="noopener"><img src="screenshots/front-130-indicator-popup-receipt-roomchange.jpg" alt="客室の状況表で部屋をクリックして開いた詳細（ルームチェンジ・領収書発行・チェックイン・予約詳細のボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-130-indicator-popup-receipt-roomchange.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-130-indicator-popup-receipt-roomchange.jpg" alt="客室の状況表で部屋をクリックして開いた詳細（ルームチェンジ・領収書発行・チェックイン・予約詳細のボタン）のスクリーンショット"></a>
             <figcaption>客室の状況表で部屋をクリックして開く詳細。「ルームチェンジ」「領収書発行」「チェックイン」「予約詳細」のボタンがあります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-131-indicator-receipt-dialog.jpg" target="_blank" rel="noopener"><img src="screenshots/front-131-indicator-receipt-dialog.jpg" alt="状況表から開いた領収書発行画面の上半分（言語、宛名、敬称、ご到着日、ご出発日、備考）のスクリーンショット"></a>
+            <a href="screenshots/front-131-indicator-receipt-dialog.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-131-indicator-receipt-dialog.jpg" alt="状況表から開いた領収書発行画面の上半分（言語、宛名、敬称、ご到着日、ご出発日、備考）のスクリーンショット"></a>
             <figcaption>「領収書発行」画面（上半分）。言語・宛名・敬称（様）・ご到着日・ご出発日・備考を確認します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-132-indicator-receipt-items.jpg" target="_blank" rel="noopener"><img src="screenshots/front-132-indicator-receipt-items.jpg" alt="領収書発行画面の下半分（項目と金額、発行するボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-132-indicator-receipt-items.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-132-indicator-receipt-items.jpg" alt="領収書発行画面の下半分（項目と金額、発行するボタン）のスクリーンショット"></a>
             <figcaption>「領収書発行」画面（下半分）。項目（料金項目・支払い項目）とご利用金額・お預かり金額・ご請求金額・領収金額を確認し、「発行する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>状況表の「領収書発行」画面には「但し書き」の欄がありません。但し書きが必要なときは、予約詳細の《利用明細・領収書》から作成してください（こちらは「但し［　］として」の欄があります）（2026/10/09確認）。</div>
           <p>状況表から発行した領収書も、予約詳細の《利用明細・領収書》の履歴（明細番号・作成日時・ダウンロード）に残りました。「領収項目に絞る」は、状況表の画面ではなく、予約詳細の《利用明細・領収書》欄にあるチェックボックスでした（「プラン仕訳料金を統合する」の下）。チェックしたときの動きは未確認です（2026/10/09確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-135-receipt-history.jpg" target="_blank" rel="noopener"><img src="screenshots/front-135-receipt-history.jpg" alt="予約詳細の利用明細・領収書欄（領収項目に絞るのチェックボックス、履歴2件）のスクリーンショット"></a>
+            <a href="screenshots/front-135-receipt-history.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-135-receipt-history.jpg" alt="予約詳細の利用明細・領収書欄（領収項目に絞るのチェックボックス、履歴2件）のスクリーンショット"></a>
             <figcaption>予約詳細の《利用明細・領収書》欄。「プラン仕訳料金を統合する」の下に「領収項目に絞る」があり、履歴に状況表から発行した分を含む2件が並んでいます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>「領収項目に絞る」にチェックを入れると、現地決済など領収書の対象になる精算に紐づく項目だけで作成します。</div>
           <h3 id="scene7-issue" class="sub">確認・発行</h3>
-          <p>作成した書類は《履歴》に一覧表示され、「ダウンロード」からPDFを確認できます。ダウンロードしてメールなどで送付・印刷してお客様にお渡しください。この施設では、ダウンロードしたPDFをメール・印刷で渡す運用です。なお公式マニュアルでは、お客様マイページからのダウンロード（物件の【お客様マイページ設定】で有効化）や、チェックイン完了メールへのPDF添付（【自動メール配信設定】）の機能もあるとされています。あらきホテルでの設定状況は未確認で、使う場合は管理者が設定します。</p>
+          <p>作成した書類は《履歴》に一覧表示され、「ダウンロード」からPDFを確認できます。ダウンロードしてメールなどで送付・印刷してお客様にお渡しください。この施設では、ダウンロードしたPDFをメール・印刷で渡す運用です（2026/10時点。マイページからの領収書発行を有効にする場合は、その運用を加えてください）。なお公式マニュアルでは、お客様マイページからのダウンロード（物件の【お客様マイページ設定】で有効化）や、チェックイン完了メールへのPDF添付（【自動メール配信設定】）の機能もあるとされています。あらきホテルでの設定状況は未確認で、使う場合は管理者が設定します。</p>
           <div class="callout tip"><span class="label">お客様マイページ・メールでの発行（公式マニュアルより）</span>あらきホテルはお客様マイページを使っています。マイページでの領収書発行を有効にしている場合は、次のようになります（領収書発行の設定は、あらきホテルでは未確認）。
             <ul>
               <li>お客様はチェックアウト後に、マイページのホーム画面から自分で宛名を入れて発行できます。領収金額がないときは、利用明細だけになります。</li>
@@ -1228,11 +1208,11 @@
           </div>
           <div class="callout tip"><span class="label">宿泊者ごとに分けて出したいとき（公式マニュアルより）</span>1つの予約で宿泊者ごとに領収書を分けたいときは、作成画面で宛名や金額の内容をそれぞれに合わせて直し、人数分を発行します。</div>
           <figure class="screenshot">
-            <a href="screenshots/front-24-invoice-history.jpg" target="_blank" rel="noopener"><img src="screenshots/front-24-invoice-history.jpg" alt="発行後の履歴（明細番号・枝番・作成日時・ダウンロード・有効）のスクリーンショット"></a>
+            <a href="screenshots/front-24-invoice-history.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-24-invoice-history.jpg" alt="発行後の履歴（明細番号・枝番・作成日時・ダウンロード・有効）のスクリーンショット"></a>
             <figcaption>発行後の《履歴》。明細番号・枝番・作成日時が表示され、「ダウンロード」からPDFを確認できます。「有効」欄で有効な書類を管理します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-04-receipt-sample.jpg" target="_blank" rel="noopener"><img src="screenshots/official/official-04-receipt-sample.jpg" alt="公式マニュアルの画面例：ダウンロードした利用明細・領収書のPDFサンプル"></a>
+            <a href="screenshots/official/official-04-receipt-sample.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-04-receipt-sample.jpg" alt="公式マニュアルの画面例：ダウンロードした利用明細・領収書のPDFサンプル"></a>
             <figcaption>発行される利用明細・領収書（PDF）のイメージ（公式マニュアルの画面例。デモ施設の帳票です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <h3 id="scene7-reissue" class="sub">再発行</h3>
@@ -1249,7 +1229,7 @@
         <p class="lede">フロントでの有人対応でチェックイン／アウトを行う方法です。操作は【客室の状況表】にて行います。チェックアウト日より前などで状況表から操作できない場合は、予約詳細のステータスから行います（下の注意を参照）。</p>
         <div class="body">
           <figure class="screenshot">
-            <a href="screenshots/official/official-01-room-indicator-guide.png" target="_blank" rel="noopener"><img src="screenshots/official/official-01-room-indicator-guide.png" alt="公式マニュアルの画面例：客室の状況表の画面構成（aからiのラベルで各部を説明）"></a>
+            <a href="screenshots/official/official-01-room-indicator-guide.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-01-room-indicator-guide.png" alt="公式マニュアルの画面例：客室の状況表の画面構成（aからiのラベルで各部を説明）"></a>
             <figcaption>客室の状況表の画面構成（公式マニュアルの画面例。デモ施設の画面で、a〜i のラベルで各部を説明しています）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <ol class="steps">
@@ -1258,64 +1238,64 @@
             <li>記載内容を確認し、フロントでの対応が必要な内容があれば対応します。特になければ「チェックイン」や「チェックアウト」を押してステータスを変更します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-116-hotel-indicator-normal.jpg" target="_blank" rel="noopener"><img src="screenshots/front-116-hotel-indicator-normal.jpg" alt="通常表示の客室の状況表（宿泊中の部屋は黄緑、空室はグレー、左側に状態ごとの部屋数）のスクリーンショット"></a>
+            <a href="screenshots/front-116-hotel-indicator-normal.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-116-hotel-indicator-normal.jpg" alt="通常表示の客室の状況表（宿泊中の部屋は黄緑、空室はグレー、左側に状態ごとの部屋数）のスクリーンショット"></a>
             <figcaption>通常表示。宿泊中の部屋は黄緑、空室はグレーで表示され、左側に状態ごとの部屋数が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-119-hotel-indicator-checkout-normal.jpg" target="_blank" rel="noopener"><img src="screenshots/front-119-hotel-indicator-checkout-normal.jpg" alt="チェックアウト予定日の客室の状況表（チェックアウト待ちの部屋がオレンジで（CO）と表示）のスクリーンショット"></a>
+            <a href="screenshots/front-119-hotel-indicator-checkout-normal.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-119-hotel-indicator-checkout-normal.jpg" alt="チェックアウト予定日の客室の状況表（チェックアウト待ちの部屋がオレンジで（CO）と表示）のスクリーンショット"></a>
             <figcaption>チェックアウト予定日の表示。チェックアウト待ちの部屋はオレンジで、『（CO）』と表示されます。連泊中の部屋には『11／31泊目』のように何泊目かが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-118-hotel-indicator-checkout-compact.jpg" target="_blank" rel="noopener"><img src="screenshots/front-118-hotel-indicator-checkout-compact.jpg" alt="縮小表示の客室の状況表（部屋番号の色で全室の状態を表示）のスクリーンショット"></a>
+            <a href="screenshots/front-118-hotel-indicator-checkout-compact.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-118-hotel-indicator-checkout-compact.jpg" alt="縮小表示の客室の状況表（部屋番号の色で全室の状態を表示）のスクリーンショット"></a>
             <figcaption>縮小表示では、部屋番号の色だけで全室の状態を見渡せます（オレンジ＝チェックアウト待ち、黄緑＝宿泊中、グレー＝空室）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-120-hotel-room-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-120-hotel-room-detail.jpg" alt="客室の状況表で部屋をクリックして開いた詳細（団体名・宿泊期間・部屋・料金の支払い状況、ルームチェンジ・領収書発行・予約詳細のボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-120-hotel-room-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-120-hotel-room-detail.jpg" alt="客室の状況表で部屋をクリックして開いた詳細（団体名・宿泊期間・部屋・料金の支払い状況、ルームチェンジ・領収書発行・予約詳細のボタン）のスクリーンショット"></a>
             <figcaption>部屋をクリックすると開く詳細。団体名・宿泊期間・部屋・料金の支払い状況を確認でき、ルームチェンジ・領収書発行・予約詳細へ進めます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-09-room-indicator-checkin-due.jpg" target="_blank" rel="noopener"><img src="screenshots/front-09-room-indicator-checkin-due.jpg" alt="チェックイン予定の部屋がオレンジ色で表示された客室の状況表のスクリーンショット"></a>
+            <a href="screenshots/front-09-room-indicator-checkin-due.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-09-room-indicator-checkin-due.jpg" alt="チェックイン予定の部屋がオレンジ色で表示された客室の状況表のスクリーンショット"></a>
             <figcaption>【客室の状況表】。チェックイン予定の部屋は色付きで表示され、左側の「チェックイン予定」に件数が表示されます。この例では206がチェックイン予定（種子島時堯 1名、1／1泊目）です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-10-today-search.jpg" target="_blank" rel="noopener"><img src="screenshots/front-10-today-search.jpg" alt="当日分の予約検索にお客様の氏名を入力して検索した状態のスクリーンショット"></a>
+            <a href="screenshots/front-10-today-search.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-10-today-search.jpg" alt="当日分の予約検索にお客様の氏名を入力して検索した状態のスクリーンショット"></a>
             <figcaption>手順1：［当日分の予約検索］欄にお客様のお名前（例：種子島）を入力した状態。該当する部屋（206）がハイライトされ、検索結果に部屋番号・代表者名・チェックインコードが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-11-room-detail-popup.jpg" target="_blank" rel="noopener"><img src="screenshots/front-11-room-detail-popup.jpg" alt="部屋をクリックして開いた詳細情報（お客様情報・宿泊情報・料金情報）のスクリーンショット"></a>
+            <a href="screenshots/front-11-room-detail-popup.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-11-room-detail-popup.jpg" alt="部屋をクリックして開いた詳細情報（お客様情報・宿泊情報・料金情報）のスクリーンショット"></a>
             <figcaption>手順2：部屋（206）をクリックして開く詳細情報。お客様情報・宿泊情報・メモ・料金情報を確認でき、「チェックイン」「ルームチェンジ」「予約詳細」のボタンがあります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-12-checkin-confirm.jpg" target="_blank" rel="noopener"><img src="screenshots/front-12-checkin-confirm.jpg" alt="チェックイン確認画面（チェックイン通知のチェックボックスと保存するボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-12-checkin-confirm.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-12-checkin-confirm.jpg" alt="チェックイン確認画面（チェックイン通知のチェックボックスと保存するボタン）のスクリーンショット"></a>
             <figcaption>手順3：「チェックイン」を押すと確認画面が開きます。対象の部屋（206）とチェックイン通知の有無（この例ではオフ）を確認し「保存する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-15-room-indicator-staying.jpg" target="_blank" rel="noopener"><img src="screenshots/front-15-room-indicator-staying.jpg" alt="宿泊中の部屋が黄緑色で表示された客室の状況表のスクリーンショット"></a>
+            <a href="screenshots/front-15-room-indicator-staying.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-15-room-indicator-staying.jpg" alt="宿泊中の部屋が黄緑色で表示された客室の状況表のスクリーンショット"></a>
             <figcaption>チェックアウト時の【客室の状況表】。宿泊中の部屋（この例では206）は黄緑色で表示され、左側の「宿泊中」に件数が表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-16-today-search-staying.jpg" target="_blank" rel="noopener"><img src="screenshots/front-16-today-search-staying.jpg" alt="当日分の予約検索で宿泊中のお客様を検索し、検索結果が表示された状態のスクリーンショット"></a>
+            <a href="screenshots/front-16-today-search-staying.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-16-today-search-staying.jpg" alt="当日分の予約検索で宿泊中のお客様を検索し、検索結果が表示された状態のスクリーンショット"></a>
             <figcaption>手順1：［当日分の予約検索］欄で宿泊中のお客様（例：種子島）を検索した状態。検索結果に部屋番号（206）・代表者名・チェックインコードが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-17-room-popup-no-checkout.jpg" target="_blank" rel="noopener"><img src="screenshots/front-17-room-popup-no-checkout.jpg" alt="チェックアウト日前のためチェックアウトボタンが表示されていない部屋の詳細情報のスクリーンショット"></a>
+            <a href="screenshots/front-17-room-popup-no-checkout.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-17-room-popup-no-checkout.jpg" alt="チェックアウト日前のためチェックアウトボタンが表示されていない部屋の詳細情報のスクリーンショット"></a>
             <figcaption>手順2：部屋（206）の詳細情報。チェックアウト日前のため、「チェックアウト」ボタンが表示されていません（下の注意を参照）。オペレーターメモには［ホスト操作：チェックイン］の記録が残ります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/official/official-25-checkout-room-detail.png" target="_blank" rel="noopener"><img src="screenshots/official/official-25-checkout-room-detail.png" alt="公式マニュアルの画面例：チェックアウト日の客室の状況表で部屋を開いた詳細（チェックアウトボタン、未払いの赤字、領収書発行）"></a>
+            <a href="screenshots/official/official-25-checkout-room-detail.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-25-checkout-room-detail.png" alt="公式マニュアルの画面例：チェックアウト日の客室の状況表で部屋を開いた詳細（チェックアウトボタン、未払いの赤字、領収書発行）"></a>
             <figcaption>チェックアウト日に部屋を開いた詳細。「チェックアウト」ボタン（赤枠）の下に「チェックアウトメール送信」のチェックがあります。料金に未払いがあると赤字で出るので、先に精算します（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>客室の状況表の日付は日次締めで切り替わります。状況表の日付がチェックアウト日になる前は、部屋の詳細情報に「チェックアウト」ボタンが表示されませんでした（2026/10/05確認）。その場合は予約詳細の右上のステータスから「チェックアウト済みにする」を選び、チェックアウトする部屋を選んで実行します。チェックアウト日より前に実行すると「チェックアウト日ではありませんが、チェックアウトしますか？」と確認が表示されます。</div>
           <figure class="screenshot">
-            <a href="screenshots/front-18-status-menu.jpg" target="_blank" rel="noopener"><img src="screenshots/front-18-status-menu.jpg" alt="予約詳細の右上のステータス（チェックイン済み（宿泊中））を開き、チェックアウト済みにするが表示されたメニューのスクリーンショット"></a>
+            <a href="screenshots/front-18-status-menu.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-18-status-menu.jpg" alt="予約詳細の右上のステータス（チェックイン済み（宿泊中））を開き、チェックアウト済みにするが表示されたメニューのスクリーンショット"></a>
             <figcaption>部屋の詳細情報の「予約詳細」から予約詳細を開き、右上のステータス（「チェックイン済み（宿泊中）」）を押すとメニューが開きます。「チェックアウト済みにする」を選びます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-19-checkout-confirm.jpg" target="_blank" rel="noopener"><img src="screenshots/front-19-checkout-confirm.jpg" alt="ステータス変更画面（チェックアウトする部屋の選択、チェックアウト通知のチェックボックス、チェックアウト済みにするボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-19-checkout-confirm.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-19-checkout-confirm.jpg" alt="ステータス変更画面（チェックアウトする部屋の選択、チェックアウト通知のチェックボックス、チェックアウト済みにするボタン）のスクリーンショット"></a>
             <figcaption>「ステータス変更」画面。チェックアウトする部屋（206）とチェックアウト通知の有無（この例ではオフ）を選び、「チェックアウト済みにする」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-20-checked-out.jpg" target="_blank" rel="noopener"><img src="screenshots/front-20-checked-out.jpg" alt="チェックアウト後の予約詳細（ステータスがチェックアウト済み、オペレーターメモに操作履歴）のスクリーンショット"></a>
+            <a href="screenshots/front-20-checked-out.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-20-checked-out.jpg" alt="チェックアウト後の予約詳細（ステータスがチェックアウト済み、オペレーターメモに操作履歴）のスクリーンショット"></a>
             <figcaption>チェックアウト後の予約詳細。ステータスが「チェックアウト済み」になり、オペレーターメモに操作履歴（ホスト操作：チェックアウト）が記録されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <table class="field">
@@ -1326,7 +1306,7 @@
             <tr><th>部屋のアイコン</th><td>公式マニュアルでは、状況表の部屋に次のようなアイコンが出るとされています：未収金あり（￥）、要領収書（お客様マイページで領収書が必要と回答）、宿泊台帳未入力（マイページの必須項目が未入力）、グループ（複数部屋の予約）など。チェックイン前に、未収金・領収書の要否・台帳の未入力をここで拾えます。詳細には、マイページの入力が済んでいると「マイページ入力済み」と表示され、チェックイン時に未収金があるとアラートが出ます（公式マニュアルより。あらきホテルでは未確認）</td></tr>
           </table>
           <figure class="screenshot">
-            <a href="screenshots/official/official-26-room-detail-unpaid.png" target="_blank" rel="noopener"><img src="screenshots/official/official-26-room-detail-unpaid.png" alt="公式マニュアルの画面例：部屋の詳細の料金情報欄（未払いの金額が赤字で表示）" style="max-width:438px"></a>
+            <a href="screenshots/official/official-26-room-detail-unpaid.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-26-room-detail-unpaid.png" alt="公式マニュアルの画面例：部屋の詳細の料金情報欄（未払いの金額が赤字で表示）" style="max-width:438px"></a>
             <figcaption>未収金がある部屋の料金情報欄。合計の横に「未払い」の金額が赤字で出ます（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">自動チェックアウト</span>公式マニュアルでは、物件詳細の【自動チェックアウト設定】で、チェックアウト時刻から決めた時間が過ぎると自動でチェックアウト済みにできるとされています。この施設で自動チェックアウトを使っているかは責任者に確認してください。使っていなければ、チェックアウトの押し忘れは日次締め画面の「チェックアウト済みになっていません」で見つかります。</div>
@@ -1339,23 +1319,23 @@
           <p>別館では［部屋別チェックイン］が許可済みで、部屋ごとのチェックインを利用できました（2026/10/06確認）。</p>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>客室の状況表からも部屋ごとに操作できます。状況表で部屋を押して「チェックイン」／「チェックアウト」を押すと、押した部屋にチェックが入った部屋選択の画面が出ます。その部屋だけならそのまま「保存する」、ほかの部屋も一緒なら［全ての部屋を選択］などでチェックを足して「保存する」を押します。一部の部屋だけチェックアウトした場合、ステータスは全部屋が終わるまで「チェックイン済み（宿泊中）」のままです。チェックアウトも「チェックアウトを取り消す」で部屋ごとに取り消せます。あらきホテルの実画面では未確認です。</div>
           <figure class="screenshot">
-            <a href="screenshots/official/official-23-room-checkin-select-indicator.png" target="_blank" rel="noopener"><img src="screenshots/official/official-23-room-checkin-select-indicator.png" alt="公式マニュアルの画面例：客室の状況表でチェックインを押すと出る部屋の選択画面（201にチェック、202は未チェック）"></a>
+            <a href="screenshots/official/official-23-room-checkin-select-indicator.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-23-room-checkin-select-indicator.png" alt="公式マニュアルの画面例：客室の状況表でチェックインを押すと出る部屋の選択画面（201にチェック、202は未チェック）"></a>
             <figcaption>状況表で部屋を開いて「チェックイン」を押すと出る部屋の選択。押した部屋（201）にだけチェックが入ります。「全ての部屋を選択」でまとめて選べます（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-59-status-menu-checkin.jpg" target="_blank" rel="noopener"><img src="screenshots/front-59-status-menu-checkin.jpg" alt="予約詳細の右上のステータスを開いたメニュー（チェックイン済みにする、キャンセルする、削除する）のスクリーンショット"></a>
+            <a href="screenshots/front-59-status-menu-checkin.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-59-status-menu-checkin.jpg" alt="予約詳細の右上のステータスを開いたメニュー（チェックイン済みにする、キャンセルする、削除する）のスクリーンショット"></a>
             <figcaption>予約詳細の右上のステータス（「未チェックイン」）を押すと開くメニュー。この例は2部屋の団体予約（代表者：種子島恵時）です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-60-room-checkin-select.jpg" target="_blank" rel="noopener"><img src="screenshots/front-60-room-checkin-select.jpg" alt="チェックイン済みにするでチェックインする部屋だけを選ぶ画面のスクリーンショット"></a>
+            <a href="screenshots/front-60-room-checkin-select.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-60-room-checkin-select.jpg" alt="チェックイン済みにするでチェックインする部屋だけを選ぶ画面のスクリーンショット"></a>
             <figcaption>「チェックイン済みにする」で、チェックインする部屋を選ぶ画面。この例では414だけを選び、417は外しています。「全ての部屋を選択している場合のみ通知が可能です。」と表示され、通知は選べません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-61-partial-checkin.jpg" target="_blank" rel="noopener"><img src="screenshots/front-61-partial-checkin.jpg" alt="一部の部屋だけチェックインし、ステータスが一部チェックインになった予約詳細のスクリーンショット"></a>
+            <a href="screenshots/front-61-partial-checkin.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-61-partial-checkin.jpg" alt="一部の部屋だけチェックインし、ステータスが一部チェックインになった予約詳細のスクリーンショット"></a>
             <figcaption>一部の部屋だけチェックインした状態。ステータスが「一部チェックイン」になります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-62-checkin-undo-select.jpg" target="_blank" rel="noopener"><img src="screenshots/front-62-checkin-undo-select.jpg" alt="チェックインを取り消すで取り消す部屋を選ぶ画面のスクリーンショット"></a>
+            <a href="screenshots/front-62-checkin-undo-select.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-62-checkin-undo-select.jpg" alt="チェックインを取り消すで取り消す部屋を選ぶ画面のスクリーンショット"></a>
             <figcaption>「チェックインを取り消す」で、取り消す部屋を選ぶ画面。この例では宿泊中の414にチェックが入り、未チェックインの417はグレーで選べません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
@@ -1394,20 +1374,20 @@
             </ul>
           </div>
           <figure class="screenshot">
-            <a href="screenshots/front-114-room-indicator-buttons.jpg" target="_blank" rel="noopener"><img src="screenshots/front-114-room-indicator-buttons.jpg" alt="客室の状況表の右上にあるカスタム質問回答一覧と滞在状況表ダウンロードのボタンのスクリーンショット"></a>
+            <a href="screenshots/front-114-room-indicator-buttons.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-114-room-indicator-buttons.jpg" alt="客室の状況表の右上にあるカスタム質問回答一覧と滞在状況表ダウンロードのボタンのスクリーンショット"></a>
             <figcaption>【客室の状況表】（10/9、種子島あらきホテル）の右上。「カスタム質問回答一覧」と「滞在状況表ダウンロード」のボタンがあります。「宿泊者カード印刷」のボタンは表示されていません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-115-stay-status-download.jpg" target="_blank" rel="noopener"><img src="screenshots/front-115-stay-status-download.jpg" alt="滞在状況表ダウンロードを押した直後の客室の状況表のスクリーンショット"></a>
+            <a href="screenshots/front-115-stay-status-download.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-115-stay-status-download.jpg" alt="滞在状況表ダウンロードを押した直後の客室の状況表のスクリーンショット"></a>
             <figcaption>「滞在状況表ダウンロード」を押した直後。画面は変わらず、表示中の日付・物件の滞在状況表（CSV）がダウンロードされます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
-          <div class="callout warn"><span class="label">宿泊者カード印刷（未導入）</span>オンラインマニュアルでは、客室の状況表の「宿泊者カード印刷」ボタンから、項目と対象の部屋を選んでA4で印刷する機能として説明されています。この施設（別館）の客室の状況表には「宿泊者カード印刷」ボタンが表示されておらず、機能は未導入です（2026/10/07確認）。利用するにはHOTEL SMARTのサポートへの申し込みが必要です（オンラインマニュアルの記載）。
+          <div class="callout warn"><span class="label">宿泊者カード印刷（未導入）</span>オンラインマニュアルでは、客室の状況表の「宿泊者カード印刷」ボタンから、項目と対象の部屋を選んでA4で印刷する機能として説明されています。あらきホテルの客室の状況表には「宿泊者カード印刷」ボタンが表示されておらず、機能は未導入です（別館 2026/10/07、本館 2026/10/09 確認）。利用するにはHOTEL SMARTのサポートへの申し込みが必要です（オンラインマニュアルの記載）。
             <figure class="screenshot">
-              <a href="screenshots/official/official-02-guestcard-button.png" target="_blank" rel="noopener"><img src="screenshots/official/official-02-guestcard-button.png" alt="公式マニュアルの画面例：客室の状況表の宿泊者カード印刷ボタンの位置"></a>
+              <a href="screenshots/official/official-02-guestcard-button.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-02-guestcard-button.png" alt="公式マニュアルの画面例：客室の状況表の宿泊者カード印刷ボタンの位置"></a>
               <figcaption>導入した場合の画面例：客室の状況表の「宿泊者カード印刷」ボタン（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
             </figure>
             <figure class="screenshot">
-              <a href="screenshots/official/official-03-guestcard-sample.jpg" target="_blank" rel="noopener"><img src="screenshots/official/official-03-guestcard-sample.jpg" alt="公式マニュアルの画面例：宿泊者カードの印刷イメージ"></a>
+              <a href="screenshots/official/official-03-guestcard-sample.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-03-guestcard-sample.jpg" alt="公式マニュアルの画面例：宿泊者カードの印刷イメージ"></a>
               <figcaption>導入した場合の画面例：宿泊者カードの印刷イメージ（公式マニュアルの画面例。デモ施設の帳票です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
             </figure>
           </div>
@@ -1428,65 +1408,65 @@
             <li>「変更を保存する」で確定します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-103-room-list.jpg" target="_blank" rel="noopener"><img src="screenshots/front-103-room-list.jpg" alt="物件管理の部屋情報の一覧のスクリーンショット"></a>
+            <a href="screenshots/front-103-room-list.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-103-room-list.jpg" alt="物件管理の部屋情報の一覧のスクリーンショット"></a>
             <figcaption>手順1：【物件管理】＞【部屋情報】の一覧（種子島あらきホテル。下部に「1 - 20 / 105件中」と表示）。ブロックしたい部屋の「詳細を見る」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-104-room-detail.jpg" target="_blank" rel="noopener"><img src="screenshots/front-104-room-detail.jpg" alt="部屋詳細のブロック設定欄（ブロック期間を追加するボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-104-room-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-104-room-detail.jpg" alt="部屋詳細のブロック設定欄（ブロック期間を追加するボタン）のスクリーンショット"></a>
             <figcaption>部屋詳細の画面（この例は415、ツイン）。下のほうに〖ブロック設定〗欄があります。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-105-block-added.jpg" target="_blank" rel="noopener"><img src="screenshots/front-105-block-added.jpg" alt="ブロック期間を追加するで行を追加した状態（期間とメモの欄）のスクリーンショット"></a>
+            <a href="screenshots/front-105-block-added.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-105-block-added.jpg" alt="ブロック期間を追加するで行を追加した状態（期間とメモの欄）のスクリーンショット"></a>
             <figcaption>手順2：「ブロック期間を追加する」で行を追加した状態。期間とメモの欄が表示され、期間の初期値は当日〜翌日です。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-106-block-period-picker.jpg" target="_blank" rel="noopener"><img src="screenshots/front-106-block-period-picker.jpg" alt="ブロック期間のカレンダー（開始日・終了日を選んでOK）のスクリーンショット"></a>
+            <a href="screenshots/front-106-block-period-picker.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-106-block-period-picker.jpg" alt="ブロック期間のカレンダー（開始日・終了日を選んでOK）のスクリーンショット"></a>
             <figcaption>手順3：期間の欄を押すとカレンダーが開きます。開始日・終了日を選んで「OK」を押します。この例では2026-10-28 15:00〜10-29 11:00を選んでいます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-107-block-memo.jpg" target="_blank" rel="noopener"><img src="screenshots/front-107-block-memo.jpg" alt="ブロックの期間とメモを入力した状態のスクリーンショット"></a>
+            <a href="screenshots/front-107-block-memo.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-107-block-memo.jpg" alt="ブロックの期間とメモを入力した状態のスクリーンショット"></a>
             <figcaption>期間とメモ（ブロックの理由。この例では「【テスト】ブロック」）を入力した状態。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-108-block-saved.jpg" target="_blank" rel="noopener"><img src="screenshots/front-108-block-saved.jpg" alt="ブロック設定を保存した後の部屋詳細のスクリーンショット"></a>
+            <a href="screenshots/front-108-block-saved.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-108-block-saved.jpg" alt="ブロック設定を保存した後の部屋詳細のスクリーンショット"></a>
             <figcaption>手順4：「変更を保存する」を押した後の部屋詳細。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>ブロック中の部屋は部屋割り表で紫色になり、予約者名の代わりにメモが表示されます（2026/10/07確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-102-allocation-table.jpg" target="_blank" rel="noopener"><img src="screenshots/front-102-allocation-table.jpg" alt="ブロック前の部屋割り表のスクリーンショット"></a>
+            <a href="screenshots/front-102-allocation-table.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-102-allocation-table.jpg" alt="ブロック前の部屋割り表のスクリーンショット"></a>
             <figcaption>ブロック前の部屋割り表（種子島あらきホテル、基準日2026-10-27）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-109-block-on-allocation.jpg" target="_blank" rel="noopener"><img src="screenshots/front-109-block-on-allocation.jpg" alt="部屋割り表でブロックが紫色に表示された状態のスクリーンショット"></a>
+            <a href="screenshots/front-109-block-on-allocation.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-109-block-on-allocation.jpg" alt="部屋割り表でブロックが紫色に表示された状態のスクリーンショット"></a>
             <figcaption>ブロック後の部屋割り表。415の10/28が紫色（ブロック中）になり、メモが表示されます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
 
           <h3 id="scene9-unblock" class="sub">ブロックを解除する</h3>
           <p>同じ部屋詳細の〖ブロック設定〗で、解除する行の「×」を押してから「変更を保存する」を押します。確認画面は出ませんでした（2026/10/07確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-110-block-row-removed.jpg" target="_blank" rel="noopener"><img src="screenshots/front-110-block-row-removed.jpg" alt="ブロック設定の行を×で消した状態のスクリーンショット"></a>
+            <a href="screenshots/front-110-block-row-removed.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-110-block-row-removed.jpg" alt="ブロック設定の行を×で消した状態のスクリーンショット"></a>
             <figcaption>「×」で行を消した状態。このあと「変更を保存する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-111-allocation-unblocked.jpg" target="_blank" rel="noopener"><img src="screenshots/front-111-allocation-unblocked.jpg" alt="ブロック解除後の部屋割り表のスクリーンショット"></a>
+            <a href="screenshots/front-111-allocation-unblocked.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-111-allocation-unblocked.jpg" alt="ブロック解除後の部屋割り表のスクリーンショット"></a>
             <figcaption>解除後の部屋割り表。紫色の表示が消え、415の行が空になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>ブロック中の部屋は、予約の部屋選択で「× 403」のように×が付いて選べません。客室の状況表でもブロック中の部屋は紫色で「ブロック中」とメモが表示され、左の「ブロック中」の数にも入ります。クリックすると部屋詳細が新しいタブで開きます（2026/10/09確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-136-block-room-select-x.jpg" target="_blank" rel="noopener"><img src="screenshots/front-136-block-room-select-x.jpg" alt="新規予約の部屋選択でブロック中の403に×が付いた状態のスクリーンショット"></a>
+            <a href="screenshots/front-136-block-room-select-x.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-136-block-room-select-x.jpg" alt="新規予約の部屋選択でブロック中の403に×が付いた状態のスクリーンショット"></a>
             <figcaption>新規予約の部屋選択。ブロック中の403に「×」が付き、選べません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-137-block-indicator-purple.jpg" target="_blank" rel="noopener"><img src="screenshots/front-137-block-indicator-purple.jpg" alt="客室の状況表（10/27）で403が紫色のブロック中と表示された状態のスクリーンショット"></a>
+            <a href="screenshots/front-137-block-indicator-purple.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-137-block-indicator-purple.jpg" alt="客室の状況表（10/27）で403が紫色のブロック中と表示された状態のスクリーンショット"></a>
             <figcaption>客室の状況表（10/27）。403が紫色で「ブロック中【テスト】…」と表示され、左の「ブロック中」が1室になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>ブロック期間のカレンダーでは、最後に締めた日の前日までがグレーになり、選べません（例：10/8 まで締め済みのホテルでは 10/7 以前）（2026/10/09確認）。最後に締めた日そのものはカレンダー上は選べますが、その日を含むブロックが保存できるかは未確認です。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-138-block-closed-date-disabled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-138-block-closed-date-disabled.jpg" alt="ブロック期間のカレンダーで締め済みの日付がグレーになり、OKが押せない状態のスクリーンショット"></a>
+            <a href="screenshots/front-138-block-closed-date-disabled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-138-block-closed-date-disabled.jpg" alt="ブロック期間のカレンダーで締め済みの日付がグレーになり、OKが押せない状態のスクリーンショット"></a>
             <figcaption>ブロック期間のカレンダー。締め済みの日付（10/7以前）がグレーになり、「OK」も押せません。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>日次締め済みの日付のブロックは変更・削除できません。ブロック中の部屋は残室数（在庫）からも外れます。翌日の0:00がブロック期間に入っていれば、その日はブロック扱いになり在庫が減ります。その夜を売り止めにするには、翌日0:00をまたぐ期間にします（例：当日15:00〜翌日11:00）。ブロックした日数は稼働率の計算から除かれます。期間は入力欄に日付を直接入力することもできます。あらきホテルはTLリンカーンと2wayで連携しているので、ブロックで減った在庫（解除で戻った在庫）もTLリンカーンへ自動で送られます（<a href="#scene4-tl-2way">シーン4「TLリンカーン（2way）と在庫」</a>）。</div>
-          <div class="callout warn"><span class="label">注意</span>すでに予約が入っている期間や、日次締めが完了している期間はブロック設定ができません。</div>
+          <div class="callout warn"><span class="label">注意</span>すでに予約が入っている期間や、日次締めが完了している期間はブロック設定ができません（公式フロント運用PDFより。予約が入っている期間については、あらきホテルでは未確認）。</div>
           <div class="callout tip"><span class="label">確認状況</span>導線・ボタン名・表示は実画面で確認しました（2026/10/07確認）。ブロック期間のカレンダーで、最後に締めた日の前日まではグレーになり選べないことを実画面で確認しました（2026/10/09確認）。最後に締めた日を含むブロックが保存できるかは未確認です。すでに予約が入っている期間にブロックを設定できないことは公式フロント運用PDFの記載で、実画面では未確認です。公式オンラインマニュアルのブロックの記事には、この記載はありません（オンライン版にあるのは、締め済みの日付のブロックは変更・削除できないこと、ブロック中の部屋は予約側で選べず保存できないこと）。</div>
         </div>
       </section>
@@ -1505,7 +1485,7 @@
             <li>注意事項を読み、「日次締め機能を有効化する」を実行します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/front-43-daily-closing-disabled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-43-daily-closing-disabled.jpg" alt="有効化前の日次締め画面（日次締め機能が有効化されていません、対象物件、日次締め時刻 毎日04:00、日次締め機能を有効化するボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-43-daily-closing-disabled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-43-daily-closing-disabled.jpg" alt="有効化前の日次締め画面（日次締め機能が有効化されていません、対象物件、日次締め時刻 毎日04:00、日次締め機能を有効化するボタン）のスクリーンショット"></a>
             <figcaption>手順2〜3：有効化前の日次締め画面（種子島あらきホテル）。「日次締め機能が有効化されていません」と表示され、対象物件と日次締め時刻（初期値は毎日04:00）を確認して「日次締め機能を有効化する」を押します。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>「日次締め機能を有効化する」を押すと、ブラウザ標準の確認画面で「（物件名）の日次締め機能を有効化しますか？／一度有効化した場合、管理画面から無効化はできません。」と表示されました（2026/10/06確認）。</p>
@@ -1515,10 +1495,10 @@
           <div class="callout warn"><span class="label">注意</span>日次締め機能は、一度有効化すると管理画面から無効化できません。また、有効化した時点ですでにその日の締め時刻を過ぎていると、前日以前の分がその場で締め済みになりました（2026/10/06確認）。締め済みの日の予約・料金・精算は変更できなくなるため、有効化する前に、直しておくべき予約や精算が残っていないか確認してください。締め時刻は一度設定すると変更できません（公式オンラインマニュアルより）。</div>
 
           <h3 id="scene10-daily" class="sub">毎日の締め処理</h3>
-          <p>日次締め画面には、まだ締めていない日付（対象日）が表示されます。締め時刻（別館は毎日04:00）を過ぎると、画面の一番下に「日次の締めを行う」ボタンが表示されます。締め時刻の前はボタンが表示されず、締め時刻を過ぎても自動では締められません（2026/10/07確認）。日次締め画面では、締めの前に注意が必要な予約、精算情報、前受金情報を確認できます。最新の状態は「再取得」で読み込み直します。締めは責任者が行います。</p>
+          <p>日次締め画面には、まだ締めていない日付（対象日）が表示されます。締め時刻（本館・別館とも毎日04:00）を過ぎると、画面の一番下に「日次の締めを行う」ボタンが表示されます。締め時刻の前はボタンが表示されず、締め時刻を過ぎても自動では締められません（2026/10/07確認）。日次締め画面では、締めの前に注意が必要な予約、精算情報、前受金情報を確認できます。最新の状態は「再取得」で読み込み直します。締めは責任者が行います。</p>
           <p>締め時刻から24時間が、その物件の「1日」です（公式マニュアルより）。締め時刻が04:00なら、1日の区切りは04:00〜翌03:59です。深夜0時〜4時前に登録した精算は、前日分の精算情報に入ります。前日の締めをしていない物件があると、管理画面右上のお知らせ欄にも表示されます（公式マニュアルより）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-44-daily-closing-enabled.jpg" target="_blank" rel="noopener"><img src="screenshots/front-44-daily-closing-enabled.jpg" alt="有効化後の日次締め画面（種子島あらきホテル、対象日2026年10月09日、再取得と取得日時、チェックイン予定なのに未チェックインの予約の一覧）のスクリーンショット"></a>
+            <a href="screenshots/front-44-daily-closing-enabled.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-44-daily-closing-enabled.jpg" alt="有効化後の日次締め画面（種子島あらきホテル、対象日2026年10月09日、再取得と取得日時、チェックイン予定なのに未チェックインの予約の一覧）のスクリーンショット"></a>
             <figcaption>有効化後の日次締め画面（種子島あらきホテル、締め時刻の前）。対象日（2026年10月09日）、「再取得」と取得日時の下に、注意点のある予約の一覧（チェックインコード・ゲスト名・エラーメッセージ）が表示されます。この例では、チェックイン予定なのに未チェックインの予約に「チェックイン予定の予約ですが、チェックイン済みになっていません。」と表示されています。一覧の下に精算情報・前受金情報が続きます。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <ol class="steps">
@@ -1528,26 +1508,26 @@
             <li>前受金情報もあわせて確認し、②と③に問題がなければ、画面の一番下の「日次の締めを行う」を押します。問題があれば、先に対応してから押します。</li>
           </ol>
           <figure class="screenshot">
-            <a href="screenshots/official/official-28-daily-closing-payment-summary.png" target="_blank" rel="noopener"><img src="screenshots/official/official-28-daily-closing-payment-summary.png" alt="公式マニュアルの画面例：日次締め画面の精算情報（予約と予約外が別の行、支払い方法ごとの合計）"></a>
+            <a href="screenshots/official/official-28-daily-closing-payment-summary.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/official/official-28-daily-closing-payment-summary.png" alt="公式マニュアルの画面例：日次締め画面の精算情報（予約と予約外が別の行、支払い方法ごとの合計）"></a>
             <figcaption>日次締め画面の精算情報。「予約」と「予約外」が別の行に分かれ、支払い方法ごとに合計が出ます（公式マニュアルの画面例。デモ施設の画面です）。（出典：HOTEL SMART公式オンラインマニュアル）<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout warn"><span class="label">注意</span>注意点のある予約が残っていても、締めは止まりません（公式マニュアルより）。エラーがあるときは、確認画面がもう一度出ます。2回目の確認画面が出たら、未対応の予約が残っているという意味です。OKを押さずに戻って対応してください。2回目の確認画面の文言は、あらきホテルの実画面では未確認です。</div>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>締め画面の精算情報は、締める前の確認用の集計（支払日ベース）です。売掛先の起算タイミングや、支払日が空欄の精算によって、締め後に確定する金額とずれることがあります。締めて集計が終わったら、収支実績報告書で確定した金額を確認します（責任者）。</div>
           <figure class="screenshot">
-            <a href="screenshots/front-156-closing-before-warnings.jpg" target="_blank" rel="noopener"><img src="screenshots/front-156-closing-before-warnings.jpg" alt="締める前の日次締め画面の上部（注意点のある予約に、チェックイン予定のまま未チェックインの予約6件）のスクリーンショット"></a>
+            <a href="screenshots/front-156-closing-before-warnings.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-156-closing-before-warnings.jpg" alt="締める前の日次締め画面の上部（注意点のある予約に、チェックイン予定のまま未チェックインの予約6件）のスクリーンショット"></a>
             <figcaption>締める前の注意点の一覧（種子島あらきホテル、対象日 2026年10月09日の画面の上部）。チェックイン予定のまま未チェックインの予約（移行テスト053〜058 の6件）に「チェックイン予定の予約ですが、チェックイン済みになっていません。」と表示されています（2026/10/10確認）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-112-daily-closing-button.jpg" target="_blank" rel="noopener"><img src="screenshots/front-112-daily-closing-button.jpg" alt="締め時刻を過ぎた後の日次締め画面の下部（対象日10/09、支払い方法別の精算情報、日次の締めを行うボタン）のスクリーンショット"></a>
+            <a href="screenshots/front-112-daily-closing-button.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-112-daily-closing-button.jpg" alt="締め時刻を過ぎた後の日次締め画面の下部（対象日10/09、支払い方法別の精算情報、日次の締めを行うボタン）のスクリーンショット"></a>
             <figcaption>締め時刻を過ぎた後の日次締め画面の下部（対象日 2026年10月09日）。精算情報に支払い方法別の合計（現金 ¥45,200／VISA ¥4,400／その他 ¥19,096,500）が表示され、画面の一番下に「日次の締めを行う」ボタンが表示されています（2026/10/10確認）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <p>「日次の締めを行う」を押すと、ブラウザ標準の確認画面で「（物件名）の（日付）分の売上・売掛金を締めますか？」と表示されます。OKすると対象日が翌日に進みます。別館では「集計処理中期間」の表示が出ましたが（2026/10/07確認）、種子島あらきホテルでは表示されませんでした（2026/10/10確認）。公式マニュアルでは、「集計処理中期間」は締めた後の帳票（収支実績報告書など）の集計が終わるまでの表示で、終わると管理画面右上のお知らせ欄（設定すればメールでも）で知らせるとされています。物件で表示が違ったのは、集計の終わるタイミングの違いと考えられます（未確認）。</p>
           <figure class="screenshot">
-            <a href="screenshots/front-113-daily-closing-done.jpg" target="_blank" rel="noopener"><img src="screenshots/front-113-daily-closing-done.jpg" alt="締めた直後の日次締め画面（対象日が10/10に進み、未チェックインと未収金の注意を表示）のスクリーンショット"></a>
+            <a href="screenshots/front-113-daily-closing-done.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-113-daily-closing-done.jpg" alt="締めた直後の日次締め画面（対象日が10/10に進み、未チェックインと未収金の注意を表示）のスクリーンショット"></a>
             <figcaption>締めた直後の日次締め画面。対象日が 2026年10月10日 に進み、注意点のある予約に「チェックイン予定の予約ですが、チェックイン済みになっていません。」（532220）と「チェックアウト予定の予約ですが、未収金が残っています。」（移行テスト054 ほか）が表示されています（2026/10/10確認）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-157-closing-after-bottom.jpg" target="_blank" rel="noopener"><img src="screenshots/front-157-closing-after-bottom.jpg" alt="締めた後の日次締め画面の下部（未チェックアウトの一覧、空の精算情報、日次の締めを行うボタンなし）のスクリーンショット"></a>
+            <a href="screenshots/front-157-closing-after-bottom.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-157-closing-after-bottom.jpg" alt="締めた後の日次締め画面の下部（未チェックアウトの一覧、空の精算情報、日次の締めを行うボタンなし）のスクリーンショット"></a>
             <figcaption>締めた後の画面の下部。「チェックアウト予定の予約ですが、チェックアウト済みになっていません。」の一覧が続き、精算情報は空になっています。締めた後は「日次の締めを行う」ボタンが消え、対象日が翌日に進みます（2026/10/10確認）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>日次締め画面のエラー（注意点のある予約）は、次の6種類の予約が対象です（2026/10/07更新の公式マニュアルより）。チェックイン予定なのに未チェックイン／チェックアウト予定なのに未収金が残っている／チェックアウト予定なのに過払い金が残っている／チェックアウト予定なのに未チェックアウト／チェックアウト済みで未収金が残っている／チェックアウト済みで過払い金が残っている。チェックインコードから予約詳細に移れます。該当がないときは「注意点のある予約はありません」と表示されます。</div>
@@ -1566,11 +1546,11 @@
           <div class="callout tip"><span class="label">公式オンラインマニュアルより</span>締め後も、料金科目の追加、チェックアウト日時の延長、食事区分の追加、メモの更新、メール送信、マイページからのお客様情報の更新はできます。締め後に金額の調整が必要な場合は、まだ締めていない日付で修正するか、予約外_料金・精算で登録します。一方、締めた日の予約は、削除やキャンセル状態の変更ができなくなります。締め済みの料金・精算を持つ予約の統合・グルーピングもできず、締め済みの日をチェックイン・チェックアウトの予定日時に指定することもできません。</div>
           <div class="callout tip"><span class="label">締めた後に見る帳票（公式マニュアルより）</span>売上や精算の内訳を確かめたいときは、帳票・CSV出力の「会計ジャーナル」を出力します。その日の売上や稼働率は「稼働出力」で確認できます。どちらも締めた後の集計が終わってから見ます（あらきホテルでは未確認）。</div>
           <figure class="screenshot">
-            <a href="screenshots/front-45-room-indicator-after-closing.jpg" target="_blank" rel="noopener"><img src="screenshots/front-45-room-indicator-after-closing.jpg" alt="締め後の客室の状況表（日付が翌日に進み、前日チェックアウトの部屋が清掃待ち）のスクリーンショット"></a>
+            <a href="screenshots/front-45-room-indicator-after-closing.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-45-room-indicator-after-closing.jpg" alt="締め後の客室の状況表（日付が翌日に進み、前日チェックアウトの部屋が清掃待ち）のスクリーンショット"></a>
             <figcaption>締め後の【客室の状況表】。日付が翌日（10/6）に進み、前日にチェックアウトした部屋が「清掃待ち」になっています。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <figure class="screenshot">
-            <a href="screenshots/front-46-reserve-locked-after-closing.jpg" target="_blank" rel="noopener"><img src="screenshots/front-46-reserve-locked-after-closing.jpg" alt="チェックイン日が締め済みの長期滞在予約の詳細（法人名・チェックイン日時・プランにチェックイン日時が日次締めされているため、変更できませんと表示）のスクリーンショット"></a>
+            <a href="screenshots/front-46-reserve-locked-after-closing.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="screenshots/front-46-reserve-locked-after-closing.jpg" alt="チェックイン日が締め済みの長期滞在予約の詳細（法人名・チェックイン日時・プランにチェックイン日時が日次締めされているため、変更できませんと表示）のスクリーンショット"></a>
             <figcaption>チェックイン日（10/1）が締め済みの長期滞在予約の詳細。法人名・チェックイン日時・プランに「チェックイン日時が日次締めされているため、変更できません。」と表示され、変更できません。チェックアウト日・泊数は編集でき、チェックアウト日の延長は締め後も可能です（2026/10/09確認）。<span class="zoom-hint">（クリックで拡大）</span></figcaption>
           </figure>
           <div class="callout tip"><span class="label">確認環境の状態</span>種子島あらき別館：2026/10/06に日次締め機能を有効化（締め時刻は毎日04:00）。種子島あらきホテル：2026/10/09に有効化済み（毎日04:00）。有効化した時点で10/8以前の日付が締め済みになりました（2026/10/09確認）。10/09分まで締め済み（2026/10/10 07:05 実施）。</div>
@@ -1585,6 +1565,6 @@
     </footer>
   </div>
 </div>
-<script src="assets/search.js?v=08b679272d" defer></script>
+<script src="assets/search.js?v=0657425aac" defer></script>
 </body>
 </html>

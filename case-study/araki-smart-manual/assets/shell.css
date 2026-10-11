@@ -1,0 +1,74 @@
+/* かんたんフロントマニュアル 共通の外枠（全ページで manual.css / 各ページの <style> より先に読む）
+   - 配色は水墨画風のグレースケール（和紙・淡墨・中墨・濃墨）。印として「止める」系にだけ朱（--lab-red）を残す。
+   - 書体は明朝（Noto Serif JP）。英語版も同じ。
+   - ヘッダー（ブランド・主要メニュー・言語切替・検索）は scripts/make_site_header.py が全ページに同じ物を入れる。 */
+:root {
+  --lab-font-sans: "Noto Serif JP", "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "BIZ UDMincho", serif;
+  --lab-font-serif: var(--lab-font-sans);
+  --lab-navy: #2b2b2b;          /* 濃墨：見出し・濃い面 */
+  --lab-navy-deep: #1e1e1e;     /* 焦墨：ヘッダー・フッター */
+  --lab-teal: #4d4c48;          /* 中墨：リンク・ボタン・番号 */
+  --lab-teal-tint: #ebe9e3;     /* 淡墨：薄い面 */
+  --lab-surface: #f4f2ec;       /* 和紙：背景 */
+  --lab-surface-soft: #ebe9e3;
+  --lab-card: #fbfaf6;          /* 白紙：カード */
+  --lab-white: #f8f6f1;
+  --lab-border: #d8d5cd;
+  --lab-border-strong: #b9b5ab;
+  --lab-border-input: #a19d93;
+  --lab-ink: #1c1b19;           /* 墨：本文 */
+  --lab-ink-soft: #5e5c56;
+  --lab-on-dark: #c9c6be;
+  --lab-gold: #6f6d66;          /* 注意：中墨の縁 */
+  --lab-gold-tint: #e4e1d8;
+  --lab-gold-ink: #2b2b2b;
+  --lab-red: #8a2f23;           /* 朱：落款の色。「止める」「禁止」にだけ使う */
+  --lab-red-tint: #efe8e3;
+  --lab-green: #3d3c38;
+  --lab-green-tint: #ecebe6;
+  --lab-shadow: 0 1px 0 rgba(28, 27, 25, .06);
+}
+html { scroll-padding-top: 76px; }
+body { -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--lab-font-serif); font-weight: 600; letter-spacing: .02em; }
+strong, b, th { font-weight: 600; }
+a { text-decoration-thickness: 1px; text-underline-offset: .18em; }
+
+/* ヘッダー（全ページ共通） */
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 1rem; top: 1rem; z-index: 99; background: var(--lab-card); padding: .7rem 1rem; }
+.site-header { position: sticky; top: 0; z-index: 20; background: var(--lab-navy-deep); color: var(--lab-white); border-bottom: 1px solid #000; }
+.header-inner { max-width: 1180px; margin: auto; padding: .55rem 1.1rem; display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1rem; }
+.brand { color: var(--lab-white); text-decoration: none; font-weight: 600; letter-spacing: .06em; white-space: nowrap; font-family: var(--lab-font-serif); font-size: 1.05rem; }
+.brand small { display: block; font-size: .68rem; font-weight: 400; color: var(--lab-on-dark); line-height: 1.3; letter-spacing: .08em; }
+.global-nav { margin-left: auto; display: flex; gap: .1rem; flex-wrap: wrap; justify-content: flex-end; }
+.global-nav a { color: var(--lab-on-dark); text-decoration: none; padding: .3rem .5rem; border-bottom: 1px solid transparent; font-size: .88rem; white-space: nowrap; }
+.global-nav a:hover, .global-nav a:focus-visible { color: var(--lab-white); border-bottom-color: var(--lab-on-dark); }
+.global-nav a[aria-current="page"] { color: var(--lab-white); border-bottom-color: var(--lab-white); }
+.site-header .site-search { flex: 0 1 14rem; min-width: 10rem; }
+.site-header .lang-switch { flex: 0 0 auto; }
+
+/* 860px 以下：メニューを隠さず、2 行目に小さく並べる */
+@media (max-width: 860px) {
+  html { scroll-padding-top: 108px; }
+  .header-inner { padding: .5rem .75rem; }
+  .site-header .site-search { flex: 1 1 10rem; margin-left: auto; }
+  .global-nav { order: 10; flex: 1 1 100%; margin: 0 -.25rem; justify-content: flex-start; gap: 0; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .global-nav::-webkit-scrollbar { display: none; }
+  .global-nav a { font-size: .82rem; padding: .25rem .45rem; }
+}
+@media print { .site-header { display: none !important; } }
+
+/* シーン別ページ（フロント運用・初期設定）の目次：スマホでは折りたたみ、PCでは常に開く（search.js が open を付ける） */
+nav.toc details > summary { cursor: pointer; list-style: none; }
+nav.toc details > summary::-webkit-details-marker { display: none; }
+@media (min-width: 861px) {
+  nav.toc details > summary { pointer-events: none; }
+}
+@media (max-width: 860px) {
+  nav.toc { display: block !important; position: static; height: auto; padding: .4rem 1rem; border-right: 0; border-bottom: 1px solid var(--lab-border); background: var(--lab-card); }
+  nav.toc details > summary { padding: .5rem 0; margin: 0; font-size: .9rem; color: var(--lab-ink); }
+  nav.toc details > summary::after { content: "▾"; float: right; color: var(--lab-ink-soft); }
+  nav.toc details[open] > summary::after { content: "▴"; }
+  nav.toc ol { padding-bottom: .5rem; }
+}

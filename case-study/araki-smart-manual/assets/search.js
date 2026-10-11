@@ -12,6 +12,7 @@
  *   assets/search-synonyms-<言語>.json（＋日本語の言い換え辞書）を使い、表示もその言語にする（文言が無い言語は英語）。
  *   英語の検索語は、よくある語（how, to, the など）を除き、語尾（-s, -ed, -ing）をそろえて探し直す。
  * - [data-lang-switch] の言語の切り替えリンクは、今の見出し（#id）を引き継いで移動する。
+ * - nav.toc details[data-toc]（シーン別ページの目次）は、PC 幅では常に開く。
  */
 (function () {
   "use strict";
@@ -679,8 +680,19 @@
     }
   }
 
+  // シーン別ページの目次（nav.toc の details）：PC 幅では常に開き、スマホでは折りたたみ
+  function setupToc() {
+    var toc = document.querySelectorAll("nav.toc details[data-toc]");
+    if (!toc.length) return;
+    var mq = window.matchMedia("(min-width: 861px)");
+    function apply() { for (var i = 0; i < toc.length; i++) { if (mq.matches) toc[i].open = true; } }
+    apply();
+    if (mq.addEventListener) mq.addEventListener("change", apply);
+  }
+
   function init() {
     setupLangSwitch();
+    setupToc();
     var forms = document.querySelectorAll("[data-site-search]");
     var widgets = [];
     for (var i = 0; i < forms.length; i++) { var w = setup(forms[i]); if (w) widgets.push(w); }
