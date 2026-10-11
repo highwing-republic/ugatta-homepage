@@ -30,7 +30,8 @@
   var OFFICIAL_PAGE = "official";
 
   // 画面の文言（日本語版／英語版）
-  var T = TRANSLATED ? {
+  var STRINGS = {
+    en: {
     official: "Official manual (Japanese)",
     category: "Category: ",
     openOfficial: "Open on the official site (Japanese) ↗",
@@ -52,7 +53,8 @@
     count: function (n) { return " (" + n + ")"; },
     found: function (q, n, note) { return n + " result" + (n === 1 ? "" : "s") + " for \u201c" + q + "\u201d." + (note ? " " + note + "." : ""); },
     none: function (q) { return "Nothing found for \u201c" + q + "\u201d. Try another word (for example \u201ccancel\u201d instead of \u201cvoid\u201d) or a shorter one."; }
-  } : {
+    },
+    ja: {
     official: "公式マニュアル",
     category: "カテゴリ：",
     openOfficial: "公式サイトで開く ↗",
@@ -74,7 +76,9 @@
     count: function (n) { return "（" + n + "）"; },
     found: function (q, n, note) { return "「" + q + "」で " + n + " 件見つかりました。" + (note ? note + "。" : ""); },
     none: function (q) { return "「" + q + "」は見つかりませんでした。別の言い方（例：「取消」→「キャンセル」）や、短い言葉でお試しください。"; }
+    }
   };
+  var T = STRINGS[LANG] || STRINGS.en;  // 文言の無い翻訳版は英語で表示
   var currentPage = location.pathname.split("/").pop() || "index.html";
 
   // ---------- 正規化（NFKC・小文字・カタカナ→ひらがな） ----------

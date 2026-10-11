@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""翻訳版ページ（英語 en/、ミャンマー語 my/ など）の下書きを作り、言語の切り替えリンクを付ける。
+"""翻訳版ページ（英語 en/ など）の下書きを作り、言語の切り替えリンクを付ける。
 
 使い方（どのディレクトリからでも可）:
     python case-study/araki-smart-manual/scripts/make_lang_page.py --lang en ページ.html [...]
@@ -23,11 +23,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-# (言語コード, 切り替えリンクの表示, フォルダ)。日本語が元。翻訳版を足すときはここに加える。
+# (言語コード, 切り替えリンクの表示, フォルダ)。日本語が元。翻訳版を足すときはここに加える
+# （例：ミャンマー語なら ("my", "မြန်မာ", "my/")）。
 LANGS = [
     ("ja", "日本語", ""),
     ("en", "English", "en/"),
-    ("my", "မြန်မာ", "my/"),
 ]
 TRANSLATED = [code for code, _label, folder in LANGS if folder]
 
@@ -60,7 +60,7 @@ def add_switch(html: str, code: str, page: str) -> str:
     if others:
         links = "".join(
             f'<a href="{rel(code, f, page)}" hreflang="{c}" lang="{c}" data-lang-switch>{l}</a>' for c, l, f in others)
-        switch = f'<span class="lang-switch" role="group" aria-label="Language">{links}</span>'
+        switch = f'<span class="lang-switch" role="group" aria-label="Language" translate="no">{links}</span>'
         if '<header class="site-header' in html:
             # ヘッダー：グローバルナビの直後（検索ボックスの手前）
             nav_end = html.find("</nav>", html.index('<header class="site-header'))

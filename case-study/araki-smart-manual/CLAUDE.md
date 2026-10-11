@@ -44,5 +44,6 @@
   python case-study/araki-smart-manual/scripts/translation_status.py --lang en --mark ページ.html#見出しid
   ```
 
+- 英語版を直したら `scripts/protect_japanese.py` を実行する。英語版の中の日本語（画面のボタン名・公式の記事名）を `translate="no"` で囲み、ミャンマー人スタッフが Chrome / Edge の翻訳で英語版をミャンマー語にして読んでも、日本語の画面名が残るようにする（2026-10-11 オーナー判断：ミャンマー語版は作らず、ブラウザの翻訳で読む）。
 - 検索インデックスは翻訳版の分（`assets/search-index-en.json`）も `build_search_index.py` が一緒に作る。英語の言い換えは `assets/search-synonyms-en.json`。
-- 言語を足す（例：ミャンマー語 `my/`）ときは、`make_lang_page.py` の `LANGS`、`build_search_index.py` の `TRANSLATIONS`、`assets/search.js` の文言（`T`）に加える。
+- 言語を足す（例：確認済みのミャンマー語訳を載せる `my/`）ときは、`make_lang_page.py` の `LANGS`、`build_search_index.py` の `TRANSLATIONS`、`assets/search.js` の文言（`T`）に加える。

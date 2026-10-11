@@ -12,6 +12,9 @@ Readers are front-desk staff who read English but operate HOTEL SMART, whose scr
   (or `--mark front-operations.html` for the whole page). Then rebuild the search index.
 - New Japanese page: `python scripts/make_lang_page.py --lang en new-page.html` makes `en/new-page.html` (paths fixed, language
   switch added) with the Japanese text still in it; translate it, add it to `PAGES_EN` in `build_search_index.py`, then `--mark` it.
+- After editing an English page, run `python scripts/protect_japanese.py`. It wraps the Japanese in the English pages
+  (screen labels, official titles) in `<span translate="no" lang="ja">` so that Chrome / Edge page translation
+  (used by Myanmar staff to read the English pages in Burmese) leaves it untouched. It is safe to run repeatedly.
 - Another language (for example Burmese, `my/`) uses the same mechanism: it is listed in `LANGS` in `make_lang_page.py`,
   gets its own page titles in `TRANSLATIONS` in `build_search_index.py`, its own `my/translation-sources.json`,
   and its own wording in `assets/search.js` and rules file.

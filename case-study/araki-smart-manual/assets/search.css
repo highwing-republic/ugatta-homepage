@@ -146,3 +146,7 @@ h2:target, h3:target, .site-search-flash { animation: site-search-flash 2.6s eas
   html { scroll-padding-top: 150px; }
 }
 @media print { .site-search, .manual-topbar .site-search, .site-search-hlbar { display: none !important; } mark.site-search-hl { background: none; box-shadow: none; } }
+
+
+/* 英語版トップ：ブラウザの翻訳の案内 */
+.translate-tip { margin: 1rem 0 0; max-width: 46rem; font-size: .9rem; line-height: 1.7; opacity: .92; }
