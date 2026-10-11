@@ -23,10 +23,13 @@
   var LANG = (document.documentElement.lang || "ja").toLowerCase().split("-")[0];
   var TRANSLATED = LANG !== "ja";  // 翻訳版のページ
   var EN = LANG === "en";          // 英語の語尾そろえ・よくある語の除外を使う
-  var INDEX_URL = new URL(TRANSLATED ? "search-index-" + LANG + ".json" : "search-index.json", scriptSrc).href;
-  var SYNONYMS_URL = new URL("search-synonyms.json", scriptSrc).href;
-  var SYNONYMS_LANG_URL = new URL("search-synonyms-" + LANG + ".json", scriptSrc).href;
-  var OFFICIAL_URL = new URL("official-manual-index.json", scriptSrc).href;
+  // search.js の ?v=（build_search_index.py が付ける）を検索データにも付け、古いデータがブラウザに残らないようにする
+  var VERSION = new URL(scriptSrc, location.href).search;
+  function dataUrl(name) { return new URL(name + VERSION, scriptSrc).href; }
+  var INDEX_URL = dataUrl(TRANSLATED ? "search-index-" + LANG + ".json" : "search-index.json");
+  var SYNONYMS_URL = dataUrl("search-synonyms.json");
+  var SYNONYMS_LANG_URL = dataUrl("search-synonyms-" + LANG + ".json");
+  var OFFICIAL_URL = dataUrl("official-manual-index.json");
   var OFFICIAL_PAGE = "official";
 
   // 画面の文言（日本語版／英語版）

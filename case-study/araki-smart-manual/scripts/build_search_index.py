@@ -10,12 +10,16 @@
 - 翻訳版（en/*.html など。TRANSLATIONS 参照）も同じように assets/search-index-<言語>.json に書き出す。
   翻訳版のページの検索はこちらを使う。
 
+- 最後に、全ページの assets/*.css・search.js への参照に ?v=内容のハッシュ を付け直す（ブラウザに古い
+  CSS・JS・検索データが残って、公開直後に古い検索結果が出るのを防ぐ。search.js は自分の ?v= を検索データの取得にも付ける）。
+
 運用ルール: ページを更新したら必ずこのスクリプトを再実行し、
 assets/search-index.json も同じ commit に含めること。
 Python 3 の標準ライブラリだけで動く。
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -189,10 +193,37 @@ def write(entries: list[dict], output: Path, n_pages: int) -> None:
     print(f"{output.relative_to(ROOT)}: {len(entries)} sections from {n_pages} pages")
 
 
+def file_hash(*paths: Path) -> str:
+    h = hashlib.sha256()
+    for p in paths:
+        if p.exists():
+            h.update(p.read_bytes())
+    return h.hexdigest()[:10]
+
+
+def stamp_versions() -> None:
+    """ページから assets の CSS・JS への参照に ?v=ハッシュ を付ける（内容が変わったときだけ URL が変わる）。"""
+    assets = ROOT / "assets"
+    versions = {
+        "manual.css": file_hash(assets / "manual.css"),
+        "search.css": file_hash(assets / "search.css"),
+        # 検索データ（JSON）が変わったときも search.js の URL を変え、search.js がその v を JSON の取得に付ける
+        "search.js": file_hash(assets / "search.js", *sorted(assets.glob("*.json"))),
+    }
+    ref = re.compile(r'((?:\.\./)?assets/(manual\.css|search\.css|search\.js))(?:\?v=[0-9a-f]+)?"')
+    pages = list(ROOT.glob("*.html")) + [p for lang in TRANSLATIONS for p in (ROOT / lang).glob("*.html")]
+    for page in pages:
+        html = page.read_text(encoding="utf-8")
+        new = ref.sub(lambda m: f'{m.group(1)}?v={versions[m.group(2)]}"', html)
+        if new != html:
+            page.write_text(new, encoding="utf-8", newline="\n")
+
+
 def main() -> None:
     write(build(), OUTPUT, len(PAGES))
     for lang, pages in TRANSLATIONS.items():
         write(build(pages, ROOT / lang), ROOT / "assets" / f"search-index-{lang}.json", len(pages))
+    stamp_versions()
 
 
 if __name__ == "__main__":
