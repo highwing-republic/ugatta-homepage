@@ -221,7 +221,6 @@
     color:var(--accent-ink);
     font-weight:600;
     width:26%;
-    white-space:nowrap;
   }
   table.field tr:last-child td, table.field tr:last-child th{border-bottom:none;}
   .callout{
@@ -379,7 +378,7 @@
             <tr><th>Check-in / check-out</th><td>Choose the time from the dropdown or enter it directly. From the official manual: this becomes the default when you create a reservation by hand. When a reservation imported from the site controller has no time, this time is also used</td></tr>
             <tr><th>Early check-in / check-in per guest / check-in per room</th><td>Set each one separately to <span translate="no" lang="ja">「許可しない／許可する」</span> (Do not allow / Allow). Their meanings according to the official manual are as follows (not yet confirmed at Araki Hotel).
               <ul>
-                <li><b>Early check-in</b>: Lets guests check in on the tablet before the reservation's check-in time. When set to <span translate="no" lang="ja">「許可する」</span> (Allow), choose how the time from which check-in is possible is decided: <span translate="no" lang="ja">「固定時刻」</span> (Fixed time) (up to 5 hours before the property's check-in time, in 15-minute steps) or <span translate="no" lang="ja">「相対時刻」</span> (Relative time) (30 minutes to 5 hours before the reservation's check-in time). If the previous reservation's check-out time is later, it becomes that time or later. This time is not shown to guests and is also used for the validity period of smart lock keys. The tablet shows <span translate="no" lang="ja">「チェックイン可能時間前です」</span> (It is before the check-in time) when it is earlier than this time (<a href="troubleshooting.html#checkin-error">When a guest cannot check in</a>).</li>
+                <li><b>Early check-in</b>: Lets guests check in on the tablet before the reservation's check-in time. When set to <span translate="no" lang="ja">「許可する」</span> (Allow), choose how the time from which check-in is possible is decided: <span translate="no" lang="ja">「固定時刻」</span> (Fixed time) (up to 5 hours before the property's check-in time, in 15-minute steps) or <span translate="no" lang="ja">「相対時刻」</span> (Relative time) (30 minutes to 5 hours before the reservation's check-in time). If the previous reservation's check-out time is later, it becomes that time or later. This time is not shown to guests and is also used for the validity period of smart lock keys. The tablet shows <span translate="no" lang="ja">「チェックイン可能時間前です」</span> (It is before the check-in time) when it is earlier than this time (<a href="troubleshooting.html#tablet-error">The check-in tablet shows an error</a>).</li>
                 <li><b>Check-in per guest</b>: For reservations with several guests, lets check-in go through to completion even if not all guests' information is complete. When only some guests are done, the status becomes <span translate="no" lang="ja">「一部チェックイン」</span> (Partially checked in).</li>
                 <li><b>Check-in per room</b>: For properties where staff switch the status face to face. When allowed, you can check in and check out each room of a multi-room reservation separately (for steps, see <a href="front-operations.html#scene8-room-checkin">Check-in per room</a>). It was already allowed at the annex (checked 2026-10-06, from front-operations). The setting at Tanegashima Araki Hotel needs to be checked on the real screen.</li>
               </ul>
@@ -748,7 +747,7 @@
 
           <h3 id="s9-errors" style="font-size:16px;margin:2em 0 6px;">⑧ Fixing tablet errors in the settings</h3>
           <table class="field">
-            <caption>From the official manual (for checks at the desk, see <a href="troubleshooting.html#checkin-error">When a guest cannot check in</a>)</caption>
+            <caption>From the official manual (for checks at the desk, see <a href="troubleshooting.html#tablet-error">The check-in tablet shows an error</a>)</caption>
             <tr><th><span translate="no" lang="ja">「チェックイン可能時間前です」</span> (It is before check-in time)</th><td>Allow early check-in (<a href="#s1-title">Scene 1</a>) or move that reservation's check-in time earlier. For reservations that came in from the site controller, stop automatic updates first, or the time will revert (<a href="front-operations.html#scene4-stop-auto-update">Stopping automatic updates</a>)</td></tr>
             <tr><th><span translate="no" lang="ja">「予約に部屋が割り当てられていません」</span> (No room is assigned to the reservation)</th><td>Assign a room to the reservation, or allow guests to pass through while unassigned. Even if you allow it, <span translate="no" lang="ja">「フロントスタッフにお声掛けください」</span> (Please speak to the front desk staff) appears at the end, so it is not suitable for unstaffed hours</td></tr>
             <tr><th><span translate="no" lang="ja">「チェックインコードが不正です」</span> (The check-in code is invalid)</th><td>Appears when the code is mistyped, and also for reservations whose check-in date is not today</td></tr>
@@ -1112,6 +1111,6 @@
     </footer>
   </div>
 </div>
-<script src="../assets/search.js?v=3886911cf4" defer></script>
+<script src="../assets/search.js?v=08b679272d" defer></script>
 </body>
 </html>
