@@ -98,19 +98,6 @@ mark.site-search-hl { background: var(--lab-gold-tint, #fff8e6); color: inherit;
 /* manual.css のページ：ヘッダーのナビの右に置く */
 .site-header .site-search { flex: 0 1 15rem; min-width: 10rem; }
 
-/* front-operations / startup：上部の帯 */
-.manual-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: .6rem 1rem;
-  flex-wrap: wrap;
-  background: var(--lab-navy-deep, #14293f);
-  color: var(--lab-white, #fff);
-  padding: .6rem 1rem;
-  font-weight: 700;
-}
-.manual-topbar > a { color: var(--lab-white, #fff); }
 
 /* 言語の切り替え（日本語／English／…。ヘッダー・上部バー） */
 .lang-switch { flex: 0 0 auto; display: flex; gap: .3rem; }
@@ -126,8 +113,6 @@ mark.site-search-hl { background: var(--lab-gold-tint, #fff8e6); color: inherit;
   white-space: nowrap;
 }
 .lang-switch a:hover, .lang-switch a:focus-visible { background: var(--lab-teal, #0f7c7c); border-color: var(--lab-teal, #0f7c7c); color: var(--lab-white, #fff); }
-.manual-topbar > .lang-switch { margin-left: auto; }
-.manual-topbar .site-search { flex: 0 1 18rem; min-width: 12rem; }
 
 /* 検索結果から移動した見出しを一瞬ハイライトする */
 @keyframes site-search-flash { 0%, 35% { background-color: var(--lab-gold-tint, #fff8e6); box-shadow: 0 0 0 6px var(--lab-gold-tint, #fff8e6); } 100% { background-color: transparent; box-shadow: 0 0 0 6px transparent; } }
@@ -135,8 +120,7 @@ h2:target, h3:target, .site-search-flash { animation: site-search-flash 2.6s eas
 
 @media (max-width: 860px) {
   .site-header .site-search { flex: 1 1 12rem; margin-left: auto; }
-  .manual-topbar .site-search { flex: 1 1 100%; }
-  .manual-topbar .site-search-results { left: 0; right: 0; width: auto; }
+  .site-header .site-search-results { left: 0; right: 0; width: auto; }
   html { scroll-padding-top: 120px; }
 }
 @media (max-width: 580px) {
@@ -145,7 +129,7 @@ h2:target, h3:target, .site-search-flash { animation: site-search-flash 2.6s eas
   .site-search-results { left: 0; right: 0; width: auto; }
   html { scroll-padding-top: 150px; }
 }
-@media print { .site-search, .manual-topbar .site-search, .site-search-hlbar { display: none !important; } mark.site-search-hl { background: none; box-shadow: none; } }
+@media print { .site-search, .site-search-hlbar { display: none !important; } mark.site-search-hl { background: none; box-shadow: none; } }
 
 
 /* 英語版トップ：ブラウザの翻訳の案内 */

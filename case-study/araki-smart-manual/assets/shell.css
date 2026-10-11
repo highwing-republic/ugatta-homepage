@@ -1,0 +1,73 @@
+/* かんたんフロントマニュアル 共通の外枠（全ページで manual.css / 各ページの <style> より先に読む）
+   - 配色・書体のトークン（--lab-*）はここだけで定義する（Shukuhaku DX Lab と同じ紺・青緑・ゴシック体）。
+   - ヘッダー（ロゴ・ブランド・主要メニュー・言語切替・検索）は scripts/make_site_header.py が全ページに同じ物を入れる。 */
+:root {
+  /* Brand tokens matched to Shukuhaku DX Lab (lab.ugatta-llc.com, css/site-shell.css) */
+  --lab-font-sans: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --lab-navy: #17324d;
+  --lab-navy-deep: #14293f;
+  --lab-teal: #2b6474;
+  --lab-teal-tint: #e7f1f3;
+  --lab-surface: #f5f7f8;
+  --lab-surface-soft: #eef2f5;
+  --lab-card: #fff;
+  --lab-white: #fff;
+  --lab-border: #dbe3e8;
+  --lab-border-strong: #c4d3dc;
+  --lab-border-input: #b8c6cf;
+  --lab-ink: #22303b;
+  --lab-ink-soft: #5a6875;
+  --lab-on-dark: #b9c8d4;
+  --lab-gold: #b8913f;
+  --lab-gold-tint: #fff8e6;
+  --lab-gold-ink: #6e5324;
+  /* Manual-only states (no Lab equivalent) */
+  --lab-red: #9c3d30;
+  --lab-red-tint: #f2e8e5;
+  --lab-green: #557335;
+  --lab-green-tint: #eef4df;
+}
+html { scroll-padding-top: 76px; }
+
+/* ヘッダー（全ページ共通） */
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 1rem; top: 1rem; z-index: 99; background: var(--lab-card); padding: .7rem 1rem; }
+.site-header { position: sticky; top: 0; z-index: 20; background: rgba(20, 41, 63, .97); color: var(--lab-white); box-shadow: 0 3px 14px rgba(0,0,0,.17); }
+.header-inner { max-width: 1180px; margin: auto; padding: .7rem 1.1rem; display: flex; align-items: center; gap: 1.2rem; }
+.brand { color: var(--lab-white); text-decoration: none; font-weight: 700; letter-spacing: .03em; white-space: nowrap; }
+.brand small { display: block; font-size: .68rem; font-weight: 500; color: var(--lab-on-dark); line-height: 1.3; }
+.global-nav { margin-left: auto; display: flex; gap: .2rem; flex-wrap: wrap; justify-content: flex-end; }
+.global-nav a { color: var(--lab-surface-soft); text-decoration: none; padding: .35rem .55rem; border-radius: 6px; font-size: .9rem; }
+.global-nav a:hover, .global-nav a[aria-current="page"] { background: var(--lab-teal); color: var(--lab-white); }
+.brand { display: flex; align-items: center; gap: .6rem; }
+.brand-mark { height: 38px; width: auto; flex: 0 0 auto; filter: invert(1) brightness(1.1); }  /* ロゴ（墨色）を白抜きにして紺のヘッダーに置く */
+.header-inner { flex-wrap: wrap; gap: .5rem 1rem; }
+.global-nav a { white-space: nowrap; }
+.site-header .site-search { flex: 0 1 14rem; min-width: 10rem; }
+.site-header .lang-switch { flex: 0 0 auto; }
+
+/* 860px 以下：メニューを隠さず、2 行目に小さく並べる */
+@media (max-width: 860px) {
+  html { scroll-padding-top: 108px; }
+  .header-inner { padding: .5rem .75rem; }
+  .brand-mark { height: 32px; }
+  .site-header .site-search { flex: 1 1 10rem; margin-left: auto; }
+  .global-nav { order: 10; flex: 1 1 100%; margin: 0 -.25rem; justify-content: flex-start; gap: 0; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .global-nav::-webkit-scrollbar { display: none; }
+  .global-nav a { font-size: .82rem; padding: .25rem .45rem; }
+}
+@media print { .site-header { display: none !important; } }
+
+/* シーン別ページ（フロント運用・初期設定）の目次：スマホでは折りたたみ、PCでは常に開く（search.js が open を付ける） */
+nav.toc details > summary { cursor: pointer; list-style: none; }
+nav.toc details > summary::-webkit-details-marker { display: none; }
+@media (min-width: 861px) {
+  nav.toc details > summary { pointer-events: none; }
+}
+@media (max-width: 860px) {
+  nav.toc { display: block !important; position: static; height: auto; padding: .4rem 1rem; border-right: 0; border-bottom: 1px solid var(--lab-border); background: var(--lab-card); }
+  nav.toc details > summary { padding: .5rem 0; margin: 0; font-size: .9rem; color: var(--lab-ink); }
+  nav.toc details > summary::after { content: "▾"; float: right; color: var(--lab-ink-soft); }
+  nav.toc details[open] > summary::after { content: "▴"; }
+  nav.toc ol { padding-bottom: .5rem; }
+}

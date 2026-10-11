@@ -22,6 +22,25 @@
   python -m http.server 8000   # case-study/araki-smart-manual で実行し、http://localhost:8000/ を開く
   ```
 
+## 見た目（配色・書体）とヘッダー
+
+- 配色・書体は Shukuhaku DX Lab と同じ紺・青緑・ゴシック体（Noto Sans JP）。色と書体のトークン（`--lab-*`）は `assets/shell.css` だけで定義する。`assets/manual.css` と フロント運用編・初期設定編の `<style>` は、そのトークンを参照するだけで色の値を書かない（2026-10-11：一時 水墨画風にしたが、オーナーの指示で元の色調に戻した）。
+- ヘッダー（ロゴ・ブランド・主要メニュー・言語切替・検索）は全ページ共通。メニューの項目やページを変えたら、次を実行してから `build_search_index.py` を実行する。
+
+  ```
+  python case-study/araki-smart-manual/scripts/make_site_header.py
+  ```
+
+- 860px 以下ではメニューを隠さず 2 行目に横スクロールで出す。フロント運用編・初期設定編の目次（`nav.toc` の `details[data-toc]`）はスマホで折りたたみ、PC では search.js が常に開く。
+- 各ページのフッターの更新日は、commit の直前に次で git の日付にそろえる（手で書かない）。
+
+  ```
+  python case-study/araki-smart-manual/scripts/update_page_dates.py
+  ```
+
+- 画像には `loading="lazy" decoding="async"` を付ける（フロント運用編は 164 枚あるため）。
+- あらきホテルのロゴは `assets/logo-araki.svg`（墨色。紺の背景では CSS の invert で白抜き）。トップのヒーローの背景は `assets/hero-bg.webp`（港から見たホテルの写真。元の色のまま幅 1920 に縮小、スマホ用は hero-bg-960.webp）。紺の帯を重ねて白い文字と検索ボックスを載せる。
+
 ## 公式オンラインマニュアルの記事索引
 
 - `assets/official-manual-index.json` に、HOTEL SMART 公式オンラインマニュアル（pms-manual.xxxaz.jp）の記事名・カテゴリ・URLを置く。検索でヒットすると「公式マニュアル」として表示し、公式サイトの記事を別タブで開く。
