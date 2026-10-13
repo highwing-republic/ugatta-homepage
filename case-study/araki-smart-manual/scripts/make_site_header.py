@@ -24,6 +24,7 @@ NAV = {
         ("troubleshooting.html", "困ったとき"),
         ("glossary.html", "用語集"),
         ("quick-reference.html", "早見表"),
+        ("how-to-use.html", "使い方"),
     ],
     "en": [
         ("daily-operations.html", "Daily tasks"),
@@ -33,6 +34,7 @@ NAV = {
         ("troubleshooting.html", "Troubleshooting"),
         ("glossary.html", "Glossary"),
         ("quick-reference.html", "Quick reference"),
+        ("how-to-use.html", "How to use"),
     ],
 }
 BRAND = {"ja": ("あらきホテル", "かんたんフロントマニュアル"), "en": ("Araki Hotel", "Front Desk Quick Manual")}

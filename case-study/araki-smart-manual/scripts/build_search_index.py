@@ -41,6 +41,7 @@ PAGES = [
     ("startup.html", "初期設定"),
     ("quick-reference.html", "早見表"),
     ("glossary.html", "用語集"),
+    ("how-to-use.html", "使い方"),
     ("HOTEL-SMART-front-manual-reference.html", "公式資料との対応"),
 ]
 
@@ -55,6 +56,7 @@ PAGES_EN = [
     ("startup.html", "Initial setup"),
     ("quick-reference.html", "Quick reference"),
     ("glossary.html", "Glossary"),
+    ("how-to-use.html", "How to use"),
     ("HOTEL-SMART-front-manual-reference.html", "Official documents map"),
 ]
 TRANSLATIONS = {"en": PAGES_EN}
