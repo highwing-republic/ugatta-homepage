@@ -24,9 +24,9 @@
 .home-service-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;padding:0;margin:0}
 .home-service-card,.home-case-card{position:relative;height:100%;background:var(--white);border:1px solid var(--line)}
 .home-service-card{display:flex;flex-direction:column;border-radius:4px}
-.home-service-card figure,.home-case-card figure{position:relative;aspect-ratio:960/450;margin:0;background:var(--paper-soft)}
-.home-service-card picture,.home-case-card picture{display:block;height:100%}
-.home-service-card img,.home-case-card img{width:100%;height:100%;object-fit:cover}
+.home-service-card figure{position:relative;aspect-ratio:960/450;margin:0;background:var(--paper-soft)}
+.home-service-card picture{display:block;height:100%}
+.home-service-card img{width:100%;height:100%;object-fit:cover}
 .home-service-card figure{aspect-ratio:8/3;border-radius:4px 4px 0 0;overflow:hidden;flex-shrink:0}
 .home-service-card__body{position:relative;display:flex;flex-direction:column;align-items:flex-start;flex:1;padding:32px 20px 22px}
 .home-service-icon{position:absolute;top:-25px;left:18px;display:grid;place-items:center;width:46px;height:46px;border:2px solid var(--white);border-radius:50%;background:var(--accent-deep);color:var(--white)}
@@ -54,11 +54,12 @@
 .home-cases__grid{display:grid;grid-template-columns:.92fr 1fr 1fr;gap:32px;align-items:start}
 .home-cases__intro .section-title{word-break:keep-all;overflow-wrap:anywhere}
 .home-cases__intro>p:not(.eyebrow){margin:22px 0 28px;color:var(--ink-soft);font-size:15px}
-.home-cases__image-note{grid-column:2/-1;margin:0;color:var(--ink-soft);font-size:12px;text-align:right}
-.home-case-card{display:flex;flex-direction:column}
-.home-case-card figure{flex-shrink:0;aspect-ratio:16/9}
-.home-case-card__body{padding:24px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+/* Text-only case cards: a top accent rule (as on the contact panel) replaces the photo. */
+.home-case-card{display:flex;flex-direction:column;border-top:2px solid var(--accent)}
+.home-case-card__body{padding:36px 24px 30px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
 .home-case-card h3{font-size:22px}
+.home-case-card .home-case-meta{margin-top:auto}
+.home-case-card p{margin-bottom:28px}
 .home-case-tags{display:flex;gap:8px;margin:0 0 14px;padding:0;list-style:none}
 .home-case-tags li{padding:3px 9px;background:var(--paper-soft);color:var(--accent-deep);font-size:11px}
 .home-case-meta{width:100%;margin-top:22px;padding-top:16px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:12px;line-height:1.8}
@@ -97,7 +98,6 @@
   .home-cases__intro{grid-column:1/-1;max-width:660px}
   .home-service-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
   .home-service-card h3{font-size:22px}
-  .home-cases__image-note{grid-column:1/-1}
   .home-lab,.home-cta__panel{padding:40px;gap:32px}
   .home-cta__panel{grid-template-columns:1fr}
   .home-cta__action{align-items:flex-start}
@@ -158,8 +158,3 @@
   .home-cta__action,.home-cta__action .button{width:100%}
   .home-cta__action .button{padding-inline:12px;font-size:12px}
 }
-
-/* Keep the faces and working materials within the existing case photo frame. */
-.home-case-card figure{aspect-ratio:5/3}
-.home-case-card picture{position:absolute;inset:0}
-.home-case-card img{object-position:center 30%}
