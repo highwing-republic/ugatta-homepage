@@ -2,6 +2,7 @@
 
 <html lang="ja">
 <head>
+<script src="js/script.js?v=20261014b"></script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=GT-M3S9S5D7"></script>
 <script>
@@ -33,8 +34,9 @@
 <link href="apple-touch-icon.png" rel="apple-touch-icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css?v=20261003k" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css?v=20261014b" rel="stylesheet"/>
+<link href="css/home.css?v=20261014d" rel="stylesheet">
 <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -72,7 +74,7 @@
   }
   </script>
 </head>
-<body>
+<body class="home-page">
 <a class="skip-link" href="#main">本文へ移動</a>
 <header class="site-header" data-header="">
 <div class="container header-inner">
@@ -93,39 +95,65 @@
 </div>
 </header>
 <main id="main">
-<section class="hero hero--home">
-<div class="container hero-grid">
-<div class="hero-copy">
+<section aria-labelledby="home-title" class="home-hero">
+<div class="container home-hero__inner">
+<div class="home-hero__copy">
 <p class="eyebrow">宿泊・観光DX / 業務改善 / 集客</p>
-<h1><span class="hero-title-line">宿泊・観光事業者の</span><span class="hero-title-line hero-title-line--accent">DX・業務改善・<wbr/>集客を支援</span></h1>
-<p class="hero-kicker">現場を見て、仕組みをつくる。</p>
-<p class="hero-lead">旅館・ホテルの予約管理やフロント業務の見直しから、宿泊管理システム（PMS）の選定・導入、スタッフ研修、体験商品の企画、海外OTAへの掲載まで。課題と業務の流れを確認し、現場で実際に使える仕組みへ整えます。</p>
-<div class="hero-actions">
+<h1 class="home-hero__title" id="home-title"><span>宿泊・観光の</span><span><em>DX</em>で、<wbr/>地域の未来を</span><span>ともにつくる。</span></h1>
+<p class="home-hero__lead">旅館・ホテルの予約管理やフロント業務の見直しから、PMSの選定・導入、スタッフ研修、体験商品の企画、海外OTAへの掲載まで。現場で実際に使える仕組みへ整えます。</p>
+<div class="home-hero__actions">
 <a class="button button--large" data-analytics-event="contact_page_click" data-contact-destination="contact_page" href="contact.html">DX・集客の課題を相談する<span aria-hidden="true">→</span></a>
 <a class="text-link" href="ugatta_case_studies.html">旅館の支援事例を見る<span aria-hidden="true">↗</span></a>
 </div>
 </div>
-<aside aria-label="UGATTAの支援領域" class="hero-visual">
-<p class="hero-aside-label">OUR WORK</p>
-<ol class="hero-work-list">
-<li><span>01</span><strong>予約・<wbr/>フロント業務<wbr/>見直し</strong></li>
-<li><span>02</span><strong>PMSの選定・<wbr/>導入</strong></li>
-<li><span>03</span><strong>研修・<wbr/>商品企画</strong></li>
-<li><span>04</span><strong>海外OTA・<wbr/>Web集客</strong></li>
-</ol>
-</aside>
 </div>
-<div aria-hidden="true" class="container hero-rule"></div>
+<figure class="home-hero__media">
+<picture>
+<source height="600" media="(max-width: 620px)" sizes="100vw" srcset="images/home/hero-mobile-480.webp 480w, images/home/hero-mobile-800.webp 800w" type="image/webp" width="800"/>
+<source height="600" media="(max-width: 620px)" srcset="images/home/hero-mobile-800.jpg" width="800"/>
+<source sizes="(max-width: 900px) 100vw, 56vw" srcset="images/home/hero-pc-1024.webp 1024w, images/home/hero-pc-1536.webp 1536w" type="image/webp"/>
+<img alt="" decoding="async" fetchpriority="high" height="1024" src="images/home/hero-pc-1536.jpg" width="1536"/>
+</picture>
+<figcaption class="home-image-credit">画像はイメージです</figcaption>
+</figure>
 </section>
-<section class="section intro-section">
-<div class="container intro-grid reveal">
-<div>
+<section class="section home-services"><div class="container"><div class="section-heading"><div><p class="eyebrow">事業内容</p><h2 class="section-title">DX・業務改善から<wbr>集客まで、<wbr>4つの支援領域</h2><p class="home-section-description">宿泊・観光の現場に合わせて、必要な支援を一緒に考えます。</p></div><a class="text-link" href="services.html">サービス一覧を見る<span aria-hidden="true">→</span></a></div><ul class="home-service-cards">
+<li><article class="home-service-card">
+<figure><picture><source sizes="(max-width: 620px) calc(100vw - 32px), (max-width: 900px) calc((100vw - 76px) / 2), (max-width: 1100px) calc((100vw - 96px) / 2), (max-width: 1244px) calc((100vw - 132px) / 4), 278px" srcset="images/home/service-dx-480.webp 480w, images/home/service-dx-800.webp 800w, images/home/service-dx.webp 1200w" type="image/webp"/><img alt="" decoding="async" height="675" loading="lazy" src="images/home/service-dx.jpg" width="1200"/></picture></figure>
+<div class="home-service-card__body">
+<span class="home-service-icon" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24"><path d="M4 20h16M6 17v-5M10 17V8M14 17v-7M18 17V4"/></svg></span>
+<h3><a href="services.html#dx">宿泊施設のDX・業務改善支援</a></h3>
+<p>予約、フロント、バックオフィスを整理し、PMSの選定・移行・運用定着まで支援します。</p><span aria-hidden="true" class="home-card-more">詳しく見る →</span>
+</div></article></li>
+<li><article class="home-service-card">
+<figure><picture><source sizes="(max-width: 620px) calc(100vw - 32px), (max-width: 900px) calc((100vw - 76px) / 2), (max-width: 1100px) calc((100vw - 96px) / 2), (max-width: 1244px) calc((100vw - 132px) / 4), 278px" srcset="images/home/service-training-480.webp 480w, images/home/service-training-800.webp 800w, images/home/service-training.webp 1200w" type="image/webp"/><img alt="" decoding="async" height="675" loading="lazy" src="images/home/service-training.jpg" width="1200"/></picture></figure>
+<div class="home-service-card__body">
+<span class="home-service-icon" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8M12 17v4"/></svg></span>
+<h3><a href="services.html#training">生成AI・デジタルツール研修</a></h3>
+<p>操作方法だけでなく、日々のどの業務に取り入れるかを整理し、現場での活用につなげます。</p><span aria-hidden="true" class="home-card-more">詳しく見る →</span>
+</div></article></li>
+<li><article class="home-service-card">
+<figure><picture><source sizes="(max-width: 620px) calc(100vw - 32px), (max-width: 900px) calc((100vw - 76px) / 2), (max-width: 1100px) calc((100vw - 96px) / 2), (max-width: 1244px) calc((100vw - 132px) / 4), 278px" srcset="images/home/service-product-480.webp 480w, images/home/service-product-800.webp 800w, images/home/service-product.webp 1200w" type="image/webp"/><img alt="" decoding="async" height="675" loading="lazy" src="images/home/service-product.jpg" width="1200"/></picture></figure>
+<div class="home-service-card__body">
+<span class="home-service-icon" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M8 13a6 6 0 1 1 8 0c-1 1-1 2-1 3H9c0-1 0-2-1-3zM12 1v1"/></svg></span>
+<h3><a href="services.html#business">体験商品・サービス開発</a></h3>
+<p>地域資源や施設の強みを整理し、市場調査から商品企画、販売方法の検討まで支援します。</p><span aria-hidden="true" class="home-card-more">詳しく見る →</span>
+</div></article></li>
+<li><article class="home-service-card">
+<figure><picture><source sizes="(max-width: 620px) calc(100vw - 32px), (max-width: 900px) calc((100vw - 76px) / 2), (max-width: 1100px) calc((100vw - 96px) / 2), (max-width: 1244px) calc((100vw - 132px) / 4), 278px" srcset="images/home/service-inbound-480.webp 480w, images/home/service-inbound-800.webp 800w, images/home/service-inbound.webp 1200w" type="image/webp"/><img alt="" decoding="async" height="675" loading="lazy" src="images/home/service-inbound.jpg" width="1200"/></picture></figure>
+<div class="home-service-card__body">
+<span class="home-service-icon" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 6h14M5 18h14"/></svg></span>
+<h3><a href="services.html#marketing">インバウンド集客・海外OTA支援</a></h3>
+<p>商品の見せ方、写真・説明文、海外OTAへの掲載、Webでの情報発信を整えます。</p><span aria-hidden="true" class="home-card-more">詳しく見る →</span>
+</div></article></li>
+</ul></div></section>
+<section class="section home-strength-section"><div class="container home-strength">
+<div class="home-strength__intro">
 <p class="eyebrow">UGATTAについて</p>
-<h2 class="section-title section-title--left">現場を見て、必要な仕組みを一緒につくる。</h2>
-</div>
-<div class="intro-copy">
+<h2 class="section-title">現場を見て、必要な仕組みを一緒につくる。</h2>
+
 <p class="lead-copy">資料や数字だけで判断せず、予約、フロント、バックオフィスなど、日々の仕事や人の動きを確認します。</p>
-<div aria-label="業務を見るときの視点" class="question-lines">
+<div aria-label="業務を見るときの視点" class="home-strength__questions" role="group">
 <p>予約情報を複数の台帳へ入力している。</p>
 <p>PMSを切り替えたいが、選び方や移行手順が分からない。</p>
 <p>海外向けの体験商品を、どこでどう販売するか決まらない。</p>
@@ -133,73 +161,75 @@
 <p>UGATTAは、手順の見直しで解決できることと、システムや研修が必要なことを整理し、現場に無理なく定着する方法を一緒に考えます。ツールを導入すること自体を目的にせず、実際の業務に合った仕組みづくりを支援します。</p>
 <a class="text-link" href="about.html">会社概要を見る<span aria-hidden="true">→</span></a>
 </div>
+<ul class="home-strength__list">
+<li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg><h3>現場を見る</h3><p>資料だけで判断せず、日々の仕事や人の動きを確認します。</p></li>
+<li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"></path></svg><h3>分かる言葉で話す</h3><p>専門用語を増やさず、判断に必要なことを分かりやすくお伝えします。</p></li>
+<li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 3v6M8 6l4 3 4-3"></path><path d="M5 21l2-9h10l2 9z"></path></svg><h3>小さく試す</h3><p>最初から大きく変えず、試せる範囲から始めて見直します。</p></li>
+</ul>
+</div></section>
+<section class="section home-cases"><div class="container home-cases__grid">
+<div class="home-cases__intro">
+<p class="eyebrow">支援事例</p>
+<h2 class="section-title">旅館のDX・<wbr/>インバウンド<wbr/>支援事例</h2>
+<p>宿泊施設で実際にご相談いただいた課題と、UGATTAが担当した支援の範囲をご紹介します。施設名など一部の情報は匿名化しています。</p>
+<a class="text-link" href="ugatta_case_studies.html">支援事例をもっと見る →</a>
 </div>
-</section>
-<section class="section section--tint">
-<div class="container">
-<div class="section-heading reveal">
-<div><p class="eyebrow">事業内容</p><h2 class="section-title">DX・業務改善から集客まで、4つの支援領域</h2></div>
-<a class="text-link" href="services.html">詳しく見る<span aria-hidden="true">→</span></a>
-</div>
-<div class="service-grid reveal">
-<a class="service-tile" href="services.html#dx"><span class="service-index">01</span><h3>宿泊施設のDX・業務改善支援</h3><p>予約、フロント、バックオフィスを整理し、PMSの選定・移行・運用定着まで支援します。</p><span class="tile-arrow">↗</span></a>
-<a class="service-tile" href="services.html#training"><span class="service-index">02</span><h3>生成AI・デジタルツール研修</h3><p>操作方法だけでなく、日々のどの業務に取り入れるかを整理し、現場での活用につなげます。</p><span class="tile-arrow">↗</span></a>
-<a class="service-tile" href="services.html#business"><span class="service-index">03</span><h3>体験商品・サービス開発</h3><p>地域資源や施設の強みを整理し、市場調査から商品企画、販売方法の検討まで支援します。</p><span class="tile-arrow">↗</span></a>
-<a class="service-tile" href="services.html#marketing"><span class="service-index">04</span><h3>インバウンド集客・海外OTA支援</h3><p>商品の見せ方、写真・説明文、海外OTAへの掲載、Webでの情報発信を整えます。</p><span class="tile-arrow">↗</span></a>
-</div>
-</div>
-</section>
-<section class="section section--dark">
-<div class="container">
-<div class="section-heading section-heading--light reveal">
-<div><p class="eyebrow eyebrow--light">支援事例</p><h2 class="section-title section-title--light">旅館のDX・インバウンド支援事例</h2></div>
-<a class="text-link text-link--light" href="ugatta_case_studies.html">すべての事例を見る<span aria-hidden="true">→</span></a>
-</div>
-<div class="case-preview-grid reveal">
-<article class="case-preview"><span class="case-label">旅館 / インバウンド</span><h3>旅館のインバウンド商品造成と海外OTA掲載支援</h3><p>体験商品の企画から、写真・説明文の整理、海外OTAへの掲載と運用まで。</p><a href="ugatta_case_studies.html#case-inbound">事例を読む<span aria-hidden="true">↗</span></a></article>
-<article class="case-preview"><span class="case-label">旅館 / DX</span><h3>旅館のPMS刷新と業務フロー見直し</h3><p>業務整理からPMS選定、データ移行、スタッフ研修まで。</p><a href="ugatta_case_studies.html#case-dx">事例を読む<span aria-hidden="true">↗</span></a></article>
-</div>
-</div>
-</section>
-<section class="section process-section">
-<div class="container">
-<div class="section-heading reveal">
-<div><p class="eyebrow">進め方</p><h2 class="section-title">ご相談から導入・運用までの進め方</h2></div>
-<p class="section-description">必要なことを、必要な順番で。最初から大きく変えず、動かせるところから始めます。</p>
-</div>
-<ol class="process-list reveal">
-<li><span>01</span><div><h3>現状を確認する</h3><p>仕事の流れと困りごとを確認</p></div></li>
-<li><span>02</span><div><h3>優先順位を決める</h3><p>先に取り組む課題と進め方を整理</p></div></li>
-<li><span>03</span><div><h3>導入・実行する</h3><p>ツール導入、研修、商品企画などを実施</p></div></li>
-<li><span>04</span><div><h3>運用を確認する</h3><p>使い方を見直し、続けられる形に調整</p></div></li>
-</ol>
-</div>
-</section>
-<section class="section tool-section">
-<div class="container tool-panel reveal">
+<article class="home-case-card">
+<figure><picture><source sizes="(max-width: 620px) calc(100vw - 32px), (max-width: 900px) calc((100vw - 80px) / 2), (max-width: 1100px) calc((100vw - 100px) / 2), (max-width: 1244px) calc((100vw - 128px) / 2.92), 382px" srcset="images/home/case-pms-480.webp 480w, images/home/case-pms-800.webp 800w, images/home/case-pms.webp 1200w" type="image/webp"/><img alt="旅館の受付でスタッフと相談しながら業務改善を検討する様子（イメージ）" decoding="async" height="899" loading="lazy" src="images/home/case-pms.jpg" width="1200"/></picture></figure>
+<div class="home-case-card__body">
+<ul class="home-case-tags"><li>旅館</li><li>DX</li></ul>
+<h3><a href="ugatta_case_studies.html#case-dx">旅館のPMS刷新と<wbr/>業務フロー見直し</a></h3>
+<p>業務を整理してからクラウド型PMSを選定し、データ移行、新しい手順づくり、スタッフ研修まで支援しました。</p>
+<div class="home-case-meta"><span>九州エリア・中規模旅館</span><b>成果物：運用マニュアル</b></div>
+<span aria-hidden="true" class="home-card-more">事例を読む ↗</span></div>
+</article>
+<article class="home-case-card">
+<figure><picture><source sizes="(max-width: 620px) calc(100vw - 32px), (max-width: 900px) calc((100vw - 80px) / 2), (max-width: 1100px) calc((100vw - 100px) / 2), (max-width: 1244px) calc((100vw - 128px) / 2.92), 382px" srcset="images/home/case-inbound-480.webp 480w, images/home/case-inbound-800.webp 800w, images/home/case-inbound.webp 1200w" type="image/webp"/><img alt="旅館で地図やパンフレットを広げ、体験商品の企画を相談する様子（イメージ）" decoding="async" height="794" loading="lazy" src="images/home/case-inbound.jpg" width="1200"/></picture></figure>
+<div class="home-case-card__body">
+<ul class="home-case-tags"><li>旅館</li><li>インバウンド</li></ul>
+<h3><a href="ugatta_case_studies.html#case-inbound">旅館のインバウンド商品造成と<wbr/>海外OTA掲載支援</a></h3>
+<p>地域と施設の強みを整理して体験商品を企画し、写真・説明文の整理から海外OTAへの掲載まで進めました。</p>
+<div class="home-case-meta"><span>中四国エリア・中規模旅館</span><b>成果物：海外OTA掲載ページ</b></div>
+<span aria-hidden="true" class="home-card-more">事例を読む ↗</span></div>
+</article>
+<p class="home-cases__image-note">写真はイメージです</p>
+</div></section>
+<section class="section tool-section"><div class="container"><div class="home-lab">
 <div>
 <p class="eyebrow">宿泊DXラボ</p>
-<h2>宿泊DXラボ ｜<br/>現場のヒントが見つかる実践ツールとデータ</h2>
-<p>自社のDX課題を整理する診断ツールや、観光市場の変化を捉える統計データなどを実験的に公開しています。</p>
-<a class="button button--outline" data-analytics-event="lab_click" href="https://lab.ugatta-llc.com/">宿泊DXラボを見る<span aria-hidden="true">→</span></a>
+<h2>宿泊DXラボ ｜ 現場のヒントが見つかる実践ツールとデータ</h2>
+<p>自社のDX課題を整理する診断ツールや、観光市場の変化を捉える統計データなどを、UGATTAが運営する別サイトで実験的に公開しています。</p>
 </div>
-</div>
-</section>
-<section class="section qa-section">
-<div class="container qa-grid reveal">
+<div class="home-lab__action"><a class="button button--outline" data-analytics-event="lab_click" href="https://lab.ugatta-llc.com/">宿泊DXラボを見る →</a><small>lab.ugatta-llc.com（別サイトが開きます）</small></div>
+</div></div></section>
+<section class="section home-process"><div class="container"><div class="section-heading"><div><p class="eyebrow">進め方</p><h2 class="section-title">ご相談から導入・運用までの進め方</h2></div><p class="section-description">必要なことを、必要な順番で。最初から大きく変えず、動かせるところから始めます。</p></div><ol class="home-flow">
+<li><span>01</span><h3>現状を確認する</h3><p>仕事の流れと困りごとを確認</p></li>
+<li><span>02</span><h3>優先順位を決める</h3><p>先に取り組む課題と進め方を整理</p></li>
+<li><span>03</span><h3>導入・実行する</h3><p>ツール導入、研修、商品企画などを実施</p></li>
+<li><span>04</span><h3>運用を確認する</h3><p>使い方を見直し、続けられる形に調整</p></li>
+</ol></div></section>
+<section class="section home-faq-section">
+<div class="container home-faq">
 <div><p class="eyebrow">よくあるご質問</p><h2 class="section-title section-title--left">DX・集客支援に<wbr/>関する<wbr/>よくあるご質問</h2><p class="section-description">支援の範囲や進め方について、よくいただく質問です。</p></div>
 <div class="accordion-list">
-<details><summary>UGATTAは何を支援する会社ですか？</summary><p>DX・業務改善、人材育成、事業・サービス開発、マーケティングを支援しています。宿泊・観光分野の実務経験を生かした支援にも取り組んでいます。</p></details>
+<details><summary>UGATTAは何を支援する会社ですか？</summary><p>宿泊施設のDX・業務改善、生成AI・デジタルツール研修、体験商品・サービス開発、インバウンド集客・海外OTA支援の4つを、現場の状況に合わせて行います。</p></details>
 <details><summary>システムを導入するか決まっていなくても相談できますか？</summary><p>はい。まず今の業務を確認し、システムが必要か、手順の見直しで解決できるかを整理します。</p></details>
 <details><summary>インバウンド支援では何をしますか？</summary><p>体験商品の企画、海外OTAへの掲載、Webでの情報発信などを、施設や地域の状況に合わせて行います。</p></details>
 </div>
 </div>
 </section>
-<section class="cta-section reveal">
+<section class="home-cta">
 <div class="container">
-<div class="cta-panel">
-<div><p class="eyebrow">お問い合わせ</p><h2>宿泊・観光のDX・集客について相談する</h2><p>予約管理、PMSの切り替え、スタッフ研修、海外向け商品の販売など、現在の状況とお困りごとをお知らせください。</p></div>
-<a class="button button--large" data-analytics-event="contact_page_click" data-contact-destination="contact_page" href="contact.html">相談方法を確認する<span aria-hidden="true">→</span></a>
+<div class="home-cta__panel">
+<div>
+<p class="eyebrow">お問い合わせ</p>
+<h2>宿泊・観光のDXについて、<br/>まずはお気軽にご相談ください。</h2>
+<p>予約管理、PMSの切り替え、スタッフ研修、海外向け商品の販売など、課題が整理できていない段階からご相談いただけます。</p>
+</div>
+<div class="home-cta__action">
+<a class="button button--large" data-analytics-event="contact_page_click" data-contact-destination="contact_page" href="contact.html">お問い合わせ・ご相談はこちら →</a>
+<small>Googleフォームでお受けしています。<br/>営業目的のみのご連絡はご遠慮ください。</small>
+</div>
 </div>
 </div>
 </section>
@@ -214,6 +244,5 @@
 </div>
 <div class="container footer-bottom"><span>© 2026 合同会社UGATTA</span></div>
 </footer>
-<script defer="" src="js/script.js"></script>
 </body>
 </html>
