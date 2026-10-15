@@ -59,7 +59,9 @@ class HomeRedesignTests(unittest.TestCase):
         self.assertEqual(len(heroes), 1)
         self.assertNotEqual(heroes[0].get("loading"), "lazy")
         for img in images:
-            if img not in heroes:
+            if img.get("src") == "images/brand/ugatta-noren-mark-256.png":
+                self.assertNotEqual(img.get("loading"), "lazy")
+            elif img not in heroes:
                 self.assertEqual(img.get("loading"), "lazy")
         self.assertEqual(heroes[0]["src"], "images/brand/ugatta-noren-hero.png")
         self.assertTrue(heroes[0]["alt"].strip())
@@ -85,6 +87,24 @@ class HomeRedesignTests(unittest.TestCase):
         self.assertTrue(any(href.startswith("css/home.css?") for href in styles))
         for filename in ("services.html", "about.html", "ugatta_case_studies.html", "contact.html", "404.html"):
             self.assertFalse(any(link.get("href", "").startswith("css/home.css") for link in Elements(filename).tagged("link")))
+
+    def test_public_shell_uses_the_noren_header_brand(self):
+        for filename in ("index.html", "services.html", "about.html", "ugatta_case_studies.html", "contact.html", "404.html"):
+            with self.subTest(filename=filename):
+                page = Elements(filename)
+                images = page.tagged("img")
+                sources = page.tagged("source")
+                self.assertTrue(any(
+                    image.get("src") == "images/brand/ugatta-noren-mark-256.png"
+                    and image.get("width") == "256"
+                    and image.get("height") == "187"
+                    for image in images
+                ))
+                self.assertTrue(any(
+                    source.get("srcset") == "images/brand/ugatta-noren-mark-256.webp"
+                    and source.get("type") == "image/webp"
+                    for source in sources
+                ))
 
 
 if __name__ == "__main__":
