@@ -61,7 +61,11 @@ class HomeRedesignTests(unittest.TestCase):
         for img in images:
             if img not in heroes:
                 self.assertEqual(img.get("loading"), "lazy")
-        self.assertTrue(any(s.get("media") == "(max-width: 620px)" for s in self.home.tagged("source")))
+        self.assertEqual(heroes[0]["src"], "images/brand/ugatta-noren-hero.png")
+        self.assertTrue(heroes[0]["alt"].strip())
+        self.assertTrue(any("images/brand/ugatta-noren-hero.webp 1000w" in s.get("srcset", "")
+                            and s.get("type") == "image/webp"
+                            for s in self.home.tagged("source")))
 
     def test_home_retains_three_faqs_and_one_primary_heading(self):
         self.assertEqual(len(self.home.tagged("h1")), 1)
