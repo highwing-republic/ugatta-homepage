@@ -103,6 +103,13 @@ class LabMigrationTests(unittest.TestCase):
                 ]
                 self.assertGreaterEqual(len(lab_links), 2)
 
+    def test_footer_uses_founding_year(self) -> None:
+        for filename in SHELL_PAGES:
+            with self.subTest(filename=filename):
+                content = read(filename)
+                self.assertIn("© 2024 合同会社UGATTA", content)
+                self.assertNotIn("© 2026 合同会社UGATTA", content)
+
     def test_lab_links_are_tracked(self) -> None:
         for path in ROOT.rglob("*.html"):
             if path.name in REDIRECTS and path.parent == ROOT:
