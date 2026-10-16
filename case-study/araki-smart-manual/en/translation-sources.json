@@ -1,10 +1,10 @@
 {
  "HOTEL-SMART-front-manual-reference.html": {
   "(top)": "1dddc8d0272e83e1",
-  "ref-onsite-checks": "28fc5359f4fecc2c",
+  "ref-onsite-checks": "84cc37da57855d51",
   "ref-pdf-key-points": "b82e563638cfd4b6",
   "ref-questions-assignment": "f3fdfa5d5499be0f",
-  "ref-sources": "1dc7b10af5cb865c"
+  "ref-sources": "bcebf569bf75335b"
  },
  "daily-operations.html": {
   "(top)": "3468e0e0e748ceb3",
@@ -25,7 +25,7 @@
   "reports-register": "37c65c0d36a3ae38",
   "reports-reservation": "a891c1409f261951",
   "reports-title": "241811cf7f03202d",
-  "room-status-title": "abbefd7f00087e2a",
+  "room-status-title": "f724a0d08728f18a",
   "shift-start-title": "ed88a82142c6bdaa"
  },
  "front-operations.html": {
@@ -33,6 +33,7 @@
   "scene1": "b040036f5cd27809",
   "scene1-login": "3affcd8e484dbd1a",
   "scene1-logout": "18c116ebcdc3281b",
+  "scene1-menu": "5a092dc34ea5b285",
   "scene1-password": "8fe308429eff457c",
   "scene10": "6f27e7c856816b8c",
   "scene10-after": "417b637c9e77b0bf",
@@ -84,7 +85,7 @@
  },
  "glossary.html": {
   "(top)": "2c1eecf6c60a1d93",
-  "glossary-operations": "949dec9b7e8bb4a4",
+  "glossary-operations": "8ca48816fbc541c5",
   "glossary-reservation": "c79c1904eb53268d",
   "glossary-stay": "cb1188ba14725109"
  },
@@ -147,7 +148,7 @@
   "s14-advance": "8cf7854b417089a0",
   "s14-master": "ccea2c56382f659a",
   "s14-other": "3a036b112b2979e3",
-  "s14-tax": "74dc3cabc2a372f3",
+  "s14-tax": "e39bad4a227e638e",
   "s14-title": "0d107f11e201f5e5",
   "s15-inventory": "f4d9d583e4ae6aa1",
   "s15-title": "6ace2eb81d565a05",
@@ -187,7 +188,7 @@
   "mypage-trouble-title": "9c6225a60fe7952e",
   "ota-mismatch-title": "3021cbe5a2d24fde",
   "report-mismatch-title": "cf15a358fc68587d",
-  "reservation-missing-title": "6eb67ab46826624e",
+  "reservation-missing-title": "738e9f3232c09e8b",
   "save-error-title": "c7254acae542b194",
   "tablet-error-title": "26ff0cece6e69b04",
   "wrong-operation-title": "3efba418e829a064"

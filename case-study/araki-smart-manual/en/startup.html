@@ -911,11 +911,20 @@
           <div class="callout warn"><span class="label">From the official manual</span>
             <ul>
               <li>Tax is applied automatically to reservations imported from the site controller or booking engine. Reservations imported before the setting was made are not taxed until they are updated.</li>
-              <li>When entering tax by hand, use a charge item whose charge category is <span translate="no" lang="ja">「税」</span> (Tax). With any other item, it does not appear in the bathing tax / accommodation tax monthly summary. Non-reservation charges are not counted either.</li>
+              <li>When entering tax by hand, use a charge item whose charge category is <span translate="no" lang="ja">「税」</span> (Tax). With any other item, it does not appear in the bathing tax / accommodation tax monthly summary.</li>
               <li>There are three tax methods: <span translate="no" lang="ja">「金額に応じて」</span> (According to the amount), which sets the tax for each band of room charge; <span translate="no" lang="ja">「一定の金額」</span> (Fixed amount), a set amount per person per night; and <span translate="no" lang="ja">「一定の割合」</span> (Fixed percentage), a percentage of the charge. To not tax children, set that category to <span translate="no" lang="ja">「課税しない」</span> (Do not tax).</li>
               <li>Bathing tax for day guests (no overnight stay) is set separately with the tax type <span translate="no" lang="ja">「入湯税（デイユース）」</span> (Bathing tax, day use).</li>
               <li>When the tax rate changes, add a setting with the revision date as the start date. Guests are not taxed twice by the old and new settings. The start date cannot be earlier than today.</li>
               <li>Totals can be seen in <span translate="no" lang="ja">【分析帳票】</span><span translate="no" lang="ja">＞</span><span translate="no" lang="ja">「入湯税・宿泊税_月計表」</span> (Analysis reports > Bathing tax / accommodation tax monthly summary), and printed from <span translate="no" lang="ja">「入湯税/宿泊税集計を印刷する」</span> (Print bathing tax / accommodation tax summary) at the top right of the screen.</li>
+            </ul>
+          </div>
+          <div class="callout warn"><span class="label">HOTEL SMART update of 2026-10-15</span>
+            <ul>
+              <li>Bathing tax and accommodation tax entered in <span translate="no" lang="ja">予約外_料金・精算</span> (charges and payments not linked to a reservation) are now also included in the monthly summary, both the amount and the number of people. They are not kept apart from the reservation amounts; they are added to the column for each unit price.</li>
+              <li>Non-reservation amounts are not included in the day-use column.</li>
+              <li>The date used for the totals is the usage date if there is one, otherwise the creation date (for the creation date, the date as divided by the daily closing time).</li>
+              <li>The points above are from the HOTEL SMART release notice (not yet confirmed at Araki Hotel).</li>
+              <li>At Araki Hotel, day-spa (<span translate="no" lang="ja">日帰り温泉</span>) sales are not entered in HOTEL SMART (owner's decision, 2026-10-13). If you enter a day guest's bathing tax as a non-reservation charge, it is added to the same column as the lodging bathing tax, so do not enter it.</li>
             </ul>
           </div>
 
@@ -1091,6 +1100,6 @@
     </footer>
   </div>
 </div>
-<script src="../assets/search.js?v=0657425aac" defer></script>
+<script src="../assets/search.js?v=d031e36cc7" defer></script>
 </body>
 </html>
