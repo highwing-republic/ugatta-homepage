@@ -42,6 +42,7 @@ Quoted words that are not screen labels (example search words, things a guest sa
 | Japanese | English |
 |---|---|
 | 公式マニュアルより | from the official manual |
+| HOTEL SMARTのリリースのお知らせより | from the HOTEL SMART release notice |
 | あらきホテルでは未確認 | not yet confirmed at Araki Hotel |
 | （2026/10/11 オーナー決定） | (owner's decision, 2026-10-11) |
 | （2026/10/09確認） | (checked 2026-10-09) |
