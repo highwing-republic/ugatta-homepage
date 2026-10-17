@@ -7,7 +7,7 @@
 - カスタムドメイン: `ugatta-llc.com`（`CNAME`で管理）
 - Google Analytics: `GT-M3S9S5D7`
 - `robots.txt` と `sitemap.xml` で検索公開を管理
-- `.nojekyll` でJekyll処理を無効化
+- 公開しないファイルは `_config.yml` の `exclude` で管理します
 
 ## 更新・デプロイ
 
