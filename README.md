@@ -14,4 +14,4 @@
 GitHub Pages の **Deploy from a branch** を使い、`main` ブランチの `/ (root)` を公開します。`main` へ push すると自動的に反映されます。
 
 ## 無料ツール
-無料ツールは宿泊DXラボ（https://lab.ugatta-llc.com/ 、リポジトリ highwing-republic/makoto-consulting）に移行しました。旧URL（useful.html / dx-diagnosis.html / inbound-analysis.html / report.html）はラボの対応ページへ転送します。
+無料ツールは宿泊DXラボ（https://lab.ugatta-llc.com/ 、リポジトリ highwing-republic/ugatta-lab）に移行しました。旧URL（useful.html / dx-diagnosis.html / inbound-analysis.html / report.html）はラボの対応ページへ転送します。
