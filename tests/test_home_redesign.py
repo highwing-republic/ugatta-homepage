@@ -74,6 +74,17 @@ class HomeRedesignTests(unittest.TestCase):
         self.assertEqual(len(self.home.tagged("details")), 3)
         self.assertEqual(len(self.home.tagged("summary")), 3)
 
+    def test_copy_centers_hands_on_lodging_dx_support(self):
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn("現場を見て、</span><span>話を聞いて、</span><span>一緒に考える。", home)
+        self.assertIn("旅館・ホテルのDX・業務改善が中心です。", home)
+        for filename in ("index.html", "services.html", "about.html", "ugatta_case_studies.html", "contact.html"):
+            with self.subTest(filename=filename):
+                content = (ROOT / filename).read_text(encoding="utf-8")
+                self.assertNotIn("申請代行", content)
+                self.assertNotIn("採択を保証", content)
+                self.assertNotIn("採択保証", content)
+
     def test_contact_attribution_is_preserved(self):
         ctas = [a for a in self.home.tagged("a") if a.get("data-analytics-event") == "contact_page_click"]
         self.assertEqual(len(ctas), 3)
